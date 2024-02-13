@@ -38,15 +38,14 @@ this.io.on("connection", (socket) => {
         },
         cors: {origin:"*"}
     })
-    
+
 
     newsocket.on('connect', (socket) => {
-        //log('Connection established to server.')
-        
+        log('Connection established to server.')
     })
     
     newsocket.on('connect_error', (socket) => {
-        //log('Couldn\'t connect to server.')
+        log('Couldn\'t connect to server.')
     })
 
     newsocket.on('mutation', (mutation, value) => {

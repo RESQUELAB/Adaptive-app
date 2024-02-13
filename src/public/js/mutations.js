@@ -30,8 +30,11 @@ class MutationController {
             }
 
             if (name == 'display') {
-                if (value == 'list')  controller.setGridSize(1)
-                if (value == 'grid')  controller.setGridSize(4)
+                if (value == 'list')   controller.setGridSize(1)
+                if (value == 'grid2')  controller.setGridSize(2)
+                if (value == 'grid3')  controller.setGridSize(3)
+                if (value == 'grid4')  controller.setGridSize(4)
+                if (value == 'grid5')  controller.setGridSize(5)
             }
         }
     }

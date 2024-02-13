@@ -38,12 +38,12 @@ const socket = io( `http://${HOST}:${PORT}` , {
 
 function sendClickInfo(msg) {
 	socket.emit('click', msg)
-	console.log("click enviado")
+	//console.log("click enviado")
 }
 
 function sendScrollInfo(msg) {
 	socket.emit('scroll', msg)
-	console.log("click enviado")
+	// console.log("click enviado")
 }
 
 socket.on('connect', (Socket) => {

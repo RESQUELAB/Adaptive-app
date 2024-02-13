@@ -8,13 +8,13 @@ window.onclick = function(event) {
     * TAGNAME; ID; NAME; NUM_CLASSES; CLASSNAME (pueden ser varios, separados por ";")
     */
     elem = event.target
-
+    /* 
     classNames = elem.className.split(" ")
     classNames.forEach( function(valor, indice) {
         console.log("Classe ", indice, ": ",  valor);
     });
-    
-    // let ret = 
+    */
+
     sendClickInfo(`${elem.tagName}  ID:  ${elem.id}  Classname:  ${elem.className}  NAME:  ${elem.name}`)
 }
 

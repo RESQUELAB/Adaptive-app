@@ -16,6 +16,7 @@ class CatalogController {
 	}
 
 	setGridSize(size) {
+		console.log("SET GRID SIZE TO: ", size)
 		if (!check(size).isInt() || size < 1 || size > 5) return
 		if (!this.catalogPanel) return
 
