@@ -1,12 +1,4 @@
-const defaultFavourites = [
-	"adidas_sunflare_7",
-	"skechers_archfit_0",
-	"asics_trabuco",
-	"nike_wildhorse",
-	"jordan_bota_4",
-	"adidas_ultraboost",
-	"keen_newport_h2"
-]
+const defaultFavourites = []
 
 class FavController {
 	LS_KEY = 'sport-favourite-articles'

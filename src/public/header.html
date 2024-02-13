@@ -45,3 +45,13 @@
         </a>
     </div>
 </div>
+
+<script>
+    
+    $('#search_input').on('click', function() {
+        let direction = window.location.href
+        if (!(direction.includes("catalog") || direction.includes("favourites"))){
+            window.location = "catalog.html"
+        }
+		})
+</script>

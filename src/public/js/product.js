@@ -64,7 +64,7 @@ class ProductPage {
 						<div class="messageSection"></div>
 					</div>
 			</div>
-			<div class="descriptionSection" textId="${this.id}_desc">-desc-</div>`)
+			`)
 		favs.setupFavouriteTogglerListeners()
 		this.setupVaritionsListener()
 		this.setupAddToCartListener()

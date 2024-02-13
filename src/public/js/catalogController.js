@@ -33,7 +33,7 @@ class CatalogController {
 
 	setResultsNumber() {
 		// 20 articles is the maximum for all modes
-		this.resultsNumber = Math.min(this.filter.filteredArticles.length, 20)
+		this.resultsNumber = Math.min(this.filter.filteredArticles.length, 30)
 
 		// Adjust to a number that can fit in the grid size
 		this.resultsNumber -= this.resultsNumber%this.gridSize
@@ -78,6 +78,7 @@ class CatalogController {
 		}
 		return null
 	}
+
 	getArticlesHtml() {
 		let maxArticles = this.resultsNumber
 
@@ -145,7 +146,7 @@ class CatalogController {
 class Filter {
 	constructor(articles, controller) {
 		let cats = (new URL(document.location)).searchParams.get('cat')
-		cats = cats? cats.split(',') : []
+		cats = cats? cats.split(',') : ["sneakers", "trail", "trecking", "urban", "running", "sandals"]
 
 		this.controller = controller
 		this.selectedCategories = cats
@@ -166,6 +167,26 @@ class Filter {
 		
 		this.parseArticles(articles)
 		this.allArticles = this.filteredArticles
+	}
+
+	search_by_name(name) {
+		let lang = getLang();
+		if (typeof lang === 'undefined') {
+			lang = 'es';
+		}
+		console.log(getLang())
+		let input = document.getElementById("search_input").value
+		let filtered = []
+		for (let aID of this.allArticles) {
+			let a = articlesData[aID]
+			if ((a.title[lang]).toLowerCase().includes(input.toLowerCase())){
+				filtered.push(aID)
+			}
+		}
+		this.filteredArticles = filtered
+		this.controller.setResultsNumber()
+		this.controller.render()
+		translateTexts()
 	}
 
 	readFilters() {
@@ -286,6 +307,9 @@ class Filter {
 		let that = this
 		$('input[name^="filter_"]').on('click', function() {
 			that.applyFilters()
+		})
+		$('#search_input').on('keyup', function() {
+			that.search_by_name()
 		})
 	}
 

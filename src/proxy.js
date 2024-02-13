@@ -2,7 +2,7 @@ const { createServer } = require("http")
 const { Server } = require("socket.io")
 const { io } = require("socket.io-client")
 
-const HOST = '192.168.0.135',
+const HOST = '158.42.185.67',
 	  PORT = '9999'
 
 function log(m) {
