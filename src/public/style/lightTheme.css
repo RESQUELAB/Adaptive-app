@@ -1,0 +1,113 @@
+/* 
+ * LIGHT THEME
+ */
+/*.lightTheme.full-container {
+	background-color: #333333;
+}*/
+
+.lightTheme * {
+	border-color: #444444;
+	color: #222222;
+}
+
+.lightTheme .header {
+    border-bottom: 1px solid #ddd !important;
+}
+
+.lightTheme .searchbar > input#search_input {
+	background-color: #FFFFFF ;
+	border-color: #bbb;
+}
+
+.lightTheme .searchbar path, .lightTheme .userbuttons .userbutton > svg > path {
+	fill: #444 ;
+}
+
+.lightTheme .userbuttons .userbutton .counter > span {
+    background: white;
+    border: 1px solid gray;
+	color: inherit;
+	opacity: 0.7;
+}
+
+.lightTheme .discrete {
+	color: #999999;
+}
+
+.lightTheme .link,
+.lightTheme a,
+.lightTheme a:visited {
+	color: #0080FF;
+}
+.lightTheme .container {
+	background-color: #d0d0d0;
+}
+
+.lightTheme input,
+.lightTheme select {
+	background-color: #EEE;
+	outline-color: cornflowerblue;
+}
+.lightTheme button {
+	background-color: #BBBBEE;
+	outline-color: cornflowerblue;
+}
+.lightTheme button.positive {
+	background-color: #57ff57;
+    color: black;
+}
+.lightTheme div.positive {
+	color: rgb(105 175 2);
+}
+.lightTheme button.negative {
+	background-color: #DD8888;
+}
+.lightTheme div.negative {
+	color: red;
+}
+
+.lightTheme .grid-border {
+    background: #ddd;
+    border: 1px solid #ddd;
+}
+.lightTheme .grid-border > * {
+    background: white;
+}
+
+/* Catalog */
+.lightTheme .catalog-article .reviews {color: gray;}
+.lightTheme .catalog-article .price, .lightTheme .catalog-article .price sup {color: rgb(85, 85, 255);}
+.lightTheme .catalog-article .likes {color: rgb(255, 96, 96);}
+.lightTheme .catalog * {background: white;}
+.lightTheme .catalog-article .star_rating .score { color: #666; }
+
+/* Product */
+.lightTheme .product .choice.selected {
+    background-color: #85db85;
+}
+.lightTheme .product .messageSection .warning {
+	color: rgb(255 0 0);
+}
+.lightTheme .product .messageSection .productAdded > span {
+	color: #888;
+}
+
+/* jquery ui tabs */
+.lightTheme .ui-widget-content, .lightTheme .ui-tabs-nav.ui-widget-header {
+	background-color: #fff;
+}
+
+/* use jquery ui styles here
+.lightTheme .ui-tabs-tab {
+	
+}
+.lightTheme .ui-tabs-tab.ui-tabs-active {
+	
+}
+
+.darkTheme .ui-tabs-tab a {
+	
+}
+.darkTheme .ui-tabs-tab.ui-state-hover a, .darkTheme .ui-tabs-tab.ui-tabs-active a {
+	
+}*/

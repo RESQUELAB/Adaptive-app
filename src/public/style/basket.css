@@ -1,0 +1,115 @@
+.goBack {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.basket {
+    grid-column: 3/6;
+    grid-row: 3;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 73% 23%;
+    column-gap: 4%;
+}
+
+.basket #articleList .article:not(:last-child) {
+    border-bottom: 1px solid;
+}
+
+.basket #articleList .article > img {
+    height: 100px;
+    width: 100%;
+    object-fit: contain;
+}
+.basket #articleList .article > :not(img) {
+    margin-top: 40px;
+}
+
+.basket #articleList > * {
+    display: grid;
+    grid-template-columns: 14% 44% 11% 18% 11%;
+    column-gap: 0.5%;
+}
+
+#basketSummary{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 12px;
+}
+
+
+#moneySummary {
+    border-top: 1px solid;
+    padding-top: 12px;
+}
+#moneySummary > * {
+    display: grid;
+    grid-template-columns: 66% 34%;
+}
+#moneySummary > *:not(:first-child) {
+    margin-top: 12px;
+}
+
+#moneySummary > :first-child
+
+
+.basket #articleList > * > *:nth-child(3),
+.basket #articleList > * > *:nth-child(4) {
+    text-align: center;
+}
+
+.basket #articleList > * > *:last-child,
+#moneySummary > * > *:last-child {
+    text-align: right;
+}
+
+
+#userData > div {
+    border: 1px solid;
+    padding: 2px 10px;
+    border-radius: 6px;
+}
+
+#userData > div:not(:first-child) {
+    margin-top: 10px;
+}
+
+.articleQuantity > .plus, .articleQuantity > .minus {
+    padding: 1px 4px;
+    border: 1px solid;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.articleQuantity > input[type=number] {
+    width: 38px;
+    height: 18px;
+    border-radius: 3px;
+}
+
+.articleQuantity > .remove {
+    font-size: small;
+    cursor: pointer;
+}
+
+.confirmPurchase {
+    display: block !important;
+    text-align: right;
+}
+.confirmPurchase button {
+    font-size: larger;
+    border-radius: 6px;
+}
+
+.articleNameAndVariations {
+    margin-top: 0 !important;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.variationsText {
+    font-size: smaller;
+    margin-left: 12px;
+}

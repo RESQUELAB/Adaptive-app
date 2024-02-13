@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Profile - AdaptiveSports</title>
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+		<!-- Jquery -->
+		<link href="./jquery/jquery-ui.css" rel="stylesheet">
+		<script src="./jquery\external\jquery\jquery.js"></script>
+		<script src="./jquery/jquery-ui.js"></script>
+		<!-- Socket IO -->
+		<script src="./js/socket.io.min.js"></script>
+		<!-- Styles -->
+		<link href="./style/structure.css" rel="stylesheet">
+		<link href="./style/lightTheme.css" rel="stylesheet">
+		<link href="./style/darkTheme.css" rel="stylesheet">
+		<link href="./style/profile.css" rel="stylesheet">
+		<!-- Core JS -->
+		<script src="./js/check.js"></script>
+		<script src="./js/translator.js"></script>
+		<script src="./js/mutations.js"></script>
+		<script src="./js/communication.js"></script>
+		<!-- Translations -->
+		<script src="./js/translations.js"></script>
+		<!-- Own models and controllers -->
+		<script src="./data/articlesData.js"></script>
+		<script src="./js/profile/ProfileModel.js"></script>
+		<script src="./js/profile/ProfileController.js"></script>
+		<script src="./js/favController.js"></script>
+		<script src="./js/cartModel.js"></script>
+		<!-- MouseTracker -->
+		<script src="./js/mouseTracker.js"></script>
+	</head>
+	<body lang="es">
+		<!-- inject: ./controls.html -->
+		<div class="full-container darkTheme">
+			<!-- Header -->
+			<!-- inject: ./header.html -->
+			<!-- Main content -->
+			<a class="goBack" href="catalog.html">
+				<span>&lt;</span>
+				<span textId="keepBuying:1c"></span>
+			</a>
+			<div class="profile">
+				<h2 textId="profile:1c"></h2>
+				
+				
+
+
+				<div id="tabsContainer">
+					<div class="tab">
+						<button id="defaultProfile" textId="personalData:1c" class="tablinks" onclick="openTab(event, 'profile-panel-1')"></button>
+						<button textId="paymentData:1c" class="tablinks" onclick="openTab(event, 'profile-panel-2')"></button>
+						<button textId="shipmentData:1c" class="tablinks" onclick="openTab(event, 'profile-panel-3')"></button>
+					</div>
+					<div id="profile-panel-1" class="tabcontent active">
+						<div>
+							<label><h3 textId="lastname:1c"></h3><input type="text" value="Contador"/></label>
+						</div>
+						<div>
+							<label><h3 textId="name:1c"></h3><input type="text" value="Alberto"/></label>
+						</div>
+						<div>
+							<label>
+								<h3 textId="genre:1c"></h3>
+								<input type="radio" name="genre" ><span textId="man:1c"  ></span></input>
+								<input type="radio" name="genre" ><span textId="woman:1c"></span></input>
+								<input type="radio" name="genre" ><span textId="other:1c"></span></input>
+							</label>
+						</div>
+						<div>
+							<h3 textId="birthDate:1c"></h3>
+							<input class="dateInput" value="DD" type="text" /> / 
+							<input class="dateInput" value="MM" type="text" /> / 
+							<input class="dateInput year" textId="year4" value="" type="text" />
+						</div>
+						<div></div>
+						<div></div>
+						<div>
+							<label><h3 textId="email:1c"></h3><input type="text" value="albertoco@fastmail.com"/></label>
+						</div>
+						<div>
+							<label><h3 textId="phone:1c"></h3><input type="text" value="666555444"/></label>
+						</div>
+						<div></div>
+						<div>
+							<label>
+								<input type="checkbox"/>
+								<span textId="newsletterQuestion:1c"></span>
+							</label>
+						</div>
+						<div></div>
+						<div></div>
+						<div><span>*</span> <span textId="requiredFields:1c"></span></div>
+						<div>
+							<button class="positive" textId="accept:1c"></button>
+							<button class="negative" textId="cancel:1c"></button>
+						</div>
+					</div>
+					<div id="profile-panel-2" class="tabcontent">
+						<div>
+							<p textId="acceptedCards:1c"></p>
+						</div>
+						<div></div>
+						<div></div>
+						<div>
+							<label><h3 textId="cardOwner:1c"></h3><input type="text" value="Alberto Contador"/></label>
+						</div>
+						<div>
+							<label><h3 textId="cardNumber:1c"></h3><input type="text" class="cardNumber" value="4444 3333 2222 1111"/></label>
+						</div>
+						<div></div>
+						<div>
+							<h3 textId="dueDate:1c"></h3>
+							<input class="dateInput" value="MM" type="text" /> / 
+							<input class="dateInput year" textId="year4" value="" type="text" />
+						</div>
+						<div><label><h3 textId="cvvcode:1c"></h3><input type="text" class="cvv" value="123"/></label></div>
+						<div></div>
+						<div><span>*</span> <span textId="requiredFields:1c"></span></div>
+						<div>
+							<button class="positive" textId="accept:1c"></button>
+							<button class="negative" textId="cancel:1c"></button>
+						</div>
+					</div>
+					<div id="profile-panel-3" class="tabcontent">
+						<div>
+							<h3 textId="country:1c"></h3>
+							<select>
+								<option selected>Spain</option>
+								<option>Portugal</option>
+								<option>France</option>
+								<option>England</option>
+								<option>Belgium</option>
+							</select>
+						</div>
+						<div><label>
+								<h3 textId="postalcode:1c"></h3>
+								<input type="text" value="46022" class="third"/>
+						</label></div>
+						<div><label>
+							<h3 textId="city:1c"></h3>
+							<input type="text" value="Valencia"/>
+						</label></div>
+						<div>
+							<h3 textId="roadType:1c"></h3>
+							<select>
+								<option textId="avenue:1c" selected></option>
+								<option textId="street:1c"></option>
+								<option textId="square:1c"></option>
+								<option textId="road:1c"></option>
+								<option textId="officebox:1c"></option>
+							</select>
+						</div>
+						<div><label>
+							<h3 textId="namenumberroad:1c"></h3>
+							<input type="text" value="Calle de los oficios, 8"/>
+						</label></div>
+						<div></div>
+						<div></div>
+						<div><label>
+							<h3 textId="roadextra:1c"></h3>
+							<input type="text" value="bloque B, escalera 1, altura 3, puerta 17"/>
+						</label></div>
+						<div></div>
+						<div><span>*</span> <span textId="requiredFields:1c"></span></div>
+						<div>
+							<button class="positive" textId="accept:1c"></button>
+							<button class="negative" textId="cancel:1c"></button>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- HTML load end scripts -->
+		<script src="./js/controls.js"></script>
+		<script src="./js/pageNavigation.js"></script>
+		<script src="./js/profile/profile.js"></script>
+		<script src="./js/head.js"></script>
+	</body>
+</html>

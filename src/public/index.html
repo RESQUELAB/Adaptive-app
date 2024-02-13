@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Login - AdaptiveSports</title>
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+		<!-- Jquery -->
+		<link href="./jquery/jquery-ui.css" rel="stylesheet">
+		<script src="./jquery\external\jquery\jquery.js"></script>
+		<script src="./jquery/jquery-ui.js"></script>
+		<!-- Socket IO -->
+		<script src="./js/socket.io.min.js"></script>
+		<!-- Styles -->
+		<link href="./style/structure.css" rel="stylesheet">
+		<link href="./style/lightTheme.css" rel="stylesheet">
+		<link href="./style/darkTheme.css" rel="stylesheet">
+        <style>
+            .container {
+                grid-column: 1/-1;
+                display: flex;
+            }
+        </style>
+		<!-- Core JS -->
+		<script src="./js/check.js"></script>
+		<script src="./js/translator.js"></script>
+		<script src="./js/mutations.js"></script>
+		<script src="./js/communication.js"></script>
+		<!-- Translations -->
+		<script src="./js/translations.js"></script>
+		<!-- Own data and js -->
+		<!-- MouseTracker -->
+		<script src="./js/mouseTracker.js"></script>
+
+	</head>
+	<body lang="es">
+		<div class="full-container darkTheme">
+            <div class="container">
+                <span>Username: </span>
+                <input id="username" value="anonymous" type="text"/>
+                <button id="login">Login</button>
+            </div>
+		</div>
+		<!-- HTML load end scripts -->
+		<script src="./js/controls.js"></script>
+		<script src="./js/pageNavigation.js"></script>
+        <script src="./js/index.js"></script>
+	</body>
+</html>

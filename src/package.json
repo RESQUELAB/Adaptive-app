@@ -1,0 +1,21 @@
+{
+  "name": "mutantapp",
+  "version": "1.0.0",
+  "description": "An app that can mutate!",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "proxy": "node proxy.js"
+  },
+  "author": "Angel",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^23.3.13",
+    "gulp": "^4.0.2",
+    "gulp-source-injector": "^1.0.1"
+  },
+  "dependencies": {
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2"
+  }
+}

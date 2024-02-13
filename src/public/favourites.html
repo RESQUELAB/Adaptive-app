@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Favourites - AdaptiveSports</title>
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+		<!-- Jquery -->
+		<link href="./jquery/jquery-ui.css" rel="stylesheet">
+		<script src="./jquery/external/jquery/jquery.js"></script>
+		<script src="./jquery/jquery-ui.js"></script>
+		<!-- Spcket IO -->
+		<script src="./js/socket.io.min.js"></script>
+		<!-- Styles -->
+		<link href="./style/structure.css" rel="stylesheet">
+		<link href="./style/lightTheme.css" rel="stylesheet">
+		<link href="./style/darkTheme.css" rel="stylesheet">
+		<link href="./style/catalog.css" rel="stylesheet">
+		<!-- Core JS -->
+		<script src="./js/check.js"></script>
+		<script src="./js/translator.js"></script>
+		<script src="./js/mutations.js"></script>
+		<script src="./js/communication.js"></script>
+		<!-- Translations -->
+		<script src="./js/translations.js"></script>
+		<!-- Own data and js -->
+		<script src="./data/articlesData.js"></script>
+		<script src="./js/favController.js"></script>
+		<script src="./js/catalogController.js"></script>
+		<script src="./js/cartModel.js"></script>
+		<!-- MouseTracker -->
+		<script src="./js/mouseTracker.js"></script>
+	</head>
+	<body lang="es">
+		<!-- inject: ./controls.html -->
+		<div class="full-container darkTheme">
+			<!-- Header -->
+			<!-- inject: ./header.html -->
+			<!-- Main content -->
+			<!-- Filters panel -->
+			<div class="filters">
+				<div class="box">
+					<span class="title" textId="categories:1c"></span>
+					<div class="line">
+						<a href="./catalog.html" textId="tshirts:1c"></a>
+					</div>
+					<div class="line">
+						<a href="./catalog.html" textId="pants:1c"></a>
+					</div>
+					<div class="line">
+						<a href="./catalog.html" textId="footwear:1c"></a>
+					</div>
+				</div>
+				<div class="box">
+					<span class="title" textId="filters:1c"></span>
+					<div class="box" id="price_filter">
+						<span class="title" textId="price:1c"></span>
+						<span id="price_min"></span><span id="price_max"></span>
+						<div id="slider-range"></div>
+					</div>
+					<div class="box">
+						<span class="title" textId="sizes:1c"></span>
+						<label><input type="checkbox" name="filter_size" value="s">S</label>
+						<label><input type="checkbox" name="filter_size" value="M">M</label>
+						<label><input type="checkbox" name="filter_size" value="L">L</label>
+						<label><input type="checkbox" name="filter_size" value="XL">XL</label>
+					</div>
+					<div class="box">
+						<span class="title" textId="logistics:1c"></span>
+						<label>
+							<input type="checkbox" name="stock">
+							<span textId="with_stock:1c"></span>
+						</label><br>
+						<label>
+							<input type="checkbox" name="rapid_shipment">
+							<span textId="rapid_shipment:1c"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<!-- Catalog panel -->
+			<div class="grid-border catalog catalog-4cols">
+			</div>
+		</div>
+		<!-- HTML load end scripts -->
+		<script src="./js/controls.js"></script>
+		<script src="./js/pageNavigation.js"></script>
+		<script src="./js/favourites.js"></script>
+		<script src="./js/head.js"></script>
+	</body>
+</html>

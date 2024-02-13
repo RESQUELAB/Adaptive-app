@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Order - AdaptiveSports</title>
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+		<!-- Jquery -->
+		<link href="./jquery/jquery-ui.css" rel="stylesheet">
+		<script src="./jquery\external\jquery\jquery.js"></script>
+		<script src="./jquery/jquery-ui.js"></script>
+		<!-- Socket IO -->
+		<script src="./js/socket.io.min.js"></script>
+		<!-- Styles -->
+		<link href="./style/structure.css" rel="stylesheet">
+		<link href="./style/lightTheme.css" rel="stylesheet">
+		<link href="./style/darkTheme.css" rel="stylesheet">
+		<link href="./style/order.css" rel="stylesheet">
+		<!-- Core JS -->
+		<script src="./js/check.js"></script>
+		<script src="./js/translator.js"></script>
+		<script src="./js/mutations.js"></script>
+		<script src="./js/communication.js"></script>
+		<!-- Translations -->
+		<script src="./js/translations.js"></script>
+		<!-- Own data and js -->
+		<script src="./data/articlesData.js"></script>
+		<script src="./js/favController.js"></script>
+		<script src="./js/profile/ProfileModel.js"></script>
+		<script src="./js/order/OrderModel.js"></script>
+		<script src="./js/order/OrderList.js"></script>
+		<!-- MouseTracker -->
+		<script src="./js/mouseTracker.js"></script>
+	</head>
+	<body lang="es">
+		<!-- inject: ./controls.html -->
+		<div class="full-container darkTheme">
+			<!-- Header -->
+			<!-- inject: ./header.html -->
+			<!-- Main content -->
+			<a class="goBack" href="catalog.html">
+				<span>&lt;</span>
+				<span textId="keepBuying:1c"></span>
+			</a>
+			<div class="orderList">
+				<div id="basketDetails">
+					<h2><span textId="order:1c"></span> <span>#23000166</span></h2>
+					<div id="articleList">
+						<div class="headers">
+							<span></span>
+							<span textId="product:1c"></span>
+							<span textId="unitPrice:1c"></span>
+							<span textId="quantity:1c"></span>
+							<span textId="amount:1c"></span>
+						</div>
+						<div class="article">
+							<img src="./img/articles/adidas_terrex_5.png" />
+							<span>adidas_terrex_5</span>
+							<span>80.00€</span>
+							<div class="articleQuantity">1</div>
+							<span>80.00€</span>
+						</div>
+						<div class="article">
+							<img src="./img/articles/adidas_ultraboost.png" />
+							<span>adidas_ultraboost</span>
+							<span>64.00€</span>
+							<div class="articleQuantity">2</div>
+							<span>128.00€</span>
+						</div>
+						<div class="article">
+							<img src="./img/articles/asics_trabuco_orange.png" />
+							<span>asics_trabuco_orange</span>
+							<span>55.00€</span>
+							<div class="articleQuantity">2</div>
+							<span>110.00€</span>
+						</div>
+					</div>
+					<div id="basketSummary">
+						<div id="shipmentData">
+							<p>Transportista: SEUR</p>
+							<p>Fecha estimada de llegada: 22/11/2022</p>
+						</div>
+						<div id="moneySummary">
+							<div id="totalMoneyStep1">
+								<div>Total artículos (IVA inc.)</div>
+								<div>318.00€</div>
+							</div>
+							<div id="shipment">
+								<div>Envío y preparación</div>
+								<div>6.00€</div>
+							</div>
+							<div id="totalMoneyStep2">
+								<div>Total (IVA inc.)</div>
+								<div>324.00€</div>
+							</div>
+							<div id="taxes">
+								<div>Impuestos (21%)</div>
+								<div>56.23€</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="userData">
+					<div id="personalData">
+						<h3>Datos personales</h3>
+						<p>Alberto Contador</p>
+						<p>Calle de los oficios, 8</p>
+						<p>46022 Valencia (Valencia)</p>
+					</div>
+					<div id="paymentData">
+						<h3>Datos de pago</h3>
+						<p>Método de pago: Tarjeta de débito</p>
+						<p>VISA: **** 5171</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- HTML load end scripts -->
+		<script src="./js/controls.js"></script>
+		<script src="./js/pageNavigation.js"></script>
+		<script src="./js/cartModel.js"></script>
+		<script src="./js/order/order.js"></script>
+		<script src="./js/head.js"></script>
+	</body>
+</html>

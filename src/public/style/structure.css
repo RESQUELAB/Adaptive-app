@@ -1,0 +1,256 @@
+/* styles.css */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	color: #444444;
+}
+a {text-decoration: none;}
+
+.controls {
+    position: fixed;
+    top: 150px;
+    right: 10px;
+    background-color: rgb(230, 230, 190);
+    color: #444444;
+    padding: 10px;
+    z-index: 99999;
+}
+.controls > * {display: block;}
+
+.controls input[type=text] {width: 76px;}
+
+.full-container, body {
+	margin: 0;
+	padding: 0;
+}
+
+.full-container {
+	position: absolute;
+	overflow: hidden;
+	min-height: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1% 17% repeat(3, 1fr) 10% 1%;
+	grid-auto-rows: min-content;
+}
+
+
+.full-container > :last-child{margin-bottom: 60px;}
+
+
+/*
+* HEADER
+*/
+.header {
+	grid-row: 1;
+	grid-column: 1 / -1;
+	display: grid;
+    grid-template-columns: 6% 19% 55% 4% 10% 6%;
+	margin-bottom: 32px;
+}
+
+.header #logo > img{
+	margin: 14px 0 10px 0px;
+    width: 75%;
+}
+
+.header svg {
+	height: 33px;
+}
+.header svg > path{
+	scale: 2;
+}
+
+.searchbar {
+    margin-top: 40px;
+}
+.searchbar svg{
+    width: 30px;
+	height: 30px;
+	top: 8px;
+	left: 8px;
+}
+.searchbar svg > path {scale: 1.7;}
+#search_input {
+	padding-left: 34px;
+    font-size: 20px;
+	border-radius: 30px;
+	height: 38px;
+	width: 100%;
+}
+
+.header .userbuttons {
+	display: grid;
+	float: right;
+	margin-right: 24px;
+	margin-top: 40px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 8px;
+}
+.header .userbuttons > * {
+	display: inline-block;
+	text-align: center;
+	font-size: 18px;
+}
+.userbuttons .userbutton .counter {
+	position: relative;
+}
+.userbuttons .userbutton .counter > span {
+    position: absolute;
+    top: -8px;
+    border-radius: 31px;
+    padding: 0px 3px;
+}
+.userbuttons .userbutton:hover .counter > span {
+	opacity: 1 !important;
+	transition: 0.3s;
+}
+
+.userbuttons > .userbutton .profileName.subText {
+	font-size: small;
+}
+.userbuttons > .userbutton .subText {
+	border-top: 1px solid;
+    transition: 0.3s;
+	width: 72px;
+    word-break: break-word;
+}
+.userbuttons > .userbutton:not(:hover) .subText {
+    opacity: 0;
+}
+
+
+button {
+	padding: 3px 8px;
+	cursor: pointer;
+}
+button, input{
+	border: 1px solid;
+	border-radius: 2px;
+}
+hr {
+	border-bottom: 1px solid;
+	border-top: none;
+}
+.container {
+	padding: 12px;
+	display: block;
+}
+.container > :first-child {
+	margin-top: 0px;
+}
+
+*[href] {
+	cursor: pointer;
+}
+
+/* Posicionado */
+.aleft {float: left;}
+.aright {float: right;}
+.tacenter {text-align: center;}
+.left20 {margin-left: 20px;}
+
+/* Tamaños */
+.wshort {width: 50px}
+.wmedium {width: 100px;}
+.wlarge {width: 140px;}
+
+
+/* Widgets */
+.box + .box {
+	margin-top: 30px;
+}
+.box > .box + .box {
+	margin-top: 20px;
+}
+.box > .title {
+	font-size: x-large;
+	display: block;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.box > :not(.title) {
+    margin-left: 12px;
+}
+.box > .line {
+	display: block;
+	font-size: large;
+}
+.box > .line + .line {margin-top: 6px;}
+
+.box .box > .title {
+    font-size: larger;
+}
+
+.row > *{
+	float: left;
+}
+
+.relative {
+	position: relative;
+	height: 0;
+}
+.relative > * {
+	position: absolute;
+}
+
+.ui-slider .ui-slider-handle {
+    width: 0.8em !important;
+    margin-left: -0.4em !important;
+}
+
+
+.star_rating svg.star {
+    display: inline;
+    width: 16px;
+    height: 16px;
+    fill: yellow;
+    stroke-width: 0.8px;
+    stroke: #aaa;
+	scale:1.3;
+}
+.star_rating  svg.star.empty {
+	fill: rgba(00, 00, 00, 00)
+}
+.star_rating > span {display: inline;}
+
+
+
+svg.heart {
+	cursor: pointer;
+    display: inline;
+    width: 16px;
+    height: 14px;
+    fill: #ff5555;
+    stroke-width: 0.8px;
+    stroke: #aaa;
+    scale: 1.6;
+}
+svg.heart.empty {
+	fill: rgba(00, 00, 00, 00)
+}
+
+
+/* Grid border */
+.grid-boder {
+	grid-gap: 1px;
+}
+
+
+/* jquery ui */
+.ui-widget-content:not(.ui-tabs-panel), .ui-widget-header {
+	border: 0px solid !important;
+}
+
+.ui-tabs-panel {
+	border: 1px solid !important;
+	border-radius: 6px;
+}
+
+.ui-tabs-tab {
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+.right {float: right;}

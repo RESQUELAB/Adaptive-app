@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Cart - AdaptiveSports</title>
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+		<!-- Jquery -->
+		<link href="./jquery/jquery-ui.css" rel="stylesheet">
+		<script src="./jquery\external\jquery\jquery.js"></script>
+		<script src="./jquery/jquery-ui.js"></script>
+		<!-- Socket IO -->
+		<script src="./js/socket.io.min.js"></script>
+		<!-- Styles -->
+		<link href="./style/structure.css" rel="stylesheet">
+		<link href="./style/lightTheme.css" rel="stylesheet">
+		<link href="./style/darkTheme.css" rel="stylesheet">
+		<link href="./style/basket.css" rel="stylesheet">
+		<!-- Core JS -->
+		<script src="./js/check.js"></script>
+		<script src="./js/translator.js"></script>
+		<script src="./js/mutations.js"></script>
+		<script src="./js/communication.js"></script>
+		<!-- Translations -->
+		<script src="./js/translations.js"></script>
+		<!-- Own data and js -->
+		<script src="./data/articlesData.js"></script>
+		<script src="./js/favController.js"></script>
+		<script src="./js/cartModel.js"></script>
+		<!-- MouseTracker -->
+		<script src="./js/mouseTracker.js"></script>
+	</head>
+	<body lang="es">
+		<!-- inject: ./controls.html -->
+		<div class="full-container darkTheme">
+			<!-- Header -->
+			<!-- inject: ./header.html -->
+			<!-- Main content -->
+			<a class="goBack" href="catalog.html">
+				<span>&lt;</span>
+				<span textId="keepBuying:1c"></span>
+			</a>
+			<div class="basket">
+				<div id="basketDetails">
+					<h2 textId="basket:1c"></h2>
+					<!-- Article list to be filled by js -->
+					<div id="articleList"></div>
+					<!-- Basket summary to be filled by js -->
+					<div id="basketSummary"></div>
+				</div>
+				<div id="userData">
+					<div id="personalData">
+						<h3>Datos personales</h3>
+						<p>Alberto Contador</p>
+						<p>Calle de los oficios, 8</p>
+						<p>46022 Valencia (Valencia)</p>
+					</div>
+					<div id="paymentData">
+						<h3>Datos de pago</h3>
+						<p>Método de pago: Tarjeta de débito</p>
+						<p>VISA: **** 5171</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- HTML load end scripts -->
+		<script src="./js/controls.js"></script>
+		<script src="./js/pageNavigation.js"></script>
+		<script src="./js/cart.js"></script>
+		<script src="./js/head.js"></script>
+	</body>
+</html>

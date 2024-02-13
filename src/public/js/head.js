@@ -1,0 +1,2 @@
+favs.setHeader()
+cart.setHeader()
