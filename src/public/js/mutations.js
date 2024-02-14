@@ -36,7 +36,14 @@ class MutationController {
                 if (value == 'grid4')  controller.setGridSize(4)
                 if (value == 'grid5')  controller.setGridSize(5)
             }
+            if (name == 'font') this.setFontSize(value)
         }
+    }
+
+    setFontSize(value) {
+        if (value == "small") document.documentElement.style.setProperty('--base-font-size', '14px');
+        if (value == "default") document.documentElement.style.setProperty('--base-font-size', '16px');
+        if (value == "big") document.documentElement.style.setProperty('--base-font-size', '22px');
     }
 
     setDarkTheme() {
@@ -70,7 +77,8 @@ class MutationController {
         this.mutations = {
             theme: 'dark',
             language: 'es',
-            display: 'list'
+            display: 'list',
+            font: "default"
         }
     }
 }

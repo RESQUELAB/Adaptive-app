@@ -5,6 +5,11 @@ $('#changeEng').click('click', () => {mc.mutate('language', 'en')})
 $('#changeLight').click(() => { mc.mutate('theme', 'light')})
 $('#changeDark').click( () => { mc.mutate('theme', 'dark') })
 
+$('#font_size_small').click(() => { mc.mutate('font', 'small')})
+$('#font_size_default').click( () => { mc.mutate('font', 'default') })
+$('#font_size_big').click( () => { mc.mutate('font', 'big') })
+
+
 // Catalog controls
 if (document.location.pathname.indexOf("catalog.html") >= 0) {
     $('#catalogControls').attr('style', 'display: grid;')
