@@ -22,6 +22,7 @@ class MutationController {
             if (name == 'theme') {
                 if (value == 'dark') this.setDarkTheme()
                 if (value == 'light') this.setLightTheme()
+                if (value == 'contrast') this.setContrastTheme()
             }
 
             if (name == 'language') {
@@ -48,12 +49,20 @@ class MutationController {
 
     setDarkTheme() {
         $('.full-container').addClass('darkTheme')
+        $('.full-container').removeClass('highContrast')
         $('.full-container').removeClass('lightTheme')
     }
     
     setLightTheme() {
         $('.full-container').addClass('lightTheme')
         $('.full-container').removeClass('darkTheme')
+        $('.full-container').removeClass('highContrast')
+    }
+    
+    setContrastTheme() {
+        $('.full-container').addClass('highContrast')
+        $('.full-container').removeClass('darkTheme')
+        $('.full-container').removeClass('lightTheme')
     }
 
     save() {
