@@ -4,13 +4,16 @@ let articlesData = {
             "en": "Adidas Sunflare 7 sneakers",
             "es": "Zapatillas Adidas Sunflare 7"
         },
-        "description": "La zapatilla Sunflare ha estado a la vanguardia de la tecnología del running desde su lanzamiento en 2015. Esta versión presenta una parte superior de tejido adidas Primeknit ligero y transpirable que envuelve el pie y proporciona un ajuste cómodo. La mediasuela creada mediante impresión digital en 3D ofrece una estructura entramada con partes más densas que aportan mayor sujeción y partes abiertas que brindan mayor amortiguación. Esta zapatilla no es que se parezca al futuro. Es que lo es.",
+        "description": {
+            "es": "La zapatilla Sunflare ha estado a la vanguardia de la tecnología del running desde su lanzamiento en 2015. Esta versión presenta una parte superior de tejido adidas Primeknit ligero y transpirable que envuelve el pie y proporciona un ajuste cómodo. La mediasuela creada mediante impresión digital en 3D ofrece una estructura entramada con partes más densas que aportan mayor sujeción y partes abiertas que brindan mayor amortiguación. Esta zapatilla no es que se parezca al futuro. Es que lo es.",
+            "en": "La zapatilla Sunflare ha estado a la vanguardia de la tecnología del running desde su lanzamiento en 2015. Esta versión presenta una parte superior de tejido adidas Primeknit ligero y transpirable que envuelve el pie y proporciona un ajuste cómodo. La mediasuela creada mediante impresión digital en 3D ofrece una estructura entramada con partes más densas que aportan mayor sujeción y partes abiertas que brindan mayor amortiguación. Esta zapatilla no es que se parezca al futuro. Es que lo es."
+        },
         "variations": {
             "sizes": [30, 35, 39, 40, 41, 42, 43],
             "colors": ["white", "blue"],
         },
         "categories": ["sneakers", "running"],
-        "images": ["zapatilla.png"],
+        "images": ["zapatilla.png", "palahuer.png", "archfit.png"],
         "stock": 1,
 		"shipment_type": "1",
         "price": 100.00,

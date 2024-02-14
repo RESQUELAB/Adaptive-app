@@ -11,7 +11,8 @@ class ProductPage {
 
 		this.id = id
 		this.setTitle(article.title)
-		this.setDescription(article.description)
+		// this.setDescription(article.description)
+		this.description = article.description
 		this.variations = article.variations
 		this.categories = article.categories
 		this.images = article.images
@@ -31,49 +32,110 @@ class ProductPage {
 
 	render() {
 		$('.full-container > .product').html(`
-			<div class="introSection">
-				<div class="leftThumbnails">
-					<!-- TODO -->
+
+
+		<div class="product-card">
+		<div class="product-images">
+		  <div class="bigPhoto">
+			<!-- Big Product Image -->
+			<img id="bigImage" src="./img/articles/${this.images[0]}" alt="Product Image"/>
+		  </div>
+		  ${this.images.length > 1
+			? `<div class="thumbnails-container">
+				<!-- Thumbnails Carousel -->
+				<div class="thumbnails">
+				${this.images.map((image, index) => `<img src="./img/articles/${image}" alt="Thumbnail" onclick="changeImage(${index})"/>`).join('')}
 				</div>
-				<div class="bigPhoto">
-					<img src="./img/articles/${this.images[0]}"/>
-				</div>
-				<div class="importantData">
-						<div class="title">
-							<span id="articleTitle" textId="${this.id}_title:1c">-article title-</span>
-							${favs.getHeartHtml(this.id)}
-						</div>
-						<div class="price">${this.price}€</div>
-						<div class="star_rating">
-							${this.getStarRatingHtml()}
-							<span class="score">${this.stars}/5</span>
-						</div>
-						${this.getVariationsHtml()}
-						<div class="bottomSection">
-							<div class="addToBucket">
-								<div textId="quantity:1c">Cantidad</div>
-								<div class="quantityGrid"></div>
-								<input type="number" value="1" min="1" name="quantity" oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
-								<button class="positive" textId="addToBucket:1c">Añadir a la cesta</button>
-							</div>
-							<div class="shipmentAndStock">
-								<div class="${this.stock == 0? 'negative' : 'positive'}" textId="${this.stock === 0? 'noStock' : 'inStock'}:1c"></div>
-								<div textId="${this.shipment == 1? 'fastShipment' : 'normalShipment'}:1c"></div>
-							</div>
-						</div>
-						<div class="messageSection"></div>
-					</div>
+			  </div>`
+			: ''}
+		</div>
+		<div class="product-details">
+		  <div class="title">
+			<span id="articleTitle" textId="${this.id}_title:1c">-article title-</span>
+			${favs.getHeartHtml(this.id)}
+		  </div>
+		  <div class="price">${this.price}€</div>
+		  <div class="star_rating">
+			${this.getStarRatingHtml()}
+			<span class="score">${this.stars}/5
+			</span>
+		</div>
+		  ${this.getVariationsHtml()}
+		  <div class="bottom-section">
+			<div class="add-to-cart">
+			  <label for="quantity" textId="quantity:1c">Cantidad</label>
+			  <div class="quantity-grid"></div>
+			  <input type="number" id="quantity" value="1" min="1" name="quantity" oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+			  <button class="positive">Añadir al carrito</button>
 			</div>
+			<div class="shipment-and-stock">
+			  <div class="${this.stock == 0? 'negative' : 'positive'}" textId="${this.stock === 0? 'noStock' : 'inStock'}:1c"></div>
+			  <div textId="${this.shipment == 1? 'fastShipment' : 'normalShipment'}:1c"></div>
+			  </div>
+			  <div class="message-section"></div>
+		  </div>
+		</div>
+	  </div>
+	  <div class="product-description">
+		<h4>Description</h4>
+		<div class="description-section" textId="${this.id}_desc">-desc-</div>
+	  </div>
+	  
+
+
+
+		<div class="introSection">
+		<div class="leftThumbnails">
+			<!-- TODO -->
+		</div>
+		<div class="bigPhoto">
+			<img src="./img/articles/${this.images[0]}"/>
+		</div>
+		<div class="importantData">
+				<div class="title">
+					<span id="articleTitle" textId="${this.id}_title:1c">-article title-</span>
+					${favs.getHeartHtml(this.id)}
+				</div>
+				<div class="price">${this.price}€</div>
+				<div class="star_rating">
+					${this.getStarRatingHtml()}
+					<span class="score">${this.stars}/5
+					</span>
+				</div>
+				${this.getVariationsHtml()}
+				<div class="bottomSection">
+					<div class="addToBucket">
+						<div textId="quantity:1c">Cantidad</div>
+						<div class="quantityGrid"></div>
+						<input type="number" value="1" min="1" name="quantity" oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+						<button class="positive" textId="addToBucket:1c">Añadir a la cesta</button>
+					</div>
+					<div class="shipmentAndStock">
+						<div class="${this.stock == 0? 'negative' : 'positive'}" textId="${this.stock === 0? 'noStock' : 'inStock'}:1c"></div>
+						<div textId="${this.shipment == 1? 'fastShipment' : 'normalShipment'}:1c"></div>
+					</div>
+				</div>
+				<div class="messageSection"></div>
+			</div>
+	</div>
+	<div>
+		<h4>Description</h4>
+		<div class="descriptionSection" textId="${this.id}_desc">-desc-</div>
+	</div>
+
+
+
+
 			`)
 		favs.setupFavouriteTogglerListeners()
 		this.setupVaritionsListener()
 		this.setupAddToCartListener()
 	}
-
+	
 	setupAddToCartListener() {
 		let productPage = this
 
-		$('.addToBucket button').click(function() {
+		$('.add-to-cart button').click(function() {
 			let variations = productPage.readSelectedVariations()
 			let q = $('input[name=quantity]', $(this).parent())[0].value
 			if (variations == null){
@@ -101,8 +163,8 @@ class ProductPage {
 
 	showVariationIncompleteWarning() {
 		this.removeVariationIncompleteWarning()
-		$('.product .messageSection').append('<div class="warning" textId="variationIncompleteWarning:1c"></div>')
-		translateTexts(null, $('.product .messageSection'))
+		$('.product .message-section').append('<div class="warning" textId="variationIncompleteWarning:1c"></div>')
+		translateTexts(null, $('.product .message-section'))
 	}
 
 	showProductAddedToCart(id, q, variations) {
@@ -184,8 +246,15 @@ class ProductPage {
 		return html
 	}
 }
+function changeImage(index) {
+	const bigImage = document.getElementById('bigImage');
+	console.log(bigImage)
+	bigImage.src = `./img/articles/${page.images[index]}`;
+  }
 
+  
 const page = new ProductPage()
 page.render()
 
 translateTexts()
+

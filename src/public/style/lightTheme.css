@@ -82,9 +82,24 @@
 .lightTheme .catalog-article .star_rating .score { color: #666; }
 
 /* Product */
+
 .lightTheme .product .choice.selected {
-    background-color: #85db85;
-}
+	background-color: #57ff57; /* Green color */
+	color: black;
+	border: 1px solid black;
+  }
+
+.lightTheme .choice {
+	background-color: #f0f0f0;
+	color: #000; 
+	border: 1px solid #ccc; 
+  }
+  
+  .lightTheme .choice:hover {
+	background-color: #e0e0e0;
+  }
+
+
 .lightTheme .product .messageSection .warning {
 	color: rgb(255 0 0);
 }

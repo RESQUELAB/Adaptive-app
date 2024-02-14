@@ -84,7 +84,42 @@
 
 /* Product */
 .darkTheme .product .choice.selected {
-    background-color: #448844;
+	background-color: #088c08; 
+	color: #fff;
+	border: 1px solid white;
+  }
+
+  .darkTheme .choice {
+	background-color: #333; 
+	color: #fff; 
+	border: 1px solid #555; 
+  }
+  
+  .darkTheme .choice:hover {
+	background-color: #555;
+  }
+
+
+
+  .darkTheme .add-to-cart button.positive {
+	background-color: #088c08; /* Dark green color for positive variation */
+	color: white;
+  }
+  
+  .darkTheme .add-to-cart button:hover {
+	background-color: #006600; /* Darker green on hover */
+  }
+.darkTheme .add-to-cart div.positive {
+  color: #b6e76a;
+}
+
+.darkTheme .add-to-cart button.negative {
+  background-color: #884444; /* Dark red color for negative variation */
+  color: white;
+}
+
+.darkTheme .add-to-cart div.negative {
+  color: rgb(255, 80, 80);
 }
 .darkTheme .product .messageSection .warning {
 	color: rgb(255 80 80);

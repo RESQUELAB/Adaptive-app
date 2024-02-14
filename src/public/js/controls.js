@@ -2,6 +2,9 @@
 $('#changeEsp').click('click', () => {mc.mutate('language', 'es')})
 $('#changeEng').click('click', () => {mc.mutate('language', 'en')})
 
+$('#infoShow').click('click', () => {mc.mutate('information', 'show')})
+$('#infoHide').click('click', () => {mc.mutate('information', 'hide')})
+
 $('#changeLight').click(() => { mc.mutate('theme', 'light')})
 $('#changeDark').click( () => { mc.mutate('theme', 'dark') })
 $('#changeContrast').click( () => { mc.mutate('theme', 'contrast') })

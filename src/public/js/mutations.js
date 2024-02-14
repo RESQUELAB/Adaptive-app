@@ -87,7 +87,8 @@ class MutationController {
             theme: 'dark',
             language: 'es',
             display: 'list',
-            font: "default"
+            font: "default",
+            information: "show",
         }
     }
 }
