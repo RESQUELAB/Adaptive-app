@@ -70,8 +70,6 @@ function translateTexts(l, inside) {
  *      string or object: {"lang1": "text1", "lang2": "text2"...}
  */
 function pushText(id, data) {
-    console.log(id)
-    console.log(data)
     let o = {}
     if (check(data).isNotEmptyString()) {
         o[id] = {'en': data}
