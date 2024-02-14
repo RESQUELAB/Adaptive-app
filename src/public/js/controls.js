@@ -4,6 +4,7 @@ $('#changeEng').click('click', () => {mc.mutate('language', 'en')})
 
 $('#changeLight').click(() => { mc.mutate('theme', 'light')})
 $('#changeDark').click( () => { mc.mutate('theme', 'dark') })
+$('#changeContrast').click( () => { mc.mutate('theme', 'contrast') })
 
 $('#font_size_small').click(() => { mc.mutate('font', 'small')})
 $('#font_size_default').click( () => { mc.mutate('font', 'default') })
