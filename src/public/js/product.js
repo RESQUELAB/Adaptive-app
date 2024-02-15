@@ -30,6 +30,41 @@ class ProductPage {
 		pushText(this.id + '_desc', desc)
 	}
 
+	setDescriptionVisibility(visibility) {
+		const productDescription = $('.product-description');
+		const descriptionText = $('.description-section');
+	
+		switch (visibility) {
+		  case 'show':
+			productDescription.show()
+			this.showDescription(descriptionText, 0);
+			break;
+		  case 'partial':
+			productDescription.show()
+			this.showDescription(descriptionText, 1);
+			break;
+		  case 'hide':
+			productDescription.hide();
+			break;
+		  default:
+			console.error('Invalid visibility value:', visibility);
+		}
+	  }
+
+	  showDescription(descriptionText, partial) {
+		let fullDescription = this.description['es']
+		if(!partial){
+			descriptionText.text(fullDescription)
+			return
+		}
+		let maxLength = 100;
+
+		if (fullDescription.length > maxLength) {
+		  const partialDescription = fullDescription.substring(0, maxLength) + '...';
+		  descriptionText.text(partialDescription);
+		}
+	  }
+
 	render() {
 		$('.full-container > .product').html(`
 
@@ -214,12 +249,12 @@ class ProductPage {
 }
 function changeImage(index) {
 	const bigImage = document.getElementById('bigImage');
-	bigImage.src = `./img/articles/${page.images[index]}`;
+	bigImage.src = `./img/articles/${pageProduct.images[index]}`;
   }
 
   
-const page = new ProductPage()
-page.render()
+const pageProduct = new ProductPage()
+pageProduct.render()
 
 translateTexts()
 
