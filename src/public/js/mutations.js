@@ -30,7 +30,7 @@ class MutationController {
                 if (value == 'es') translateTexts('es')
             }
 
-            if (name == 'display') {
+            if (name == 'display' && typeof controller !== 'undefined') {
                 if (value == 'list')   controller.setGridSize(1)
                 if (value == 'grid2')  controller.setGridSize(2)
                 if (value == 'grid3')  controller.setGridSize(3)
@@ -38,6 +38,8 @@ class MutationController {
                 if (value == 'grid5')  controller.setGridSize(5)
             }
             if (name == 'font') this.setFontSize(value)
+            console.log(typeof pageProduct !== 'undefined')
+            if (name == 'information' && typeof pageProduct !== 'undefined') pageProduct.setDescriptionVisibility(value)
         }
     }
 

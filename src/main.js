@@ -27,6 +27,9 @@ function createWindow () {
 
 	// Open the DevTools.
 	mainWindow.webContents.openDevTools()
+	
+	// Set Window Size
+	mainWindow.setSize(1240, 780);
 }
 
 

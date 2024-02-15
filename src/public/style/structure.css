@@ -234,6 +234,7 @@ svg.heart {
     stroke-width: 0.8px;
     stroke: #aaa;
     scale: 1.6;
+	margin-left: 10px;
 }
 svg.heart.empty {
 	fill: rgba(00, 00, 00, 00)

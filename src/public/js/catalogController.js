@@ -16,7 +16,6 @@ class CatalogController {
 	}
 
 	setGridSize(size) {
-		console.log("SET GRID SIZE TO: ", size)
 		if (!check(size).isInt() || size < 1 || size > 5) return
 		if (!this.catalogPanel) return
 
@@ -295,9 +294,18 @@ class Filter {
 	getVariationsHtml() {
 		let html = ''
 		for (let variation in this.variations) {
+			console.log(variation)
 			let s = ''
 			for (let opt of this.variations[variation]) {
-				s += `<label><input type="checkbox" name="filter_${variation}_${opt}" value="${opt}">${check(opt).isNumber() ? opt : '<span class="choice" textId="' + opt + 'Choice:1c"></span>'}</label>`
+				s += `
+				<label>
+				  <input type="checkbox" name="filter_${variation}_${opt}" value="${opt}">
+				  ${check(opt).isNumber() 
+					? `<span class="choice">${opt}</span>` 
+					: `<span class="choice" textId="${opt}Choice:1c"></span>`
+				  }
+				</label>
+			  `;
 			}
 			html += this.getFilterHtml(`variation_${variation}:1c`, s)
 		}
@@ -341,7 +349,7 @@ class Article {
 		this.stock = data.stock
 		this.shipment = data.shipment_type
 		this.price = data.price
-		this.stars = data.stars
+		this.stars = Math.round(data.stars)
 		this.favourite = favs.isFav(this.id)
 	}
 
@@ -381,7 +389,7 @@ class Article {
 				</a>
 				<div class="star_rating">
 					${this.getStarRatingHtml()}
-					<span class="score">${this.stars.toFixed(1)}/5</span>
+					<span class="score">${this.stars}/5</span>
 				</div>
 				<span class="price">${this.price.toFixed(2).replace('.', ',')}<sup>€</sup></span>
 			</div>

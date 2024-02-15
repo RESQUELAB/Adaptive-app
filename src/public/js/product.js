@@ -19,7 +19,7 @@ class ProductPage {
 		this.stock = article.stock
 		this.shipment = article.shipment_type
 		this.price = article.price
-		this.stars = article.stars
+		this.stars = Math.round(article.stars)
 	}
 
 	setTitle(title) {
@@ -29,6 +29,41 @@ class ProductPage {
 	setDescription(desc) {
 		pushText(this.id + '_desc', desc)
 	}
+
+	setDescriptionVisibility(visibility) {
+		const productDescription = $('.product-description');
+		const descriptionText = $('.description-section');
+	
+		switch (visibility) {
+		  case 'show':
+			productDescription.show()
+			this.showDescription(descriptionText, 0);
+			break;
+		  case 'partial':
+			productDescription.show()
+			this.showDescription(descriptionText, 1);
+			break;
+		  case 'hide':
+			productDescription.hide();
+			break;
+		  default:
+			console.error('Invalid visibility value:', visibility);
+		}
+	  }
+
+	  showDescription(descriptionText, partial) {
+		let fullDescription = this.description['es']
+		if(!partial){
+			descriptionText.text(fullDescription)
+			return
+		}
+		let maxLength = 100;
+
+		if (fullDescription.length > maxLength) {
+		  const partialDescription = fullDescription.substring(0, maxLength) + '...';
+		  descriptionText.text(partialDescription);
+		}
+	  }
 
 	render() {
 		$('.full-container > .product').html(`
@@ -65,7 +100,7 @@ class ProductPage {
 			<div class="add-to-cart">
 			  <label for="quantity" textId="quantity:1c">Cantidad</label>
 			  <div class="quantity-grid"></div>
-			  <input type="number" id="quantity" value="1" min="1" name="quantity" oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+			  <input type="number" id="quantity" value="1" min="1" name="quantity" oninput="this.value = this.value !== '' ? Math.abs(this.value) : '1'">
 			  <button class="positive">Añadir al carrito</button>
 			</div>
 			<div class="shipment-and-stock">
@@ -80,53 +115,7 @@ class ProductPage {
 		<h4>Description</h4>
 		<div class="description-section" textId="${this.id}_desc">-desc-</div>
 	  </div>
-	  
-
-
-
-		<div class="introSection">
-		<div class="leftThumbnails">
-			<!-- TODO -->
-		</div>
-		<div class="bigPhoto">
-			<img src="./img/articles/${this.images[0]}"/>
-		</div>
-		<div class="importantData">
-				<div class="title">
-					<span id="articleTitle" textId="${this.id}_title:1c">-article title-</span>
-					${favs.getHeartHtml(this.id)}
-				</div>
-				<div class="price">${this.price}€</div>
-				<div class="star_rating">
-					${this.getStarRatingHtml()}
-					<span class="score">${this.stars}/5
-					</span>
-				</div>
-				${this.getVariationsHtml()}
-				<div class="bottomSection">
-					<div class="addToBucket">
-						<div textId="quantity:1c">Cantidad</div>
-						<div class="quantityGrid"></div>
-						<input type="number" value="1" min="1" name="quantity" oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
-						<button class="positive" textId="addToBucket:1c">Añadir a la cesta</button>
-					</div>
-					<div class="shipmentAndStock">
-						<div class="${this.stock == 0? 'negative' : 'positive'}" textId="${this.stock === 0? 'noStock' : 'inStock'}:1c"></div>
-						<div textId="${this.shipment == 1? 'fastShipment' : 'normalShipment'}:1c"></div>
-					</div>
-				</div>
-				<div class="messageSection"></div>
-			</div>
-	</div>
-	<div>
-		<h4>Description</h4>
-		<div class="descriptionSection" textId="${this.id}_desc">-desc-</div>
-	</div>
-
-
-
-
-			`)
+	  `)
 		favs.setupFavouriteTogglerListeners()
 		this.setupVaritionsListener()
 		this.setupAddToCartListener()
@@ -136,12 +125,19 @@ class ProductPage {
 		let productPage = this
 
 		$('.add-to-cart button').click(function() {
+			console.log(productPage.stock)
+			if (productPage.stock === 0) {
+				productPage.showOutOfStockWarning();
+				return;
+			}
+
 			let variations = productPage.readSelectedVariations()
 			let q = $('input[name=quantity]', $(this).parent())[0].value
 			if (variations == null){
 				productPage.showVariationIncompleteWarning()
 				return
 			}
+			
 			cart.add(productPage.id, q, variations)
 			productPage.showProductAddedToCart(productPage.id, q, variations)
 		})
@@ -167,6 +163,12 @@ class ProductPage {
 		translateTexts(null, $('.product .message-section'))
 	}
 
+	showOutOfStockWarning() {
+		this.removeVariationIncompleteWarning();
+		$('.product .message-section').append('<div class="warning" textId="outOfStockWarning:1c"></div>');
+		translateTexts(null, $('.product .message-section'));
+	}
+
 	showProductAddedToCart(id, q, variations) {
 		this.removeVariationIncompleteWarning()
 		let variationsArray = []
@@ -177,7 +179,7 @@ class ProductPage {
 		let variationsString = variationsArray.join(', ')
 
 		translateTexts(null,
-			$('.product .messageSection').append(`<div class="productAdded">
+			$('.product .message-section').append(`<div class="productAdded">
 				<span textId="productAdded:1c"></span>
 				<span>${q}x</span>
 				<span textId="${id}_title:1c"></span>
@@ -187,13 +189,13 @@ class ProductPage {
 	}
 
 	removeVariationIncompleteWarning() {
-		$('.product .messageSection .warning').remove()
+		$('.product .message-section .warning').remove()
 	}
 
 	readSelectedVariations() {
 		let variations = {}
 
-		$('.full-container > .product .importantData .variation').each(function() {
+		$('.full-container > .product .product-details .variation').each(function() {
 			if (variations == null) return
 
 			let name = $(this).attr('name')
@@ -225,7 +227,6 @@ class ProductPage {
 		n = 5-n
 		for (let i=0; i<n; i++)
 			s += '<svg class="star empty"><path xmlns="http://www.w3.org/2000/svg" d="M7.641.781l1.735 4.106 4.441.382c.308.027.433.411.199.613l-3.368 2.918 1.009 4.341c.07.302-.257.539-.522.379l-3.816-2.302-3.816 2.302c-.265.16-.591-.078-.522-.379l1.009-4.341-3.369-2.919c-.234-.202-.109-.587.199-.613l4.441-.382 1.735-4.105c.12-.286.524-.286.645 0z"></path></svg>\n'
-
 		return s
 	}
 
@@ -248,13 +249,12 @@ class ProductPage {
 }
 function changeImage(index) {
 	const bigImage = document.getElementById('bigImage');
-	console.log(bigImage)
-	bigImage.src = `./img/articles/${page.images[index]}`;
+	bigImage.src = `./img/articles/${pageProduct.images[index]}`;
   }
 
   
-const page = new ProductPage()
-page.render()
+const pageProduct = new ProductPage()
+pageProduct.render()
 
 translateTexts()
 

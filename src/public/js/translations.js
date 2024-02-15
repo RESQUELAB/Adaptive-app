@@ -380,6 +380,10 @@
             "en": "you must select at least one option for each product variant",
             "es": "debes seleccionar al menos una opción para cada variante del producto"
         },
+        "outOfStockWarning": {
+            "en": "there is no stock for that product. Try again later",
+            "es": "no hay stock para ese producto. Vuelva a intentarlo más tarde"
+        },
         "productAdded": {
             "en": "products added:",
             "es": "productos añadidos:"
