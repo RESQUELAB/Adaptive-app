@@ -295,9 +295,18 @@ class Filter {
 	getVariationsHtml() {
 		let html = ''
 		for (let variation in this.variations) {
+			console.log(variation)
 			let s = ''
 			for (let opt of this.variations[variation]) {
-				s += `<label><input type="checkbox" name="filter_${variation}_${opt}" value="${opt}">${check(opt).isNumber() ? opt : '<span class="choice" textId="' + opt + 'Choice:1c"></span>'}</label>`
+				s += `
+				<label>
+				  <input type="checkbox" name="filter_${variation}_${opt}" value="${opt}">
+				  ${check(opt).isNumber() 
+					? `<span class="choice">${opt}</span>` 
+					: `<span class="choice" textId="${opt}Choice:1c"></span>`
+				  }
+				</label>
+			  `;
 			}
 			html += this.getFilterHtml(`variation_${variation}:1c`, s)
 		}
