@@ -1,8 +1,15 @@
-.goBack {
+.keep-buying {
     grid-column: 3;
     grid-row: 2;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
-
+.keep-buying:hover {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  transition: text-decoration 0.3s ease;
+}
 .product {
     grid-column: 3/7;
     grid-row: 3;
