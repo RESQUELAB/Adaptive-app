@@ -30,16 +30,30 @@
 		<!-- Own data and js -->
 		<!-- MouseTracker -->
 		<script src="./js/mouseTracker.js"></script>
-
+		<!-- Icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 	</head>
 	<body lang="es">
-		<div class="full-container darkTheme">
-            <div class="container">
-                <span>Username: </span>
-                <input id="username" value="anonymous" type="text"/>
-                <button id="login">Login</button>
-            </div>
-		</div>
+		<div class="full-container login-container">
+
+            <div class="login-container">
+				<div class="login-card">
+					<h2>Login</h2>
+					<label for="username">Usuario:</label>
+					<input id="username" name="username" value="anonymous" type="text" placeholder="Introduce tu nombre de usuario" required/>
+				
+					<label for="password" class="password-container">
+						Contraseña:
+						<input id="password" name="password" type="password" placeholder="Introduce tu contraseña" required/>
+						<span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fas fa-eye-slash"></i></span>
+					</label>
+			
+				
+					<button id="login" type="button">Login</button>
+				</div>
+			</div>
+
+        </div>
 		<!-- HTML load end scripts -->
 		<script src="./js/controls.js"></script>
 		<script src="./js/pageNavigation.js"></script>

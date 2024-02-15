@@ -103,17 +103,11 @@
 	background-color: #fff;
 }
 
-/* use jquery ui styles here
-.lightTheme .ui-tabs-tab {
-	
-}
-.lightTheme .ui-tabs-tab.ui-tabs-active {
-	
+.lightTheme .login-card button {
+	background-color: #4caf50;
+	color: #ffffff;
 }
 
-.darkTheme .ui-tabs-tab a {
-	
+.lightTheme .login-card button:hover {
+	background-color: #45a049;
 }
-.darkTheme .ui-tabs-tab.ui-state-hover a, .darkTheme .ui-tabs-tab.ui-tabs-active a {
-	
-}*/
