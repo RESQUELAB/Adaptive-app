@@ -65,7 +65,7 @@ class ProductPage {
 			<div class="add-to-cart">
 			  <label for="quantity" textId="quantity:1c">Cantidad</label>
 			  <div class="quantity-grid"></div>
-			  <input type="number" id="quantity" value="1" min="1" name="quantity" oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+			  <input type="number" id="quantity" value="1" min="1" name="quantity" oninput="this.value = this.value !== '' ? Math.abs(this.value) : '1'">
 			  <button class="positive">Añadir al carrito</button>
 			</div>
 			<div class="shipment-and-stock">
@@ -90,12 +90,19 @@ class ProductPage {
 		let productPage = this
 
 		$('.add-to-cart button').click(function() {
+			console.log(productPage.stock)
+			if (productPage.stock === 0) {
+				productPage.showOutOfStockWarning();
+				return;
+			}
+
 			let variations = productPage.readSelectedVariations()
 			let q = $('input[name=quantity]', $(this).parent())[0].value
 			if (variations == null){
 				productPage.showVariationIncompleteWarning()
 				return
 			}
+			
 			cart.add(productPage.id, q, variations)
 			productPage.showProductAddedToCart(productPage.id, q, variations)
 		})
@@ -119,6 +126,12 @@ class ProductPage {
 		this.removeVariationIncompleteWarning()
 		$('.product .message-section').append('<div class="warning" textId="variationIncompleteWarning:1c"></div>')
 		translateTexts(null, $('.product .message-section'))
+	}
+
+	showOutOfStockWarning() {
+		this.removeVariationIncompleteWarning();
+		$('.product .message-section').append('<div class="warning" textId="outOfStockWarning:1c"></div>');
+		translateTexts(null, $('.product .message-section'));
 	}
 
 	showProductAddedToCart(id, q, variations) {
