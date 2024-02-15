@@ -341,7 +341,7 @@ class Article {
 		this.stock = data.stock
 		this.shipment = data.shipment_type
 		this.price = data.price
-		this.stars = data.stars
+		this.stars = Math.round(data.stars)
 		this.favourite = favs.isFav(this.id)
 	}
 
@@ -381,7 +381,7 @@ class Article {
 				</a>
 				<div class="star_rating">
 					${this.getStarRatingHtml()}
-					<span class="score">${this.stars.toFixed(1)}/5</span>
+					<span class="score">${this.stars}/5</span>
 				</div>
 				<span class="price">${this.price.toFixed(2).replace('.', ',')}<sup>€</sup></span>
 			</div>

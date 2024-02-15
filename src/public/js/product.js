@@ -19,7 +19,7 @@ class ProductPage {
 		this.stock = article.stock
 		this.shipment = article.shipment_type
 		this.price = article.price
-		this.stars = article.stars
+		this.stars = Math.round(article.stars)
 	}
 
 	setTitle(title) {
@@ -179,7 +179,6 @@ class ProductPage {
 		n = 5-n
 		for (let i=0; i<n; i++)
 			s += '<svg class="star empty"><path xmlns="http://www.w3.org/2000/svg" d="M7.641.781l1.735 4.106 4.441.382c.308.027.433.411.199.613l-3.368 2.918 1.009 4.341c.07.302-.257.539-.522.379l-3.816-2.302-3.816 2.302c-.265.16-.591-.078-.522-.379l1.009-4.341-3.369-2.919c-.234-.202-.109-.587.199-.613l4.441-.382 1.735-4.105c.12-.286.524-.286.645 0z"></path></svg>\n'
-
 		return s
 	}
 
@@ -202,7 +201,6 @@ class ProductPage {
 }
 function changeImage(index) {
 	const bigImage = document.getElementById('bigImage');
-	console.log(bigImage)
 	bigImage.src = `./img/articles/${page.images[index]}`;
   }
 
