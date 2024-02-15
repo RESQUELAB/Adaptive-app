@@ -80,53 +80,7 @@ class ProductPage {
 		<h4>Description</h4>
 		<div class="description-section" textId="${this.id}_desc">-desc-</div>
 	  </div>
-	  
-
-
-
-		<div class="introSection">
-		<div class="leftThumbnails">
-			<!-- TODO -->
-		</div>
-		<div class="bigPhoto">
-			<img src="./img/articles/${this.images[0]}"/>
-		</div>
-		<div class="importantData">
-				<div class="title">
-					<span id="articleTitle" textId="${this.id}_title:1c">-article title-</span>
-					${favs.getHeartHtml(this.id)}
-				</div>
-				<div class="price">${this.price}€</div>
-				<div class="star_rating">
-					${this.getStarRatingHtml()}
-					<span class="score">${this.stars}/5
-					</span>
-				</div>
-				${this.getVariationsHtml()}
-				<div class="bottomSection">
-					<div class="addToBucket">
-						<div textId="quantity:1c">Cantidad</div>
-						<div class="quantityGrid"></div>
-						<input type="number" value="1" min="1" name="quantity" oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
-						<button class="positive" textId="addToBucket:1c">Añadir a la cesta</button>
-					</div>
-					<div class="shipmentAndStock">
-						<div class="${this.stock == 0? 'negative' : 'positive'}" textId="${this.stock === 0? 'noStock' : 'inStock'}:1c"></div>
-						<div textId="${this.shipment == 1? 'fastShipment' : 'normalShipment'}:1c"></div>
-					</div>
-				</div>
-				<div class="messageSection"></div>
-			</div>
-	</div>
-	<div>
-		<h4>Description</h4>
-		<div class="descriptionSection" textId="${this.id}_desc">-desc-</div>
-	</div>
-
-
-
-
-			`)
+	  `)
 		favs.setupFavouriteTogglerListeners()
 		this.setupVaritionsListener()
 		this.setupAddToCartListener()
@@ -177,7 +131,7 @@ class ProductPage {
 		let variationsString = variationsArray.join(', ')
 
 		translateTexts(null,
-			$('.product .messageSection').append(`<div class="productAdded">
+			$('.product .message-section').append(`<div class="productAdded">
 				<span textId="productAdded:1c"></span>
 				<span>${q}x</span>
 				<span textId="${id}_title:1c"></span>
@@ -187,13 +141,13 @@ class ProductPage {
 	}
 
 	removeVariationIncompleteWarning() {
-		$('.product .messageSection .warning').remove()
+		$('.product .message-section .warning').remove()
 	}
 
 	readSelectedVariations() {
 		let variations = {}
 
-		$('.full-container > .product .importantData .variation').each(function() {
+		$('.full-container > .product .product-details .variation').each(function() {
 			if (variations == null) return
 
 			let name = $(this).attr('name')
