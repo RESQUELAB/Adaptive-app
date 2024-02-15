@@ -263,6 +263,8 @@ svg.heart.empty {
 
 .right {float: right;}
 
+/* Login page */
+
 .login-container {
 	display: flex;
 	align-items: center;
@@ -270,12 +272,15 @@ svg.heart.empty {
 	height: 100vh;
 }
 
+.login-container {
+	text-align: center;
+}
+
 .login-card {
 	background-color: #ffffff;
 	padding: 20px;
 	border-radius: 8px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	text-align: center;
 	max-width: 400px;
 	width: 100%;
 }
@@ -286,7 +291,7 @@ svg.heart.empty {
 
 .login-card label {
 	display: block;
-	margin-top: 8px;
+	margin-bottom: 8px;
 	text-align: left;
 }
 
@@ -299,8 +304,28 @@ svg.heart.empty {
 	border-radius: 4px;
 }
 
+.login-card .password-container {
+	position: relative;
+}
+
+.login-card #password {
+	width: calc(100% - 30px);
+	padding-right: 30px;
+}
+
+.login-card .toggle-password {
+	position: absolute;
+	top: 60%;
+	right: 0;
+	transform: translateY(-50%);
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+
 .login-card button {
-	background-color: #4caf50 !important;
+	background-color: #4caf50;
 	color: #ffffff;
 	padding: 10px 20px;
 	border: none;
@@ -311,23 +336,7 @@ svg.heart.empty {
 }
 
 .login-card button:hover {
-	background-color: #45a049 !important;
+	background-color: #45a049;
 }
 
-.login-card .password-container {
-            position: relative;
-        }
-
-.login-card #password {
-	width: calc(100% - 30px);
-}
-
-.login-card .toggle-password {
-	width: 10%;
-	right: 0;
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
-	outline: none;
-}
 
