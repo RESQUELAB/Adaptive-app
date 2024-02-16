@@ -146,7 +146,7 @@ class CatalogController {
 class Filter {
 	constructor(articles, controller) {
 		let cats = (new URL(document.location)).searchParams.get('cat')
-		cats = cats? cats.split(',') : ["sneakers", "trail", "trecking", "urban", "running", "sandals"]
+		cats = cats? cats.split(',') : ["sneakers", "trail", "hiking", "urban", "running", "sandals", "mountain", "casual"]
 
 		this.controller = controller
 		this.selectedCategories = cats
@@ -232,7 +232,7 @@ class Filter {
 			// Custom filters
 			if (this.inStock && a.stock == 0) continue
 			if (this.fastShipment && a.shipment == 0) continue
-
+			console.log("FILTERED: ", aID)
 			filtered.push(aID)
 		}
 		this.filteredArticles = filtered

@@ -68,8 +68,8 @@
             "en": "trail",
             "es": "trail"
         },
-        "category_trecking": {
-            "en": "trecking",
+        "category_hiking": {
+            "en": "hiking",
             "es": "senderismo"
         },
         "category_urban": {
@@ -79,6 +79,14 @@
         "category_running": {
             "en": "running",
             "es": "running"
+        },
+        "category_mountain": {
+            "en": "mountain",
+            "es": "Montaña"
+        },
+        "category_casual": {
+            "en": "casual",
+            "es": "casual"
         },
         "category_sandals": {
             "en": "sandals",
@@ -131,6 +139,10 @@
         "greyChoice": {
             "en": "grey",
             "es": "gris"
+        },
+        "sandChoice": {
+            "en": "sand",
+            "es": "arena"
         },
         "beigeChoice": {
             "en": "beige",
@@ -231,6 +243,10 @@
         "shipmentData": {
             "en": "shipment data",
             "es": "datos de envío"
+        },
+        "descriptionTitle": {
+            "en": "Description",
+            "es": "Descripción"
         },
         "lastname": {
             "en": "last name*",
