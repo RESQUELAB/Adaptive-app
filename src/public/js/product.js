@@ -54,14 +54,14 @@ class ProductPage {
 	  showDescription(descriptionText, partial) {
 		let fullDescription = this.description['es']
 		if(!partial){
-			descriptionText.text(fullDescription)
+			descriptionText.innerHtml(fullDescription)
 			return
 		}
 		let maxLength = 100;
 
 		if (fullDescription.length > maxLength) {
 		  const partialDescription = fullDescription.substring(0, maxLength) + '...';
-		  descriptionText.text(partialDescription);
+		  descriptionText.innerHtml(partialDescription);
 		}
 	  }
 
@@ -112,7 +112,7 @@ class ProductPage {
 		</div>
 	  </div>
 	  <div class="product-description">
-		<h4>Description</h4>
+		<h4 textId="descriptionTitle:1c"></h4>
 		<div class="description-section" textId="${this.id}_desc">-desc-</div>
 	  </div>
 	  `)
