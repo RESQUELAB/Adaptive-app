@@ -14,7 +14,7 @@
     grid-column: 3/6;
 	display: grid;
     grid-gap: 1px;
-    background: #bdbdbd;
+    /*background: #bdbdbd;*/ 
     border-radius: 6px;
 }
 .catalog-1cols {
