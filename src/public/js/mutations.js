@@ -38,7 +38,6 @@ class MutationController {
                 if (value == 'grid5')  controller.setGridSize(5)
             }
             if (name == 'font') this.setFontSize(value)
-            console.log(typeof pageProduct !== 'undefined')
             if (name == 'information' && typeof pageProduct !== 'undefined') pageProduct.setDescriptionVisibility(value)
         }
     }
