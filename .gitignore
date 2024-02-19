@@ -60,3 +60,6 @@ spec/fixtures/logo.png
 
 # Electron stuff
 app-tests/out
+
+# Package created
+AdaptiveApp-win32-x64/
