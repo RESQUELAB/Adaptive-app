@@ -1,8 +1,4 @@
-const defaultCart = [
-	{"id": "adidas_terrex_5", "quantity": 1, "variations": null},
-	{"id": "adidas_ultraboost", "quantity": 2, "variations": null},
-	{"id": "asics_trabuco", "quantity": 2, "variations": null}
-]
+const defaultCart = []
 
 class CartModel {
 	LS_KEY = 'sports-cart-articles'
