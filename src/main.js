@@ -15,6 +15,7 @@ function createWindow () {
 		webPreferences: {
 			preload: path.join(__dirname, 'preload.js'),
 		}
+		// ,icon: 'public/img/logo.png'
 	})
 
 	// Link emulating on electron
@@ -26,10 +27,15 @@ function createWindow () {
 	mainWindow.loadFile(pagesFolder + 'index.html')
 
 	// Open the DevTools.
-	mainWindow.webContents.openDevTools()
+	// mainWindow.webContents.openDevTools()
 	
+	mainWindow.webContents.setWindowOpenHandler(() => {
+		return { action: "deny" };
+	  });
+
 	// Set Window Size
-	mainWindow.setSize(1240, 780);
+	mainWindow.setSize(1400, 780);
+
 }
 
 
