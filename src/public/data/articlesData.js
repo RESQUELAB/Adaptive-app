@@ -338,8 +338,8 @@ let articlesData = {
             "es": "Evadict MT Cushion 2"
         },
         "description": {
-            "es": "",
-            "en": ""
+            "es": "Las zapatillas de trail running para mujer Evadict MT Cushion 2 frambuesa son unas zapatillas versátiles y polivalentes que ofrecen comodidad, amortiguación y agarre en todo tipo de terrenos. Tienen un empeine de textil MATRYX resistente y transpirable, una media suela de espuma Kalensole que mejora el retorno de energía, una suela de caucho con tacos hard & soft que se adaptan a diferentes superficies, un drop de 4 mm que favorece una pisada natural y un peso de 255 g.",
+            "en": "The Evadict MT Cushion 2 raspberry women's trail running shoe is a versatile all-rounder that offers comfort, cushioning and grip on all types of terrain. They have a durable and breathable MATRYX textile upper, a Kalensole foam midsole for improved energy return, a rubber outsole with hard & soft lugs that adapt to different surfaces, a 4mm drop for a natural stride and a weight of 255g."
         },
         "variations": {
             "sizes": [36, 37, 41, 42,43,44],
@@ -352,17 +352,15 @@ let articlesData = {
         "price": 109.99,
         "stars": 5,
     },
-
-
-
-
-
     "skechers_archfit_0": {
         "title": {
-            "en": "Skechers Archfit woman sneakers",
-            "es": "Zapatillas Skechers Archfit mujer"
+            "en": "Archfit",
+            "es": "Archfit"
         },
-        "description": "Zapatillas Skechers Archfit mujer ideales para pasear",
+        "description": {
+            "es": "Realiza tus rutinas de bajo impacto con las zapatillas Skechers Sport: Arch Fit - Infinity Cool para Mujer. Este calzado con cuenta con agujetas que te ofrecerán el ajuste que necesitas en tu día a día o en tus horas de entrenamiento. Confeccionados con una parte superior de malla con un diseño refrigerado por aire y una plantilla extraíble Arch Fit con soporte para el arco certificado por un podólogo y desarrollada con 20 años de datos y 120.000 escaneos de pie no ponderados, ayuda a amoldarse al pie para reducir el impacto y aumentar la dispersión del peso.",
+            "en": "Perform your low-impact routines with the Skechers Sport: Arch Fit - Infinity Cool Women's Shoes. This lace-up shoe will give you the fit you need for everyday or workout time. Built with an air-cooled mesh upper and a removable Arch Fit footbed with podiatrist-certified arch support, developed with 20 years of data and 120,000 unweighted foot scans, helps mould to the foot to reduce impact and increase weight dispersion."
+        },
         "variations": {
             "sizes": [37, 38, 40],
             "colors": ["pink"]
@@ -374,208 +372,201 @@ let articlesData = {
         "price": 49.95,
         "stars": 0,
     },
-    "adidas_terrex_5": {
+    "tucax": {
         "title": {
-            "en": "Adidas Terrex sneakers",
-            "es": "Zapatillas Adidas Terrex"
+            "en": "+8000 TUCAX",
+            "es": "+8000 TUCAX"
         },
-        "description": "Zapatillas Adidas Terrex trail",
+        "description": {
+            "es": "Estas zapatillas son ideales para los amantes del trail running, ya que te ofrecen una gran protección, comodidad y rendimiento en cualquier terreno. Están fabricadas con un recubrimiento Skintex que repele el agua, una tecnología termosellada que elimina las costuras y una suela Vibram que te garantiza una excelente tracción y durabilidad. Con estas zapatillas, podrás superar tus límites en cada aventura.",
+            "en": "These shoes are ideal for trail running enthusiasts, offering great protection, comfort and performance on any terrain. They are made with a Skintex coating that repels water, a heat-sealed technology that eliminates seams and a Vibram outsole that guarantees excellent traction and durability. With these shoes, you can push your limits on every adventure."
+        },
         "variations": {
             "sizes": [40, 41, 43],
             "colors": ["blue"]
         },
         "categories": ["sneakers", "trail"],
-        "images": ["adidas_terrex_5.png"],
+        "images": ["tucax_1.png", "tucax_2.png"],
         "stock": 5,
 		"shipment_type": 1,
-        "price": 50.00,
+        "price": 84.90,
         "stars": 0
     },
-    "asics_trabuco": {
+    "puma_ultra_match": {
         "title": {
-            "es": "Asics Gel Trabuco",
-            "en": "Asics Gel Trail"
+            "es": "Puma Ultra Match FG/AG",
+            "en": "Puma Ultra Match FG/AG"
         },
-        "description": "Deportivas trail impact protect",
+        "description": {
+            "es": "Estas botas de fútbol son perfectas para los jugadores que buscan velocidad y estabilidad en el campo. Tienen una caña de tejido de malla ligero y una capa de piel GripControl que mejora el control del balón. La suela de TPU Speedplate te proporciona una gran propulsión y agarre en césped natural o artificial. Con estas botas, podrás desbloquear los partidos con tu rapidez y habilidad.",
+            "en": "These soccer boots are perfect for players looking for speed and stability on the field. They have a lightweight mesh upper and a GripControl leather layer that improves ball control. The TPU Speedplate outsole gives you great propulsion and grip on natural or artificial turf. With these boots, you'll be able to unlock matches with your speed and skill."
+        },
         "variations": {
             "sizes": [39, 40, 41, 42, 43, 44],
-            "colors": ["orange", "green", "black", "red"]
+            "colors": ["pink"]
         },
-        "categories": ["trail"],
-        "images": ["asics_trabuco_orange.png"],
+        "categories": ["football"],
+        "images": ["puma_ultra_match.png"],
         "stock": 1,
 		"shipment_type": 1,
-        "price": 99.00,
+        "price": 53.49,
         "stars": 4
     },
-    "scott_trail": {
+    "adidas_kaiser": {
         "title": {
-            "es": "Zapatillas Scott Trail",
-            "en": "Scott Trail Shoes"
+            "es": "Botas de Fútbol Adidas Kaiser",
+            "en": "Botas de Fútbol Adidas Kaiser"
         },
-        "description": "Deportivas trail impact protect",
+        "description": {
+            "es": "Estas botas de fútbol son un clásico que nunca pasa de moda. Están confeccionadas con piel natural de alta calidad que te ofrece un tacto suave y preciso con el balón. La lengüeta vuelta le da un toque retro y elegante. La suela con tacos cilíndricos de goma te brinda una buena tracción y rotación en césped natural o artificial. Con estas botas, podrás disfrutar del fútbol con estilo y comodidad.",
+            "en": "These soccer boots are a classic that never goes out of style. They are made with high quality natural leather that offers a soft and precise touch with the ball. The turned tongue gives it a retro and elegant touch. The sole with cylindrical rubber studs gives you good traction and rotation on natural or artificial grass. With these boots, you can enjoy soccer in style and comfort."
+        },
         "variations": {
             "sizes": [39, 40, 41, 42, 43, 44],
-            "colors": ["blue","black"]
+            "colors": ["white","black"]
         },
-        "categories": ["trail"],
-        "images": ["ScottTrail.png"],
+        "categories": ["football"],
+        "images": ["adidas_kaiser_1.png"],
         "stock": 1,
 		"shipment_type": 1,
-        "price": 99.00,
+        "price": 94.49,
         "stars": 4
     },
-    "salomon_trail": {
+    "adidas_crazyfast": {
         "title": {
-            "es": "Zapatillas Salomon Trail",
-            "en": "Salomon Trail Shoes"
+            "es": "Adidas X Crazyfast.3 MG",
+            "en": "Adidas X Crazyfast.3 MG"
         },
-        "description": "Deportivas trail impact protect",
+        "description": {
+            "es": "Estas botas de fútbol son la elección definitiva para los jugadores que quieren ser los más rápidos del campo. Están diseñadas con un material sintético resistente y ligero que se adapta a tu pie. El acabado GripControl Speedcage te ayuda a tener un mejor dominio del balón. La suela con tacos mixtos te permite una gran aceleración y frenada en césped natural o artificial. Con estas botas, podrás sorprender a tus rivales con tu velocidad y agilidad.",
+            "en": "These soccer boots are the ultimate choice for players who want to be the fastest on the field. They are designed with a durable and lightweight synthetic material that adapts to your foot. The GripControl Speedcage finish helps you have a better command of the ball. The outsole with mixed studs allows for great acceleration and braking on natural or artificial turf. With these boots, you will be able to surprise your opponents with your speed and agility."
+        },
         "variations": {
             "sizes": [39, 40, 41, 42, 43, 44],
-            "colors": ["orange", "red"]
+            "colors": ["white", "green"]
         },
-        "categories": ["trail"],
-        "images": ["SalomonTrail.png"],
+        "categories": ["football"],
+        "images": ["adidas_crazyfast_1.png",  "adidas_crazyfast_2.png"],
         "stock": 1,
 		"shipment_type": 1,
-        "price": 99.00,
+        "price": 59.99, 
         "stars": 4
     },
-    "nike_wildhorse": {
+    "nike_court_royale": {
         "title": {
-            "es": "Nike mujer Wildhorse",
-            "en": "Nike Woman Wildhorse"
+            "es": "Nike Court Royale 2 Next Nature",
+            "en": "Nike Court Royale 2 Next Nature"
         },
-        "description": "Deportivas senderismo ",
+        "description": {
+            "es": "Estas zapatillas son una combinación de diseño y sostenibilidad. Están hechas con, al menos, un 20 % de materiales reciclados por peso. Su estilo retro te hará destacar en cualquier lugar. El logotipo Swoosh de gran tamaño le da un toque vintage. El borde acolchado se amolda a tu tobillo y te ofrece un ajuste cómodo. La suela de goma es duradera y te brinda la comodidad que necesitas mientras caminas.",
+            "en": "These sneakers are a combination of design and sustainability. They are made with at least 20% recycled materials by weight. Their retro style will make you stand out anywhere. The oversized Swoosh logo adds a vintage touch. The padded edge molds to your ankle and offers a comfortable fit. The rubber outsole is durable and gives you the comfort you need as you walk."
+        },
         "variations": {
             "sizes": [36, 37, 38, 39, 40],
             "colors": ["black", "purple", "pink", "green"]
         },
         "categories": ["hiking"],
-        "images": ["nike_wildhorse.png"],
+        "images": ["nike_court_royale_1.png"],
         "stock": 2,
 		"shipment_type": 1,
-        "price": 105.00,
+        "price": 87.99,
         "stars": 4
     },
-    "jordan_bota_4": {
+    "saurus_boreal": {
         "title": {
-            "es": "Jordan Max Bota 4",
-            "en": "Jordan Max Boot 4"
+            "es": "SAURUS WS BOREAL",
+            "en": "SAURUS WS BOREAL"
         },
-        "description": "Deportivas urban",
+        "description": {
+            "es": "Estas zapatillas son ligeras, flexibles y transpirables, con un diseño que se adapta al pie y una suela que ofrece un buen agarre y amortiguación en terrenos irregulares. Están fabricadas con malla sintética y microfibra, y tienen un refuerzo de TPU en la puntera y el talón. Su peso es de 290 g y su drop de 10 mm.",
+            "en": "These shoes are lightweight, flexible and breathable, with a design that adapts to the foot and a sole that offers good grip and cushioning on uneven terrain. They are made of synthetic mesh and microfiber, and have a TPU reinforcement in the toe and heel. They weigh 290 g and have a 10 mm drop."
+        },
         "variations": {
             "sizes": [40, 41, 42, 43, 44],
             "colors": ["white", "red", "black", "blue"]
         },
-        "categories": ["sneakers"],
-        "images": ["jordan_red_white.png"],
+        "categories": ["sneakers", "hiking"],
+        "images": ["saurus_boreal_a.png"],
         "stock": 3,
 		"shipment_type": 1,
-        "price": 179.90,
+        "price": 125.95,
         "stars": 4
     },
-    "nike_species_2_0": {
+    "scott_supertrac": {
         "title": {
-            "es": "Nike Species 2.0",
-            "en": "Nike Species 2.0"
+            "en": "Scott WS SUPERTRAC RC 2",
+            "es": "Scott WS SUPERTRAC RC 2 "
         },
-        "description": "Deportivas running",
-        "variations": {
-            "sizes": [40, 41, 42, 43],
-            "colors": ["blue","yellow","grey"]
+        "description": {
+            "es": "Estas zapatillas son unas de las más premiadas y utilizadas por los corredores de montaña más exigentes. Destacan por su tracción, su amortiguación equilibrada y su polivalencia. Su upper está elaborado con un tejido de alta calidad que ofrece transpiración y repelencia al agua, y su suela tiene un dibujo radial que se adapta a todo tipo de terrenos. Su peso es de 270 g y su drop de 5 mm.",
+            "en": "These shoes are among the most awarded and used by the most demanding mountain runners. They stand out for their traction, balanced cushioning and versatility. Its upper is made with a high quality fabric that offers breathability and water repellency, and its outsole has a radial pattern that adapts to all types of terrain. Its weight is 270 g and its drop is 5 mm."
         },
-        "categories": ["running"],
-        "images": ["nike_blue.png"],
-        "stock": 4,
-		"shipment_type": 1,
-        "price": 35.00,
-        "stars": 4
-    },
-    "adidas_ultraboost": {
-        "title": {
-            "en": "Adidas Ultraboost sneakers",
-            "es": "Zapatillas Adidas Ultraboost "
-        },
-        "description": "Las zapatillas adidas Ultraboost Light le permitirán sentirse bien, correr más rápido, y batir tu mejor marca.",
         "variations": {
             "sizes": [42, 43],
             "colors": ["black"]
         },
         "categories": ["sneakers", "running"],
-        "images": ["adidas_ultraboost.png"],
+        "images": ["scott_supertrac.png"],
         "stock": 1,
 		"shipment_type": 1,
         "price": 200.00,
         "stars": 3
     },
-    "new_balance_fresh_foam": {
+    "hayber_ripon": {
         "title": {
-            "en": "Zapatillas New Balance Fresh Foam",
-            "es": "New Balance Fresh Foam sneakers"
+            "en": "HAYBER RIPON",
+            "es": "'HAYBER RIPON"
         },
-        "description": "Las zapatillas New Balance Fresh Foam 1080 v12 son el modelo de running más avanzado de la marca. ",
+        "description": {
+            "es": "Estas zapatillas son ideales para los niños que quieren iniciarse en el trail running o hacer senderismo. Tienen un diseño resistente y cómodo, con un cierre de velcro y cordones elásticos. Su suela es elevada y dentada, para mejorar la amortiguación y el agarre en superficies irregulares. Su peso es de 240 g y su drop de 8 mm.",
+            "en": "These shoes are ideal for children who want to start trail running or hiking. They have a durable and comfortable design, with a Velcro closure and elastic laces. Its sole is raised and serrated, to improve cushioning and grip on uneven surfaces. Its weight is 240 g and its drop is 8 mm."
+        },
         "variations": {
             "sizes": [42, 43],
             "colors": ["black", "orange"]
         },
         "categories": ["sneakers", "running"],
-        "images": [
-            "new_balance_fresh_foam.png",
-            "new_balance_fresh_foam_2.png"
-        ],
+        "images": ["hayber_ripon.png"],
         "stock": 1,
 		"shipment_type": 1,
-        "price": 150.00,
+        "price": 47.95,
         "stars": 3
     },
-    "keen_newport_h2": {
+    "saurus_boral": {
         "title": {
-            "en": "Keen Newport H2 sandals",
-            "es": "Sandalias Keen Newport H2"
+            "en": "SAURUS 2.0 WMNS GR/G BOREAL ",
+            "es": "SAURUS 2.0 WMNS GR/G BOREAL "
         },
-        "description": "DESCRIPTION",
-        "variations": {
-            "sizes": [42, 43],
-            "colors": ["beige", "grey"]
+        "description": {
+            "es": "Estas zapatillas son la versión mejorada de las Saurus WS, con un diseño más moderno y atractivo. Conservan las mismas características de ligereza, flexibilidad y transpirabilidad, con un upper de malla y microfibra, y un refuerzo de TPU en la puntera y el talón. Su suela también ofrece un buen agarre y amortiguación, con un dibujo multidireccional. Su peso es de 290 g y su drop de 10 mm.",
+            "en": "These shoes are the improved version of the Saurus WS, with a more modern and attractive design. They retain the same characteristics of lightness, flexibility and breathability, with a mesh and microfiber upper, and TPU reinforcement in the toe and heel. The outsole also offers good grip and cushioning, with a multidirectional pattern. Its weight is 290 g and its drop is 10 mm."
         },
-        "categories": ["sneakers", "sandals"],
-        "images": ["keen_newport_h2_0.png", "keen_newport_h2_1.png"],
-        "stock": 1,
-		"shipment_type": 1,
-        "price": 97.30,
-        "stars": 3
-    },
-    "fila_sandals": {
-        "title": {
-            "en": "Fila sandals",
-            "es": "Sandalias Fila"
-        },
-        "description": "DESCRIPTION",
         "variations": {
             "sizes": [42, 43],
             "colors": ["black"]
         },
-        "categories": ["sandals"],
-        "images": ["SandaliasFila.png"],
+        "categories": ["hiking"],
+        "images": ["saurus_boral.png"],
         "stock": 1,
 		"shipment_type": 1,
         "price": 40.20,
         "stars": 4
     },
-    "adidas_sandals": {
+    "joma_trek": {
         "title": {
-            "en": "Adidas sandals",
-            "es": "Sandalias Adidas"
+            "en": "Joma TK.TREK 2322",
+            "es": "Joma TK.TREK 2322"
         },
-        "description": "DESCRIPTION",
+        "description": {
+            "es": "Estas zapatillas son unas de las más vendidas de la marca Joma, por su relación calidad-precio. Tienen un upper de nylon transpirable con un micro PU en la parte central, una puntera de TPU y un sistema EXO Counter en el talón, que aporta estabilidad y protección. Su suela es elevada y dentada, con un dibujo que favorece la tracción y el frenado. Su peso es de 320 g y su drop de 10 mm.",
+            "en": "These shoes are one of Joma's best sellers, due to their value for money. They have a breathable nylon upper with a micro PU in the central part, a TPU toe cap and an EXO Counter system in the heel, which provides stability and protection. Its sole is high and serrated, with a pattern that favors traction and braking. Its weight is 320 g and its drop is 10 mm."
+        },
         "variations": {
             "sizes": [42, 43],
             "colors": ["blue"]
         },
-        "categories": ["sandals"],
-        "images": ["SandaliasAdidas.png"],
+        "categories": ["hiking"],
+        "images": ["joma_trek.png"],
         "stock": 1,
 		"shipment_type": 1,
         "price": 50.00,
@@ -586,7 +577,10 @@ let articlesData = {
             "en": "Nike sandals",
             "es": "Sandalias Nike"
         },
-        "description": "DESCRIPTION",
+        "description": {
+            "es": "Estas sandalias son ideales para el verano, ya que te ofrecen un estilo deportivo y casual, con un gran confort y frescura. Están fabricadas con materiales de calidad, como la goma, la espuma o el tejido de malla, que se adaptan a tu pie y te brindan una buena amortiguación y transpiración. Tienen un diseño variado, con diferentes colores, formas y logotipos, para que elijas las que más te gusten. Con estas sandalias, podrás disfrutar del sol y el aire libre con la garantía de Nike.",
+            "en": "These sandals are ideal for summer, as they offer a sporty and casual style, with great comfort and freshness. They are made with quality materials, such as rubber, foam or mesh fabric, which adapt to your foot and provide good cushioning and breathability. They have a varied design, with different colors, shapes and logos, so you can choose the ones you like best. With these sandals, you can enjoy the sun and the outdoors with the Nike guarantee."
+        },
         "variations": {
             "sizes": [42, 43],
             "colors": ["black"]
@@ -600,10 +594,13 @@ let articlesData = {
     },
     "salomon_trecking": {
         "title": {
-            "es": "Zapatilla Salomon Trecking",
-            "en": "Salomon Trecking Shoes"
+            "es": "Salomon Trecking",
+            "en": "Salomon Trecking"
         },
-        "description": "Deportivas senderismo ",
+        "description": {
+            "es": "Estas zapatillas son perfectas para los amantes del trekking y el senderismo, ya que te ofrecen una gran protección, estabilidad y rendimiento en cualquier terreno. Están equipadas con una membrana impermeable y transpirable GORE-TEX®, que te mantiene seco y cómodo en todo momento. Su suela Vibram® te proporciona una excelente tracción y durabilidad, con un dibujo que se adapta a todo tipo de superficies. Su sistema de lazada rápida te permite un ajuste preciso y seguro. Con estas zapatillas, podrás explorar la montaña con confianza y seguridad.",
+            "en": "These shoes are perfect for trekking and hiking enthusiasts, offering great protection, stability and performance on any terrain. Equipped with a waterproof and breathable GORE-TEX® membrane, they keep you dry and comfortable at all times. The Vibram® outsole provides excellent traction and durability, with a tread pattern that adapts to all types of surfaces. Its quick lacing system allows for a precise and secure fit. With these shoes, you can explore the mountain with confidence and security."
+        },
         "variations": {
             "sizes": [36, 37, 38, 39, 40],
             "colors": ["blue"]
@@ -620,7 +617,10 @@ let articlesData = {
             "es": "Zapatillas Alpina Trecking",
             "en": "Alpina Trecking Shoes"
         },
-        "description": "Deportivas senderismo ",
+        "description": {
+            "es": "Estas zapatillas son unas de las más ligeras y flexibles del mercado, ideales para el senderismo rápido y las rutas de baja dificultad. Están hechas con un material sintético resistente y ligero, que se ajusta a tu pie y te ofrece una buena ventilación. Su suela es elevada y dentada, para mejorar la amortiguación y el agarre en superficies irregulares. Su peso es de 290 g y su drop de 10 mm. Con estas zapatillas, podrás caminar con agilidad y comodidad por la naturaleza.",
+            "en": "hese shoes are some of the lightest and most flexible on the market, ideal for fast hiking and low-difficulty routes. They are made of a durable and lightweight synthetic material, which fits your foot and offers good ventilation. Its sole is raised and serrated, to improve cushioning and grip on uneven surfaces. Its weight is 290 g and its drop is 10 mm. With these shoes, you can walk with agility and comfort in nature."
+        },
         "variations": {
             "sizes": [36, 37, 38, 39, 40],
             "colors": ["black"]
@@ -637,7 +637,10 @@ let articlesData = {
             "es": "Zapatillas Columbia Trecking",
             "en": "Columbia Trecking Shoes"
         },
-        "description": "Deportivas senderismo ",
+        "description": {
+            "es": "Estas zapatillas son unas de las más robustas y versátiles del mercado, ideales para el senderismo y el trekking de media y alta dificultad. Están fabricadas con una parte superior de cuero y malla, que te ofrece una buena resistencia y transpirabilidad. Su membrana impermeable y transpirable Outdry® te protege de la lluvia y el sudor. Su suela Vibram® te garantiza una buena tracción y estabilidad, con un dibujo que se adapta a todo tipo de terrenos. Su peso es de 320 g y su drop de 10 mm. Con estas zapatillas, podrás afrontar los retos más exigentes de la montaña.",
+            "en": "These shoes are one of the most robust and versatile shoes on the market, ideal for hiking and trekking of medium and high difficulty. They are made with a leather and mesh upper, which offers you good resistance and breathability. Its waterproof and breathable Outdry® membrane protects you from rain and sweat. Its Vibram® sole guarantees good traction and stability, with a pattern that adapts to all types of terrain. Its weight is 320 g and its drop is 10 mm. With these shoes, you can face the most demanding challenges of the mountain."
+        },
         "variations": {
             "sizes": [36, 37, 38, 39, 40],
             "colors": ["pink"]

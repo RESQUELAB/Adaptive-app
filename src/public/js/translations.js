@@ -64,6 +64,10 @@
             "en": "sneakers",
             "es": "deportivas"
         },
+        "category_football": {
+            "en": "football",
+            "es": "fútbol"
+        },
         "category_trail": {
             "en": "trail",
             "es": "trail"
