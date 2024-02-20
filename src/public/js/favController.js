@@ -1,7 +1,7 @@
 const defaultFavourites = []
 
 class FavController {
-	LS_KEY = 'sport-favourite-articles'
+	LS_KEY = 'favourite-articles'
 	constructor() {
 		this.load()
 		if (this.data == null) {

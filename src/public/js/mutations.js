@@ -1,6 +1,6 @@
 class MutationController {
     constructor() {
-        this.LS_KEY = 'sports-mutation'
+        this.LS_KEY = 'adaptive-app'
         this.load()
 
         let that = this
@@ -39,7 +39,16 @@ class MutationController {
             }
             if (name == 'font') this.setFontSize(value)
             if (name == 'information' && typeof pageProduct !== 'undefined') pageProduct.setDescriptionVisibility(value)
+
+            if (name == 'category') this.changeCategory(value)
         }
+    }
+
+    changeCategory(value){
+        console.log("CHANGING CATEGORY: ", value)
+        $('#headerLogo').attr('src', "img/logo_" + value + '.png');
+        localStorage.setItem("favourite-articles", JSON.stringify([]))
+        localStorage.setItem("cart-articles", JSON.stringify([]))
     }
 
     setFontSize(value) {
@@ -85,11 +94,12 @@ class MutationController {
 
     loadDefaults() {
         this.mutations = {
-            theme: 'dark',
+            theme: 'light',
             language: 'es',
             display: 'list',
             font: "default",
             information: "show",
+            category: "sports"
         }
     }
 }

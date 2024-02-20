@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Login - AdaptiveSports</title>
+		<title>Login - AdaptiveApp</title>
 		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 		<!-- Jquery -->
 		<link href="./jquery/jquery-ui.css" rel="stylesheet">
@@ -12,6 +12,7 @@
 		<script src="./js/socket.io.min.js"></script>
 		<!-- Styles -->
 		<link href="./style/structure.css" rel="stylesheet">
+		<link href="./style/login.css" rel="stylesheet">
 		<link href="./style/lightTheme.css" rel="stylesheet">
 		<link href="./style/darkTheme.css" rel="stylesheet">
         <style>
@@ -38,9 +39,23 @@
 
             <div class="login-container">
 				<div class="login-card">
+					<div>
+						<img id="headerLogo" src="./img/logo_sports.png"></img>
+					</div>
 					<h2>Login</h2>
+					
+					<!-- Server Connection Indicator -->
+					<div class="server-indicator-container">
+						<div id="server-indicator" class="server-indicator"></div>
+						<div id="server-indicator_text" class="server-indicator_text">
+							Server status
+						</div>
+						<i id="refresh-button" class="fas fa-sync" onclick="checkServerStatus()"></i> 
+					</div>
+
+
 					<label for="username">Usuario:</label>
-					<input id="username" name="username" value="anonymous" type="text" placeholder="Introduce tu nombre de usuario" required/>
+					<input id="username" name="username" value="GX-X-Nombre" type="text" placeholder="Introduce tu nombre de usuario" required/>
 				
 					<label for="password" class="password-container">
 						Contraseña:
@@ -48,8 +63,11 @@
 						<span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fas fa-eye-slash"></i></span>
 					</label>
 			
+					<div id="login-message">
+					</div>
 				
 					<button id="login" type="button">Login</button>
+
 				</div>
 			</div>
 

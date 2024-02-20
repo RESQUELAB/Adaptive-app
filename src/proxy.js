@@ -9,6 +9,8 @@ function log(m) {
     console.log(m)
 }
 
+let connection = false
+
 const httpServer = createServer({
     // key:  readFileSync(path + "server.key"),
     // cert: readFileSync(path + "server.crt")
@@ -21,6 +23,7 @@ log("proxy on!")
 
 
 this.io.on("connection", (socket) => {
+    console.log(socket)
     let auth = socket.handshake.auth
     auth.sessionID = auth.sessionID || ''
     auth.page = auth.page || ''
@@ -42,6 +45,7 @@ this.io.on("connection", (socket) => {
 
     newsocket.on('connect', (socket) => {
         log('Connection established to server.')
+        connection = true
     })
     
     newsocket.on('connect_error', (socket) => {
@@ -59,6 +63,7 @@ this.io.on("connection", (socket) => {
 
     newsocket.on('disconnect', () => {
         socket.disconnect()
+        connection = false
     })
 
     socket.on('click', (value) => {
@@ -68,8 +73,27 @@ this.io.on("connection", (socket) => {
     socket.on('scroll', (value) => {
         newsocket.emit('scroll', value)
     })
+
+    socket.on("updateName", (value) => {
+        newsocket.emit("updateName", value)
+    })
 })
 
 
+httpServer.on("request", (req, res) => {
+    console.log("REQUEST!! : ", req.url)
+    console.log("REQUEST!! : ", req.method)
+    console.log("connect!! : ", connection)
+    if (req.url === "/check-status" && req.method === "GET") {
+        // Respond with a success status
+        if(connection){
+            res.writeHead(200, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ status: "OK" }));
+        }else{
+            res.writeHead(505, { "Content-Type": "application/json" });
+            res.end("Server Down");
+        }
+    }
+});
 
 

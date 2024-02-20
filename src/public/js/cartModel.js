@@ -1,7 +1,7 @@
 const defaultCart = []
 
 class CartModel {
-	LS_KEY = 'sports-cart-articles'
+	LS_KEY = 'cart-articles'
 	constructor() {
 		this.load()
 		if (this.data == null) {

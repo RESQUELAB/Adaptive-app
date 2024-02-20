@@ -3,6 +3,7 @@ const HOST = 'localhost',
 	  LS_LOGIN_KEY = 'sports-login'
 
 var loginInfo = null
+var amIconnected = false
 function loadLoginInfo() {
 	return JSON.parse(localStorage.getItem(LS_LOGIN_KEY)) || {
 		sessionID: '', 
@@ -35,6 +36,9 @@ const socket = io( `http://${HOST}:${PORT}` , {
 	cors: {origin:"*"}
 })
 
+function sendUpdateName(msg){
+	socket.emit("updateName", msg)
+}
 
 function sendClickInfo(msg) {
 	socket.emit('click', msg)
@@ -48,6 +52,7 @@ function sendScrollInfo(msg) {
 
 socket.on('connect', (Socket) => {
 	console.log('Connection established to server.')
+	amIconnected = true
 
 })
 

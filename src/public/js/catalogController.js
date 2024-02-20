@@ -146,7 +146,7 @@ class CatalogController {
 class Filter {
 	constructor(articles, controller) {
 		let cats = (new URL(document.location)).searchParams.get('cat')
-		cats = cats? cats.split(',') : ["sneakers", "trail", "hiking", "urban", "running", "sandals", "mountain", "casual"]
+		cats = cats? cats.split(',') : uniqueCategories
 
 		this.controller = controller
 		this.selectedCategories = cats
@@ -219,7 +219,7 @@ class Filter {
 					cont = true
 					break
 				}
-				if (!array(a.variations[filter]).hasOne(this.variations[filter]) ) {
+				if (!array(a.variations[filter].map(String)).hasOne(this.variations[filter])) {
 					cont = true
 					break
 				}
