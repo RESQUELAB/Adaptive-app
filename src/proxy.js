@@ -23,7 +23,6 @@ log("proxy on!")
 
 
 this.io.on("connection", (socket) => {
-    console.log(socket)
     let auth = socket.handshake.auth
     auth.sessionID = auth.sessionID || ''
     auth.page = auth.page || ''
@@ -81,9 +80,6 @@ this.io.on("connection", (socket) => {
 
 
 httpServer.on("request", (req, res) => {
-    console.log("REQUEST!! : ", req.url)
-    console.log("REQUEST!! : ", req.method)
-    console.log("connect!! : ", connection)
     if (req.url === "/check-status" && req.method === "GET") {
         // Respond with a success status
         if(connection){
