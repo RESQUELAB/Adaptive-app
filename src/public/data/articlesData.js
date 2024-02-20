@@ -1150,6 +1150,27 @@ let articlesData = {
             "price": 600.00,
             "stars": 4
         },
+    },
+    "courses": {
+        "python_1": {
+            "title": {
+                "en": "Python course",
+                "es": "Curso de Python"
+            },
+            "description": {
+                "en": "",
+                "es": ""
+            },
+            "variations": {
+                "begin": ["01/01/24", "15/01/24", "31/01/24"],
+                "duration": ["1m", "2m"],
+            },
+            "categories": ["programming"],
+            "images": ["python.png"],
+            "stock": 1,
+            "price": 35.93,
+            "stars": 5
+        }   
     }
 }
 

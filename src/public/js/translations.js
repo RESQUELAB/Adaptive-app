@@ -200,6 +200,15 @@
             "en": "9 days",
             "es": "9 días"
         },
+        "1mChoice": {
+            "en": "1 month",
+            "es": "1 mes"
+        },
+        "2mChoice": {
+            "en": "2 months",
+            "es": "2 meses"
+        },
+        
         "winter_coats": {
             "en": "winter coats",
             "es": "abrigos"
