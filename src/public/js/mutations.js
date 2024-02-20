@@ -45,10 +45,13 @@ class MutationController {
     }
 
     changeCategory(value){
-        console.log("CHANGING CATEGORY: ", value)
         $('#headerLogo').attr('src', "img/logo_" + value + '.png');
-        localStorage.setItem("favourite-articles", JSON.stringify([]))
-        localStorage.setItem("cart-articles", JSON.stringify([]))
+        if (window.location.pathname.includes("index")) {
+            // Reset localStorage only if on the login page
+            console.log("reset localstorage.")
+            localStorage.setItem("favourite-articles", JSON.stringify([]))
+            localStorage.setItem("cart-articles", JSON.stringify([]))
+        }
     }
 
     setFontSize(value) {
