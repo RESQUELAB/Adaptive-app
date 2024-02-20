@@ -54,14 +54,14 @@ class ProductPage {
 	  showDescription(descriptionText, partial) {
 		let fullDescription = this.description['es']
 		if(!partial){
-			descriptionText.innerHtml(fullDescription)
+			descriptionText.text(fullDescription)
 			return
 		}
 		let maxLength = 100;
 
 		if (fullDescription.length > maxLength) {
 		  const partialDescription = fullDescription.substring(0, maxLength) + '...';
-		  descriptionText.innerHtml(partialDescription);
+		  descriptionText.text(partialDescription);
 		}
 	  }
 
