@@ -11,7 +11,7 @@ let articlesData = {
                 "en": "The Adidas Adizero Boston 12 black running shoes are designed for neutral and medium to lightweight runners looking for speed and performance. These shoes offer you good cushioning and reactivity, thanks to their Lightstrike foam midsole and Energyrods carbon plate, which propel you through every stride12. The Adidas Adizero Boston 12 black running shoes have a streamlined, lightweight design that combines black with white and blue accents. Their perforated mesh upper promotes ventilation and a snug fit, while their lace-up closure allows you to adjust the fit. They weigh only 230 g in size 42, making them very agile and dynamic13. These shoes are suitable for running on asphalt surfaces or trails, as they have a Continental rubber outsole, which offers good grip and resistance to wear12. You can also use them for racing or training at fast paces. They are quality running shoes at a good price, which you can find at Decathlon1, the leading sports store in Spain. If you want to run faster and farther, the Adidas Adizero Boston 12 black running shoes are a good choice for you. They offer everything you need to improve your performance: cushioning, reactivity, lightness and design."
             },
             "variations": {
-                "sizes": [40, 41, 42, 43, 44, 45, 46, 47],
+                "sizes": [40, 41, 42, 46, 47],
                 "colors": ["black", "grey"],
             },
             "categories": ["running"],
