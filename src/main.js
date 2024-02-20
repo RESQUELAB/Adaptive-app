@@ -4,6 +4,10 @@ const path = require('path')
 
 const pagesFolder = 'release/public/'
 
+
+const {spawn} = require('child_process');
+var child = spawn("node", ["proxy.js"], { stdio: ['inherit']});
+
 function createWindow () {
 	// Browser window
 	const mainWindow = new BrowserWindow({
@@ -15,7 +19,7 @@ function createWindow () {
 		webPreferences: {
 			preload: path.join(__dirname, 'preload.js'),
 		}
-		// ,icon: 'public/img/logo.png'
+		,icon: 'public/img/icon.png'
 	})
 
 	// Link emulating on electron
