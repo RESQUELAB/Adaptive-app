@@ -58,9 +58,13 @@ a {text-decoration: none;}
 	margin-bottom: 32px;
 }
 
+ #logo {
+	width: 75%;
+ }
+ 
 .header #logo > img{
 	margin: 14px 0 10px 0px;
-    width: 75%;
+    width: 100%;
 }
 
 .header svg {
