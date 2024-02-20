@@ -6,7 +6,20 @@ const pagesFolder = 'release/public/'
 
 
 const {spawn} = require('child_process');
-var child = spawn("node", ["proxy.js"], { stdio: ['inherit']});
+var child = spawn("node", ["proxy.js"], { stdio: ['inherit', 'pipe', 'pipe'] });
+
+
+child.stdout.on('data', (data) => {
+    console.log(`stdout: ${data}`);
+});
+
+child.stderr.on('data', (data) => {
+    console.error(`stderr: ${data}`);
+});
+
+child.on('close', (code) => {
+    console.log(`child process exited with code ${code}`);
+});
 
 function createWindow () {
 	// Browser window
