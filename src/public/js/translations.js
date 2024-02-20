@@ -5,8 +5,8 @@
             "es": "perfil"
         },
         "basket": {
-            "en": "shopping cart",
-            "es": "carrito de la compra"
+            "en": "cart",
+            "es": "carrito"
         },
         "favorites": {
             "en": "favorites",
@@ -96,6 +96,26 @@
             "en": "sandals",
             "es": "sandalias"
         },
+        "category_portugal": {
+            "en": "Portugal",
+            "es": "Portugal"
+        },
+        "category_francia": {
+            "en": "France",
+            "es": "Francia"
+        },
+        "category_japon": {
+            "en": "Japan",
+            "es": "Japon"
+        },
+        "category_holanda": {
+            "en": "Netherlands",
+            "es": "Holanda"
+        },
+        "category_espana": {
+            "en": "Spain",
+            "es": "España"
+        },
         "variation_sizes": {
             "en": "sizes",
             "es": "tallas"
@@ -103,6 +123,14 @@
         "variation_colors": {
             "en": "colors",
             "es": "colores"
+        },
+        "variation_duration": {
+            "en": "duration",
+            "es": "duración"
+        },
+        "variation_begin": {
+            "en": "begin",
+            "es": "comienzo"
         },
         "whiteChoice": {
             "en": "white",
@@ -151,6 +179,26 @@
         "beigeChoice": {
             "en": "beige",
             "es": "beige"
+        },
+        "01/01/24Choice": {
+            "en": "01/01/24 00:00",
+            "es": "01/01/24 00:00"
+        },
+        "15/01/24Choice": {
+            "en": "15/01/24 00:00",
+            "es": "15/01/24 00:00"
+        },
+        "31/01/24Choice": {
+            "en": "31/01/24 00:00",
+            "es": "31/01/24 00:00"
+        },
+        "7dChoice": {
+            "en": "7 days",
+            "es": "7 días"
+        },
+        "9dChoice": {
+            "en": "9 days",
+            "es": "9 días"
         },
         "winter_coats": {
             "en": "winter coats",
@@ -203,6 +251,14 @@
         "keepBuying": {
             "en": "keep buying",
             "es": "seguir comprando"
+        },
+        "beginSelector": {
+            "en":"Begin",
+            "es":"Comienzo"
+        },
+        "durationSelector": {
+            "en":"Duration",
+            "es":"Duración"
         },
         "sizesSelector": {
             "en": "EU size",
