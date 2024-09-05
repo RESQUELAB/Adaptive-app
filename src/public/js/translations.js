@@ -116,6 +116,40 @@
             "en": "Spain",
             "es": "España"
         },
+        "category_programming": {
+            "en": "programming",
+            "es": "programación"
+        },
+        "category_web_development": {
+            "en": "web development",
+            "es": "desarrollo web"
+        },
+        "category_data_science": {
+            "en": "data science",
+            "es": "ciencia de datos"
+        },
+        "category_mobile": {
+            "en": "mobile development",
+            "es": "desarrollo para móviles"
+        },
+        
+        "category_cybersecurity": {
+            "en": "cybersecurity",
+            "es": "ciberseguridad"
+        },
+        "category_design": {
+            "en": "graphic design",
+            "es": "diseño gráfico"
+        },
+        "category_game_dev": {
+            "en": "game development",
+            "es": "desarrollo de videojuegos"
+        },
+        "category_ml": {
+            "en": "machine learning",
+            "es": "machine learning"
+        },
+        
         "variation_sizes": {
             "en": "sizes",
             "es": "tallas"
@@ -127,6 +161,14 @@
         "variation_duration": {
             "en": "duration",
             "es": "duración"
+        },
+        "variation_level": {
+            "en": "level",
+            "es": "nivel"
+        },
+        "variation_framework": {
+            "en": "framework",
+            "es": "Framework"
         },
         "variation_begin": {
             "en": "begin",
@@ -200,6 +242,74 @@
             "en": "9 days",
             "es": "9 días"
         },
+        "30dChoice": {
+            "en": "30 days",
+            "es": "30 días"
+        },
+        "45dChoice": {
+            "en": "45 days",
+            "es": "45 días"
+        },
+        "60dChoice": {
+            "en": "60 days",
+            "es": "60 días"
+        },
+        "90dChoice": {
+            "en": "90 days",
+            "es": "90 días"
+        },
+        "120dChoice": {
+            "en": "120 days",
+            "es": "120 días"
+        },
+        "BeginnerChoice": {
+            "en": "Beginner",
+            "es": "Principiante"
+        },
+        "IntermediateChoice": {
+            "en": "Intermediate",
+            "es": "Intermedio"
+        },
+        "AdvancedChoice": {
+            "en": "Advanced",
+            "es": "Avanzado"
+        },
+        "ReactChoice": {
+            "en": "React",
+            "es": "React"
+        },
+        "VueChoice": {
+            "en": "Vue",
+            "es": "Vue"
+        },
+        "AngularChoice": {
+            "en": "Angular",
+            "es": "Angular"
+        },
+        "PythonChoice": {
+            "en": "Python",
+            "es": "Python"
+        },
+        "RChoice": {
+            "en": "R",
+            "es": "R"
+        },
+        "FlutterChoice": {
+            "en": "Flutter",
+            "es": "Flutter"
+        },
+        "TensorFlowChoice": {
+            "en": "TensorFlow",
+            "es": "TensorFlow"
+        },
+        "UnityChoice": {
+            "en": "Unity",
+            "es": "Unity"
+        },
+        "C#Choice": {
+            "en": "C#",
+            "es": "C#"
+        },
         "1mChoice": {
             "en": "1 month",
             "es": "1 mes"
@@ -268,6 +378,14 @@
         "durationSelector": {
             "en":"Duration",
             "es":"Duración"
+        },
+        "levelSelector": {
+            "en":"Level",
+            "es":"nivel"
+        },
+        "frameworkSelector": {
+            "en":"Framework",
+            "es":"Framework"
         },
         "sizesSelector": {
             "en": "EU size",

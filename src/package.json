@@ -1,21 +1,43 @@
 {
-  "name": "mutantapp",
+  "name": "adaptiveapp",
   "version": "1.0.0",
-  "description": "An app that can mutate!",
+  "description": "An app that can Adapt!",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "proxy": "node proxy.js"
+    "pkg": "pkg . --out-path dist",
+    "build": "electron-builder",
+    "build:win": "electron-packager . adaptiveapp --asar --platform=win32 --arch=x64 --prune=true --out=release-builds --icon='icon.ico' --extra-resource='icon.ico'",
+    "build:win_2": "electron-packager . adaptiveapp --platform=win32 --arch=x64 --prune=true --out=release-builds --icon='icon.ico' --extra-resource='icon.ico'",
+    "build:mac": "electron-packager . adaptiveapp --asar --platform=darwin --arch=x64 --prune=true --out=release-builds --icon='icon.icns' --extra-resource='proxy.js' --extra-resource='icon.ico'",
+    "proxy": "node proxy.js",
+    "build:proxy": "electron-packager proxy.js --out-path . --out-name proxy --platform=win32 --arch=x64",
+    "build:pkg": "pkg . --out-path release-builds"
   },
+  "files": [
+    "proxy.js"
+  ],
   "author": "RESQUELAB",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^23.3.13",
-    "gulp": "^4.0.2",
+    "asar": "^3.2.0",
+    "electron": "^29.0.0",
+    "electron-builder": "^24.12.0",
+    "electron-packager": "^17.1.2",
+    "gulp": "^3.9.1",
     "gulp-source-injector": "^1.0.1"
   },
   "dependencies": {
     "socket.io": "^4.7.2",
-    "socket.io-client": "^4.7.2"
-  }
+    "socket.io-client": "^4.7.2",
+    "graceful-fs": "4.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RESQUELAB/Adaptive-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RESQUELAB/Adaptive-app/issues"
+  },
+  "homepage": "https://github.com/RESQUELAB/Adaptive-app#readme"
 }

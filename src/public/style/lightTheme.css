@@ -11,21 +11,23 @@
 }
 
 .lightTheme .header {
-    border-bottom: 1px solid #ddd !important;
+	border-bottom: 1px solid #ddd !important;
 }
 
-.lightTheme .searchbar > input#search_input {
-	background-color: #FFFFFF ;
+.lightTheme .searchbar>input#search_input {
+	background-color: #FFFFFF;
 	border-color: #bbb;
+	color: black;
 }
 
-.lightTheme .searchbar path, .lightTheme .userbuttons .userbutton > svg > path {
-	fill: #444 ;
+.lightTheme .searchbar path,
+.lightTheme .userbuttons .userbutton>svg>path {
+	fill: #444;
 }
 
-.lightTheme .userbuttons .userbutton .counter > span {
-    background: white;
-    border: 1px solid gray;
+.lightTheme .userbuttons .userbutton .counter>span {
+	background: white;
+	border: 1px solid gray;
 	color: inherit;
 	opacity: 0.7;
 }
@@ -39,6 +41,7 @@
 .lightTheme a:visited {
 	color: #0080FF;
 }
+
 .lightTheme .container {
 	background-color: #d0d0d0;
 }
@@ -48,58 +51,82 @@
 	background-color: #EEE;
 	outline-color: cornflowerblue;
 }
+
 .lightTheme button {
 	background-color: #BBBBEE;
 	outline-color: cornflowerblue;
 }
+
 .lightTheme button.positive {
 	background-color: #57ff57;
-    color: black;
+	color: black;
 }
+
 .lightTheme div.positive {
 	color: rgb(105 175 2);
 }
+
 .lightTheme button.negative {
 	background-color: #DD8888;
 }
+
 .lightTheme div.negative {
 	color: red;
 }
 
 .lightTheme .grid-border {
-    background: #ddd;
-    border: 1px solid #ddd;
+	background: #ddd;
+	border: 1px solid #ddd;
 }
-.lightTheme .grid-border > * {
-    background: white;
+
+.lightTheme .grid-border>* {
+	background: white;
 }
 
 /* Catalog */
-.lightTheme .catalog-article .reviews {color: gray;}
-.lightTheme .catalog-article .price, .lightTheme .catalog-article .price sup {color: rgb(85, 85, 255);}
-.lightTheme .catalog-article .likes {color: rgb(255, 96, 96);}
-.lightTheme .catalog * {background: white;}
-.lightTheme .catalog-article .star_rating .score { color: #666; }
+.lightTheme .catalog-article .reviews {
+	color: gray;
+}
+
+.lightTheme .catalog-article .price,
+.lightTheme .catalog-article .price sup {
+	color: rgb(85, 85, 255);
+}
+
+.lightTheme .catalog-article .likes {
+	color: rgb(255, 96, 96);
+}
+
+.lightTheme .catalog * {
+	background: white;
+}
+
+.lightTheme .catalog-article .star_rating .score {
+	color: #666;
+}
 
 /* Product */
 
 .lightTheme .product .choice.selected {
-	background-color: #57ff57; /* Green color */
+	background-color: #57ff57;
+	/* Green color */
 	color: black;
 	border: 1px solid black;
-  }
+}
 
 
 
 .lightTheme .product .messageSection .warning {
 	color: rgb(255 0 0);
 }
-.lightTheme .product .messageSection .productAdded > span {
+
+.lightTheme .product .messageSection .productAdded>span {
 	color: #888;
 }
 
 /* jquery ui tabs */
-.lightTheme .ui-widget-content, .lightTheme .ui-tabs-nav.ui-widget-header {
+.lightTheme .ui-widget-content,
+.lightTheme .ui-tabs-nav.ui-widget-header {
 	background-color: #fff;
 }
 
@@ -110,4 +137,8 @@
 
 .lightTheme .login-card button:hover {
 	background-color: #45a049;
+}
+
+.lightTheme .toggle-link-span {
+	color: #007BFF;
 }

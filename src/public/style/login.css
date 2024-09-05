@@ -90,6 +90,10 @@
 	width: calc(100% - 30px);
 	padding-right: 30px;
 }
+.login-card #reg-password {
+	width: calc(100% - 30px);
+	padding-right: 30px;
+}
 
 .login-card .toggle-password {
 	position: absolute;
@@ -115,6 +119,39 @@
 
 .login-card button:hover {
 	background-color: #45a049;
+}
+
+/* Registration form styles */
+.registration-container {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.registration-card {
+	width: 100%;
+	max-width: 400px;
+	margin-top: 20px;
+}
+#registration-message {
+	color: red;
+	margin-top: 10px;
+}
+#register {
+	margin-top: 10px;
+	width: 100%;
+}
+/* Toggle between login and register */
+.toggle-link {
+	margin-top: 10px;
+	text-align: center;
+}
+.toggle-link-span {
+	cursor: pointer;
+	text-decoration: underline;
 }
 
 

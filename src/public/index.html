@@ -37,7 +37,7 @@
 	<body lang="es">
 		<div class="full-container login-container">
 
-            <div class="login-container">
+            <div>
 				<div class="login-card">
 					<div>
 						<img id="headerLogo" src="./img/logo_sports.png"></img>
@@ -60,16 +60,47 @@
 					<label for="password" class="password-container">
 						Contraseña:
 						<input id="password" name="password" type="password" placeholder="Introduce tu contraseña" required/>
-						<span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fas fa-eye-slash"></i></span>
-					</label>
+						<span class="toggle-password" onclick="togglePasswordVisibility('password', this)"><i class="fas fa-eye-slash"></i></span>					</label>
 			
 					<div id="login-message">
 					</div>
 				
 					<button id="login" type="button">Login</button>
 
+					<!-- Link to registration form -->
+					<p class="toggle-link"><span class="toggle-link-span" onclick="toggleForm()">¿No tienes una cuenta? Regístrate aquí</span></p>
 				</div>
 			</div>
+
+        </div>
+		<!-- Registration Form -->
+		<div class="full-container registration-container">
+			<div class="login-card">
+				<h2>Registro</h2>
+
+				<label for="reg-username">Usuario:</label>
+				<input id="reg-username" name="username" type="text" placeholder="Introduce tu nombre de usuario" required/>
+				
+				<!-- <label for="reg-email">Correo electrónico:</label>
+				<input id="reg-email" name="email" type="email" placeholder="Introduce tu correo" required/> -->
+
+				<!-- <label for="reg-password">Contraseña:</label>
+				<input id="reg-password" name="reg-password" type="password" placeholder="Introduce tu contraseña" required/> -->
+				
+				<label for="reg-password" class="password-container">
+				Contraseña:
+					<input id="reg-password" name="password" type="password" placeholder="Introduce tu contraseña" required/>
+					<span class="toggle-password" onclick="togglePasswordVisibility('reg-password', this)"><i class="fas fa-eye-slash"></i></span>				</label>
+
+
+				<div id="registration-message"></div>
+				
+				<button id="register" type="button">Registrarse</button>
+
+				<!-- Link to go back to login -->
+				<p class="toggle-link"><span class="toggle-link-span" onclick="toggleForm()">¿Ya tienes una cuenta? Inicia sesión</span></p>
+			</div>
+		</div>
 
         </div>
 		<!-- HTML load end scripts -->

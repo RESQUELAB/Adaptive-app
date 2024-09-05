@@ -12,10 +12,11 @@ let articlesData = {
             },
             "variations": {
                 "sizes": [40, 41, 42, 46, 47],
-                "colors": ["black", "grey"],
+                "colors": ["black", "grey", "blue"],
+                "aaaa": [1, 2, 3, 44]
             },
             "categories": ["running"],
-            "images": ["adidas_adizero_1.png", "adidas_adizero_3.png" ],
+            "images": ["adidas_adizero_1.png", "adidas_adizero_3.png"],
             "stock": 1,
             "shipment_type": "1",
             "price": 150.99,
@@ -33,7 +34,7 @@ let articlesData = {
             },
             "variations": {
                 "sizes": [36, 37, 38, 39, 41, 42],
-                "colors": ["pink","white"],
+                "colors": ["pink", "white"],
             },
             "categories": ["running"],
             "images": ["velocity-nitro_1.png", "velocity-nitro.png"],
@@ -57,7 +58,7 @@ let articlesData = {
                 "colors": ["black", "blue", "orange"],
             },
             "categories": ["running"],
-            "images": ["active-azul-marino_1.png", "active-azul-marino_2.png" ],
+            "images": ["active-azul-marino_1.png", "active-azul-marino_2.png"],
             "stock": 1,
             "shipment_type": "1",
             "price": 24.99,
@@ -74,7 +75,7 @@ let articlesData = {
             },
             "variations": {
                 "sizes": [36, 37, 38, 39, 41, 42],
-                "colors": ["white","blue"],
+                "colors": ["white", "blue"],
             },
             "categories": ["mountain"],
             "images": ["quechua-nieve-500_1.png", "quechua-nieve-500_2.png"],
@@ -115,7 +116,7 @@ let articlesData = {
             },
             "variations": {
                 "sizes": [40, 41, 43, 44, 46, 47],
-                "colors": ["white","orange"],
+                "colors": ["white", "orange"],
             },
             "categories": ["running"],
             "images": ["kiprun-kd500-3_1.png"],
@@ -136,9 +137,9 @@ let articlesData = {
             },
             "variations": {
                 "sizes": [36, 37, 38, 39, 41, 42],
-                "colors": ["sand","grey"],
+                "colors": ["sand", "grey"],
             },
-            "categories": ["mountain","hiking"],
+            "categories": ["mountain", "hiking"],
             "images": ["quechua-sh500_2.png", "quechua-sh500_1.png"],
             "stock": 1,
             "shipment_type": "1",
@@ -166,7 +167,7 @@ let articlesData = {
             "price": 44.40,
             "stars": 2,
         },
-        
+
         "durtal_w": {
             "title": {
                 "en": "Durtal W",
@@ -178,9 +179,9 @@ let articlesData = {
             },
             "variations": {
                 "sizes": [36, 37, 38, 39, 41, 42],
-                "colors": ["white","black"],
+                "colors": ["white", "black"],
             },
-            "categories": ["sandals","urban"],
+            "categories": ["sandals", "urban"],
             "images": ["durtal_w_1.png", "durtal_w_2.png"],
             "stock": 1,
             "shipment_type": "1",
@@ -197,10 +198,10 @@ let articlesData = {
                 "en": "The Converse Pro Blaze V2 black men's casual sneakers are a revamped version of the legendary Chuck Taylor All Star. These sneakers feature a mid-top design with mixed material uppers, flat cotton laces and a removable nylon strap for style and security. The court-inspired rubber outsole will give you traction and durability, and the chevron star logo will give you a distinctive touch. These sneakers are perfect for men who want comfortable, modern footwear with an elevated, urban style."
             },
             "variations": {
-                "sizes": [41, 42,43,44,45],
+                "sizes": [41, 42, 43, 44, 45],
                 "colors": ["black", "blue"],
             },
-            "categories": ["sandals","urban"],
+            "categories": ["sandals", "urban"],
             "images": ["converse_pro_blaze_v2_1.png"],
             "stock": 1,
             "shipment_type": "1",
@@ -217,8 +218,8 @@ let articlesData = {
                 "en": "The Converse Tobin black unisex casual sneakers are cotton canvas sneakers, practically monochrome, without large logos, that adapt to the needs of casual etiquette. They have a lace-up closure, a padded collar for comfort and a sole that softens the tread and offers great cushioning. They are a go-with-everything sneaker, ideal for everyday wear, with a skateboarding-inspired design and a faux leather Chevron star symbol."
             },
             "variations": {
-                "sizes": [41, 42,43,44,45],
-                "colors": ["white","black"],
+                "sizes": [41, 42, 43, 44, 45],
+                "colors": ["white", "black"],
             },
             "categories": ["casual"],
             "images": ["converse_tobin_1.png"],
@@ -238,9 +239,9 @@ let articlesData = {
             },
             "variations": {
                 "sizes": [36, 37, 38, 39, 41, 42],
-                "colors": ["blue","white"],
+                "colors": ["blue", "white"],
             },
-            "categories": ["casual","running"],
+            "categories": ["casual", "running"],
             "images": ["caracal_retro_1.png", "caracal_retro_2.png"],
             "stock": 1,
             "shipment_type": "1",
@@ -260,7 +261,7 @@ let articlesData = {
                 "sizes": [36, 37, 41, 42],
                 "colors": ["grey"],
             },
-            "categories": ["sneakers","running"],
+            "categories": ["sneakers", "running"],
             "images": ["xti_140776_1.png", "xti_140776_2.png"],
             "stock": 1,
             "shipment_type": "1",
@@ -278,7 +279,7 @@ let articlesData = {
                 "en": "These trail running shoes are designed to offer excellent grip and cushioning on slippery and muddy terrain, for training and trails up to 80 km. They are made with a breathable and resistant mesh, with reinforcements on the contour of the foot for better support. The outsole has 5 mm lugs spaced to favor grip and mud expulsion. The midsole is composed of an exclusive EVA foam called Kalensole, which provides greater cushioning and durability. The drop is 8 mm, which offers a good ratio between impulse and cushioning. In addition, these shoes feature the K-Only concept, which makes them suitable for all types of footsteps."
             },
             "variations": {
-                "sizes": [36, 37, 41, 42,43,44],
+                "sizes": [36, 37, 41, 42, 43, 44],
                 "colors": ["blue", "orange"],
             },
             "categories": ["trail", "running"],
@@ -300,8 +301,8 @@ let articlesData = {
                 "en": "These trail running shoes are ideal for long technical outings and ultras, in mountainous and rocky terrain. They are made with a perforated mesh that incorporates synthetic reinforcements to protect the foot and make them more resistant to wear. The midsole has a lightweight EVA foam that improves momentum and shock absorption on the ground. It also has reinforcements against rocks and stones, which provide greater adaptability on rocky surfaces. The outsole has TRAXION technology, which offers powerful grip on all types of terrain. The toe cap is slightly wider to give more room for the toes and prevent chafing. The drop is 7 mm, which favors a more natural stride."
             },
             "variations": {
-                "sizes": [36, 37, 41, 42,43,44],
-                "colors": ["orange","black"],
+                "sizes": [36, 37, 41, 42, 43, 44],
+                "colors": ["orange", "black"],
             },
             "categories": ["trail"],
             "images": ["trail_race_ultra_1.png", "trail_race_ultra_2.png"],
@@ -322,7 +323,7 @@ let articlesData = {
                 "en": "These trail running shoes offer maximum grip on rocky, wet and unstable terrain. The breathable GORE-TEX membrane keeps feet dry and comfortable in wet and humid conditions. The upper is made of a durable mesh that has rubber reinforcements in high-wear areas. The midsole has an EVA foam that provides good cushioning and light weight. The outsole has a multi-directional lug design that adapts to changes in direction and surface. TRAXION technology improves grip and traction on all types of terrain. The drop is 7 mm, which allows a smooth transition of the footprint."
             },
             "variations": {
-                "sizes": [36, 37, 41, 42,43,44],
+                "sizes": [36, 37, 41, 42, 43, 44],
                 "colors": ["orange", "green"],
             },
             "categories": ["trail"],
@@ -344,7 +345,7 @@ let articlesData = {
                 "en": "The Evadict MT Cushion 2 raspberry women's trail running shoe is a versatile all-rounder that offers comfort, cushioning and grip on all types of terrain. They have a durable and breathable MATRYX textile upper, a Kalensole foam midsole for improved energy return, a rubber outsole with hard & soft lugs that adapt to different surfaces, a 4mm drop for a natural stride and a weight of 255g."
             },
             "variations": {
-                "sizes": [36, 37, 41, 42,43,44],
+                "sizes": [36, 37, 41, 42, 43, 44],
                 "colors": ["red"],
             },
             "categories": ["trail"],
@@ -425,7 +426,7 @@ let articlesData = {
             },
             "variations": {
                 "sizes": [39, 40, 41, 42, 43, 44],
-                "colors": ["white","black"]
+                "colors": ["white", "black"]
             },
             "categories": ["football"],
             "images": ["adidas_kaiser_1.png"],
@@ -448,10 +449,10 @@ let articlesData = {
                 "colors": ["white", "green"]
             },
             "categories": ["football"],
-            "images": ["adidas_crazyfast_1.png",  "adidas_crazyfast_2.png"],
+            "images": ["adidas_crazyfast_1.png", "adidas_crazyfast_2.png"],
             "stock": 1,
             "shipment_type": 1,
-            "price": 59.99, 
+            "price": 59.99,
             "stars": 4
         },
         "nike_court_royale": {
@@ -653,7 +654,7 @@ let articlesData = {
             "shipment_type": 1,
             "price": 105.00,
             "stars": 5
-        }   
+        }
     },
     "trips": {
         "barcelona": {
@@ -683,8 +684,8 @@ let articlesData = {
             "description": {
                 "en": "Experience the charm of Oporto during our 7 or 9-day journey. Wander through historic neighborhoods, savoring the rich flavors of port wine. Admire the iconic Dom Luís I Bridge and cruise along the Douro River while immersing yourself in the Portuguese hospitality.",
                 "es": "Vive el encanto de Oporto durante nuestro viaje de 7 u 9 días. Recorre barrios históricos, saboreando los ricos aromas del vino de Oporto. Admira el icónico Puente Dom Luís I y navega por el río Duero, sumergiéndote en la hospitalidad portuguesa."
-              },
-              "variations": {
+            },
+            "variations": {
                 "begin": ["01/01/24", "15/01/24", "31/01/24"],
                 "duration": ["7d", "9d"],
             },
@@ -702,7 +703,7 @@ let articlesData = {
             "description": {
                 "en": "Embark on a magical 7 or 9-day journey to Paris, the City of Lights. Explore world-renowned landmarks like the Eiffel Tower and Louvre Museum. Stroll along the Seine River, indulge in exquisite French cuisine, and fall in love with the romantic ambiance of this iconic city.",
                 "es": "Embárcate en un mágico viaje de 7 u 9 días a París, la Ciudad de las Luces. Explora lugares emblemáticos como la Torre Eiffel y el Museo del Louvre. Pasea por el río Sena, disfruta de la exquisita cocina francesa y enamórate de la atmósfera romántica de esta ciudad icónica."
-              },
+            },
             "variations": {
                 "begin": ["01/01/24", "15/01/24", "31/01/24"],
                 "duration": ["7d", "9d"],
@@ -721,7 +722,7 @@ let articlesData = {
             "description": {
                 "en": "Discover the vibrant energy of Madrid during our 7 or 9-day adventure. Immerse yourself in Spanish art at the Prado Museum, savor authentic tapas in lively plazas, and experience the lively nightlife. Madrid welcomes you with open arms.",
                 "es": "Descubre la vibrante energía de Madrid durante nuestra aventura de 7 u 9 días. Sumérgete en el arte español en el Museo del Prado, saborea auténticas tapas en animadas plazas y experimenta la animada vida nocturna. Madrid te da la bienvenida con los brazos abiertos."
-              },
+            },
             "variations": {
                 "begin": ["01/01/24", "15/01/24", "31/01/24"],
                 "duration": ["7d", "9d"],
@@ -740,7 +741,7 @@ let articlesData = {
             "description": {
                 "en": "Embark on a 7 or 9-day journey to Montpelier, a charming city in the south of France. Explore its historic architecture, wander through vibrant markets, and savor exquisite French cuisine. Immerse yourself in the relaxed atmosphere of this Mediterranean gem.",
                 "es": "Embárcate en un viaje de 7 u 9 días a Montpelier, una encantadora ciudad en el sur de Francia. Explora su arquitectura histórica, pasea por mercados vibrantes y saborea la exquisita cocina francesa. Sumérgete en la relajada atmósfera de esta joya mediterránea."
-              },
+            },
             "variations": {
                 "begin": ["01/01/24", "15/01/24", "31/01/24"],
                 "duration": ["7d", "9d"],
@@ -759,7 +760,7 @@ let articlesData = {
             "description": {
                 "en": "Embark on a captivating journey to Tokyo with our 7 or 9-day trip. Discover the fusion of traditional and modern Japan, explore vibrant neighborhoods like Shibuya, and savor authentic sushi. Immerse yourself in the rich culture and cutting-edge technology of this dynamic city.",
                 "es": "Embárcate en un cautivador viaje a Tokio con nuestro viaje de 7 u 9 días. Descubre la fusión de Japón tradicional y moderno, explora barrios vibrantes como Shibuya y saborea auténtico sushi. Sumérgete en la rica cultura y tecnología de vanguardia de esta ciudad dinámica."
-              },
+            },
             "variations": {
                 "begin": ["01/01/24", "15/01/24", "31/01/24"],
                 "duration": ["7d", "9d"],
@@ -778,7 +779,7 @@ let articlesData = {
             "description": {
                 "en": "Explore the enchanting city of Amsterdam during our 7 or 9-day journey. Cruise along picturesque canals, visit iconic museums like the Van Gogh Museum, and embrace the laid-back atmosphere of this Dutch masterpiece. Discover the beauty that awaits you in every corner.",
                 "es": "Explora la encantadora ciudad de Ámsterdam durante nuestro viaje de 7 u 9 días. Navega por pintorescos canales, visita museos icónicos como el Museo Van Gogh y abraza la relajada atmósfera de esta obra maestra holandesa. Descubre la belleza que te espera en cada rincón."
-              },
+            },
             "variations": {
                 "begin": ["01/01/24", "15/01/24", "31/01/24"],
                 "duration": ["7d", "9d"],
@@ -797,7 +798,7 @@ let articlesData = {
             "description": {
                 "en": "Embark on a 7 or 9-day journey to Córdoba, Spain. Immerse yourself in the rich history of this Andalusian city, explore the stunning Mezquita-Catedral, and wander through the charming streets of the Jewish Quarter. Experience the cultural tapestry that defines Córdoba.",
                 "es": "Embárcate en un viaje de 7 u 9 días a Córdoba, España. Sumérgete en la rica historia de esta ciudad andaluza, explora la impresionante Mezquita-Catedral y pasea por las encantadoras calles del Barrio Judío. Experimenta el tapiz cultural que define a Córdoba."
-              },
+            },
             "variations": {
                 "begin": ["01/01/24", "15/01/24", "31/01/24"],
                 "duration": ["7d", "9d"],
@@ -816,7 +817,7 @@ let articlesData = {
             "description": {
                 "en": "Indulge in a 7 or 9-day journey to Bordeaux, France, renowned for its world-class vineyards and historic architecture. Discover the art of wine tasting, stroll through the charming old town, and savor exquisite French cuisine. Immerse yourself in the heart of wine country.",
                 "es": "Disfruta de un viaje de 7 u 9 días a Burdeos, Francia, famosa por sus viñedos de clase mundial y arquitectura histórica. Descubre el arte de la cata de vinos, pasea por el encantador casco antiguo y saborea la exquisita cocina francesa. Sumérgete en el corazón del país del vino."
-              },
+            },
             "variations": {
                 "begin": ["01/01/24", "15/01/24", "31/01/24"],
                 "duration": ["7d", "9d"],
@@ -835,7 +836,7 @@ let articlesData = {
             "description": {
                 "en": "Embark on a journey to Toledo, Spain, for 7 or 9 days. Explore the medieval charm of this UNESCO World Heritage city, visit iconic landmarks like the Alcázar, and wander through narrow cobblestone streets. Experience the cultural richness of Toledo.",
                 "es": "Embárcate en un viaje a Toledo, España, durante 7 u 9 días. Explora el encanto medieval de esta ciudad Patrimonio de la Humanidad de la UNESCO, visita lugares emblemáticos como el Alcázar y pasea por estrechas calles empedradas. Experimenta la riqueza cultural de Toledo."
-              },
+            },
             "variations": {
                 "begin": ["01/01/24", "15/01/24", "31/01/24"],
                 "duration": ["7d", "9d"],
@@ -854,7 +855,7 @@ let articlesData = {
             "description": {
                 "en": "Embark on a captivating journey to Kyoto with our 7 or 9-day trip. Discover the timeless beauty of traditional temples and gardens, experience the tranquility of bamboo forests, and delve into the cultural heritage of Japan. Immerse yourself in the essence of Kyoto.",
                 "es": "Embárcate en un cautivador viaje a Kioto con nuestro viaje de 7 u 9 días. Descubre la belleza atemporal de templos y jardines tradicionales, experimenta la tranquilidad de los bosques de bambú y sumérgete en el patrimonio cultural de Japón. Sumérgete en la esencia de Kioto."
-              },
+            },
             "variations": {
                 "begin": ["01/01/24", "15/01/24", "31/01/24"],
                 "duration": ["7d", "9d"],
@@ -873,7 +874,7 @@ let articlesData = {
             "description": {
                 "en": "Embark on a journey to Sintra, Portugal, for 7 or 9 days. Explore the romantic architecture of the Palácio Nacional da Pena, wander through lush forests, and enjoy the picturesque landscapes of this fairy-tale town. Experience the enchantment of Sintra.",
                 "es": "Embárcate en un viaje a Sintra, Portugal, durante 7 u 9 días. Explora la arquitectura romántica del Palácio Nacional da Pena, pasea por bosques exuberantes y disfruta de los paisajes pintorescos de esta ciudad de cuento de hadas. Experimenta el encanto de Sintra."
-              },
+            },
             "variations": {
                 "begin": ["01/01/24", "15/01/24", "31/01/24"],
                 "duration": ["7d", "9d"],
@@ -892,7 +893,7 @@ let articlesData = {
             "description": {
                 "en": "Indulge in a 7 or 9-day journey to Rotterdam, Netherlands, a city known for its modern architecture and vibrant cultural scene. Explore the innovative design of the Cube Houses, stroll along the scenic waterfront, and savor the diverse culinary offerings. Immerse yourself in Rotterdam's dynamic atmosphere.",
                 "es": "Disfrute de un viaje de 7 ó 9 días a Rotterdam (Países Bajos), ciudad conocida por su moderna arquitectura y su vibrante escena cultural. Explore el innovador diseño de las Casas Cubo, pasee por el pintoresco paseo marítimo y saboree la variada oferta culinaria. Sumérjase en la dinámica atmósfera de Rotterdam."
-              },
+            },
             "variations": {
                 "begin": ["01/01/24", "15/01/24", "31/01/24"],
                 "duration": ["7d", "9d"],
@@ -1152,25 +1153,201 @@ let articlesData = {
         },
     },
     "courses": {
-        "python_1": {
+        "python_course": {
             "title": {
-                "en": "Python course",
-                "es": "Curso de Python"
+                "en": "Python Programming Course",
+                "es": "Curso de Programación en Python"
             },
             "description": {
-                "en": "",
-                "es": ""
+                "en": "Comprehensive Python programming course for beginners to advanced developers.",
+                "es": "Curso completo de programación en Python para principiantes y desarrolladores avanzados."
             },
             "variations": {
-                "begin": ["01/01/24", "15/01/24", "31/01/24"],
-                "duration": ["1m", "2m"],
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate", "Advanced"]
             },
             "categories": ["programming"],
-            "images": ["python.png"],
-            "stock": 1,
-            "price": 35.93,
+            "images": ["python_course.jpeg"],
+            "stock": 10,
+            "price": 199.99,
             "stars": 5
-        }   
+        },
+        "webdev_bootcamp": {
+            "title": {
+                "en": "Web Development Bootcamp",
+                "es": "Bootcamp de Desarrollo Web"
+            },
+            "description": {
+                "en": "Intensive web development bootcamp covering HTML, CSS, JavaScript, and more.",
+                "es": "Bootcamp intensivo de desarrollo web que abarca HTML, CSS, JavaScript y más."
+            },
+            "variations": {
+                "duration": ["45d", "90d"],
+                "level": ["Beginner", "Intermediate", "Advanced"],
+                "framework": ["React", "Vue", "Angular"]
+            },
+            "categories": ["web_development"],
+            "images": ["web_dev_bootcamp.jpg"],
+            "stock": 15,
+            "price": 199.99,
+            "stars": 3
+        },
+        "data_science_fundamentals": {
+            "title": {
+                "en": "Data Science Fundamentals",
+                "es": "Fundamentos de Ciencia de Datos"
+            },
+            "description": {
+                "en": "In-depth course covering data analysis, machine learning, and data visualization.",
+                "es": "Curso profundo que abarca análisis de datos, aprendizaje automático y visualización de datos."
+            },
+            "variations": {
+                "duration": ["60d", "120d"],
+                "level": ["Beginner", "Intermediate", "Advanced"],
+                "framework": ["Python", "R"]
+            },
+            "categories": ["data_science"],
+            "images": ["Data-Science-Fundamentals.png"],
+            "stock": 8,
+            "price": 349.99,
+            "stars": 4
+        },
+        "flutter_mobile_dev": {
+            "title": {
+                "en": "Mobile App Development with Flutter",
+                "es": "Desarrollo de Aplicaciones Móviles con Flutter"
+            },
+            "description": {
+                "en": "Learn to build cross-platform mobile apps using the Flutter framework.",
+                "es": "Aprende a construir aplicaciones móviles multiplataforma con el framework Flutter."
+            },
+            "variations": {
+                "duration": ["45d", "90d"],
+                "level": ["Beginner", "Intermediate", "Advanced"],
+                "framework": ["Flutter"]
+            },
+            "categories": ["mobile", "programming"],
+            "images": ["flutter_mobile_dev.jpg"],
+            "stock": 12,
+            "price": 249.99,
+            "stars": 4
+        },
+        "cybersecurity_essentials": {
+            "title": {
+                "en": "Cybersecurity Essentials",
+                "es": "Conceptos Básicos de Ciberseguridad"
+            },
+            "description": {
+                "en": "Essential course covering cybersecurity principles, practices, and defense strategies.",
+                "es": "Curso esencial que abarca principios, prácticas y estrategias de defensa en ciberseguridad."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate", "Advanced"]
+            },
+            "categories": ["cybersecurity"],
+            "images": ["cybersecurity_essentials.jpeg"],
+            "stock": 10,
+            "price": 199.99,
+            "stars": 4
+        },
+        "graphic_design_masterclass": {
+            "title": {
+                "en": "Graphic Design Masterclass",
+                "es": "Masterclass de Diseño Gráfico"
+            },
+            "description": {
+                "en": "Comprehensive masterclass covering graphic design principles, tools, and techniques.",
+                "es": "Masterclass completa que abarca principios, herramientas y técnicas de diseño gráfico."
+            },
+            "variations": {
+                "duration": ["45d", "90d"],
+                "level": ["Beginner", "Intermediate", "Advanced"]
+            },
+            "categories": ["design"],
+            "images": ["graphic_design_masterclass.png"],
+            "stock": 15,
+            "price": 279.99,
+            "stars": 3
+        },
+        "business_analytics_intelligence": {
+            "title": {
+                "en": "Business Analytics and Intelligence",
+                "es": "Analítica de Negocios e Inteligencia Empresarial"
+            },
+            "description": {
+                "en": "Learn how to analyze business data and gain insights for informed decision-making.",
+                "es": "Aprende a analizar datos empresariales y obtener insights para la toma de decisiones informada."
+            },
+            "variations": {
+                "duration": ["30d", "45d", "120d"],
+                "level": ["Beginner", "Intermediate", "Advanced"]
+            },
+            "categories": ["data_science"],
+            "images": ["business_analytics_intelligence.PNG"],
+            "stock": 15,
+            "price": 259.99,
+            "stars": 4
+        },
+        "machine_learning_mastery": {
+            "title": {
+                "en": "Machine Learning Mastery",
+                "es": "Máster en Aprendizaje Automático"
+            },
+            "description": {
+                "en": "Comprehensive course on machine learning algorithms and applications.",
+                "es": "Curso completo sobre algoritmos y aplicaciones de aprendizaje automático."
+            },
+            "variations": {
+                "duration": ["30d", "120d"],
+                "level": ["Beginner", "Intermediate", "Advanced"],
+                "framework": ["TensorFlow"]
+            },
+            "categories": ["ml"],
+            "images": ["machine_learning_mastery.jpg"],
+            "stock": 17,
+            "price": 319.99,
+            "stars": 4
+        },
+        "ethical_hacking_cybersecurity": {
+            "title": {
+                "en": "Ethical Hacking and Cybersecurity",
+                "es": "Hacking Ético y Ciberseguridad"
+            },
+            "description": {
+                "en": "Gain skills in ethical hacking to secure systems and networks.",
+                "es": "Adquiere habilidades en hacking ético para asegurar sistemas y redes."
+            },
+            "variations": {
+                "duration": ["45d", "90d"],
+                "level": ["Beginner", "Intermediate", "Advanced"]
+            },
+            "categories": ["cybersecurity"],
+            "images": ["ethical_hacking_cybersecurity.jpg"],
+            "stock": 16,
+            "price": 299.99,
+            "stars": 3
+        },
+        "game_dev_unity": {
+            "title": {
+                "en": "Game Development with Unity",
+                "es": "Desarrollo de Juegos con Unity"
+            },
+            "description": {
+                "en": "Learn game development using the Unity game engine and C# programming.",
+                "es": "Aprende desarrollo de juegos utilizando el motor Unity y programación en C#."
+            },
+            "variations": {
+                "duration": ["45d", "120d"],
+                "level": ["Beginner", "Intermediate", "Advanced"],
+                "framework": ["Unity", "C#"]
+            },
+            "categories": ["game_dev"],
+            "images": ["game_dev_unity.jpg"],
+            "stock": 20,
+            "price": 349.99,
+            "stars": 5
+        },
     }
 }
 

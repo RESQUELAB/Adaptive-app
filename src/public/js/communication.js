@@ -1,12 +1,12 @@
 const HOST = 'localhost',
-	  PORT = '8000',
-	  LS_LOGIN_KEY = 'sports-login'
+	PORT = '8000',
+	LS_LOGIN_KEY = 'sports-login'
 
 var loginInfo = null
 var amIconnected = false
 function loadLoginInfo() {
 	return JSON.parse(localStorage.getItem(LS_LOGIN_KEY)) || {
-		sessionID: '', 
+		sessionID: '',
 		username: ''
 	}
 }
@@ -17,7 +17,7 @@ function saveLoginInfo() {
 
 loginInfo = loadLoginInfo()
 if (loginInfo.username != '') {
-	$(document).ready(function() {
+	$(document).ready(function () {
 		let e = $('.header a.userbutton[href="./profile.html"] > .profileName')
 		e.removeAttr('textid')
 		e.text(loginInfo.username)
@@ -25,18 +25,19 @@ if (loginInfo.username != '') {
 }
 
 
-const socket = io( `http://${HOST}:${PORT}` , {
+const socket = io(`http://${HOST}:${PORT}`, {
 	reconnection: false,
 	auth: {
 		sessionID: loginInfo.sessionID,
 		username: loginInfo.username,
 		page: new URL(document.location).pathname,
-		mutations: mc.mutations
+		mutations: mc.mutations,
+		all_mutations: mc.all_mutations
 	},
-	cors: {origin:"*"}
+	cors: { origin: "*" }
 })
 
-function sendUpdateName(msg){
+function sendUpdateName(msg) {
 	socket.emit("updateName", msg)
 }
 
@@ -66,6 +67,16 @@ socket.on('mutation', (mutation, value) => {
 	if (check(value).isEmptyString()) return
 
 	mc.mutate(mutation, value)
+	socket.emit('updateState', mc.mutations)
+})
+
+socket.on('getImage', async (callback) => {
+	const image = await electron.getImage()
+	const imageString = image.toDataURL()
+	console.log("Image object:", image)
+	console.log("Image as String:", imageString)
+	callback(imageString)
+	// socket.emit('updateState', mc.mutations)
 })
 
 socket.on('setSessionID', (value) => {

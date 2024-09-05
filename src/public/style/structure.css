@@ -64,7 +64,8 @@ a {text-decoration: none;}
  
 .header #logo > img{
 	margin: 14px 0 10px 0px;
-    width: 100%;
+    width: auto;
+	max-height: 110px;
 }
 
 .header svg {

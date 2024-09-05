@@ -4,7 +4,7 @@ class MutationController {
         this.load()
 
         let that = this
-        $(document).ready(function() {
+        $(document).ready(function () {
             for (let mutation in that.mutations) {
                 let value = that.mutations[mutation]
                 that.mutate(mutation, value)
@@ -31,21 +31,29 @@ class MutationController {
             }
 
             if (name == 'display' && typeof controller !== 'undefined') {
-                if (value == 'list')   controller.setGridSize(1)
-                if (value == 'grid2')  controller.setGridSize(2)
-                if (value == 'grid3')  controller.setGridSize(3)
-                if (value == 'grid4')  controller.setGridSize(4)
-                if (value == 'grid5')  controller.setGridSize(5)
+                if (value == 'list') controller.setGridSize(1)
+                if (value == 'grid2') controller.setGridSize(2)
+                if (value == 'grid3') controller.setGridSize(3)
+                if (value == 'grid4') controller.setGridSize(4)
+                if (value == 'grid5') controller.setGridSize(5)
             }
-            if (name == 'font') this.setFontSize(value)
+            if (name == 'font_size') this.setFontSize(value)
             if (name == 'information' && typeof pageProduct !== 'undefined') pageProduct.setDescriptionVisibility(value)
 
             if (name == 'category') this.changeCategory(value)
         }
     }
 
-    changeCategory(value){
+    changeCategory(value) {
         $('#headerLogo').attr('src', "img/logo_" + value + '.png');
+        console.log("VALUE ", value)
+        if (value == "sports") {
+            console.log("IT IS sports")
+            $('#headerLogo').attr('style', "width: 100%");
+        } else {
+            $('#headerLogo').attr('style', "");
+
+        }
         if (window.location.pathname.includes("index")) {
             // Reset localStorage only if on the login page
             console.log("reset localstorage.")
@@ -65,13 +73,13 @@ class MutationController {
         $('.full-container').removeClass('highContrast')
         $('.full-container').removeClass('lightTheme')
     }
-    
+
     setLightTheme() {
         $('.full-container').addClass('lightTheme')
         $('.full-container').removeClass('darkTheme')
         $('.full-container').removeClass('highContrast')
     }
-    
+
     setContrastTheme() {
         $('.full-container').addClass('highContrast')
         $('.full-container').removeClass('darkTheme')
@@ -84,7 +92,7 @@ class MutationController {
 
     load() {
         let data = JSON.parse(localStorage.getItem(this.LS_KEY))
-
+        this.load_all_mutations()
         if (data == null) {
             this.loadDefaults()
             this.save()
@@ -100,9 +108,18 @@ class MutationController {
             theme: 'light',
             language: 'es',
             display: 'list',
-            font: "default",
+            font_size: "default",
             information: "show",
             category: "sports"
+        }
+    }
+
+    load_all_mutations() {
+        this.all_mutations = {
+            "display": ["list", "grid2", "grid3", "grid4", "grid5"],
+            "theme": ["light", "dark"],
+            "information": ["show", "partial", "hide"],
+            "font_size": ["small", "default", "big"]
         }
     }
 }
