@@ -1,17 +1,26 @@
+.full-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
-.server-indicator-container, #login-message {
+.server-indicator-container {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 .server-indicator {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    margin-right: 10px;
     background-color: red;
+    margin-right: 10px;
 }
+
 .server-indicator.connected {
     background-color: #4caf50;
 }
@@ -21,141 +30,109 @@
 }
 
 #refresh-button {
-	background: none;
-	border: none;
-	cursor: pointer;
-	font-size: 18px;
-	color: #3498db;
-	margin-left: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #3498db;
+    margin-left: 15px;
 }
 
 #refresh-button:hover {
-	color: #2980b9; /* Adjust hover color as needed */
+    color: #2980b9;
 }
 
 #refresh-button.connecting {
-	animation: spin 1s infinite linear; /* Add spinning animation */
+    animation: spin 1s infinite linear;
 }
-
 
 @keyframes spin {
-	0% { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-.login-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-}
-
-.login-container {
-	text-align: center;
-}
-
-.login-card {
-	background-color: #ffffff;
-	padding: 20px;
-	border-radius: 8px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	max-width: 400px;
-	width: 100%;
-}
-
-.login-card h2 {
-	margin-bottom: 20px;
-}
-
-.login-card label {
-	display: block;
-	margin-bottom: 8px;
-	text-align: left;
-}
-
-.login-card input {
-	width: 100%;
-	padding: 10px;
-	margin: 10px 0;
-	box-sizing: border-box;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-}
-
-.login-card .password-container {
-	position: relative;
-}
-
-.login-card #password {
-	width: calc(100% - 30px);
-	padding-right: 30px;
-}
-.login-card #reg-password {
-	width: calc(100% - 30px);
-	padding-right: 30px;
-}
-
-.login-card .toggle-password {
-	position: absolute;
-	top: 60%;
-	right: 0;
-	transform: translateY(-50%);
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
-	outline: none;
-}
-
-.login-card button {
-	background-color: #4caf50;
-	color: #ffffff;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	font-size: 16px;
-	width: 100%;
-}
-
-.login-card button:hover {
-	background-color: #45a049;
-}
-
-/* Registration form styles */
-.registration-container {
+.register-card{
 	display: none;
-	flex-direction: column;
-	align-items: center;
-	padding: 20px;
-	border: 1px solid #ccc;
-	background-color: #fff;
-	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-.registration-card {
-	width: 100%;
-	max-width: 400px;
-	margin-top: 20px;
+
+.login-card, .register-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
 }
-#registration-message {
-	color: red;
-	margin-top: 10px;
+
+.login-card h2, .register-card h2 {
+    margin-bottom: 20px;
 }
-#register {
-	margin-top: 10px;
-	width: 100%;
+
+.login-card label, .register-card label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
 }
-/* Toggle between login and register */
+
+.login-card input, .register-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.password-container {
+    position: relative;
+}
+
+#password, #reg-password {
+    width: calc(100% - 30px);
+    padding-right: 30px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 60%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+button {
+    background-color: #4caf50;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
 .toggle-link {
-	margin-top: 10px;
-	text-align: center;
+    margin-top: 10px;
+    text-align: center;
 }
+
 .toggle-link-span {
-	cursor: pointer;
-	text-decoration: underline;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
-
-#headerLogo{
-	width: 200px;
-	height: auto;
+#login-message, #registration-message{
+	color: #4caf50;
+}
+#login-message .error, #registration-message .error{
+	color: red;
 }

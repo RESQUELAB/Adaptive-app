@@ -130,13 +130,16 @@
 	background-color: #fff;
 }
 
-.lightTheme .login-card button {
-	background-color: #4caf50;
-	color: #ffffff;
+/* Light Theme */
+.lightTheme .login-card button,
+.lightTheme .register-card button {
+    background-color: #4caf50;
+    color: #ffffff;
 }
 
-.lightTheme .login-card button:hover {
-	background-color: #45a049;
+.lightTheme .login-card button:hover,
+.lightTheme .register-card button:hover {
+    background-color: #45a049;
 }
 
 .lightTheme .toggle-link-span {

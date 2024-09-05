@@ -73,8 +73,18 @@ this.io.on("connection", (socket) => {
     })
 
     socket.on('loginRequest', (password) => {
+        console.log("loginRequest: ", password)
         newsocket.emit('loginRequest', password)
     })
+    
+    socket.on('registerRequest', (data) => {
+        console.log("registerRequest:: ",data)
+        newsocket.emit('registerRequest', data)
+    })
+
+    newsocket.on('registerResponse', (data) => {
+        socket.emit('registerResponse', data);
+    });    
 
     newsocket.on('login', (value) => {
         socket.emit('login', value)

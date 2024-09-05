@@ -1,14 +1,14 @@
 
 // Toggle between Login and Registration form
 function toggleForm() {
-    const loginContainer = document.querySelector('.login-container');
-    const registrationContainer = document.querySelector('.registration-container');
+    const loginContainer = document.querySelector('.login-card');
+    const registrationContainer = document.querySelector('.register-card');
 
     const loginDisplay = window.getComputedStyle(loginContainer).display;
     const registrationDisplay = window.getComputedStyle(registrationContainer).display;
 
-    loginContainer.style.display = loginDisplay === 'none' ? 'flex' : 'none';
-    registrationContainer.style.display = registrationDisplay === 'none' ? 'flex' : 'none';
+    loginContainer.style.display = loginDisplay === 'none' ? 'block' : 'none';
+    registrationContainer.style.display = registrationDisplay === 'none' ? 'block' : 'none';
 }
 
 
@@ -33,8 +33,52 @@ function getUsername() {
 }
 
 
+$('#register').on('click', function () {
+    // Obtener los valores ingresados en el formulario de registro
+    var username = $('#reg-username')[0].value;
+    var password = $('#reg-password')[0].value;
+
+    // Validar que todos los campos estén completos (puedes agregar más validaciones si es necesario)
+    if (!username || !password) {
+        document.getElementById('registration-message').textContent = 'Por favor, completa todos los campos';
+        return;
+    }
+
+    // Emitir un evento de registro al servidor con los datos
+    socket.emit('registerRequest', { username: username, password: password });
+
+    // Esperar la respuesta del servidor
+    var registrationPromise = new Promise(function (resolve, reject) {
+        socket.once('registerResponse', function (response) {
+            resolve(response); // Resolver la promesa con la respuesta del servidor
+        });
+    });
+
+    // Manejar la respuesta del servidor
+    registrationPromise.then(function (response) {
+        console.log(response)
+        console.log(response.success)
+        if (response.success === true) {
+            // Registro exitoso, redirigir a la página de inicio de sesión
+            document.getElementById('registration-message').textContent = 'Registro exitoso. Puede iniciar sesión';
+            setTimeout(function() {
+                toggleForm()
+                document.getElementById('login-message').textContent = 'Registro exitoso. Puede iniciar sesión';
+                document.getElementById('username').value = username;
+            }, 2000); // Esperar 2 segundos antes de redirigir
+        } else {
+            // Mostrar un mensaje de error si el registro falla
+            document.getElementById('registration-message').textContent = 'Error en el registro: ' + response.message;
+        }
+    }).catch(function (error) {
+        document.getElementById('registration-message').textContent = 'Error de conexión: ' + error;
+    });
+});
+
 $('#login').on('click', function () {
     // checkServerStatus()
+    console.log("Trying to log in.")
+    console.log(socket)
     // Get the password from the user input
     var password = $('#password')[0].value
     // Send login request to the server
