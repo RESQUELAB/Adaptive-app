@@ -14,7 +14,7 @@
     grid-column: 3/6;
 	display: grid;
     grid-gap: 1px;
-    background: #bdbdbd;
+    /*background: #bdbdbd;*/ 
     border-radius: 6px;
 }
 .catalog-1cols {
@@ -56,7 +56,7 @@
 }
 
 .catalog-article .title {
-    font-size: 110%;
+    font-size: 130%;
 }
 
 .catalog-article img {
@@ -90,7 +90,7 @@
     left: 1px;
 }
 .catalog-article .star_rating {
-    margin: 6px 2px 8px;
+    margin: 12px 2px 2px;
 }
 .catalog-article svg.heart {
     float: right;
@@ -102,7 +102,7 @@
 /* List catalog */
 .catalog-1cols .catalog-article {
     display: grid;
-    grid-template-columns: 10% 80% 10%;
+    grid-template-columns: 20% 70% 10%;
     align-items: center;
 }
 

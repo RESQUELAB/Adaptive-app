@@ -127,9 +127,10 @@
   }
   
   .thumbnails img {
-    width: 100px; /* Adjust the size of the thumbnails */
-    height: 100px;
+    width: 110px;
+    height: auto;
     margin-right: 8px;
+    margin-top: 15px;
     scroll-snap-align: start;
   }
   

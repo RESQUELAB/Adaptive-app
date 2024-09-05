@@ -6,19 +6,19 @@ class CartController {
 	}
 
 	render() {
-		if(Object.keys(cart.data).length == 0 ){
+		if (Object.keys(cart.data).length == 0) {
 			this.renderEmptyBasket();
-			document.getElementById("articleList").style.display = "none"; 
-			document.getElementById("basketSummary").style.display = "none"; 
-		}else {
-			document.getElementById("articleList").style.display = "block"; 
+			document.getElementById("articleList").style.display = "none";
+			document.getElementById("basketSummary").style.display = "none";
+		} else {
+			document.getElementById("articleList").style.display = "block";
 			document.getElementById("basketSummary").style.display = "grid";
 			this.renderArticleList()
 			this.renderBasketSummary()
 		}
 	}
 
-	renderEmptyBasket(){
+	renderEmptyBasket() {
 		let html = '<div><span textId="emptyCart:1c"></span></div>'
 		this.articleList.before(html)
 	}
@@ -32,7 +32,7 @@ class CartController {
 						<span textId="quantity:1c"></span>
 						<span textId="amount:1c"></span>
 					</div>`
-		
+
 		let line = 0
 		for (let article of cart.data) {
 			// Ensure article id in cart exists
@@ -71,9 +71,9 @@ class CartController {
 		for (let v in article.variations) {
 			let s = ''
 			let val = article.variations[v]
-			
+
 			s += `<span textId="${v}Selector"></span> `
-			if ( check((Number)(val)).isNumber() )
+			if (check((Number)(val)).isNumber())
 				s += `<span>${article.variations[v]}</span>`
 			else
 				s += `<span textId="${article.variations[v]}Choice"></span>`
@@ -102,7 +102,7 @@ class CartController {
 		</div>
 		<div id="taxes">
 			<div>Impuestos (21%)</div>
-			<div>${(((this.total + 6)/1.21)*0.21).toFixed(2)}€</div>
+			<div>${(((this.total + 6) / 1.21) * 0.21).toFixed(2)}€</div>
 		</div>
 		<div class="confirmPurchase">
 			<a href="order.html?action=create">
@@ -132,7 +132,7 @@ class CartController {
 		})
 
 		// input[type=number] on change
-		$('#articleList .articleQuantity input[type=number]').on('change', function() {
+		$('#articleList .articleQuantity input[type=number]').on('change', function () {
 			let value = this.valueAsNumber
 			let line = (Number)($(this).parent().parent().attr('name'))
 			cart.setQ(line, value)
@@ -141,7 +141,7 @@ class CartController {
 		})
 
 		// Remove button listeners
-		$('#articleList .articleQuantity .remove').click(function() {
+		$('#articleList .articleQuantity .remove').click(function () {
 			let line = (Number)($(this).parent().parent().attr('name'))
 			cart.delLine(line)
 			cartController.render()

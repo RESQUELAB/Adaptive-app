@@ -60,3 +60,24 @@ spec/fixtures/logo.png
 
 # Electron stuff
 app-tests/out
+
+# Package created
+AdaptiveApp-win32-x64/
+
+# Log-Files
+*.txt
+
+# Images
+*.png
+*.jpg
+*.jpeg
+
+# Libraries
+*.dll
+
+# Compiled versions
+*.exe
+src/release*
+
+# proxy-src
+proxy_src/*

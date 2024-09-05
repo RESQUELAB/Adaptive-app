@@ -5,7 +5,7 @@ class CatalogController {
 		this.catalogPanel = $('.full-container > .catalog')
 		this.page = 1
 		if (this.catalogPanel.length == 0) this.catalogPanel = null
-		
+
 		this.filtersPanel = $('.full-container > .filters')
 		if (this.filtersPanel.length == 0) this.filtersPanel = null
 
@@ -24,7 +24,7 @@ class CatalogController {
 
 		this.setResultsNumber()
 		this.maxArticlesPerPage = Math.min(this.filter.filteredArticles.length, 20)
-		this.maxArticlesPerPage -= this.resultsNumber%this.gridSize
+		this.maxArticlesPerPage -= this.resultsNumber % this.gridSize
 
 
 		if (this.rendered)
@@ -36,14 +36,14 @@ class CatalogController {
 		this.resultsNumber = Math.min(this.filter.filteredArticles.length, 30)
 
 		// Adjust to a number that can fit in the grid size
-		this.resultsNumber -= this.resultsNumber%this.gridSize
+		//this.resultsNumber -= this.resultsNumber % this.gridSize
 	}
 
 	parseArticles() {
 		this.articles = []
 
 		for (let articleId in articlesData)
-			this.articles.push( new Article(articleId, articlesData[articleId]) )
+			this.articles.push(new Article(articleId, articlesData[articleId]))
 
 		this.filter = new Filter(this.articles, this)
 	}
@@ -56,7 +56,7 @@ class CatalogController {
 
 	getResultsHtml() {
 		let maxArticles = Math.min(20, this.articles.length)
-		maxArticles -= maxArticles%this.gridSize
+		maxArticles -= maxArticles % this.gridSize
 
 		return `<div class="results">
 			<span textId="results_found_0:1c"></span>
@@ -98,28 +98,28 @@ class CatalogController {
 	}
 
 	setSlider(min, max) {
-		$( function() {
-			$( "#slider-range" ).slider({
-			  range: true,
-			  min: min,
-			  step: 5,
-			  max: max,
-			  values: [ min, max ],
-			  slide: function( event, ui ) {
-				let min = (Number)(ui.values[0])
-				let max = (Number)(ui.values[1])
+		$(function () {
+			$("#slider-range").slider({
+				range: true,
+				min: min,
+				step: 5,
+				max: max,
+				values: [min, max],
+				slide: function (event, ui) {
+					let min = (Number)(ui.values[0])
+					let max = (Number)(ui.values[1])
 
-				$("#price_filter #price_min").text( min + "€")
-				$("#price_filter #price_max").text( max + "€")
+					$("#price_filter #price_min").text(min + "€")
+					$("#price_filter #price_max").text(max + "€")
 
-				controller.filter.minPrice = min
-				controller.filter.maxPrice = max
-				controller.filter.applyFilters()
-			  }
+					controller.filter.minPrice = min
+					controller.filter.maxPrice = max
+					controller.filter.applyFilters()
+				}
 			});
-			$("#price_filter #price_min").text( $( "#slider-range" ).slider( "values", 0 ) + "€");
-			$("#price_filter #price_max").text( $( "#slider-range" ).slider( "values", 1 ) + "€");
-		} );
+			$("#price_filter #price_min").text($("#slider-range").slider("values", 0) + "€");
+			$("#price_filter #price_max").text($("#slider-range").slider("values", 1) + "€");
+		});
 	}
 
 	renderFilters() {
@@ -146,7 +146,7 @@ class CatalogController {
 class Filter {
 	constructor(articles, controller) {
 		let cats = (new URL(document.location)).searchParams.get('cat')
-		cats = cats? cats.split(',') : ["sneakers", "trail", "trecking", "urban", "running", "sandals"]
+		cats = cats ? cats.split(',') : uniqueCategories
 
 		this.controller = controller
 		this.selectedCategories = cats
@@ -164,7 +164,7 @@ class Filter {
 		// Custom filters
 		this.inStock = false
 		this.fastShipment = false
-		
+
 		this.parseArticles(articles)
 		this.allArticles = this.filteredArticles
 	}
@@ -174,12 +174,11 @@ class Filter {
 		if (typeof lang === 'undefined') {
 			lang = 'es';
 		}
-		console.log(getLang())
 		let input = document.getElementById("search_input").value
 		let filtered = []
 		for (let aID of this.allArticles) {
 			let a = articlesData[aID]
-			if ((a.title[lang]).toLowerCase().includes(input.toLowerCase())){
+			if ((a.title[lang]).toLowerCase().includes(input.toLowerCase())) {
 				filtered.push(aID)
 			}
 		}
@@ -191,7 +190,7 @@ class Filter {
 
 	readFilters() {
 		let v = this.variations = {}
-		$('input[name^="filter_"]:checked').each(function() {
+		$('input[name^="filter_"]:checked').each(function () {
 			let e = $(this)
 			let filter = e.attr('name').split('_')[1]
 			let value = e.attr('name').split('_')[2]
@@ -212,27 +211,24 @@ class Filter {
 
 			if (a.stars < this.minStars) continue
 			if (a.stars > this.maxStars) continue
-
 			let cont = false
 			for (let filter in this.variations) {
 				if (!check(a.variations).has(filter)) {
 					cont = true
 					break
 				}
-				if (!array(a.variations[filter]).hasOne(this.variations[filter]) ) {
+				if (!array(a.variations[filter].map(String)).hasOne(this.variations[filter])) {
 					cont = true
 					break
 				}
 			}
 			if (cont) continue
-
 			if (!array(this.selectedCategories).hasOne(a.categories)) continue
 			if (this.isFav && !favs.isFav(aID)) continue
 
 			// Custom filters
 			if (this.inStock && a.stock == 0) continue
 			if (this.fastShipment && a.shipment == 0) continue
-
 			filtered.push(aID)
 		}
 		this.filteredArticles = filtered
@@ -247,7 +243,7 @@ class Filter {
 			this.filteredArticles.push(article.id)
 			this.maxPrice = Math.max(article.price, this.maxPrice)
 			this.minPrice = Math.min(article.price, this.minPrice)
-			
+
 			for (let variation in article.variations) {
 				obj(this.variations).newProperty(variation, [])
 				array(this.variations[variation]).extend(article.variations[variation])
@@ -256,11 +252,11 @@ class Filter {
 			array(this.categories).extend(article.categories)
 			array(this.stocks).pushNew(article.stock)
 			array(this.shipmentTypes).pushNew(article.shipment)
-			
+
 			this.minStars = Math.min(this.minStars, article.stars)
 			this.maxStars = Math.max(this.maxStars, article.stars)
 		}
-		
+
 		if (this.variations.sizes)
 			this.variations.sizes = this.variations.sizes.sort()
 	}
@@ -273,7 +269,7 @@ class Filter {
 
 		// Price
 		html += this.getFilterHtml('price:1c', '<div id="price_filter"><span id="price_min"></span><span id="price_max"></span><div id="slider-range"></div></div>')
-		
+
 		html += this.getVariationsHtml()
 
 		// With stock
@@ -286,24 +282,23 @@ class Filter {
 				<input type="checkbox"/>
 				<span textId="rapid_shipment:1c"></span>
 			</label>`)
-		
-	
+
+
 		return html
 	}
 
 	getVariationsHtml() {
 		let html = ''
 		for (let variation in this.variations) {
-			console.log(variation)
 			let s = ''
 			for (let opt of this.variations[variation]) {
 				s += `
 				<label>
 				  <input type="checkbox" name="filter_${variation}_${opt}" value="${opt}">
-				  ${check(opt).isNumber() 
-					? `<span class="choice">${opt}</span>` 
-					: `<span class="choice" textId="${opt}Choice:1c"></span>`
-				  }
+				  ${check(opt).isNumber()
+						? `<span class="choice">${opt}</span>`
+						: `<span class="choice" textId="${opt}Choice:1c"></span>`
+					}
 				</label>
 			  `;
 			}
@@ -314,10 +309,10 @@ class Filter {
 
 	setupListeners() {
 		let that = this
-		$('input[name^="filter_"]').on('click', function() {
+		$('input[name^="filter_"]').on('click', function () {
 			that.applyFilters()
 		})
-		$('#search_input').on('keyup', function() {
+		$('#search_input').on('keyup', function () {
 			that.search_by_name()
 		})
 	}
@@ -368,10 +363,10 @@ class Article {
 	getStarRatingHtml() {
 		let n = Math.round(this.stars)
 		let s = ''
-		for (let i = 0; i<n; i++)
+		for (let i = 0; i < n; i++)
 			s += '<svg class="star"><path xmlns="http://www.w3.org/2000/svg" d="M7.641.781l1.735 4.106 4.441.382c.308.027.433.411.199.613l-3.368 2.918 1.009 4.341c.07.302-.257.539-.522.379l-3.816-2.302-3.816 2.302c-.265.16-.591-.078-.522-.379l1.009-4.341-3.369-2.919c-.234-.202-.109-.587.199-.613l4.441-.382 1.735-4.105c.12-.286.524-.286.645 0z"></path></svg>\n'
-		n = 5-n
-		for (let i=0; i<n; i++)
+		n = 5 - n
+		for (let i = 0; i < n; i++)
 			s += '<svg class="star empty"><path xmlns="http://www.w3.org/2000/svg" d="M7.641.781l1.735 4.106 4.441.382c.308.027.433.411.199.613l-3.368 2.918 1.009 4.341c.07.302-.257.539-.522.379l-3.816-2.302-3.816 2.302c-.265.16-.591-.078-.522-.379l1.009-4.341-3.369-2.919c-.234-.202-.109-.587.199-.613l4.441-.382 1.735-4.105c.12-.286.524-.286.645 0z"></path></svg>\n'
 
 		return s

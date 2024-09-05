@@ -112,7 +112,7 @@ class ProductPage {
 		</div>
 	  </div>
 	  <div class="product-description">
-		<h4>Description</h4>
+		<h4 textId="descriptionTitle:1c"></h4>
 		<div class="description-section" textId="${this.id}_desc">-desc-</div>
 	  </div>
 	  `)
