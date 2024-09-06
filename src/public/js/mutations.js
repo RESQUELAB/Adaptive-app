@@ -45,6 +45,9 @@ class MutationController {
     }
 
     changeCategory(value) {
+
+        $('#full-container').attr('background-image', "../img/logo_" + value + '.png');
+
         $('#headerLogo').attr('src', "img/logo_" + value + '.png');
         console.log("VALUE ", value)
         if (value == "sports") {

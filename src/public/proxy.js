@@ -72,9 +72,9 @@ this.io.on("connection", (socket) => {
         newsocket.emit('click', value)
     })
 
-    socket.on('loginRequest', (password) => {
-        console.log("loginRequest: ", password)
-        newsocket.emit('loginRequest', password)
+    socket.on('loginRequest', (data) => {
+        console.log("loginRequest: ", data)
+        newsocket.emit('loginRequest', data)
     })
     
     socket.on('registerRequest', (data) => {
@@ -86,8 +86,9 @@ this.io.on("connection", (socket) => {
         socket.emit('registerResponse', data);
     });    
 
-    newsocket.on('login', (value) => {
-        socket.emit('login', value)
+    newsocket.on('loginResponse', (data) => {
+        console.log("loginResponse: ", data)
+        socket.emit('loginResponse', data)
     })
 
     socket.on('scroll', (value) => {

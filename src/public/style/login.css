@@ -1,16 +1,33 @@
+#headerLogo{
+	display: none !important;
+}
 .full-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+	background-image: url(../img/logo_courses.png);
+    background-size: 100vh;
+    /* background-color: rgba(255, 0, 0, 1); */
+    /* opacity: 50%; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-blend-mode: lighten;
 }
 
 .server-indicator-container {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 	margin-top: 20px;
+	background-color: rgb(171 171 171 / 26%);
+	position:absolute;
+	bottom: 0px;
+	padding: 8px;
+	padding-left: 3%;
+	width: 100%;
 }
 
 .server-indicator {
@@ -64,6 +81,8 @@
     width: 100%;
     text-align: center;
     margin-top: 20px;
+	opacity: 95%;
+    height: 59vh;
 }
 
 .login-card h2, .register-card h2 {

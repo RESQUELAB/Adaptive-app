@@ -4,6 +4,7 @@
 	margin-left: 1.6%;
 	float: left;
     margin-right: 50px;
+    height: 100vh;
 }
 .filters #price_max {float:right;}
 .filters #slider-range {margin-top: 5px;}

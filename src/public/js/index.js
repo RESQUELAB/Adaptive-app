@@ -76,29 +76,36 @@ $('#register').on('click', function () {
 });
 
 $('#login').on('click', function () {
-    // checkServerStatus()
-    console.log("Trying to log in.")
-    console.log(socket)
-    // Get the password from the user input
-    var password = $('#password')[0].value
-    // Send login request to the server
-    socket.emit('loginRequest', password);
+    // Obtener los valores ingresados en el formulario de registro
+    var username = $('#username')[0].value;
+    var password = $('#password')[0].value;
+
+    // Validar que todos los campos estén completos (puedes agregar más validaciones si es necesario)
+    if (!username || !password) {
+        document.getElementById('login-message').textContent = 'Por favor, escriba su usuario y contraseña para iniciar sesión.';
+        return;
+    }
+
+    // Emitir un evento de registro al servidor con los datos
+    socket.emit('loginRequest', { username: username, password: password });
+
     // Wait for response from the server
     var loginPromise = new Promise(function (resolve, reject) {
-        socket.once('login', function (response) {
+        socket.once('loginResponse', function (response) {
             resolve(response); // Resolve the promise with the response from the server
         });
     });
 
     // Handle the response from the server
     loginPromise.then(function (response) {
-        if (response === 1) {
+        console.log("got the response:: ", response)
+        if (response.success === true) {
             // Login successful, redirect to catalog page
             loginInfo.username = getUsername();
             saveLoginInfo();
             document.location = './catalog.html';
         } else {
-            document.getElementById('login-message').textContent = 'Contraseña incorrecta';
+            document.getElementById('login-message').textContent = response.message;
         }
     }).catch(function (error) {
         document.getElementById('login-message').textContent = error;
