@@ -52,14 +52,21 @@
 	outline-color: cornflowerblue;
 }
 
-.lightTheme button {
+/* .lightTheme button {
 	background-color: #BBBBEE;
 	outline-color: cornflowerblue;
-}
+} */
 
 .lightTheme button.positive {
-	background-color: #57ff57;
-	color: black;
+    background-color: #4CAF50; /* Softer green */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+.lightTheme button.positive:hover {
+    background-color: #45a049; /* Darker on hover */
 }
 
 .lightTheme div.positive {
@@ -67,7 +74,16 @@
 }
 
 .lightTheme button.negative {
-	background-color: #DD8888;
+    background-color: #f44336; /* Softer red */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.lightTheme button.negative:hover {
+    background-color: #e53935; /* Darker on hover */
 }
 
 .lightTheme div.negative {
@@ -131,7 +147,7 @@
 }
 
 /* Light Theme */
-.lightTheme .login-card button,
+/* .lightTheme .login-card button,
 .lightTheme .register-card button {
     background-color: #4caf50;
     color: #ffffff;
@@ -140,7 +156,7 @@
 .lightTheme .login-card button:hover,
 .lightTheme .register-card button:hover {
     background-color: #45a049;
-}
+} */
 
 .lightTheme .toggle-link-span {
 	color: #007BFF;

@@ -41,6 +41,10 @@ class MutationController {
             if (name == 'information' && typeof pageProduct !== 'undefined') pageProduct.setDescriptionVisibility(value)
 
             if (name == 'category') this.changeCategory(value)
+            if (name == 'menu_type' && typeof controller !== 'undefined' ){
+                console.log("MENU TYPE: ", name, " - ", value)
+                controller.changeFilters(name, value)
+            }
         }
     }
 
@@ -101,9 +105,17 @@ class MutationController {
             this.save()
         }
         else {
-            this.mutations = data
+            const missingMutations = Object.keys(this.all_mutations).filter(mutation => !data.hasOwnProperty(mutation));
+    
+            // Load defaults for any missing mutations
+            if (missingMutations.length > 0) {
+                missingMutations.forEach(mutation => {
+                    data[mutation] = this.all_mutations[mutation][0]; // Load default for missing mutation
+                });
+            }
+    
+            this.mutations = data; // Set the mutations to the loaded data
         }
-
     }
 
     loadDefaults() {
@@ -113,7 +125,8 @@ class MutationController {
             display: 'list',
             font_size: "default",
             information: "show",
-            category: "sports"
+            category: "sports",
+            menu_type: "line",
         }
     }
 
@@ -122,7 +135,8 @@ class MutationController {
             "display": ["list", "grid2", "grid3", "grid4", "grid5"],
             "theme": ["light", "dark"],
             "information": ["show", "partial", "hide"],
-            "font_size": ["small", "default", "big"]
+            "font_size": ["small", "default", "big"],
+            "menu_type": ["line", "dropdown"]
         }
     }
 }

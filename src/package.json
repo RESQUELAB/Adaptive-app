@@ -28,9 +28,10 @@
     "gulp-source-injector": "^1.0.1"
   },
   "dependencies": {
+    "axios": "^1.7.7",
+    "graceful-fs": "4.2.2",
     "socket.io": "^4.7.2",
-    "socket.io-client": "^4.7.2",
-    "graceful-fs": "4.2.2"
+    "socket.io-client": "^4.7.2"
   },
   "repository": {
     "type": "git",

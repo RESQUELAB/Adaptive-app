@@ -7,13 +7,38 @@ var amIconnected = false
 function loadLoginInfo() {
 	return JSON.parse(localStorage.getItem(LS_LOGIN_KEY)) || {
 		sessionID: '',
-		username: ''
+		username: '',
+		session: 0,
+		groupDefinition: {},
+		userProfile: {},
 	}
 }
+
 function saveLoginInfo() {
 	localStorage.setItem(LS_LOGIN_KEY, JSON.stringify(loginInfo))
 }
 
+function setUsername(username){
+	console.log("SETTING THE USERNAME TO:: ", username)
+	loginInfo.username = username
+	saveLoginInfo()
+}
+
+function setUserProfile(userProfile){
+	loginInfo.userProfile = userProfile
+	console.log("this is the user profile:" ,loginInfo.userProfile)
+	saveLoginInfo()
+}
+
+function setSession(session) {
+	loginInfo.session = session
+	saveLoginInfo()
+}
+
+function setGroupDefinition(groupDefinition) {
+	loginInfo.groupDefinition = groupDefinition
+	saveLoginInfo()
+}
 
 loginInfo = loadLoginInfo()
 if (loginInfo.username != '') {
@@ -23,7 +48,6 @@ if (loginInfo.username != '') {
 		e.text(loginInfo.username)
 	})
 }
-
 
 const socket = io(`http://${HOST}:${PORT}`, {
 	reconnection: false,
@@ -41,6 +65,10 @@ function sendUpdateName(msg) {
 	socket.emit("updateName", msg)
 }
 
+function askForAgent(value) {
+	socket.emit("askForAgent", value)
+}
+
 function sendClickInfo(msg) {
 	socket.emit('click', msg)
 	//console.log("click enviado")
@@ -50,6 +78,15 @@ function sendScrollInfo(msg) {
 	socket.emit('scroll', msg)
 	// console.log("click enviado")
 }
+
+function getProfileInformation(){
+	console.log("ASKING FOR INFORMATION FROM:: ", loginInfo.username)
+	socket.emit("askForProfile", loginInfo.username)
+}
+
+socket.on('profileInformation', (profile) => {
+	console.log(profile)
+})
 
 socket.on('connect', (Socket) => {
 	console.log('Connection established to server.')
@@ -70,6 +107,15 @@ socket.on('mutation', (mutation, value) => {
 	socket.emit('updateState', mc.mutations)
 })
 
+socket.on('location', (location, value) => {
+	console.log(location, value)
+	if (check(location).isEmptyString()) return
+	if (check(value).isEmptyString()) return
+
+	document.location = value;
+	// socket.emit('updateState', mc.mutations)
+})
+
 socket.on('getImage', async (callback) => {
 	const image = await electron.getImage()
 	const imageString = image.toDataURL()
@@ -83,6 +129,12 @@ socket.on('setSessionID', (value) => {
 	loginInfo.sessionID = value
 	saveLoginInfo()
 	console.log('session id setted')
+})
+
+socket.on("setExperimentSession", (value) => {
+	loginInfo.session = value
+	saveLoginInfo()
+	console.log("Experiment Session setted to: " , value)
 })
 
 socket.on('disconnect', () => {

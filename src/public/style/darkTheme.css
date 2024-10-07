@@ -58,8 +58,16 @@
 }
 
 .darkTheme button.positive {
-	background-color: #088c08;
-	color: white;
+    background-color: #388e3c; /* Darker green for dark theme */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.darkTheme button.positive:hover {
+    background-color: #2e7d32; /* Darker on hover */
 }
 
 .darkTheme div.positive {
@@ -67,7 +75,16 @@
 }
 
 .darkTheme button.negative {
-	background-color: #884444;
+    background-color: #d32f2f; /* Softer red for dark theme */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.darkTheme button.negative:hover {
+    background-color: #c62828; /* Darker on hover */
 }
 
 .darkTheme div.negative {
@@ -191,15 +208,50 @@
 }
 
 .darkTheme .login-card,
-.darkTheme .register-card {
+.darkTheme .register-card,
+.darkTheme .main-content {
     background-color: #2c3e50;
     color: #ecf0f1;
 }
 
 .darkTheme .login-card label,
-.darkTheme .register-card label {
+.darkTheme .register-card label
+.darkTheme .main-content {
     color: #ecf0f1;
+	font-weight: 600; /* Make labels bold */
+
 }
+
+
+.darkTheme .description-text p {
+    color: #bdc3c7; /* Use a lighter color for paragraph text */
+}
+
+.darkTheme .welcome-message h1 {
+    color: #ffffff; /* Make the header text bright white */
+}
+.darkTheme .card_selection {
+    background-color: #34495e; /* Darker background for cards */
+    color: #ecf0f1; /* Lighter text color for contrast */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5); /* Slightly darker shadow */
+}
+
+.darkTheme .card_selection:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: #2c3e50; /* Darker on hover */
+}
+
+.darkTheme .card_selection img {
+    filter: brightness(0.9); /* Slightly darken images */
+}
+
+/* Optional: Add a text shadow for better readability */
+.darkTheme .main-content {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+
 
 .darkTheme .login-card input,
 .darkTheme .register-card input {
@@ -223,3 +275,52 @@
 .darkTheme .register-card button:hover {
     background-color: #2980b9;
 }
+
+
+.darkTheme .profile {
+	background-color: #1e1e1e; /* Dark background */
+	color: #e0e0e0; /* Light text for contrast */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow for dark mode */
+  }
+  
+  .darkTheme .profile input[type=text] {
+	background-color: #2a2a2a; /* Darker input background */
+	color: #ffffff; /* Light text */
+	border: 1px solid #444; /* Darker border */
+  }
+  
+  .darkTheme .profile input[type=text]:focus {
+	border-color: #007fff; /* Highlight border on focus */
+  }
+  
+  .darkTheme .tab button {
+	background-color: #2a2a2a; /* Dark background for buttons */
+	color: #e0e0e0; /* Light text for tabs */
+  }
+  
+  .darkTheme .tab button:hover, .darkTheme .tab button.active {
+	background-color: #444444; /* Darker hover/active background */
+	color: #ffffff; /* Keep text light on hover */
+  }
+  
+  .darkTheme .tabcontent {
+	background-color: #2a2a2a; /* Darker tab content background */
+	color: #e0e0e0; /* Light text */
+	border-color: #444444; /* Darker borders */
+  }
+  
+  /* Dark theme style for the Back button */
+.darkTheme .back-button {
+	background: #c79400; /* Darker yellow */
+	color: #fff; /* Light text for contrast */
+  }
+  
+  .darkTheme .back-button:hover {
+	background: #b38600; /* Darker hover state */
+  }
+  /* Optional: Style for the date input in dark theme */
+.darkTheme .profile input[type=date] {
+	background-color: #2c2c2c; /* Dark background for dark theme */
+	border: 1px solid #555; /* Darker border */
+	color: #fff; /* Light text for contrast */
+  }

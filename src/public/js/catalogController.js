@@ -2,6 +2,7 @@ class CatalogController {
 	constructor() {
 		this.rendered = false
 		this.gridSize = 1
+		this.menu_type = "line"
 		this.catalogPanel = $('.full-container > .catalog')
 		this.page = 1
 		if (this.catalogPanel.length == 0) this.catalogPanel = null
@@ -29,6 +30,20 @@ class CatalogController {
 
 		if (this.rendered)
 			this.render()
+	}
+
+	changeFilters(name, value){
+		console.log("CHANGING THE FILTER, MUTATION", name, " . ", value)
+		if(name == "menu_type"){
+			this.filter.menuType = value
+
+			// Regenerate the categories HTML using the updated menu type
+			let newInnerHtml = this.filter.getCategoriesHtml()
+
+			// Replace only the inner HTML of the existing categories box
+			document.querySelector('#id_categories .inner-content').innerHTML = newInnerHtml;
+			translateTexts()
+		}
 	}
 
 	setResultsNumber() {
@@ -150,6 +165,7 @@ class Filter {
 
 		this.controller = controller
 		this.selectedCategories = cats
+		this.menuType = "default"
 		this.filteredArticles = []
 		this.maxPrice = 0
 		this.minPrice = 9999999999
@@ -318,19 +334,85 @@ class Filter {
 	}
 
 	getFilterHtml(titleId, innerHtml) {
-		return `<div class="box">
+		let div_id = titleId
+		if (titleId == "categories:1c"){
+			div_id = "categories"
+		}
+		return `<div id="id_${div_id}" class="box">
 		<div class="title" textId="${titleId}"></div>
-		${innerHtml}
+		<div class="inner-content">
+            ${innerHtml}
+        </div>
 		</div>`
 	}
 
 	getCategoriesHtml() {
 		let s = ''
-		for (let c of this.categories)
-			//s += `<div class="line">${array(this.selectedCategories).has(c)? '>' : ''}<a href="./catalog.html?cat=${c}" textId="category_${c}:1c"></a></div>`
-			s += `<div class="line"><a href="./catalog.html?cat=${c}" textId="category_${c}:1c"></a></div>`
-		return s
+		console.log("TEST CATEGORIES HTML:: ", this.menuType)
+		switch (this.menuType) {
+			case 'dropdown':
+				s = `<select onchange="window.location.href='./catalog.html?cat='+this.value">
+					<option>Select a category</option>`;
+				for (let c of this.categories) {
+					s += `<option value="${c}">
+					${c}
+					</option>`;
+				}
+				s += `</select>`;
+				break;
+			
+			case 'accordion':
+				for (let c of this.categories) {
+					s += `<div class="accordion-item">
+						<a href="./catalog.html?cat=${c}" textId="category_${c}:1c">${c}</a>
+						</div>`;
+				}
+				break;
+	
+			case 'tags':
+				for (let c of this.categories) {
+					s += `<span class="chip">
+						<a href="./catalog.html?cat=${c}" textId="category_${c}:1c">${c}</a>
+						</span>`;
+				}
+				break;
+	
+			case 'checkboxes':
+				for (let c of this.categories) {
+					s += `<div class="category-item">
+						<input type="checkbox" id="${c}" name="${c}">
+						<label for="${c}">${c}</label>
+						</div>`;
+				}
+				break;
+	
+			case 'horizontal-scroll':
+				s += `<div class="horizontal-scroll">`;
+				for (let c of this.categories) {
+					s += `<a href="./catalog.html?cat=${c}" class="scroll-item" textId="category_${c}:1c">${c}</a>`;
+				}
+				s += `</div>`;
+				break;
+	
+			default:
+				// Default line display
+				for (let c of this.categories) {
+					s += `<div class="line"><a href="./catalog.html?cat=${c}" textId="category_${c}:1c"></a></div>`;
+				}
+		}
+		return s;
 	}
+
+	
+	
+
+	// getCategoriesHtml() {
+	// 	let s = ''
+	// 	for (let c of this.categories)
+	// 		//s += `<div class="line">${array(this.selectedCategories).has(c)? '>' : ''}<a href="./catalog.html?cat=${c}" textId="category_${c}:1c"></a></div>`
+	// 		s += `<div class="line"><a href="./catalog.html?cat=${c}" textId="category_${c}:1c"></a></div>`
+	// 	return s
+	// }
 }
 
 class Article {

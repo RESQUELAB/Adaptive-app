@@ -1159,15 +1159,26 @@ let articlesData = {
                 "es": "Curso de Programación en Python"
             },
             "description": {
-                "en": "Comprehensive Python programming course for beginners to advanced developers.",
-                "es": "Curso completo de programación en Python para principiantes y desarrolladores avanzados."
+                "en": "Comprehensive Python programming course for beginners to advanced developers. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Curso completo de programación en Python para principiantes y desarrolladores avanzados. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["30d", "60d"],
-                "level": ["Beginner", "Intermediate", "Advanced"]
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
             },
-            "categories": ["programming"],
-            "images": ["python_course.jpeg"],
+            "categories": [
+                "programming"
+            ],
+            "images": [
+                "python_course.jpeg"
+            ],
             "stock": 10,
             "price": 199.99,
             "stars": 5
@@ -1178,16 +1189,31 @@ let articlesData = {
                 "es": "Bootcamp de Desarrollo Web"
             },
             "description": {
-                "en": "Intensive web development bootcamp covering HTML, CSS, JavaScript, and more.",
-                "es": "Bootcamp intensivo de desarrollo web que abarca HTML, CSS, JavaScript y más."
+                "en": "Intensive web development bootcamp covering HTML, CSS, JavaScript, and more. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Bootcamp intensivo de desarrollo web que abarca HTML, CSS, JavaScript y más. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["45d", "90d"],
-                "level": ["Beginner", "Intermediate", "Advanced"],
-                "framework": ["React", "Vue", "Angular"]
+                "duration": [
+                    "45d",
+                    "90d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ],
+                "framework": [
+                    "React",
+                    "Vue",
+                    "Angular"
+                ]
             },
-            "categories": ["web_development"],
-            "images": ["web_dev_bootcamp.jpg"],
+            "categories": [
+                "web_development"
+            ],
+            "images": [
+                "web_dev_bootcamp.jpg"
+            ],
             "stock": 15,
             "price": 199.99,
             "stars": 3
@@ -1198,16 +1224,30 @@ let articlesData = {
                 "es": "Fundamentos de Ciencia de Datos"
             },
             "description": {
-                "en": "In-depth course covering data analysis, machine learning, and data visualization.",
-                "es": "Curso profundo que abarca análisis de datos, aprendizaje automático y visualización de datos."
+                "en": "In-depth course covering data analysis, machine learning, and data visualization. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Curso profundo que abarca análisis de datos, aprendizaje automático y visualización de datos. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["60d", "120d"],
-                "level": ["Beginner", "Intermediate", "Advanced"],
-                "framework": ["Python", "R"]
+                "duration": [
+                    "60d",
+                    "120d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ],
+                "framework": [
+                    "Python",
+                    "R"
+                ]
             },
-            "categories": ["data_science"],
-            "images": ["Data-Science-Fundamentals.png"],
+            "categories": [
+                "data_science"
+            ],
+            "images": [
+                "Data-Science-Fundamentals.png"
+            ],
             "stock": 8,
             "price": 349.99,
             "stars": 4
@@ -1218,16 +1258,30 @@ let articlesData = {
                 "es": "Desarrollo de Aplicaciones Móviles con Flutter"
             },
             "description": {
-                "en": "Learn to build cross-platform mobile apps using the Flutter framework.",
-                "es": "Aprende a construir aplicaciones móviles multiplataforma con el framework Flutter."
+                "en": "Learn to build cross-platform mobile apps using the Flutter framework. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Aprende a construir aplicaciones móviles multiplataforma con el framework Flutter. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["45d", "90d"],
-                "level": ["Beginner", "Intermediate", "Advanced"],
-                "framework": ["Flutter"]
+                "duration": [
+                    "45d",
+                    "90d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ],
+                "framework": [
+                    "Flutter"
+                ]
             },
-            "categories": ["mobile", "programming"],
-            "images": ["flutter_mobile_dev.jpg"],
+            "categories": [
+                "mobile",
+                "programming"
+            ],
+            "images": [
+                "flutter_mobile_dev.jpg"
+            ],
             "stock": 12,
             "price": 249.99,
             "stars": 4
@@ -1238,15 +1292,26 @@ let articlesData = {
                 "es": "Conceptos Básicos de Ciberseguridad"
             },
             "description": {
-                "en": "Essential course covering cybersecurity principles, practices, and defense strategies.",
-                "es": "Curso esencial que abarca principios, prácticas y estrategias de defensa en ciberseguridad."
+                "en": "Essential course covering cybersecurity principles, practices, and defense strategies. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Curso esencial que abarca principios, prácticas y estrategias de defensa en ciberseguridad. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["30d", "60d"],
-                "level": ["Beginner", "Intermediate", "Advanced"]
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
             },
-            "categories": ["cybersecurity"],
-            "images": ["cybersecurity_essentials.jpeg"],
+            "categories": [
+                "cybersecurity"
+            ],
+            "images": [
+                "cybersecurity_essentials.jpeg"
+            ],
             "stock": 10,
             "price": 199.99,
             "stars": 4
@@ -1257,15 +1322,26 @@ let articlesData = {
                 "es": "Masterclass de Diseño Gráfico"
             },
             "description": {
-                "en": "Comprehensive masterclass covering graphic design principles, tools, and techniques.",
-                "es": "Masterclass completa que abarca principios, herramientas y técnicas de diseño gráfico."
+                "en": "Comprehensive masterclass covering graphic design principles, tools, and techniques. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Masterclass completa que abarca principios, herramientas y técnicas de diseño gráfico. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["45d", "90d"],
-                "level": ["Beginner", "Intermediate", "Advanced"]
+                "duration": [
+                    "45d",
+                    "90d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
             },
-            "categories": ["design"],
-            "images": ["graphic_design_masterclass.png"],
+            "categories": [
+                "design"
+            ],
+            "images": [
+                "graphic_design_masterclass.png"
+            ],
             "stock": 15,
             "price": 279.99,
             "stars": 3
@@ -1276,15 +1352,27 @@ let articlesData = {
                 "es": "Analítica de Negocios e Inteligencia Empresarial"
             },
             "description": {
-                "en": "Learn how to analyze business data and gain insights for informed decision-making.",
-                "es": "Aprende a analizar datos empresariales y obtener insights para la toma de decisiones informada."
+                "en": "Learn how to analyze business data and gain insights for informed decision-making. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Aprende a analizar datos empresariales y obtener insights para la toma de decisiones informada. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["30d", "45d", "120d"],
-                "level": ["Beginner", "Intermediate", "Advanced"]
+                "duration": [
+                    "30d",
+                    "45d",
+                    "120d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
             },
-            "categories": ["data_science"],
-            "images": ["business_analytics_intelligence.PNG"],
+            "categories": [
+                "data_science"
+            ],
+            "images": [
+                "business_analytics_intelligence.PNG"
+            ],
             "stock": 15,
             "price": 259.99,
             "stars": 4
@@ -1295,16 +1383,29 @@ let articlesData = {
                 "es": "Máster en Aprendizaje Automático"
             },
             "description": {
-                "en": "Comprehensive course on machine learning algorithms and applications.",
-                "es": "Curso completo sobre algoritmos y aplicaciones de aprendizaje automático."
+                "en": "Comprehensive course on machine learning algorithms and applications. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Curso completo sobre algoritmos y aplicaciones de aprendizaje automático. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["30d", "120d"],
-                "level": ["Beginner", "Intermediate", "Advanced"],
-                "framework": ["TensorFlow"]
+                "duration": [
+                    "30d",
+                    "120d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ],
+                "framework": [
+                    "TensorFlow"
+                ]
             },
-            "categories": ["ml"],
-            "images": ["machine_learning_mastery.jpg"],
+            "categories": [
+                "ml"
+            ],
+            "images": [
+                "machine_learning_mastery.jpg"
+            ],
             "stock": 17,
             "price": 319.99,
             "stars": 4
@@ -1315,15 +1416,26 @@ let articlesData = {
                 "es": "Hacking Ético y Ciberseguridad"
             },
             "description": {
-                "en": "Gain skills in ethical hacking to secure systems and networks.",
-                "es": "Adquiere habilidades en hacking ético para asegurar sistemas y redes."
+                "en": "Gain skills in ethical hacking to secure systems and networks. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Adquiere habilidades en hacking ético para asegurar sistemas y redes. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["45d", "90d"],
-                "level": ["Beginner", "Intermediate", "Advanced"]
+                "duration": [
+                    "45d",
+                    "90d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
             },
-            "categories": ["cybersecurity"],
-            "images": ["ethical_hacking_cybersecurity.jpg"],
+            "categories": [
+                "cybersecurity"
+            ],
+            "images": [
+                "ethical_hacking_cybersecurity.jpg"
+            ],
             "stock": 16,
             "price": 299.99,
             "stars": 3
@@ -1334,20 +1446,634 @@ let articlesData = {
                 "es": "Desarrollo de Juegos con Unity"
             },
             "description": {
-                "en": "Learn game development using the Unity game engine and C# programming.",
-                "es": "Aprende desarrollo de juegos utilizando el motor Unity y programación en C#."
+                "en": "Learn game development using the Unity game engine and C# programming. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Aprende desarrollo de juegos utilizando el motor Unity y programación en C#. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["45d", "120d"],
-                "level": ["Beginner", "Intermediate", "Advanced"],
-                "framework": ["Unity", "C#"]
+                "duration": [
+                    "45d",
+                    "120d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ],
+                "framework": [
+                    "Unity",
+                    "C#"
+                ]
             },
-            "categories": ["game_dev"],
-            "images": ["game_dev_unity.jpg"],
+            "categories": [
+                "game_dev"
+            ],
+            "images": [
+                "game_dev_unity.jpg"
+            ],
             "stock": 20,
             "price": 349.99,
             "stars": 5
         },
+        "course_1": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "marketing"
+            ],
+            "images": [
+                "digital_marketing.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_2": {
+            "title": {
+                "en": "Data Structures and Algorithms",
+                "es": "Data Structures and Algorithms"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "marketing"
+            ],
+            "images": [
+                "data_science_business.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_3": {
+            "title": {
+                "en": "Database Management Systems (SQL & NoSQL)",
+                "es": "Database Management Systems (SQL & NoSQL)"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "cybersecurity"
+            ],
+            "images": [
+                "cybersecurity.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_4": {
+            "title": {
+                "en": "Artificial Intelligence: Theory and Applications",
+                "es": "Artificial Intelligence: Theory and Applications"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "cybersecurity"
+            ],
+            "images": [
+                "graphic_design.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_5": {
+            "title": {
+                "en": "Cloud Computing with AWS",
+                "es": "Cloud Computing with AWS"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "ai"
+            ],
+            "images": [
+                "ai_python.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_6": {
+            "title": {
+                "en": "DevOps: Continuous Integration and Deployment",
+                "es": "DevOps: Continuous Integration and Deployment"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "ai"
+            ],
+            "images": [
+                "cloud_computing.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_7": {
+            "title": {
+                "en": "Operating Systems: Concepts and Design",
+                "es": "Operating Systems: Concepts and Design"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "mobile"
+            ],
+            "images": [
+                "mobile_app.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_8": {
+            "title": {
+                "en": "Network Administration and Security",
+                "es": "Network Administration and Security"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "ai"
+            ],
+            "images": [
+                "blockchain.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_9": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "ai"
+            ],
+            "images": [
+                "product_management.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_10": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "game_dev"
+            ],
+            "images": [
+                "unity_game_dev.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_11": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "game_dev"
+            ],
+            "images": [
+                "video_editing.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_12": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "game_dev"
+            ],
+            "images": [
+                "seo_strategies.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_13": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "game_dev"
+            ],
+            "images": [
+                "ecommerce.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_14": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "programming"
+            ],
+            "images": [
+                "advanced_python.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_15": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "game_dev"
+            ],
+            "images": [
+                "aws_cloud.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_16": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "game_dev"
+            ],
+            "images": [
+                "ui_ux.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_17": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "game_dev"
+            ],
+            "images": [
+                "ml_az.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_18": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "game_dev"
+            ],
+            "images": [
+                "devops.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_19": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "big_data"
+            ],
+            "images": [
+                "big_data.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_20": {
+            "title": {
+                "en": "WordPress for Beginners",
+                "es": "WordPress para Principiantes"
+            },
+            "description": {
+                "en": "Learn web dev in this comprehensive course, designed for both beginners and intermediate learners.",
+                "es": "Aprende web dev en este curso completo, diseñado tanto para principiantes como para estudiantes intermedios."
+            },
+            "variations": {
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "web_development"
+            ],
+            "images": [
+                "wordpress.jpeg"
+            ],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        }
     }
 }
 
