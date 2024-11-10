@@ -82,6 +82,33 @@ button.positive + button.negative {
   color: #ffffff;
 }
 
+#logoutBtn {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  background-color: #f6f6f6;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+#logoutBtn:hover, #logoutBtn.active {
+  background-color: #ff5757;
+  color: #ffffff;
+}
+
+#logoutBtn i, #logoutBtn span {
+  color: inherit; /* Inherit color from the parent button */
+  transition: color 0.05s; /* Smooth transition for icon color */
+}
+
+#logoutBtn i {
+  margin-right: 8px;
+  font-size: 18px; /* adjust as needed */
+}
+
 .tabcontent {
   display: none;
   padding: 20px;
@@ -111,20 +138,19 @@ button.positive + button.negative {
 /* Style for the Back button */
 .back-button {
   width: 35% !important; 
-  background: #f1c40f ; 
+  background: #77b1e5 ; 
   color: #333; 
 }
 
 .back-button:hover {
-  background: #e0b90b; 
+  background: #007fff;
+  color: white;
 }
 
 /* Style for the Submit button */
 .button-group .positive {
   width: 60% !important; 
 }
-
-
 
 .due-date-inputs input[type=text] {
   width: 50px; /* Adjust width for a shorter input */

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Login - AdaptiveApp</title>
+		<title>Selection - AdaptiveApp</title>
 		<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 		<!-- Jquery -->
 		<link href="./jquery/jquery-ui.css" rel="stylesheet">
@@ -54,11 +54,14 @@
         </div>
         <div class="description-text">
             <p>
-				Descripción de todo el experimento.
-				Estás en la sesión <b><span id="session_id">X</span></b>, 
-				por tanto solo está disponible la aplicación de <b><span id="session_text">sección a habilitar</span></b>.
-			</p>
+                Este es el flujo del experimento que estás realizando. A continuación se detallan los pasos que deberás completar:
+            </p>
+            
+            <p id="warning-message" style="font-size: x-large;">
+                <strong>Si todas las tarjetas parece activas, pero no tienen efecto, avisa al expeimentador y sigue sus intrucciones.</strong>
+            </p>
         </div>
+        
         <div class="row_selection">
             <div class="column_selection">
                 <div id="card1" class="card_selection">
@@ -90,6 +93,13 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="description-text" style="margin-top: 40px">
+            <p>
+                Por favor, sigue el orden de los pasos y asegúrate de completar todas las tareas en cada sesión. Al finalizar cada catálogo o cuestionario, el siguiente paso se habilitará automáticamente.
+
+            </p>
         </div>
     </div>
 

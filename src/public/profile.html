@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Profile - AdaptiveSports</title>
-		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 		<!-- Jquery -->
 		<link href="./jquery/jquery-ui.css" rel="stylesheet">
 		<script src="./jquery\external\jquery\jquery.js"></script>
@@ -15,6 +14,7 @@
 		<link href="./style/lightTheme.css" rel="stylesheet">
 		<link href="./style/darkTheme.css" rel="stylesheet">
 		<link href="./style/profile_new.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 		<!-- Core JS -->
 		<script src="./js/check.js"></script>
 		<script src="./js/translator.js"></script>
@@ -109,6 +109,9 @@
 						<button id="defaultProfile" textId="personalData:1c" class="tablinks" onclick="openTab(event, 'profile-panel-1')"></button>
 						<button textId="paymentData:1c" class="tablinks" onclick="openTab(event, 'profile-panel-2')"></button>
 						<button textId="shipmentData:1c" class="tablinks" onclick="openTab(event, 'profile-panel-3')"></button>
+						<button id="logoutBtn"  class="tablinks logout" onclick="logout()">
+							<i class="fa fa-sign-out"></i> <span textId="logout:1c"></span>
+						</button>
 					</div>
 					<div id="profile-panel-1" class="tabcontent active">
 						<div>

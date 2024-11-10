@@ -165,7 +165,7 @@ function getSelectedOccupations() {
     // Check server status (proxy server)
     let serverIsOnline = await checkServerStatus();
     if (!serverIsOnline) {
-        loginMessage.textContent = 'Proxy server is unavailable. Please try again later.';
+        loginMessage.textContent = 'Server is unavailable. Please try again later.';
         return;
     }
     try {
@@ -232,6 +232,11 @@ async function loginUser(username, password) {
     return new Promise((resolve, reject) => {
         socket.once('loginResponse', function (response) {
             if (response.success === true) {
+
+                // Show the modal
+                const modal = document.getElementById('setup-modal');
+                modal.style.display = 'block';
+
                 // Save login information locally
                 setUsername(username)
                 // loginInfo.username = username;
@@ -240,7 +245,12 @@ async function loginUser(username, password) {
                 console.log("SETTING THE PROFILE TO:: ", response.params.userProfile)
                 setUserProfile(response.params.userProfile)
                 saveLoginInfo();
-                resolve(response); // Login successful
+                // Delay for 10 seconds before resolving
+                setTimeout(() => {
+                    modal.style.display = 'none'; // Hide modal after setup
+                    resolve(response);
+                }, 10000); // Wait 10 seconds for setup
+                // resolve(response); // Login successful
             } else {
                 reject(response.message); // Login failed, return the error message
             }

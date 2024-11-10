@@ -28,6 +28,7 @@ $(function() {
 });
 });
 
+
 function gatherProfileData() {
   const selectedGender = document.querySelector('input[name="genre"]:checked');
   const genderValue = selectedGender ? parseInt(selectedGender.value) : null; // Get gender value or null if none selected
@@ -81,6 +82,21 @@ function showSuccessMessage(messageElementId, message) {
   setTimeout(() => {
       messageElement.style.display = "none";
   }, 3000); 
+}
+
+async function logout(){
+  const confirmLogout = confirm("¿Estás seguro de cerrar sesión?");
+  if (confirmLogout) {
+    console.log("OK. LOGING OUT")
+    try {
+      await user_logout();
+      document.location = './selection.html';
+    } catch (error) {
+        console.log(error)
+    }
+  }else{
+    console.log("Not yet...")
+  }
 }
 
 function openTab(evt, profileTab) {

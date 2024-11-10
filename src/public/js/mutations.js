@@ -107,14 +107,13 @@ class MutationController {
         else {
             const missingMutations = Object.keys(this.all_mutations).filter(mutation => !data.hasOwnProperty(mutation));
     
-            // Load defaults for any missing mutations
             if (missingMutations.length > 0) {
                 missingMutations.forEach(mutation => {
-                    data[mutation] = this.all_mutations[mutation][0]; // Load default for missing mutation
+                    data[mutation] = this.all_mutations[mutation][0];
                 });
             }
     
-            this.mutations = data; // Set the mutations to the loaded data
+            this.mutations = data; 
         }
     }
 

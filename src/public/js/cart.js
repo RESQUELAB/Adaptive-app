@@ -10,22 +10,41 @@ class CartController {
 			this.renderEmptyBasket();
 			document.getElementById("articleList").style.display = "none";
 			document.getElementById("basketSummary").style.display = "none";
+			document.getElementById("userData").style.display = "none";
 		} else {
 			document.getElementById("articleList").style.display = "block";
 			document.getElementById("basketSummary").style.display = "grid";
 			this.renderArticleList()
 			this.renderBasketSummary()
 		}
+		this.renderMyOrders()
 	}
 
+
 	renderEmptyBasket() {
-		let html = '<div><span textId="emptyCart:1c"></span></div>'
+		let html = `
+		    <div style="text-align: left; margin: 20px 0;">
+        <span textId="emptyCart:1c" style="font-size: 18px; font-weight: bold;"></span>
+    </div>
+	<div style="text-align: left; margin: 20px 0;">
+			<a href="order.html?action=list" style="color: #007bff; text-decoration: none; font-size: 16px;">
+				Mis pedidos
+			</a>
+		</div>
+		`
 		this.articleList.before(html)
 	}
 
 	renderArticleList() {
 		this.total = 0
-		let html = `<div class="headers">
+		let html = `
+		<div style="text-align: left; margin: 20px 0;">
+			<a href="order.html?action=list" style="color: #007bff; text-decoration: none; font-size: 16px;">
+				Mis pedidos
+			</a>
+		</div>
+		
+		<div class="headers">
 						<span></span>
 						<span textId="product:1c"></span>
 						<span textId="unitPrice:1c"></span>
@@ -83,33 +102,69 @@ class CartController {
 	}
 
 	renderBasketSummary() {
-		this.basketSummary.html(`<div id="shipmentData">
-		<p>Transportista: SEUR</p>
-		<p>Fecha estimada de llegada: 22/11/2022</p>
-	</div>
-	<div id="moneySummary">
-		<div id="totalMoneyStep1">
-			<div>Total artículos (IVA inc.)</div>
-			<div>${this.total.toFixed(2)}€</div>
-		</div>
-		<div id="shipment">
-			<div>Envío y preparación</div>
-			<div>6.00€</div>
-		</div>
-		<div id="totalMoneyStep2">
-			<div>Total (IVA inc.)</div>
-			<div>${(this.total + 6).toFixed(2)}€</div>
-		</div>
-		<div id="taxes">
-			<div>Impuestos (21%)</div>
-			<div>${(((this.total + 6) / 1.21) * 0.21).toFixed(2)}€</div>
-		</div>
-		<div class="confirmPurchase">
-			<a href="order.html?action=create">
-				<button id="confirmPurchaseBtn" textId="confirmPurchase:1c" class="positive"></button>
-			</a>
-		</div>
-	</div>`)
+		// Start building the HTML content
+		let basketHtml = '';
+
+		// Conditionally add the shipment details if the category is not 'trips'
+		if (mc.mutations.category !== 'trips') {
+			basketHtml += `
+				<div id="shipmentData">
+					<p>Transportista: SEUR</p>
+					<p>Fecha estimada de llegada: 22/11/2022</p>
+				</div>
+				
+				<div id="moneySummary">
+				<div id="totalMoneyStep1">
+					<div>Total artículos (IVA inc.)</div>
+					<div>${this.total.toFixed(2)}€</div>
+				</div>
+				<div id="shipment">
+					<div>Envío y preparación</div>
+					<div>6.00€</div>
+				</div>
+				<div id="taxes">
+					<div>Impuestos (21%)</div>
+					<div>${(((this.total + 6) / 1.21) * 0.21).toFixed(2)}€</div>
+				</div>
+				<div id="totalMoneyStep2">
+					<div>Total (IVA inc.)</div>
+					<div>${(this.total + 6).toFixed(2)}€</div>
+				</div>
+				
+				`;
+		}else{
+			basketHtml += `
+				<div id="shipmentData">
+				</div>
+				<div id="moneySummary">
+				<div id="totalMoneyStep1">
+					<div>Total artículos (IVA inc.)</div>
+					<div>${this.total.toFixed(2)}€</div>
+				</div>
+				
+				<div id="taxes">
+					<div>Impuestos (21%)</div>
+					<div>${(((this.total) / 1.21) * 0.21).toFixed(2)}€</div>
+				</div>
+				<div id="totalMoneyStep2">
+					<div>Total (IVA inc.)</div>
+					<div>${(this.total).toFixed(2)}€</div>
+				</div>
+				`;
+		}
+	
+	
+		// Add the rest of the basket summary
+		basketHtml += `
+			
+				<div class="confirmPurchase">
+					<a href="order.html?action=create">
+						<button id="confirmPurchaseBtn" textId="confirmPurchase:1c" class="positive"></button>
+					</a>
+				</div>
+			</div>`;
+
+		this.basketSummary.html(basketHtml);
 	}
 
 	setupArticleListListeners() {
@@ -153,4 +208,8 @@ class CartController {
 
 let cartController = new CartController()
 cartController.render()
+
+let pc = new ProfileController()
+pc.render_cart()
+
 translateTexts()

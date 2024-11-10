@@ -33,9 +33,10 @@ class OrderListController {
 		d.setHours(0, 0, 0, 0)
 
 		order.id = (2300001 + this.orders.length).toFixed(0)
-		order.shipmentData = profile.shipmentData
-		order.clientData = profile.clientData
-		order.paymentData = profile.paymentData
+		order.shipmentData = profile.userInfo.shipmentData
+		order.clientData = profile.userInfo.clientData
+		order.paymentData = profile.userInfo.paymentData
+
 		order.summary = {
 			status: 1,
 			orderDate: d,
@@ -98,10 +99,13 @@ class OrderListController {
 	renderDetail() {
 		let o = this.order
 		let c = o.clientData
+		console.log("----------")
+		console.log(o)
+		console.log("----------")
+		console.log("----------")
 		let card = o.paymentData.cardNumber
 
-		$('.orderList').html(`
-		<div id="orderDetails">
+		let orderHtml = `<div id="orderDetails">
 			<h2><span textid="order:1c"></span> <span>#${o.id}</span></h2>
 			<div id="articleList">
 				<div class="headers">
@@ -113,6 +117,14 @@ class OrderListController {
 				</div>
 				${this.getArticleListHTML()}
 			</div>
+			
+			
+			`;
+
+		if (mc.mutations.category !== 'trips') {
+
+			orderHtml += `
+			
 			<div id="orderSummary">
 				<div id="shipmentData">
 					<p><span textId="carrier:1c"></span>: SEUR</p>
@@ -128,22 +140,53 @@ class OrderListController {
 						<div>Envío y preparación</div>
 						<div>6.00€</div>
 					</div>
-					<div id="totalMoneyStep2">
-						<div>Total (IVA inc.)</div>
-						<div>${(o.summary.total).toFixed(2)}€</div>
-					</div>
 					<div id="taxes">
 						<div>Impuestos (21%)</div>
 						<div>${o.summary.tax.toFixed(2)}€</div>
 					</div>
+					<div id="totalMoneyStep2">
+						<div>Total (IVA inc.)</div>
+						<div>${(o.summary.total).toFixed(2)}€</div>
+					</div>
 				</div>
 			</div>
+			`
+		}else{
+			
+			orderHtml += `
+			
+			<div id="orderSummary">
+				<div id="shipmentData">
+					<p><span textId="orderDate:1c"></span>: ${o.summary.orderDate.toLocaleDateString()}</p>
+				</div>
+				<div id="moneySummary">
+					<div id="totalMoneyStep1">
+						<div>Total artículos (IVA inc.)</div>
+						<div>${(o.summary.total - 6).toFixed(2)}€</div>
+					</div>
+					
+					<div id="taxes">
+						<div>Impuestos (21%)</div>
+						<div>${o.summary.tax.toFixed(2)}€</div>
+					</div>
+					<div id="totalMoneyStep2">
+						<div>Total (IVA inc.)</div>
+						<div>${(o.summary.total).toFixed(2)}€</div>
+					</div>
+				</div>
+			</div>
+			`
+		}
+			orderHtml += `
 		</div>
 		<div id="userData">
 			<div id="personalData">
 				<h3>Datos personales</h3>
 				<p>${c.lastName}, ${c.name}</p>
-				<p><span textId="${this.getRoadTypeString()}"></span> ${o.shipmentData.roadMainInfo} - ${o.shipmentData.roadExtraInfo}</p>
+				<p>
+				<!-- <span textId="${this.getRoadTypeString()}">
+				-->
+				</span> ${o.shipmentData.roadMainInfo} - ${o.shipmentData.roadExtraInfo}</p>
 				<p>${o.shipmentData.postalCode} ${o.shipmentData.city}</p>
 			</div>
 			<div id="paymentData">
@@ -152,7 +195,10 @@ class OrderListController {
 				<p>VISA: **** ${card.substring(card.length - 4)}</p>
 			</div>
 		</div>
-		`)
+			`
+
+
+		$('.orderList').html(orderHtml)
 
 		$('a.goBack').attr('href', './order.html?action=list').text('< Pedidos')
 	}

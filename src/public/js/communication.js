@@ -1,18 +1,31 @@
-const HOST = 'localhost',
-	PORT = '8000',
+// const HOST = 'localhost',
+// 	PORT = '8000',
+// 	LS_LOGIN_KEY = 'sports-login'
+
+
+	const HOST = '158.42.185.67',
+    PORT = '9999'
 	LS_LOGIN_KEY = 'sports-login'
 
 var loginInfo = null
 var amIconnected = false
 function loadLoginInfo() {
-	return JSON.parse(localStorage.getItem(LS_LOGIN_KEY)) || {
+	const defaultLoginInfo = {
 		sessionID: '',
 		username: '',
 		session: 0,
 		groupDefinition: {},
 		userProfile: {},
-	}
+		catalogue_1: false,
+		catalogue_2: false,
+		survey_1: false,
+		survey_2: false,  // Ensure this is always initialized
+	};
+
+	// Merge default values with stored values, ensuring all keys are initialized
+	return { ...defaultLoginInfo, ...JSON.parse(localStorage.getItem(LS_LOGIN_KEY)) || {} };
 }
+
 
 function saveLoginInfo() {
 	localStorage.setItem(LS_LOGIN_KEY, JSON.stringify(loginInfo))
@@ -23,6 +36,31 @@ function setUsername(username){
 	loginInfo.username = username
 	saveLoginInfo()
 }
+
+function setCatalogue_1_finished(){
+	loginInfo.catalogue_1 = true;
+	console.log("Catalogue 1 finished!")
+	saveLoginInfo();
+}
+
+function setCatalogue_2_finished(){
+	loginInfo.catalogue_2 = true;
+	console.log("Catalogue 2 finished!")
+	saveLoginInfo();
+}
+
+function setSurvey_1_finished(){
+	loginInfo.survey_1 = true;
+	console.log("Survey 1 finished!")
+	saveLoginInfo();
+}
+
+function setSurvey_2_finished(){
+	loginInfo.survey_2 = true;
+	console.log("Survey 2 finished!")
+	saveLoginInfo();
+}
+
 
 function setUserProfile(userProfile){
 	loginInfo.userProfile = userProfile
@@ -61,6 +99,10 @@ const socket = io(`http://${HOST}:${PORT}`, {
 	cors: { origin: "*" }
 })
 
+function experimentCompleted(){
+	socket.emit("experimentCompleted")
+}
+
 function sendUpdateName(msg) {
 	socket.emit("updateName", msg)
 }
@@ -80,8 +122,40 @@ function sendScrollInfo(msg) {
 }
 
 function getProfileInformation(){
-	console.log("ASKING FOR INFORMATION FROM:: ", loginInfo.username)
 	socket.emit("askForProfile", loginInfo.username)
+}
+
+
+async function user_logout() {
+    // Emit a login request to the proxy server
+    socket.emit('logoutRequest');
+
+    // Create a promise to wait for the response from the server
+    return new Promise((resolve, reject) => {
+        socket.once('logoutResponse', function (response) {
+            if (response.success === true) {
+				console.log("CLEARING LS...")
+
+				/* CLEAR LOCAL STORAGE AND PREPARE FOR THE NEXT CATALOGUE! */
+				localStorage.setItem("favourite-articles", JSON.stringify([]))
+				localStorage.setItem("cart-articles", JSON.stringify([]))
+				localStorage.setItem("app-orders", JSON.stringify([]))
+				console.log("CLEARED LS...")
+
+				if(!loginInfo.catalogue_1){
+					// if Catalogue 1 is not finished. Let's go for the Survey.
+					setCatalogue_1_finished();
+				}
+				else if(!loginInfo.catalogue_2){
+					setCatalogue_2_finished();
+				}
+
+                resolve(response);
+            } else {
+                reject(response.message); 
+            }
+        });
+    });
 }
 
 socket.on('profileInformation', (profile) => {
@@ -119,8 +193,8 @@ socket.on('location', (location, value) => {
 socket.on('getImage', async (callback) => {
 	const image = await electron.getImage()
 	const imageString = image.toDataURL()
-	console.log("Image object:", image)
-	console.log("Image as String:", imageString)
+	console.log("Sending Image...")
+	// console.log("Image as String:", imageString)
 	callback(imageString)
 	// socket.emit('updateState', mc.mutations)
 })

@@ -16,6 +16,33 @@ class ProfileController {
 		this.renderShipmentData()
 	}
 
+	render_cart(){
+		console.log("CART RENDERING!!!")
+		let c = this.profile.userInfo.clientData
+		let cship = this.profile.userInfo.shipmentData
+		let cpay = this.profile.userInfo.paymentData
+
+		let panel = $('#userData').html(`
+
+			<div id="personalData">
+						<h3>Datos personales</h3>
+						<p>${c.name} ${c.lastName}</p>
+						<p>${cship.roadMainInfo}, ${cship.roadExtraInfo}</p>
+						<p>${cship.postalCode} ${cship.city}</p>
+					</div>
+					<div id="paymentData">
+						<h3>Datos de pago</h3>
+						<p>Método de pago: Tarjeta de débito</p>
+						<p>VISA: ${cpay.cardNumber}</p>
+					</div>
+		`)
+
+		console.log("this is the panel!: ", panel)
+		
+		translateTexts(null, panel)
+	}
+
+
 	renderClientData() {
 		let c = this.profile.userInfo.clientData
 		let panel = $('#profile-panel-1').html(`

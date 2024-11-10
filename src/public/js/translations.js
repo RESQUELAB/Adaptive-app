@@ -150,6 +150,42 @@
             "en": "game development",
             "es": "desarrollo de videojuegos"
         },
+        
+        "category_blockchain": {
+            "en": "blockchain",
+            "es": "blockchain"
+        },
+        
+        "category_healthcare": {
+            "en": "healthcare",
+            "es": "sector salud"
+        },
+
+        "category_seo": {
+            "en": "seo",
+            "es": "seo"
+        },
+
+        "category_finance": {
+            "en": "finance",
+            "es": "finanzas"
+        },
+
+        "category_project_management": {
+            "en": "project management",
+            "es": "gestión de proyectos"
+        },
+        "category_cloud": {
+            "en": "cloud",
+            "es": "la nube"
+        }, 
+        "category_devops": {
+            "en": "devops",
+            "es": "devops"
+        },
+
+
+
         "category_ml": {
             "en": "machine learning",
             "es": "machine learning"
@@ -444,6 +480,10 @@
             "en": "shipment data",
             "es": "datos de envío"
         },
+        "logout": {
+            "en": "Log out",
+            "es": "Cerrar sesión"
+        },        
         "descriptionTitle": {
             "en": "Description",
             "es": "Descripción"
