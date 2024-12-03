@@ -32,16 +32,17 @@ class OrderListController {
 		let d = new Date()
 		d.setHours(0, 0, 0, 0)
 
-		order.id = (2300001 + this.orders.length).toFixed(0) 
-		order.shipmentData = profile.shipmentData
-		order.clientData = profile.clientData
-		order.paymentData = profile.paymentData
+		order.id = (2300001 + this.orders.length).toFixed(0)
+		order.shipmentData = profile.userInfo.shipmentData
+		order.clientData = profile.userInfo.clientData
+		order.paymentData = profile.userInfo.paymentData
+
 		order.summary = {
 			status: 1,
 			orderDate: d,
-			arrivalDate: new Date((Number)(d) + 3*1000*60*60*24),
+			arrivalDate: new Date((Number)(d) + 3 * 1000 * 60 * 60 * 24),
 			total: cart.total,
-			tax: (cart.total/1.21)*0.21
+			tax: (cart.total / 1.21) * 0.21
 		}
 
 		order.articles = cart.data
@@ -81,7 +82,7 @@ class OrderListController {
 			1: "En progreso",
 			2: "Completado"
 		}
-		let n=0
+		let n = 0
 		for (let order of this.orders) {
 			html += `
 			<div class="article" name="${n++}">
@@ -98,10 +99,13 @@ class OrderListController {
 	renderDetail() {
 		let o = this.order
 		let c = o.clientData
+		console.log("----------")
+		console.log(o)
+		console.log("----------")
+		console.log("----------")
 		let card = o.paymentData.cardNumber
 
-		$('.orderList').html(`
-		<div id="orderDetails">
+		let orderHtml = `<div id="orderDetails">
 			<h2><span textid="order:1c"></span> <span>#${o.id}</span></h2>
 			<div id="articleList">
 				<div class="headers">
@@ -113,6 +117,14 @@ class OrderListController {
 				</div>
 				${this.getArticleListHTML()}
 			</div>
+			
+			
+			`;
+
+		if (mc.mutations.category !== 'trips') {
+
+			orderHtml += `
+			
 			<div id="orderSummary">
 				<div id="shipmentData">
 					<p><span textId="carrier:1c"></span>: SEUR</p>
@@ -128,38 +140,72 @@ class OrderListController {
 						<div>Envío y preparación</div>
 						<div>6.00€</div>
 					</div>
-					<div id="totalMoneyStep2">
-						<div>Total (IVA inc.)</div>
-						<div>${(o.summary.total).toFixed(2)}€</div>
-					</div>
 					<div id="taxes">
 						<div>Impuestos (21%)</div>
 						<div>${o.summary.tax.toFixed(2)}€</div>
 					</div>
+					<div id="totalMoneyStep2">
+						<div>Total (IVA inc.)</div>
+						<div>${(o.summary.total).toFixed(2)}€</div>
+					</div>
 				</div>
 			</div>
+			`
+		}else{
+			
+			orderHtml += `
+			
+			<div id="orderSummary">
+				<div id="shipmentData">
+					<p><span textId="orderDate:1c"></span>: ${o.summary.orderDate.toLocaleDateString()}</p>
+				</div>
+				<div id="moneySummary">
+					<div id="totalMoneyStep1">
+						<div>Total artículos (IVA inc.)</div>
+						<div>${(o.summary.total - 6).toFixed(2)}€</div>
+					</div>
+					
+					<div id="taxes">
+						<div>Impuestos (21%)</div>
+						<div>${o.summary.tax.toFixed(2)}€</div>
+					</div>
+					<div id="totalMoneyStep2">
+						<div>Total (IVA inc.)</div>
+						<div>${(o.summary.total).toFixed(2)}€</div>
+					</div>
+				</div>
+			</div>
+			`
+		}
+			orderHtml += `
 		</div>
 		<div id="userData">
 			<div id="personalData">
 				<h3>Datos personales</h3>
 				<p>${c.lastName}, ${c.name}</p>
-				<p><span textId="${this.getRoadTypeString()}"></span> ${o.shipmentData.roadMainInfo} - ${o.shipmentData.roadExtraInfo}</p>
+				<p>
+				<!-- <span textId="${this.getRoadTypeString()}">
+				-->
+				</span> ${o.shipmentData.roadMainInfo} - ${o.shipmentData.roadExtraInfo}</p>
 				<p>${o.shipmentData.postalCode} ${o.shipmentData.city}</p>
 			</div>
 			<div id="paymentData">
 				<h3>Datos de pago</h3>
 				<p>Método de pago: Tarjeta de débito</p>
-				<p>VISA: **** ${card.substring(card.length-4)}</p>
+				<p>VISA: **** ${card.substring(card.length - 4)}</p>
 			</div>
 		</div>
-		`)
+			`
+
+
+		$('.orderList').html(orderHtml)
 
 		$('a.goBack').attr('href', './order.html?action=list').text('< Pedidos')
 	}
 
 	getRoadTypeString() {
 		let n = this.order.shipmentData.roadType
-		switch(n) {
+		switch (n) {
 			case 1: return 'avenue'
 			case 2: return 'street'
 			case 3: return 'square'
@@ -194,9 +240,9 @@ class OrderListController {
 		for (let v in article.variations) {
 			let s = ''
 			let val = article.variations[v]
-			
+
 			s += `<span textId="${v}Selector"></span> `
-			if ( check((Number)(val)).isNumber() )
+			if (check((Number)(val)).isNumber())
 				s += `<span>${article.variations[v]}</span>`
 			else
 				s += `<span textId="${article.variations[v]}Choice"></span>`

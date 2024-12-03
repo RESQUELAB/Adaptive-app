@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Login - AdaptiveSports</title>
-		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+		<title>Login - AdaptiveApp</title>
+		<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 		<!-- Jquery -->
 		<link href="./jquery/jquery-ui.css" rel="stylesheet">
 		<script src="./jquery\external\jquery\jquery.js"></script>
@@ -12,6 +12,7 @@
 		<script src="./js/socket.io.min.js"></script>
 		<!-- Styles -->
 		<link href="./style/structure.css" rel="stylesheet">
+		<link href="./style/login.css" rel="stylesheet">
 		<link href="./style/lightTheme.css" rel="stylesheet">
 		<link href="./style/darkTheme.css" rel="stylesheet">
         <style>
@@ -30,19 +31,310 @@
 		<!-- Own data and js -->
 		<!-- MouseTracker -->
 		<script src="./js/mouseTracker.js"></script>
-
+		<!-- Icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 	</head>
 	<body lang="es">
-		<div class="full-container darkTheme">
-            <div class="container">
-                <span>Username: </span>
-                <input id="username" value="anonymous" type="text"/>
-                <button id="login">Login</button>
-            </div>
+
+
+<div class="full-container">
+	<div>
+		<img id="headerLogo" src="./img/logo_sports.png"></img>
+	</div>
+	
+	<div class="server-indicator-container">
+		<div id="server-indicator" class="server-indicator"></div>
+		<div id="server-indicator_text" class="server-indicator_text">
+		Server status
 		</div>
+		<i id="refresh-button" class="fas fa-sync" onclick="checkServerStatus()"></i> 
+		</div>
+
+		
+
+
+		<div class="register-card">
+
+
+			<form id="registration-form">
+				<div id="step1" class="step active">
+					<!-- Title section -->
+					<div class="title">REGISTRO - Paso 1</div>
+					<div class="content">
+					<!-- Registration form -->
+						<div class="user-details">
+						<!-- Input for Full Name -->
+						<div class="input-box">
+							<span class="details">Nombre</span>
+							<input type="text" name="name" placeholder="Enter your name" required>
+						</div>
+						<!-- Input for Username -->
+						<div class="input-box">
+							<span class="details">Apellidos</span>
+							<input type="text" name="surname" placeholder="Enter your username" required>
+						</div>
+						<!-- Input for Email -->
+						<div class="input-box">
+							<span class="details">Correo</span>
+							<input type="text" name="username" placeholder="Enter your email" required>
+						</div>
+						<!-- Input for Phone Number -->
+						<div class="input-box">
+							<span class="details">Fecha de nacimiento</span>
+							<input type="date" name="birth" placeholder="dd/mm/aaaa" required>
+						</div>
+						<!-- Input for Password -->
+						<div class="input-box">
+							<span class="details">Contraseña</span>
+
+							<div class="password-wrapper">
+								<input id="reg-password" class="password" type="password" name="password" placeholder="Introduce tu contraseña" required>
+								<span class="toggle-password" onclick="togglePasswordVisibility('reg-password', this)">
+								  <i class="fas fa-eye-slash"></i>
+								</span>
+							  </div>
+						</div>
+						<!-- Input for Confirm Password -->
+						<div class="input-box">
+							<span class="details">Confirmar Password</span>
+							<div class="password-wrapper">
+								<input id="reg-password2" class="password" type="password" name="confirm-password" placeholder="Confirma tu contraseña" required>
+								<span class="toggle-password" onclick="togglePasswordVisibility('reg-password2', this)">
+								  <i class="fas fa-eye-slash"></i>
+								</span>
+							  </div>
+
+							
+						</div>
+						</div>
+						<div class="gender-details">
+							<!-- Radio buttons for gender selection -->
+							<input type="radio" name="gender" id="male">
+							<input type="radio" name="gender" id="female">
+							<input type="radio" name="gender" id="other" checked>
+							<span class="gender-title">Gender</span>
+							<div class="category">
+								<!-- Label for Male -->
+								<label for="male">
+								<span class="dot one"></span>
+								<span class="gender">Hombre</span>
+								</label>
+								<!-- Label for Female -->
+								<label for="female">
+								<span class="dot two"></span>
+								<span class="gender">Mujer</span>
+								</label>
+								<!-- Label for Prefer not to say -->
+								<label for="other">
+								<span class="dot three"></span>
+								<span class="gender">Prefiero no decirlo</span>
+								</label>
+							</div>
+						</div>
+						<!-- Button to go to Step 2 -->
+						<div class="button">
+							<input type="button" value="Siguiente" onclick="goToStep2()">
+						</div>
+						<!-- Submit button -->
+						<!-- <div class="button">
+						<input type="submit" value="Register">
+						</div> -->
+					
+					<p class="toggle-link">¿Ya tienes una cuenta? <span class="toggle-link-span" onclick="toggleForm()">Inicia sesión</span></p>
+					</div>
+				</div>
+				<!-- Step 2: Additional Information -->
+				<div id="step2" class="step">
+					<div class="title">Registro - Paso 2</div>
+					<div class="content">
+						<div class="user-details">
+							<!-- Input for Occupation -->
+							<div class="input-box" style="width: 100%;">
+								<span class="details">Ocupación</span>
+								<div class="checkbox-group">
+								<label><input type="checkbox" name="occupation" value="Estudiante"> Estudiante</label>
+								<label><input type="checkbox" name="occupation" value="Ejecutivo"> Ejecutivo</label>
+								<label><input type="checkbox" name="occupation" value="Empleado"> Empleado</label>
+								<label><input type="checkbox" name="occupation" value="Autónomo"> Autónomo</label>
+								<label><input type="checkbox" name="occupation" value="Jubilado"> Jubilado</label>
+								<label><input type="checkbox" name="occupation" value="Desempleado"> Desempleado</label>
+								</div>
+							</div>
+							
+							
+
+
+
+										<!-- Input for Sector of Occupation -->
+							<div class="input-box">
+								<span class="details">Sector de ocupación</span>
+								<input type="text" name="field" placeholder="e.g., administración, dirección, finanza, técnico" required>
+							</div>
+						
+						<!-- Input for Background -->
+						<div class="input-box">
+							<span class="details">Antecedentes</span>
+							<input type="text" name="background" placeholder="sector de tu último diploma, e.g., Master, Grado, ..." required>
+						</div>
+						<!-- Input for Computer Usage Frequency -->
+						<div class="input-box">
+							<span class="details">Uso un ordenador frecuentemente</span>
+							<div class="slider-description">
+								<span>1 = Totalmente desacuerdo</span>
+								<span>7 = Totalmente de acuerdo</span>
+							</div>
+							<input name="pc_frequency" type="range" min="1" max="7" value="4" class="slider">
+							<div class="slider-values">
+								<span>1</span>
+								<span>2</span>
+								<span>3</span>
+								<span>4</span>
+								<span>5</span>
+								<span>6</span>
+								<span>7</span>
+							</div>
+						</div>
+
+
+						<!-- Input for Computer Usage Frequency -->
+						<div class="input-box">
+							<span class="details">Uso un Smartphone frecuentemente</span>
+							<div class="slider-description">
+								<span>1 = Totalmente desacuerdo</span>
+								<span>7 = Totalmente de acuerdo</span>
+							</div>
+							<input name="smartphone_frequency" type="range" min="1" max="7" value="4" class="slider">
+							<div class="slider-values">
+								<span>1</span>
+								<span>2</span>
+								<span>3</span>
+								<span>4</span>
+								<span>5</span>
+								<span>6</span>
+								<span>7</span>
+							</div>
+						</div>
+
+						<!-- Input for Computer Usage Frequency -->
+						<div class="input-box">
+							<span class="details">Uso una Tablet frecuentemente</span>
+							<div class="slider-description">
+								<span>1 = Totalmente desacuerdo</span>
+								<span>7 = Totalmente de acuerdo</span>
+							</div>
+							<input name="tablet_frequency" type="range" min="1" max="7" value="4" class="slider">
+							<div class="slider-values">
+								<span>1</span>
+								<span>2</span>
+								<span>3</span>
+								<span>4</span>
+								<span>5</span>
+								<span>6</span>
+								<span>7</span>
+							</div>
+						</div>
+
+						<!-- Input for Computer Usage Frequency -->
+						<div class="input-box">
+							<span class="details">Uso una videoconsola frecuentemente</span>
+							<div class="slider-description">
+								<span>1 = Totalmente desacuerdo</span>
+								<span>7 = Totalmente de acuerdo</span>
+							</div>
+							<input name="console_frequency" type="range" min="1" max="7" value="4" class="slider">
+							<div class="slider-values">
+								<span>1</span>
+								<span>2</span>
+								<span>3</span>
+								<span>4</span>
+								<span>5</span>
+								<span>6</span>
+								<span>7</span>
+							</div>
+						</div>
+						<!-- Input for Occupation -->
+						<div class="input-box" style="width: 100%;">
+							<span class="details">Protección de datos</span>
+							<div class="checkbox-group">
+							<label><input type="checkbox" name="data_protection" value="consent" required >Sí, acepto la <a> política de privacidad</a> </label>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+					<div id="registration-message" style="color: red; margin-top: 10px;"></div>
+    
+					<div class="button-group">
+						<input type="button" value="Atrás" class="back-button" onclick="goToStep1()">
+						<input id="register" type="submit" value="Registrarse" class="submit-button">
+					</div>
+
+				</div>
+			</form>
+		</div>
+
+
+		
+	<div class="login-card">
+		<form id="login-form" onsubmit="handleLogin(event)">
+			<div class="title">LOGIN</div>
+			<div class="content">
+				<div class="user-details">
+
+
+					<div class="input-box" style="width: 100%;">
+						<span class="details">Correo</span>
+						<input type="text" id="username" name="username" placeholder="Enter your email" required>
+					</div>
+
+
+					<div class="input-box" style="width: 100%;">
+						<span class="details">Contraseña</span>
+						<div class="password-wrapper">
+						  <input class="password" type="password" id="password" name="password" placeholder="Introduce tu contraseña" required>
+						  <span class="toggle-password" onclick="togglePasswordVisibility('password', this)">
+							<i class="fas fa-eye-slash"></i>
+						  </span>
+						</div>
+					  </div>
+				</div>
+				<div id="login-message">
+				</div>
+
+				<div class="button">
+					<input class="login" id="login" type="submit" value="Login">
+				</div>
+		
+				<p class="toggle-link">¿No tienes una cuenta? <span class="toggle-link-span" onclick="toggleForm()">Regístrate aquí</span></p>
+			
+			</div>
+		</form>
+	</div>
+
+	<!-- Modal Box -->
+	<div id="setup-modal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>Login Successful</h2>
+			</div>
+			<div class="modal-body">
+				<p>Tu inicio de sesión fue exitoso. Por favor, espera mientras preparamos todo...</p>
+				<div class="loading-spinner">
+					<div></div>
+					<div></div>
+					<div></div>
+				  </div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
 		<!-- HTML load end scripts -->
 		<script src="./js/controls.js"></script>
 		<script src="./js/pageNavigation.js"></script>
         <script src="./js/index.js"></script>
+        <script src="./js/connection_checker.js"></script>
 	</body>
 </html>

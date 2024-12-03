@@ -1,0 +1,118 @@
+/* 
+ * HIGH CONTRAST THEME
+ */
+
+.highContrast * {
+	border-color: #ffff00;
+	color: #ffff00;
+}
+
+.highContrast .header {
+    border-bottom: 1px solid #ffff00 !important;
+}
+
+.highContrast .searchbar > input#search_input {
+	background-color: #000 ;
+	border-color: #ffff00;
+}
+
+.highContrast .searchbar path, .highContrast .userbuttons .userbutton > svg > path {
+	fill: #ffff00 ;
+}
+
+.highContrast .userbuttons .userbutton .counter > span {
+    background: #ffff00;
+    border: 1px solid #000;
+	color: #000;
+	opacity: 0.7;
+}
+
+.highContrast .discrete {
+	color: #888;
+}
+
+.highContrast .link,
+.highContrast a,
+.highContrast a:visited {
+	color: #0000ff;
+}
+.highContrast .container {
+	background-color: #000;
+}
+
+.highContrast input,
+.highContrast select {
+	background-color: #ffff00;
+	outline-color: #0000ff;
+}
+.highContrast button {
+	background-color: #ffff00;
+	outline-color: #0000ff;
+}
+.highContrast button.positive {
+	background-color: #0000ff;
+    color: #000;
+}
+.highContrast div.positive {
+	color: #00ff00;
+}
+.highContrast button.negative {
+	background-color: #ff0000;
+}
+.highContrast div.negative {
+	color: #ff0000;
+}
+
+.highContrast .grid-border {
+    background: #000;
+    border: 1px solid #ffff00;
+}
+.highContrast .grid-border * {
+    background: #000 !important;
+}
+
+/* Catalog */
+.highContrast .catalog-article .reviews {color: #888;}
+.highContrast .catalog-article .price, .highContrast .catalog-article .price sup {color: #0000ff;}
+.highContrast .catalog-article .likes {color: #ff0000;}
+.highContrast .catalog * {background: #000;}
+.highContrast .catalog-article .star_rating .score { color: #888; }
+
+/* Product */
+.highContrast .product .choice.selected {
+    background-color: #00ff00;
+}
+.highContrast .product .messageSection .warning {
+	color: #ff0000;
+}
+.highContrast .product .messageSection .productAdded > span {
+	color: #888;
+}
+
+/* jquery ui tabs */
+.highContrast .ui-widget-content, .highContrast .ui-tabs-nav.ui-widget-header {
+	background-color: #000;
+}
+
+.highContrast .ui-tabs-tab {
+	background-color: #ffff00;
+}
+.highContrast .ui-tabs-tab.ui-tabs-active {
+	background-color: #0000ff;
+}
+
+.highContrast .ui-tabs-tab a {
+	color: #000;
+}
+.highContrast .ui-tabs-tab.ui-state-hover a, .highContrast .ui-tabs-tab.ui-tabs-active a {
+	color: #fff;
+}
+
+.highContrast .tab > .tablinks {
+	background-color: #ffff00;
+	color: #0000ff;
+}
+.highContrast .tab > .tablinks.active, .highContrast .tab > .tablinks:hover  {
+	background-color: #0000ff;
+	color: #fff;
+}

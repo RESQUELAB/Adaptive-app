@@ -1,7 +1,15 @@
 /* styles.css */
 
+
+:root {
+	--base-font-size: 16px;
+	--larger-font-size: 20px;
+	--smaller-font-size: 14px;
+  }
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
+	font-size: var(--base-font-size);
 	background-color: #FFFFFF;
 	color: #444444;
 }
@@ -50,9 +58,14 @@ a {text-decoration: none;}
 	margin-bottom: 32px;
 }
 
+ #logo {
+	width: 75%;
+ }
+ 
 .header #logo > img{
 	margin: 14px 0 10px 0px;
-    width: 75%;
+    width: auto;
+	max-height: 110px;
 }
 
 .header svg {
@@ -73,7 +86,7 @@ a {text-decoration: none;}
 }
 .searchbar svg > path {scale: 1.7;}
 #search_input {
-	padding-left: 34px;
+	padding-left: 50px;
     font-size: 20px;
 	border-radius: 30px;
 	height: 38px;
@@ -114,6 +127,7 @@ a {text-decoration: none;}
 	border-top: 1px solid;
     transition: 0.3s;
 	width: 72px;
+	font-size: small;
     word-break: break-word;
 }
 .userbuttons > .userbutton:not(:hover) .subText {
@@ -160,6 +174,8 @@ hr {
 /* Widgets */
 .box + .box {
 	margin-top: 30px;
+    display: grid;
+	grid-column: 2;
 }
 .box > .box + .box {
 	margin-top: 20px;
@@ -226,6 +242,7 @@ svg.heart {
     stroke-width: 0.8px;
     stroke: #aaa;
     scale: 1.6;
+	margin-left: 10px;
 }
 svg.heart.empty {
 	fill: rgba(00, 00, 00, 00)

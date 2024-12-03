@@ -1,0 +1,161 @@
+.full-container {
+  position: absolute;
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1% 17% repeat(3, 1fr) 10% 1%;
+  grid-auto-rows: min-content;
+}
+
+.goBack {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.profile {
+  grid-column: 3 / 6;
+  grid-row: 3;
+  max-width: 900px; /* To limit the width */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px;
+  background-color: #f9f9f9; /* Background for better contrast */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.profile #tabsContainer > div[id^="profile-panel"] {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for inputs */
+  gap: 20px; /* Space between inputs */
+}
+
+.profile input[type=text] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.profile input[type=date] {
+  width: 100%; /* Full width to match other inputs */
+  padding: 10px; /* Same padding for consistency */
+  border-radius: 4px; /* Rounded corners */
+  border: 1px solid #ccc; /* Light gray border */
+  box-sizing: border-box; /* Ensure padding and border are included in the total width/height */
+  background-color: #fff; /* White background */
+  font-size: 16px; /* Adjust font size for better readability */
+}
+
+.profile input[type=text].half { width: 48%; }
+.profile input[type=text].third { width: 32%; }
+.profile input[type=text].long { width: 150%; }
+
+
+.profile .cvv { width: 70px !important; }
+
+button.positive + button.negative {
+  margin-left: 40px;
+}
+
+/* Tabs styling */
+.tab {
+  overflow: hidden;
+  margin-bottom: 20px; /* Add margin to separate tabs from content */
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  margin: 1px .2em 0 0;
+  background-color: #f6f6f6;
+}
+
+.tab button:hover, .tab button.active {
+  background-color: #007fff;
+  color: #ffffff;
+}
+
+#logoutBtn {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  background-color: #f6f6f6;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+#logoutBtn:hover, #logoutBtn.active {
+  background-color: #ff5757;
+  color: #ffffff;
+}
+
+#logoutBtn i, #logoutBtn span {
+  color: inherit; /* Inherit color from the parent button */
+  transition: color 0.05s; /* Smooth transition for icon color */
+}
+
+#logoutBtn i {
+  margin-right: 8px;
+  font-size: 18px; /* adjust as needed */
+}
+
+.tabcontent {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0; 
+}
+
+.button-group input {
+  height: 45px; 
+  border-radius: 5px; 
+  border: none; 
+  font-size: 18px; 
+  font-weight: 500; 
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease; 
+}
+
+/* Style for the Back button */
+.back-button {
+  width: 35% !important; 
+  background: #77b1e5 ; 
+  color: #333; 
+}
+
+.back-button:hover {
+  background: #007fff;
+  color: white;
+}
+
+/* Style for the Submit button */
+.button-group .positive {
+  width: 60% !important; 
+}
+
+.due-date-inputs input[type=text] {
+  width: 50px; /* Adjust width for a shorter input */
+  padding: 8px; /* Slightly reduce padding for compactness */
+  border-radius: 4px; /* Keep the same border radius */
+  border: 1px solid #ccc; /* Keep the same border style */
+  box-sizing: border-box; /* Ensure proper box sizing */
+}

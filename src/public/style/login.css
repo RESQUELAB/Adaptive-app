@@ -1,0 +1,586 @@
+#headerLogo{
+	display: none !important;
+}
+.full-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+	background-image: url(../img/logo.png);
+    background-size: 100vh;
+    /* background-color: rgba(255, 0, 0, 1); */
+    /* opacity: 50%; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-blend-mode: lighten;
+}
+
+.server-indicator-container {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 20px; */
+	margin-top: 20px;
+	background-color: rgb(171 171 171 / 26%);
+	position:absolute;
+	bottom: 0px;
+	padding: 8px;
+	padding-left: 3%;
+	width: 100%;
+}
+
+.server-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    margin-right: 10px;
+}
+
+.server-indicator.connected {
+    background-color: #4caf50;
+}
+
+.server-indicator_text {
+    color: white;
+}
+
+#refresh-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #3498db;
+    margin-left: 15px;
+}
+
+#refresh-button:hover {
+    color: #2980b9;
+}
+
+#refresh-button.connecting {
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.login-card, .register-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    /* text-align: center; */
+    margin-top: 20px;
+	opacity: 95%;
+    /* height: 59vh;  */
+}
+
+.register-card{
+    display: none;
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.login-card h2, .register-card h2 {
+    margin-bottom: 20px;
+}
+
+.login-card label, .register-card label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.login-card input, .register-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.register-card input {
+    margin: 0;
+    
+}
+
+.password-container {
+    position: relative;
+}
+
+#password, #reg-password, #reg-password2 {
+    width: calc(100% - 30px);
+    padding-right: 30px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 60%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+button {
+    background-color: #4caf50;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.toggle-link {
+    margin-top: 10px;
+    text-align: center;
+}
+
+button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.toggle-link-span {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#registration-message, #login-message {
+    color: red; 
+    /* margin-top: 10px;  */
+    font-size: 20px;
+}
+
+  
+  /* Float four columns side by side */
+  .column_selection {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row_selection {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row_selection:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card_selection {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+ 
+  .form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+
+  .likert-scale {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.likert-scale label {
+    margin: 0 5px;
+}
+
+
+
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column_selection {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+
+  /* Importing Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.register-card .title, .login-card .title {
+  font-size: 25px;
+  font-weight: bold;
+  position: relative;
+}
+
+.register-card .title::before, .login-card .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+form .content .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 0px 0;
+  align-items: end;
+}
+
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+form .user-details .input-box .password {
+  padding-right: 40px;
+}
+
+form .input-box span.details, form .gender-details .gender-title {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #9b59b6;
+}
+/* Wrapper to contain the input and icon */
+.password-wrapper {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+/* Flex-grow to make the input fill the space */
+.password-wrapper input {
+  flex-grow: 1;
+  padding-right: 40px; /* Padding to make space for the icon */
+}
+
+/* Position the icon absolutely inside the wrapper */
+.password-wrapper .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #9b59b6;
+}
+
+.password-wrapper .toggle-password i {
+  font-size: 16px;
+}
+
+.password-wrapper .toggle-password:hover {
+  color: #8e44ad;
+}
+
+form .category {
+  display: flex;
+  width: 100%;
+  margin: 5px 0px 0px 0px;
+  justify-content: space-between;
+}
+
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#male:checked~.category label .one,
+#female:checked~.category label .two,
+#other:checked~.category label .three {
+  background: #9b59b6;
+  border-color: #d9d9d9;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    gap: 15px; /* Space between items */
+  }
+  
+  .checkbox-group label {
+    display: flex; /* Align checkbox and text */
+    align-items: center; /* Center vertically */
+    margin-bottom: 0; /* Remove margin between labels */
+    flex: 1 0 calc(33.33% - 10px); /* Make each label take up to a third of the row, minus space for gap */
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    margin-right: 5px; /* Reduce space between checkbox and label text */
+    width: 40px;
+}
+  
+  .checkbox-group input[type="text"] {
+    margin-left: 5px; /* Add some space between "Otro" checkbox and text input */
+    flex: 1; /* Allow the text input to grow */
+  }
+
+form .button {
+  height: 45px;
+  margin: 10px 0px 5px 0px;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+form .button input.login{
+  margin-top: 0px;
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+
+.button-group {
+    display: flex; /* Use flexbox to align buttons */
+    justify-content: space-between; /* Space between buttons */
+    margin: 10px 0; /* Adjust margin as needed */
+}
+
+.button-group input {
+    height: 45px; /* Match the height of the existing buttons */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* Remove default border */
+    font-size: 18px; /* Font size */
+    font-weight: 500; /* Font weight */
+    letter-spacing: 1px; /* Letter spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Style for the Back button */
+.back-button {
+    width: 35% !important; /* Smaller width for the back button */
+    background: #f1c40f; /* Yellow background */
+    color: #333; /* Dark text color */
+}
+
+.back-button:hover {
+    background: #e0b90b; /* Darker yellow on hover */
+}
+
+/* Style for the Submit button */
+.submit-button {
+    width: 60% !important; /* Larger width for the submit button */
+    background: linear-gradient(135deg, #71b7e6, #9b59b6); /* Gradient background */
+    color: #fff; /* White text */
+}
+
+.submit-button:hover {
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6); /* Inverse gradient on hover */
+}
+
+
+.step {
+    display: none;
+  }
+  
+  .step.active {
+    display: block;
+  }
+
+  .slider-description {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666; /* Gray color for the text */
+    margin-top: 5px; /* Space between the description and the slider */
+    font-weight: 400; /* Optional: adjust font weight */
+}
+.slider-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px; /* Space between the slider and the values */
+}
+
+.slider-values span {
+    color: #666; /* Gray color for the numbers */
+    font-size: 14px; /* Adjust size as needed */
+}
+
+
+/* Modal Box Styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 999; /* Sits on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Background transparency */
+}
+
+.modal-content {
+  position: relative;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.modal-body p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.loading-spinner {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loading-spinner div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 6px solid #3498db;  /* Color of the ring */
+  border-radius: 50%;
+  animation: loading-ring 1.2s infinite ease-in-out;
+  border-color: #3498db transparent transparent transparent;
+}
+
+.loading-spinner div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.loading-spinner div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loading-spinner div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes loading-ring {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+
+/* Responsive media query code for mobile devices */
+@media(max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  form .category {
+    width: 100%;
+  }
+
+  .content form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .user-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+
+/* Responsive media query code for mobile devices */
+@media(max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
