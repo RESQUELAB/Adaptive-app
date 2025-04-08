@@ -30,9 +30,13 @@ function goToStep2() {
       // Disable Step 1 inputs
       step1Inputs.forEach(input => input.disabled = true);
   
-      // Enable Step 2 inputs
-      const step2Inputs = document.querySelectorAll('#step2 input');
-      step2Inputs.forEach(input => input.disabled = false);
+    // Enable Step 2 inputs, except the data protection checkbox
+    const step2Inputs = document.querySelectorAll('#step2 input');
+    step2Inputs.forEach(input => {
+      if (input.id !== 'data-protection-checkbox' || input.checked) {
+        input.disabled = false;
+      }
+      });
   
       // Hide Step 1 and Show Step 2
       document.querySelector('#step1').classList.remove('active');
@@ -67,15 +71,17 @@ function getSelectedOccupations() {
     return selectedOccupations; // Return the array of selected values
 }
 
-  // Handle form submission
-  document.getElementById('registration-form').addEventListener('submit', function (event) {
+// Handle form submission
+document.getElementById('registration-form').addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent form from submitting immediately
     
     // Perform additional validation or process data here if needed
     const form = event.target;
-    if (form.checkValidity()) {
-      // Submit the form data (e.g., via AJAX or a backend call)
-      console.log("Form is valid, submitting...");
+    const dataProtectionCheckbox = document.querySelector('input[name="data_protection"]');
+    console.log("Form is valid: ", form.checkValidity());
+    console.log("Data protection checkbox is checked: ", dataProtectionCheckbox.checked);
+    if (form.checkValidity() && dataProtectionCheckbox.checked) {
+        console.log("Form is valid, submitting...");
         // Obtain form values
         var first_name = document.querySelector('input[name="name"]').value; 
         var last_name = document.querySelector('input[name="surname"]').value;
@@ -125,18 +131,26 @@ function getSelectedOccupations() {
                 document.location = './selection.html';
             } catch (error) {
                 document.getElementById('registration-message').textContent = 'Error during login after registration: ' + error.message;
+                showNotification('registration-message');
             }
         } else {
             // Display registration error message
             document.getElementById('registration-message').textContent = response.message;
+            showNotification('registration-message');
         }
     }).catch(function (error) {
         document.getElementById('registration-message').textContent = 'An error occurred during registration: ' + error;
+        showNotification('registration-message');
+        console.log("error while registring: ", error)
     });
 
 
     } else {
-      form.reportValidity();
+        if (!dataProtectionCheckbox.checked) {
+            document.getElementById('registration-message').textContent = 'Debe aceptar la protección de datos para registrarse.';
+            showNotification('registration-message');
+        }
+        form.reportValidity();
     }
   });
 
@@ -237,10 +251,25 @@ async function loginUser(username, password) {
                 const modal = document.getElementById('setup-modal');
                 modal.style.display = 'block';
 
+                let session = response.params.session;
+
+                console.log("session:: ", session)
+
+                let spinnerDelay = 10000; // 10 seconds
+                if (session === '1') {
+                    spinnerDelay = 2000; // 2 seconds
+                }
+
+                console.log("----------------")
+                console.log("----------------")
+                console.log(response.params)
+                console.log("----------------")
+
                 // Save login information locally
                 setUsername(username)
                 // loginInfo.username = username;
                 setSession(response.params.session)
+                setExperimentName(response.params.experimentName)
                 setGroupDefinition(response.params.groupDefinition)
                 console.log("SETTING THE PROFILE TO:: ", response.params.userProfile)
                 setUserProfile(response.params.userProfile)
@@ -249,7 +278,7 @@ async function loginUser(username, password) {
                 setTimeout(() => {
                     modal.style.display = 'none'; // Hide modal after setup
                     resolve(response);
-                }, 10000); // Wait 10 seconds for setup
+                }, spinnerDelay); // Wait 10 seconds for setup
                 // resolve(response); // Login successful
             } else {
                 reject(response.message); // Login failed, return the error message

@@ -61,18 +61,36 @@ class OrderListController {
 	}
 
 	renderList() {
-		$('.orderList').html(`
-		<div id="articleList">
-		<div class="headers">
-			<span>ID</span>
-			<span>Cantidad de articulos</span>
-			<span>Importe</span>
-			<span>Estado</span>
-			<span>Pedido realizado el</span>
+		if (Object.keys(this.orders).length == 0) {
+			this.renderEmptyOrders();
+		} else {
+			$('.orderList').html(`
+				<div id="articleList">
+				<div class="headers">
+					<span>ID</span>
+					<span>Cantidad de articulos</span>
+					<span>Importe</span>
+					<span>Estado</span>
+					<span>Pedido realizado el</span>
+				</div>
+				${this.getOrdersHTML()}
+				</div>
+				`)
+		}
+	}
+
+	renderEmptyOrders() {
+		let html = `
+		    <div style="text-align: left; margin: 20px 0;">
+        <span style="font-size: 18px; font-weight: bold;">No existen pedidos todavía.</span>
+    </div>
+	<div style="text-align: left; margin: 20px 0;">
+			<a href="catalog.html" style="color: #007bff; text-decoration: none; font-size: 16px;">
+				Volver al inicio
+			</a>
 		</div>
-		${this.getOrdersHTML()}
-		</div>
-		`)
+		`
+		$('.orderList').html(html)
 	}
 
 	getOrdersHTML() {

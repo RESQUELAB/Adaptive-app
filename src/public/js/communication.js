@@ -2,10 +2,18 @@
 // 	PORT = '8000',
 // 	LS_LOGIN_KEY = 'sports-login'
 
+function getHost() {
+    const IP_REGEX = /^(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}(:[0-9]{1,5})?$/;
+    let host = localStorage.getItem('server-host');
+	host = "158.42.185.67"
+    return host;
+}
 
-	const HOST = '158.42.185.67',
-    PORT = '9999'
-	LS_LOGIN_KEY = 'sports-login'
+
+
+const HOST = getHost();
+PORT = '9999'
+LS_LOGIN_KEY = 'sports-login'
 
 var loginInfo = null
 var amIconnected = false
@@ -19,7 +27,8 @@ function loadLoginInfo() {
 		catalogue_1: false,
 		catalogue_2: false,
 		survey_1: false,
-		survey_2: false,  // Ensure this is always initialized
+		survey_2: false,
+		experimentName: '',
 	};
 
 	// Merge default values with stored values, ensuring all keys are initialized
@@ -70,6 +79,12 @@ function setUserProfile(userProfile){
 
 function setSession(session) {
 	loginInfo.session = session
+	saveLoginInfo()
+}
+
+function setExperimentName(experimentName) {
+	loginInfo.experimentName = experimentName
+	console.log("Experiment Name setted to: " , experimentName)
 	saveLoginInfo()
 }
 

@@ -1,6 +1,8 @@
 .goBack {
     grid-column: 3;
     grid-row: 2;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .orderList {

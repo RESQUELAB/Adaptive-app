@@ -17,13 +17,11 @@ class ProfileController {
 	}
 
 	render_cart(){
-		console.log("CART RENDERING!!!")
 		let c = this.profile.userInfo.clientData
 		let cship = this.profile.userInfo.shipmentData
 		let cpay = this.profile.userInfo.paymentData
 
 		let panel = $('#userData').html(`
-
 			<div id="personalData">
 						<h3>Datos personales</h3>
 						<p>${c.name} ${c.lastName}</p>
@@ -35,6 +33,11 @@ class ProfileController {
 						<p>Método de pago: Tarjeta de débito</p>
 						<p>VISA: ${cpay.cardNumber}</p>
 					</div>
+					<div style="text-align: left; margin: 20px 0; border: 0;">
+			<a href="order.html?action=list" style="color: #007bff; text-decoration: none; font-size: 16px;">
+				Mis pedidos
+			</a>
+		</div>
 		`)
 
 		console.log("this is the panel!: ", panel)

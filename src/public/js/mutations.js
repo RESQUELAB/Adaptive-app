@@ -72,6 +72,7 @@ class MutationController {
     setFontSize(value) {
         if (value == "small") document.documentElement.style.setProperty('--base-font-size', '14px');
         if (value == "default") document.documentElement.style.setProperty('--base-font-size', '16px');
+        if (value == "medium") document.documentElement.style.setProperty('--base-font-size', '18px');
         if (value == "big") document.documentElement.style.setProperty('--base-font-size', '22px');
     }
 
