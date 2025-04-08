@@ -14,13 +14,12 @@
 	border-bottom: 1px solid #555 !important;
 }
 
-.darkTheme .searchbar>input#search_input {
+.darkTheme .search-bar>input#search_input {
 	background-color: #FFFFFF;
 	border-color: #bbb;
 	color: black;
 }
-
-.darkTheme .searchbar path,
+.darkTheme .search-bar path,
 .darkTheme .userbuttons .userbutton>svg>path {
 	fill: #bbb;
 }
@@ -30,6 +29,10 @@
 	border: 1px solid gray;
 	color: black;
 	opacity: 0.7;
+}
+
+.darkTheme .user-button .icon{
+	filter: brightness(2);
 }
 
 .darkTheme .discrete {
@@ -334,3 +337,32 @@
 	border: 1px solid #555; /* Darker border */
 	color: #fff; /* Light text for contrast */
   }
+ 
+.darkTheme .no-items-found button{
+	background-color: #007bff !important;
+}
+
+:root {
+	--card-bg-color: #2c2c2c;
+	--card-border-color: #444;
+	--thumbnail-border-color: #555;
+	--title-color: #e0e0e0;
+	--price-color: #1e90ff;
+	--score-color: #999;
+	--label-color: #ccc;
+	--input-border-color: #666;
+	--positive-bg-color: #388e3c;
+	--positive-text-color: #fff;
+	--positive-hover-bg-color: #2e7d32;
+	--positive-color: #b6e76a;
+	--negative-color: #d32f2f;
+	--description-title-color: #e0e0e0;
+	--description-text-color: #ccc;
+}
+
+.darkTheme .articleQuantity > .remove{
+	color: white;
+}
+.darkTheme .articleQuantity > .remove:hover{
+	color: #F44436;
+}

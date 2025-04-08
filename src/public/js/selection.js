@@ -10,6 +10,8 @@ function updateSelectionPage() {
     const survey_1_finished = loginInfo.survey_1
     const survey_2_finished = loginInfo.survey_2
 
+    const experiment_name = loginInfo.experiment_name;
+
     let experiment_finished = false;
 
     let flags = {
@@ -152,11 +154,11 @@ function getDomainImageSource(domain) {
     // This function can map the domain names to specific image paths
     const domainImageMap = {
         "Courses": "./img/logo_courses.png",
-        "Trips": "./img/logo_trips.png"
+        "Trips": "./img/logo_trips.png",
+        "Sports": "./img/logo_sports.png",
     };
 
-    // Return the image path for the corresponding domain or a default image if not found
-    return domainImageMap[domain] || "./img/logo.png";
+    return domainImageMap[domain] || domainImageMap["Courses"];
 }
 
 // Enable a specific card
@@ -179,7 +181,7 @@ function disableCard(cardId) {
 // Add click events to the cards
 function addCardClickEvents(groupDefinition, flags) {
     document.getElementById("card1").onclick = function() {
-        document.location = 'http://158.42.185.67:8000/login_web';
+        document.location = 'http://158.42.185.67:8000/login_web?username=' + loginInfo.username + '&experimentName=' + loginInfo.experimentName;
     };
 
     document.getElementById("card2").onclick = function() {

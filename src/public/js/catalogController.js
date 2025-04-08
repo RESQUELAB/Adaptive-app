@@ -73,18 +73,23 @@ class CatalogController {
 		let maxArticles = Math.min(20, this.articles.length)
 		maxArticles -= maxArticles % this.gridSize
 
-		return `<div class="results">
+		return `
+		<div class="results">
 			<span textId="results_found_0:1c"></span>
 			<span>${this.resultsNumber}</span>
 			<span textId="results_found_1"></span>
-			<div class="aright">
-				<span textId="order_by:1c"></span>
-				<select>
-					<option textId="relevance:1c"></option>
-					<option textId="price:1c"></option>
-				</select>
-			</div>
-		</div>`
+
+			<!-- 
+				<div class="aright">
+					<span textId="order_by:1c"></span>
+					<select>
+						<option textId="relevance:1c"></option>
+						<option textId="price:1c"></option>
+					</select>
+				</div>
+			-->
+		</div>
+		`
 	}
 
 	getArticleById(id) {
@@ -144,17 +149,26 @@ class CatalogController {
 	}
 
 	render() {
-		this.catalogPanel.html(
-			this.getResultsHtml() +
-			this.getArticlesHtml() +
-			this.getPaginationHtml()
-		)
-		favs.setupFavouriteTogglerListeners()
-
-
-		translateTexts(null, this.catalogPanel)
-
-		this.rendered = true
+		if (this.filter.filteredArticles.length === 0) {
+			this.catalogPanel.attr('class', 'grid-border catalog catalog-1cols')
+			this.catalogPanel.html(`
+				<div class="no-items-found" style="text-align: center; padding: 50px;">
+					<h2>No se han encontrado productos en esta búsqueda</h2>
+					<p>Pruebe a cambiar los filtros.</p>
+					<p>Si se trata de la lista de favoritos, añada productos a la lista de favoritos primero.</p>
+					<button onclick="window.location.href='./catalog.html'" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Reiniciar búsqueda</button>
+				</div>
+			`);
+		} else {
+			this.catalogPanel.html(
+				this.getResultsHtml() +
+				this.getArticlesHtml() +
+				this.getPaginationHtml()
+			);
+		}
+		favs.setupFavouriteTogglerListeners();
+		translateTexts(null, this.catalogPanel);
+		this.rendered = true;
 	}
 }
 
@@ -348,7 +362,6 @@ class Filter {
 
 	getCategoriesHtml() {
 		let s = ''
-		console.log("TEST CATEGORIES HTML:: ", this.menuType)
 		switch (this.menuType) {
 			case 'dropdown':
 				s = `<select onchange="window.location.href='./catalog.html?cat='+this.value">

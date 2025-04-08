@@ -75,13 +75,22 @@ function gatherProfileData() {
 }
 
 function showSuccessMessage(messageElementId, message) {
-  const messageElement = document.getElementById(messageElementId);
-  messageElement.textContent = message;
-  messageElement.style.display = "block";
+	const messageContainer = document.getElementById("successMessageContainer");
+	messageContainer.textContent = message;
+	messageContainer.style.display = "block";
 
-  setTimeout(() => {
-      messageElement.style.display = "none";
-  }, 3000); 
+	setTimeout(() => {
+		messageContainer.classList.add("show");
+	}, 10); // Delay to trigger the transition
+
+	setTimeout(() => {
+		messageContainer.classList.add("hide");
+	}, 2500);
+
+	setTimeout(() => {
+		messageContainer.classList.remove("show", "hide");
+		messageContainer.style.display = "none";
+	}, 3000);
 }
 
 async function logout(){

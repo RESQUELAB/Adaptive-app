@@ -11,6 +11,7 @@
 .goBack {
   grid-column: 3;
   grid-row: 2;
+  margin-top: 8px;
 }
 
 .profile {
@@ -56,6 +57,20 @@
 
 button.positive + button.negative {
   margin-left: 40px;
+}
+
+button.save {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 14px 20px; /* Some padding */
+  margin: 8px 0; /* Some margin */
+  border: none; /* Remove borders */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 100%; /* Full width */
+}
+
+button.save:hover {
+  background-color: #45a049; /* Darker green */
 }
 
 /* Tabs styling */
@@ -138,13 +153,13 @@ button.positive + button.negative {
 /* Style for the Back button */
 .back-button {
   width: 35% !important; 
-  background: #77b1e5 ; 
-  color: #333; 
+  background: #007fff ; 
+  color: #fff;
+  transition: background-color 0.3s ease; 
 }
 
 .back-button:hover {
-  background: #007fff;
-  color: white;
+  background: #0043ff;
 }
 
 /* Style for the Submit button */
@@ -158,4 +173,31 @@ button.positive + button.negative {
   border-radius: 4px; /* Keep the same border radius */
   border: 1px solid #ccc; /* Keep the same border style */
   box-sizing: border-box; /* Ensure proper box sizing */
+}
+
+.success-message-container {
+	display: none;
+	position: fixed;
+	/* bottom: 20px; */
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #4CAF50;
+	color: white;
+	padding: 15px;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	opacity: 0;
+}
+
+.success-message-container.show {
+	transform: translateX(-50%) translateY(50%);
+	opacity: 1;
+}
+
+.success-message-container.hide {
+	transform: translateX(-50%) translateY(-20px);
+	opacity: 0;
 }

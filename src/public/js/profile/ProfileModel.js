@@ -40,6 +40,8 @@ class Profile {
 		console.log("LOADDING....", )
 		if(typeof loginInfo.userProfile !== 'undefined'){	
 
+			console.log(loginInfo.userProfile)
+
 			this.userInfo.clientData = {
 				name: loginInfo.userProfile.first_name,
 				lastName: loginInfo.userProfile.last_name,

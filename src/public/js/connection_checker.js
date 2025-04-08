@@ -1,11 +1,45 @@
+// // Function to update HOST when the user edits the input
+// function updateHostFromInput() {
+//     const IP_REGEX = /^(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}(:[0-9]{1,5})?$/;
+//     const input = document.getElementById('server-host-display');
+//     const newHost = input.value.trim();
+
+//     if (newHost && IP_REGEX.test(newHost)) {
+//         localStorage.setItem('server-host', newHost); // Save valid HOST
+//         checkServerStatus(); // Optionally recheck server status
+//     } else {
+//         alert('Please enter a valid server host in the format "192.168.1.1:9999".');
+//         input.value = localStorage.getItem('server-host') || ''; // Reset to last valid value
+//     }
+//     location.reload()
+// }
+
+// // Initialize input field on page load
+// document.addEventListener('DOMContentLoaded', () => {
+//     const savedHost = localStorage.getItem('server-host');
+//     const input = document.getElementById('server-host-display');
+//     input.value = savedHost || 'Not Set';
+//     if (savedHost) {
+//         checkServerStatus();
+//     }
+// });
+
+// document.getElementById('server-host-display').addEventListener('input', (event) => {
+//     const input = event.target;
+//     const IP_REGEX = /^(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}(:[0-9]{1,5})?$/;
+//     const isValid = IP_REGEX.test(input.value.trim());
+//     input.style.borderColor = isValid ? 'green' : 'red';
+// });
+
 
 function checkServerStatus(retryCount = 0) {
-    const maxRetries = 10;  // You can adjust the number of retry attempts
-    const retryDelay = 500;  // Retry every 3 seconds
+    const maxRetries = 10; 
+    const retryDelay = 500;  
 
     const currentPage = window.location.pathname;
 
     console.log("the socket:: ", socket.connected)
+    console.log("the socket host:: ", socket)
 
 
     // Check socket connection status
