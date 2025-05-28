@@ -260,11 +260,6 @@ async function loginUser(username, password) {
                     spinnerDelay = 2000; // 2 seconds
                 }
 
-                console.log("----------------")
-                console.log("----------------")
-                console.log(response.params)
-                console.log("----------------")
-
                 // Save login information locally
                 setUsername(username)
                 // loginInfo.username = username;
