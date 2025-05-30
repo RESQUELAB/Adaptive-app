@@ -31,66 +31,7 @@
   </head>
 
   <body lang="es">
-    <div class="assistant-sidebar" id="assistantSidebar">
-      <button
-        class="minimize-btn"
-        id="assistantMinimizeBtn"
-        title="Minimizar/Expandir"
-        aria-expanded="true"
-      >
-        –
-      </button>
-      <div class="assistant-title">🛠️ Centro de Adaptación</div>
-      <div class="assistant-content" id="assistantContent">
-        <div class="assistant-group">
-          <div class="assistant-group-title">Usuario</div>
-          <input type="text" id="username" placeholder="Username" value="anonymous" />
-          <input type="text" id="host" placeholder="Host" value="localhost" />
-        </div>
-        <div class="assistant-group">
-          <div class="assistant-group-title">Idioma</div>
-          <button id="changeEsp">Español</button>
-          <button id="changeEng">English</button>
-        </div>
-        <div class="assistant-group">
-          <div class="assistant-group-title">Información</div>
-          <button id="infoShow">Mostrar</button>
-          <button id="infoPartial">Parcial</button>
-          <button id="infoHide">Ocultar</button>
-        </div>
-        <div class="assistant-group">
-          <div class="assistant-group-title">Tema</div>
-          <button id="changeLight">Claro</button>
-          <button id="changeDark">Oscuro</button>
-          <button id="changeContrast">Alto Contraste</button>
-        </div>
-        <div class="assistant-group">
-          <div class="assistant-group-title">Catálogo</div>
-          <button id="catalog_grid1cols">Lista</button>
-          <button id="catalog_grid2cols">2 Columnas</button>
-          <button id="catalog_grid3cols">3 Columnas</button>
-          <button id="catalog_grid4cols">4 Columnas</button>
-          <button id="catalog_grid5cols">5 Columnas</button>
-        </div>
-        <div class="assistant-group">
-          <div class="assistant-group-title">Tamaño de Fuente</div>
-          <button id="font_size_small">Pequeña</button>
-          <button id="font_size_default">Normal</button>
-          <button id="font_size_big">Grande</button>
-        </div>
-        <div class="assistant-group">
-          <div class="assistant-group-title">Tipo de Menú</div>
-          <button id="menu_type_line">Línea</button>
-          <button id="menu_type_dropdown">Desplegable</button>
-        </div>
-        <div class="assistant-group">
-          <div class="assistant-group-title">Categoría</div>
-          <button id="category_sports">Deportes</button>
-          <button id="category_courses">Cursos</button>
-          <button id="category_trips">Viajes</button>
-        </div>
-      </div>
-    </div>
+    <div id="adaptation-center"></div>
 
     <div class="full-container">
       <!-- Header -->
@@ -198,52 +139,5 @@
     <script src="./js/pageNavigation.js"></script>
     <script src="./js/catalog.js"></script>
     <script src="./js/head.js"></script>
-    <script>
-      // Adaptation actuators for mutations.js
-      document.getElementById('changeLight').onclick = function() { mc.mutate('theme', 'light'); };
-      document.getElementById('changeDark').onclick = function() { mc.mutate('theme', 'dark'); };
-      document.getElementById('changeContrast').onclick = function() { mc.mutate('theme', 'contrast'); };
-      document.getElementById('changeEsp').onclick = function() { mc.mutate('language', 'es'); };
-      document.getElementById('changeEng').onclick = function() { mc.mutate('language', 'en'); };
-      document.getElementById('infoShow').onclick = function() { mc.mutate('information', 'show'); };
-      document.getElementById('infoPartial').onclick = function() { mc.mutate('information', 'partial'); };
-      document.getElementById('infoHide').onclick = function() { mc.mutate('information', 'hide'); };
-      document.getElementById('font_size_small').onclick = function() { mc.mutate('font_size', 'small'); };
-      document.getElementById('font_size_default').onclick = function() { mc.mutate('font_size', 'default'); };
-      document.getElementById('font_size_big').onclick = function() { mc.mutate('font_size', 'big'); };
-      document.getElementById('catalog_grid1cols').onclick = function() { mc.mutate('display', 'list'); };
-      document.getElementById('catalog_grid2cols').onclick = function() { mc.mutate('display', 'grid2'); };
-      document.getElementById('catalog_grid3cols').onclick = function() { mc.mutate('display', 'grid3'); };
-      document.getElementById('catalog_grid4cols').onclick = function() { mc.mutate('display', 'grid4'); };
-      document.getElementById('catalog_grid5cols').onclick = function() { mc.mutate('display', 'grid5'); };
-      document.getElementById('menu_type_line').onclick = function() { mc.mutate('menu_type', 'line'); };
-      document.getElementById('menu_type_dropdown').onclick = function() { mc.mutate('menu_type', 'dropdown'); };
-      document.getElementById('category_sports').onclick = function() { mc.mutate('category', 'sports'); };
-      document.getElementById('category_courses').onclick = function() { mc.mutate('category', 'courses'); };
-      document.getElementById('category_trips').onclick = function() { mc.mutate('category', 'trips'); };
-    </script>
-    <script>
-      // Minimizar/expandir sidebar con ocultar/mostrar contenido
-      const sidebar = document.getElementById('assistantSidebar');
-      const minBtn = document.getElementById('assistantMinimizeBtn');
-      const content = document.getElementById('assistantContent');
-      minBtn.onclick = function(e) {
-        e.stopPropagation();
-        sidebar.classList.toggle('minimized');
-        const minimized = sidebar.classList.contains('minimized');
-        minBtn.textContent = minimized ? '☰' : '–';
-        minBtn.setAttribute('aria-expanded', !minimized);
-        content.style.display = minimized ? 'none' : 'block';
-      };
-      // Permitir expandir haciendo click en el sidebar minimizado
-      sidebar.onclick = function(e) {
-        if (sidebar.classList.contains('minimized') && e.target === sidebar) {
-          sidebar.classList.remove('minimized');
-          minBtn.textContent = '–';
-          minBtn.setAttribute('aria-expanded', true);
-          content.style.display = 'block';
-        }
-      };
-    </script>
   </body>
 </html>
