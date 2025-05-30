@@ -55,7 +55,7 @@ function createWindow() {
 	})
 
 	// Load the catalog.html of the app
-	mainWindow.loadFile(pagesFolder + 'index.html')
+	mainWindow.loadFile(pagesFolder + 'catalog.html')
 
 	// Open the DevTools.
 	// mainWindow.webContents.openDevTools()

@@ -1,40 +1,65 @@
-<div class="controls" style="display: none;">
-    <span>Username</span>
-    <input type="text" id="username"/ value="anonymous">
-    <hr>
-    <span>Host</span>
-    <input type="text" id="host" value="localhost"/>
-    <hr>
-<!-- 
--->
-<span>Language</span>
-    <button id="changeEsp">Spanish</button>
-    <button id="changeEng">English</button>
-    <hr> 
-<!-- 
--->
-    <span>Information</span>
-    <button id="infoShow">Show</button>
-    <button id="infoPartial">Show Partial</button>
-    <button id="infoHide">Hide</button>
-    <hr>
-    <span>Theme</span>
-    <button id="changeLight">Light</button>
-    <button id="changeDark">Dark</button>
-    <button id="changeContrast">High Contrast</button>
-    <div id="catalogControls">
-        <hr>
-        <span>Catalog</span>
-        <button id="catalog_grid1cols">List</button>
-        <button id="catalog_grid2cols">Grid 2 cols</button>
-        <button id="catalog_grid3cols">Grid 3 cols</button>
-        <button id="catalog_grid4cols">Grid 4 cols</button>
-        <button id="catalog_grid5cols">Grid 5 cols</button>
+<div class="assistant-sidebar" id="assistantSidebar">
+  <button
+    class="minimize-btn"
+    id="assistantMinimizeBtn"
+    title="Minimizar/Expandir"
+    aria-expanded="true"
+  >
+    –
+  </button>
+  <div class="assistant-title">🛠️ Centro de Adaptación</div>
+  <div class="assistant-content" id="assistantContent">
+    <div class="assistant-group">
+      <div class="assistant-group-title">Usuario</div>
+      <input
+        type="text"
+        id="username"
+        placeholder="Username"
+        value="anonymous"
+      />
+      <input type="text" id="host" placeholder="Host" value="localhost" />
     </div>
-
-        <span>Font Size</span>
-        <button id="font_size_small">Small</button>
-        <button id="font_size_default">Default</button>
-        <button id="font_size_big">Big</button>
-    
+    <div class="assistant-group">
+      <div class="assistant-group-title">Idioma</div>
+      <button id="changeEsp">Español</button>
+      <button id="changeEng">English</button>
+    </div>
+    <div class="assistant-group">
+      <div class="assistant-group-title">Información</div>
+      <button id="infoShow">Mostrar</button>
+      <button id="infoPartial">Parcial</button>
+      <button id="infoHide">Ocultar</button>
+    </div>
+    <div class="assistant-group">
+      <div class="assistant-group-title">Tema</div>
+      <button id="changeLight">Claro</button>
+      <button id="changeDark">Oscuro</button>
+      <button id="changeContrast">Alto Contraste</button>
+    </div>
+    <div class="assistant-group">
+      <div class="assistant-group-title">Catálogo</div>
+      <button id="catalog_grid1cols">Lista</button>
+      <button id="catalog_grid2cols">2 Columnas</button>
+      <button id="catalog_grid3cols">3 Columnas</button>
+      <button id="catalog_grid4cols">4 Columnas</button>
+      <button id="catalog_grid5cols">5 Columnas</button>
+    </div>
+    <div class="assistant-group">
+      <div class="assistant-group-title">Tamaño de Fuente</div>
+      <button id="font_size_small">Pequeña</button>
+      <button id="font_size_default">Normal</button>
+      <button id="font_size_big">Grande</button>
+    </div>
+    <div class="assistant-group">
+      <div class="assistant-group-title">Tipo de Menú</div>
+      <button id="menu_type_line">Línea</button>
+      <button id="menu_type_dropdown">Desplegable</button>
+    </div>
+    <div class="assistant-group">
+      <div class="assistant-group-title">Categoría</div>
+      <button id="category_sports">Deportes</button>
+      <button id="category_courses">Cursos</button>
+      <button id="category_trips">Viajes</button>
+    </div>
+  </div>
 </div>

@@ -417,3 +417,94 @@ svg.heart.empty {
 		opacity: 1;
 	}
 }
+
+  .assistant-sidebar {
+        position: fixed;
+        top: 30px;
+        left: unset;
+        right: 20px;
+        width: 320px;
+        max-height: 90vh;
+        background: rgba(30, 30, 40, 0.95);
+        color: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+        z-index: 1000;
+        padding: 24px 18px 18px 18px;
+        overflow-y: auto;
+        font-family: "Segoe UI", Arial, sans-serif;
+        transition: left 0.3s, width 0.3s;
+      }
+      .assistant-sidebar.minimized {
+        width: 20px;
+		height: 20px;
+        padding: 8px 4px;
+        overflow: hidden;
+        left: unset;
+        right: 8px;
+		top: 8px;
+      }
+      .assistant-sidebar .assistant-title {
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-bottom: 18px;
+        letter-spacing: 1px;
+        text-align: left;
+      }
+      .assistant-sidebar .assistant-group {
+        margin-bottom: 18px;
+      }
+      .assistant-sidebar .assistant-group-title {
+        font-size: 1em;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #ffd700;
+      }
+      .assistant-sidebar button,
+      .assistant-sidebar input[type="text"] {
+        margin: 4px 4px 4px 0;
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: none;
+        background: #444;
+        color: #fff;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .assistant-sidebar button:hover {
+        background: #666;
+      }
+      .assistant-sidebar input[type="text"] {
+        background: #222;
+        border: 1px solid #555;
+        width: 70%;
+      }
+      .assistant-sidebar hr {
+        border: none;
+        border-top: 1px solid #555;
+        margin: 10px 0;
+      }
+      .assistant-sidebar .minimize-btn {
+        position: absolute;
+        top: -2px;
+        right: 2px;
+        background: #222;
+        color: #ffd700;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        font-size: 1.2em;
+        line-height: 28px;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        z-index: 1100;
+      }
+      .assistant-sidebar.minimized .assistant-title,
+      .assistant-sidebar.minimized .assistant-group,
+      .assistant-sidebar.minimized hr {
+        display: none;
+      }
+
+	  
