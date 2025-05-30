@@ -45,9 +45,25 @@ class MutationController {
                 console.log("MENU TYPE: ", name, " - ", value)
                 controller.changeFilters(name, value)
             }
+            if (name == 'images' && typeof controller !== 'undefined') {
+                if (value == 'show') this.showImages()
+                if (value == 'hide') this.hideImages()
+            }
         }
     }
 
+    showImages() {
+        /** 
+         * TODO: Implement the logic to show images.
+        */
+    }
+
+    hideImages() {
+        /**
+         * TODO: Implement the logic to hide images.
+        */
+    }
+    
     changeCategory(value) {
 
         $('#full-container').attr('background-image', "../img/logo_" + value + '.png');
@@ -136,7 +152,8 @@ class MutationController {
             "theme": ["light", "dark"],
             "information": ["show", "partial", "hide"],
             "font_size": ["small", "default",  "medium", "big"],
-            "menu_type": ["line", "dropdown"]
+            "menu_type": ["line", "dropdown"],
+            "images": ["images", "no_images"],
         }
     }
 }

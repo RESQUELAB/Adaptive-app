@@ -77,6 +77,7 @@ window.initAdaptationCenter = function() {
       font_size: 'Tamaño de Fuente',
       menu_type: 'Tipo de Menú',
       category: 'Categoría',
+      images: 'Imágenes',
     };
     const valueLabels = {
       light: 'Claro', dark: 'Oscuro', contrast: 'Alto Contraste',
@@ -85,7 +86,8 @@ window.initAdaptationCenter = function() {
       list: 'Lista', grid2: '2 Columnas', grid3: '3 Columnas', grid4: '4 Columnas', grid5: '5 Columnas',
       small: 'Pequeña', default: 'Normal', medium: 'Mediana', big: 'Grande',
       line: 'Línea', dropdown: 'Desplegable',
-      sports: 'Deportes', courses: 'Cursos', trips: 'Viajes'
+      sports: 'Deportes', courses: 'Cursos', trips: 'Viajes',
+      images_show: 'Imágenes', no_images: 'Sin Imágenes',
     };
     Object.entries(mc.all_mutations).forEach(([mutation, values]) => {
       let group = `<div class="assistant-group"><div class="assistant-group-title">${prettyNames[mutation]||mutation}</div>`;
