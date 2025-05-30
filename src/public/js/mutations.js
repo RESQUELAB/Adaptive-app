@@ -41,10 +41,17 @@ class MutationController {
             if (name == 'information' && typeof pageProduct !== 'undefined') pageProduct.setDescriptionVisibility(value)
 
             if (name == 'category') this.changeCategory(value)
+            if (name == 'menu_type' && typeof controller !== 'undefined' ){
+                console.log("MENU TYPE: ", name, " - ", value)
+                controller.changeFilters(name, value)
+            }
         }
     }
 
     changeCategory(value) {
+
+        $('#full-container').attr('background-image', "../img/logo_" + value + '.png');
+
         $('#headerLogo').attr('src', "img/logo_" + value + '.png');
         console.log("VALUE ", value)
         if (value == "sports") {
@@ -65,6 +72,7 @@ class MutationController {
     setFontSize(value) {
         if (value == "small") document.documentElement.style.setProperty('--base-font-size', '14px');
         if (value == "default") document.documentElement.style.setProperty('--base-font-size', '16px');
+        if (value == "medium") document.documentElement.style.setProperty('--base-font-size', '18px');
         if (value == "big") document.documentElement.style.setProperty('--base-font-size', '22px');
     }
 
@@ -98,9 +106,16 @@ class MutationController {
             this.save()
         }
         else {
-            this.mutations = data
+            const missingMutations = Object.keys(this.all_mutations).filter(mutation => !data.hasOwnProperty(mutation));
+    
+            if (missingMutations.length > 0) {
+                missingMutations.forEach(mutation => {
+                    data[mutation] = this.all_mutations[mutation][0];
+                });
+            }
+    
+            this.mutations = data; 
         }
-
     }
 
     loadDefaults() {
@@ -110,7 +125,8 @@ class MutationController {
             display: 'list',
             font_size: "default",
             information: "show",
-            category: "sports"
+            category: "sports",
+            menu_type: "line",
         }
     }
 
@@ -119,7 +135,8 @@ class MutationController {
             "display": ["list", "grid2", "grid3", "grid4", "grid5"],
             "theme": ["light", "dark"],
             "information": ["show", "partial", "hide"],
-            "font_size": ["small", "default", "big"]
+            "font_size": ["small", "default",  "medium", "big"],
+            "menu_type": ["line", "dropdown"]
         }
     }
 }

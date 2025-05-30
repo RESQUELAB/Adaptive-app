@@ -2,6 +2,7 @@ class CatalogController {
 	constructor() {
 		this.rendered = false
 		this.gridSize = 1
+		this.menu_type = "line"
 		this.catalogPanel = $('.full-container > .catalog')
 		this.page = 1
 		if (this.catalogPanel.length == 0) this.catalogPanel = null
@@ -31,6 +32,20 @@ class CatalogController {
 			this.render()
 	}
 
+	changeFilters(name, value){
+		console.log("CHANGING THE FILTER, MUTATION", name, " . ", value)
+		if(name == "menu_type"){
+			this.filter.menuType = value
+
+			// Regenerate the categories HTML using the updated menu type
+			let newInnerHtml = this.filter.getCategoriesHtml()
+
+			// Replace only the inner HTML of the existing categories box
+			document.querySelector('#id_categories .inner-content').innerHTML = newInnerHtml;
+			translateTexts()
+		}
+	}
+
 	setResultsNumber() {
 		// 20 articles is the maximum for all modes
 		this.resultsNumber = Math.min(this.filter.filteredArticles.length, 30)
@@ -58,18 +73,23 @@ class CatalogController {
 		let maxArticles = Math.min(20, this.articles.length)
 		maxArticles -= maxArticles % this.gridSize
 
-		return `<div class="results">
+		return `
+		<div class="results">
 			<span textId="results_found_0:1c"></span>
 			<span>${this.resultsNumber}</span>
 			<span textId="results_found_1"></span>
-			<div class="aright">
-				<span textId="order_by:1c"></span>
-				<select>
-					<option textId="relevance:1c"></option>
-					<option textId="price:1c"></option>
-				</select>
-			</div>
-		</div>`
+
+			<!-- 
+				<div class="aright">
+					<span textId="order_by:1c"></span>
+					<select>
+						<option textId="relevance:1c"></option>
+						<option textId="price:1c"></option>
+					</select>
+				</div>
+			-->
+		</div>
+		`
 	}
 
 	getArticleById(id) {
@@ -129,17 +149,26 @@ class CatalogController {
 	}
 
 	render() {
-		this.catalogPanel.html(
-			this.getResultsHtml() +
-			this.getArticlesHtml() +
-			this.getPaginationHtml()
-		)
-		favs.setupFavouriteTogglerListeners()
-
-
-		translateTexts(null, this.catalogPanel)
-
-		this.rendered = true
+		if (this.filter.filteredArticles.length === 0) {
+			this.catalogPanel.attr('class', 'grid-border catalog catalog-1cols')
+			this.catalogPanel.html(`
+				<div class="no-items-found" style="text-align: center; padding: 50px;">
+					<h2>No se han encontrado productos en esta búsqueda</h2>
+					<p>Pruebe a cambiar los filtros.</p>
+					<p>Si se trata de la lista de favoritos, añada productos a la lista de favoritos primero.</p>
+					<button onclick="window.location.href='./catalog.html'" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Reiniciar búsqueda</button>
+				</div>
+			`);
+		} else {
+			this.catalogPanel.html(
+				this.getResultsHtml() +
+				this.getArticlesHtml() +
+				this.getPaginationHtml()
+			);
+		}
+		favs.setupFavouriteTogglerListeners();
+		translateTexts(null, this.catalogPanel);
+		this.rendered = true;
 	}
 }
 
@@ -150,6 +179,7 @@ class Filter {
 
 		this.controller = controller
 		this.selectedCategories = cats
+		this.menuType = "default"
 		this.filteredArticles = []
 		this.maxPrice = 0
 		this.minPrice = 9999999999
@@ -318,19 +348,84 @@ class Filter {
 	}
 
 	getFilterHtml(titleId, innerHtml) {
-		return `<div class="box">
+		let div_id = titleId
+		if (titleId == "categories:1c"){
+			div_id = "categories"
+		}
+		return `<div id="id_${div_id}" class="box">
 		<div class="title" textId="${titleId}"></div>
-		${innerHtml}
+		<div class="inner-content">
+            ${innerHtml}
+        </div>
 		</div>`
 	}
 
 	getCategoriesHtml() {
 		let s = ''
-		for (let c of this.categories)
-			//s += `<div class="line">${array(this.selectedCategories).has(c)? '>' : ''}<a href="./catalog.html?cat=${c}" textId="category_${c}:1c"></a></div>`
-			s += `<div class="line"><a href="./catalog.html?cat=${c}" textId="category_${c}:1c"></a></div>`
-		return s
+		switch (this.menuType) {
+			case 'dropdown':
+				s = `<select onchange="window.location.href='./catalog.html?cat='+this.value">
+					<option>Select a category</option>`;
+				for (let c of this.categories) {
+					s += `<option value="${c}">
+					${c}
+					</option>`;
+				}
+				s += `</select>`;
+				break;
+			
+			case 'accordion':
+				for (let c of this.categories) {
+					s += `<div class="accordion-item">
+						<a href="./catalog.html?cat=${c}" textId="category_${c}:1c">${c}</a>
+						</div>`;
+				}
+				break;
+	
+			case 'tags':
+				for (let c of this.categories) {
+					s += `<span class="chip">
+						<a href="./catalog.html?cat=${c}" textId="category_${c}:1c">${c}</a>
+						</span>`;
+				}
+				break;
+	
+			case 'checkboxes':
+				for (let c of this.categories) {
+					s += `<div class="category-item">
+						<input type="checkbox" id="${c}" name="${c}">
+						<label for="${c}">${c}</label>
+						</div>`;
+				}
+				break;
+	
+			case 'horizontal-scroll':
+				s += `<div class="horizontal-scroll">`;
+				for (let c of this.categories) {
+					s += `<a href="./catalog.html?cat=${c}" class="scroll-item" textId="category_${c}:1c">${c}</a>`;
+				}
+				s += `</div>`;
+				break;
+	
+			default:
+				// Default line display
+				for (let c of this.categories) {
+					s += `<div class="line"><a href="./catalog.html?cat=${c}" textId="category_${c}:1c"></a></div>`;
+				}
+		}
+		return s;
 	}
+
+	
+	
+
+	// getCategoriesHtml() {
+	// 	let s = ''
+	// 	for (let c of this.categories)
+	// 		//s += `<div class="line">${array(this.selectedCategories).has(c)? '>' : ''}<a href="./catalog.html?cat=${c}" textId="category_${c}:1c"></a></div>`
+	// 		s += `<div class="line"><a href="./catalog.html?cat=${c}" textId="category_${c}:1c"></a></div>`
+	// 	return s
+	// }
 }
 
 class Article {

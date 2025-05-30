@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Selection - AdaptiveApp</title>
+		<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+		<!-- Jquery -->
+		<link href="./jquery/jquery-ui.css" rel="stylesheet">
+		<script src="./jquery\external\jquery\jquery.js"></script>
+		<script src="./jquery/jquery-ui.js"></script>
+		<!-- Socket IO -->
+		<script src="./js/socket.io.min.js"></script>
+		<!-- Styles -->
+		<link href="./style/structure.css" rel="stylesheet">
+		<link href="./style/login.css" rel="stylesheet">
+		<link href="./style/selection.css" rel="stylesheet">
+		<link href="./style/lightTheme.css" rel="stylesheet">
+		<link href="./style/darkTheme.css" rel="stylesheet">
+        <style>
+            .container {
+                grid-column: 1/-1;
+                display: flex;
+            }
+        </style>
+		<!-- Core JS -->
+		<script src="./js/check.js"></script>
+		<script src="./js/translator.js"></script>
+		<script src="./js/mutations.js"></script>
+		<script src="./js/communication.js"></script>
+		<!-- Translations -->
+		<script src="./js/translations.js"></script>
+		<!-- Own data and js -->
+		<!-- MouseTracker -->
+		<script src="./js/mouseTracker.js"></script>
+		<!-- Icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+	</head>
+<body lang="es">
+
+
+<div class="full-container">	
+	<div class="server-indicator-container">
+		<div id="server-indicator" class="server-indicator"></div>
+		<div id="server-indicator_text" class="server-indicator_text">
+		Server status
+		</div>
+		<i id="refresh-button" class="fas fa-sync" onclick="checkServerStatus()"></i> 
+	</div>
+
+
+	<div class="main-content">
+        <div class="welcome-message">
+            <h1>Hola, <span id="username">Username</span> </h1>
+        </div>
+        <div class="description-text">
+            <p>
+                Este es el flujo del experimento que estás realizando. A continuación se detallan los pasos que deberás completar:
+            </p>
+            
+            <p id="warning-message" style="font-size: x-large;">
+                <strong>Si todas las tarjetas parece activas, pero no tienen efecto, avisa al expeimentador y sigue sus intrucciones.</strong>
+            </p>
+        </div>
+        
+        <div class="row_selection">
+            <div class="column_selection">
+                <div id="card1" class="card_selection">
+                    <div >
+                        <img width="100px" src="./img/lang-logo.png"></img>
+                    </div>
+                    <div>
+                        Learning (Human Feedback)
+                    </div>
+                </div>
+            </div>
+            <div class="column_selection">
+                <div id="card2" class="card_selection">
+                    <div>
+                        <img width="100px" src="./img/logo_courses.png"></img>
+                    </div>
+                    <div class="title">
+                        System1
+                    </div>
+                </div>
+            </div>
+            <div class="column_selection">
+                <div id="card3" class="card_selection">
+                    <div>
+                        <img width="100px" src="./img/logo_trips.png"></img>
+                    </div>
+                    <div class="title">
+                        System2
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="description-text" style="margin-top: 40px">
+            <p>
+                Por favor, sigue el orden de los pasos y asegúrate de completar todas las tareas en cada sesión. Al finalizar cada catálogo o cuestionario, el siguiente paso se habilitará automáticamente.
+
+            </p>
+        </div>
+    </div>
+
+</div>
+
+		<!-- HTML load end scripts -->
+		<script src="./js/controls.js"></script>
+		<script src="./js/pageNavigation.js"></script>
+        <script src="./js/selection.js"></script>
+        <script src="./js/connection_checker.js"></script>
+	</body>
+</html>

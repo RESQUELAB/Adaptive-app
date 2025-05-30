@@ -42,7 +42,8 @@ function createWindow() {
 		autoHideMenuBar: true,
 		webPreferences: {
 			preload: path.join(__dirname, 'preload.js'),
-			nodeIntegration: true
+			nodeIntegration: true,
+			webSecurity: false,
 		},
 		enableRemoteModule: true,
 		icon: iconPath

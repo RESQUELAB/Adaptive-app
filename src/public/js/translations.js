@@ -128,6 +128,11 @@
             "en": "data science",
             "es": "ciencia de datos"
         },
+        "category_ai": {
+            "en": "Artificial intelligence",
+            "es": "Inteligencia Artificial"
+        },
+        
         "category_mobile": {
             "en": "mobile development",
             "es": "desarrollo para móviles"
@@ -145,9 +150,53 @@
             "en": "game development",
             "es": "desarrollo de videojuegos"
         },
+        
+        "category_blockchain": {
+            "en": "blockchain",
+            "es": "blockchain"
+        },
+        
+        "category_healthcare": {
+            "en": "healthcare",
+            "es": "sector salud"
+        },
+
+        "category_seo": {
+            "en": "seo",
+            "es": "seo"
+        },
+
+        "category_finance": {
+            "en": "finance",
+            "es": "finanzas"
+        },
+
+        "category_project_management": {
+            "en": "project management",
+            "es": "gestión de proyectos"
+        },
+        "category_cloud": {
+            "en": "cloud",
+            "es": "la nube"
+        }, 
+        "category_devops": {
+            "en": "devops",
+            "es": "devops"
+        },
+
+
+
         "category_ml": {
             "en": "machine learning",
             "es": "machine learning"
+        },
+        "category_marketing": {
+            "en": "marketing",
+            "es": "marketing"
+        },
+        "category_big_data": {
+            "en": "Big Data",
+            "es": "Big Data"
         },
         
         "variation_sizes": {
@@ -431,17 +480,21 @@
             "en": "shipment data",
             "es": "datos de envío"
         },
+        "logout": {
+            "en": "Log out",
+            "es": "Cerrar sesión"
+        },        
         "descriptionTitle": {
             "en": "Description",
             "es": "Descripción"
         },
         "lastname": {
-            "en": "last name*",
-            "es": "apellidos*"
+            "en": "last name",
+            "es": "apellidos"
         },
         "name": {
-            "en": "name*",
-            "es": "nombre*"
+            "en": "name",
+            "es": "nombre"
         },
         "genre": {
             "en": "genre",
@@ -460,20 +513,20 @@
             "es": "otro"
         },
         "birthDate": {
-            "en": "birth date*",
-            "es": "fecha de nacimiento*"
+            "en": "birth date",
+            "es": "fecha de nacimiento"
         },
         "year4": {
             "en": "YYYY",
             "es": "AAAA"
         },
         "email": {
-            "en": "email*",
-            "es": "correo electrónico*"
+            "en": "email",
+            "es": "correo electrónico"
         },
         "phone": {
-            "en": "phone*",
-            "es": "teléfono*"
+            "en": "phone",
+            "es": "teléfono"
         },
         "newsletterQuestion": {
             "en": "subscribe to the newsletter",
@@ -496,40 +549,40 @@
             "es": "aceptamos tarjetas de crédito y débito."
         },
         "cardOwner": {
-            "en": "card owner*",
-            "es": "titular de la tarjeta*"
+            "en": "card owner",
+            "es": "titular de la tarjeta"
         },
         "cardNumber": {
-            "en": "card number*",
-            "es": "número de la tarjeta*"
+            "en": "card number",
+            "es": "número de la tarjeta"
         },
         "dueDate": {
-            "en": "due date*",
-            "es": "fecha de vencimiento*"
+            "en": "due date",
+            "es": "fecha de vencimiento"
         },
         "cvvcode": {
-            "en": "CVV code*",
-            "es": "código CVV*"
+            "en": "CVV code",
+            "es": "código CVV"
         },
         "country": {
-            "en": "country*",
-            "es": "país*"
+            "en": "country",
+            "es": "país"
         },
         "postalcode": {
-            "en": "postal code*",
-            "es": "código postal*"
+            "en": "postal code",
+            "es": "código postal"
         },
         "city": {
-            "en": "city*",
-            "es": "ciudad*"
+            "en": "city",
+            "es": "ciudad"
         },
         "roadType": {
-            "en": "road type*",
-            "es": "tipo de vía*"
+            "en": "road type",
+            "es": "tipo de vía"
         },
         "namenumberroad": {
-            "en": "name and number of the road*",
-            "es": "nombre y número de la vía*"
+            "en": "name and number of the road",
+            "es": "nombre y número de la vía"
         },
         "avenue": {
             "en": "avenue",

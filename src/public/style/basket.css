@@ -1,14 +1,15 @@
 .goBack {
     grid-column: 3;
     grid-row: 2;
+    margin-top: 15px;
 }
 
 .basket {
-    grid-column: 3/6;
+    grid-column: 3/7;
     grid-row: 3;
     width: 90%;
     display: grid;
-    grid-template-columns: 73% 23%;
+    grid-template-columns: 70% 30%;
     column-gap: 4%;
 }
 
@@ -31,12 +32,12 @@
     column-gap: 0.5%;
 }
 
-#basketSummary{
-    display: grid;
-    grid-template-columns: 50% 50%;
+#basketSummary {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     margin-top: 12px;
 }
-
 
 #moneySummary {
     border-top: 1px solid;
@@ -52,7 +53,6 @@
 
 #moneySummary > :first-child
 
-
 .basket #articleList > * > *:nth-child(3),
 .basket #articleList > * > *:nth-child(4) {
     text-align: center;
@@ -63,15 +63,35 @@
     text-align: right;
 }
 
+#userData {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
 
 #userData > div {
     border: 1px solid;
-    padding: 2px 10px;
+    padding: 12px;
     border-radius: 6px;
+    font-size: calc(var(--base-font-size) - 2px);
 }
 
 #userData > div:not(:first-child) {
     margin-top: 10px;
+}
+
+.articleQuantity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.articleQuantity .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .articleQuantity > .plus, .articleQuantity > .minus {
@@ -88,8 +108,11 @@
 }
 
 .articleQuantity > .remove {
-    font-size: small;
+    font-size: calc(var(--base-font-size) -3px);
     cursor: pointer;
+    margin-top: 8px; /* Add margin to avoid overlap */
+    background-color: transparent;
+    color: black;
 }
 
 .confirmPurchase {
@@ -112,4 +135,92 @@
 .variationsText {
     font-size: smaller;
     margin-left: 12px;
+}
+
+/* Improved styling */
+.headers {
+    display: grid;
+    grid-template-columns: 14% 44% 11% 18% 11%;
+    column-gap: 0.5%;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.article {
+    display: grid;
+    grid-template-columns: 14% 44% 11% 18% 11%;
+    column-gap: 0.5%;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.article img {
+    border-radius: 8px;
+}
+
+.article-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-title {
+    font-size: var(--base-font-size);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.unit-price, .amount {
+    font-size: var(--base-font-size);
+    font-weight: bold;
+}
+
+.articleQuantity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.articleQuantity .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--base-font-size);
+}
+
+.articleQuantity button {
+    padding: 4px 8px;
+    border: none;
+    background-color: #80acdb;
+    color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.articleQuantity input {
+    width: 50px;
+    padding: 4px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.remove {
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.remove:hover {
+    font-weight: bold;
+    color: #F44436;
+}
+
+.articleQuantity button.minus:hover, .articleQuantity button.plus:hover {
+    background-color: #2477cf;
+    color: white;
 }

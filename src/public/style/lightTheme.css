@@ -5,6 +5,24 @@
 	background-color: #333333;
 }*/
 
+:root {
+	--card-bg-color: #ffffff;
+	--card-border-color: #ddd;
+	--thumbnail-border-color: #ccc;
+	--title-color: #333;
+	--price-color: #007bff;
+	--score-color: #666;
+	--label-color: #444;
+	--input-border-color: #bbb;
+	--positive-bg-color: #4CAF50;
+	--positive-text-color: #fff;
+	--positive-hover-bg-color: #45a049;
+	--positive-color: #4CAF50;
+	--negative-color: #f44336;
+	--description-title-color: #333;
+	--description-text-color: #555;
+}
+
 .lightTheme * {
 	border-color: #444444;
 	color: #222222;
@@ -14,13 +32,13 @@
 	border-bottom: 1px solid #ddd !important;
 }
 
-.lightTheme .searchbar>input#search_input {
+.lightTheme .search-bar>input#search_input {
 	background-color: #FFFFFF;
 	border-color: #bbb;
 	color: black;
 }
 
-.lightTheme .searchbar path,
+.lightTheme .search-bar path,
 .lightTheme .userbuttons .userbutton>svg>path {
 	fill: #444;
 }
@@ -52,14 +70,21 @@
 	outline-color: cornflowerblue;
 }
 
-.lightTheme button {
+/* .lightTheme button {
 	background-color: #BBBBEE;
 	outline-color: cornflowerblue;
-}
+} */
 
 .lightTheme button.positive {
-	background-color: #57ff57;
-	color: black;
+    background-color: #4CAF50; /* Softer green */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+.lightTheme button.positive:hover {
+    background-color: #45a049; /* Darker on hover */
 }
 
 .lightTheme div.positive {
@@ -67,7 +92,16 @@
 }
 
 .lightTheme button.negative {
-	background-color: #DD8888;
+    background-color: #f44336; /* Softer red */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.lightTheme button.negative:hover {
+    background-color: #e53935; /* Darker on hover */
 }
 
 .lightTheme div.negative {
@@ -108,7 +142,7 @@
 /* Product */
 
 .lightTheme .product .choice.selected {
-	background-color: #57ff57;
+	background-color: #4dcd53;
 	/* Green color */
 	color: black;
 	border: 1px solid black;
@@ -130,15 +164,30 @@
 	background-color: #fff;
 }
 
-.lightTheme .login-card button {
-	background-color: #4caf50;
-	color: #ffffff;
+/* Light Theme */
+/* .lightTheme .login-card button,
+.lightTheme .register-card button {
+    background-color: #4caf50;
+    color: #ffffff;
 }
 
-.lightTheme .login-card button:hover {
-	background-color: #45a049;
-}
+.lightTheme .login-card button:hover,
+.lightTheme .register-card button:hover {
+    background-color: #45a049;
+} */
 
 .lightTheme .toggle-link-span {
 	color: #007BFF;
+}
+
+.lightTheme .no-items-found h2{
+	color: #555;
+}
+
+.lightTheme .no-items-found p{
+	color: #888;
+}
+
+.lightTheme .no-items-found button{
+	background-color: #007bff !important;
 }

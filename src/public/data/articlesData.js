@@ -1159,15 +1159,26 @@ let articlesData = {
                 "es": "Curso de Programación en Python"
             },
             "description": {
-                "en": "Comprehensive Python programming course for beginners to advanced developers.",
-                "es": "Curso completo de programación en Python para principiantes y desarrolladores avanzados."
+                "en": "Comprehensive Python programming course for beginners to advanced developers. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Curso completo de programación en Python para principiantes y desarrolladores avanzados. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["30d", "60d"],
-                "level": ["Beginner", "Intermediate", "Advanced"]
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
             },
-            "categories": ["programming"],
-            "images": ["python_course.jpeg"],
+            "categories": [
+                "programming"
+            ],
+            "images": [
+                "python_course.jpeg"
+            ],
             "stock": 10,
             "price": 199.99,
             "stars": 5
@@ -1178,16 +1189,31 @@ let articlesData = {
                 "es": "Bootcamp de Desarrollo Web"
             },
             "description": {
-                "en": "Intensive web development bootcamp covering HTML, CSS, JavaScript, and more.",
-                "es": "Bootcamp intensivo de desarrollo web que abarca HTML, CSS, JavaScript y más."
+                "en": "Intensive web development bootcamp covering HTML, CSS, JavaScript, and more. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Bootcamp intensivo de desarrollo web que abarca HTML, CSS, JavaScript y más. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["45d", "90d"],
-                "level": ["Beginner", "Intermediate", "Advanced"],
-                "framework": ["React", "Vue", "Angular"]
+                "duration": [
+                    "45d",
+                    "90d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ],
+                "framework": [
+                    "React",
+                    "Vue",
+                    "Angular"
+                ]
             },
-            "categories": ["web_development"],
-            "images": ["web_dev_bootcamp.jpg"],
+            "categories": [
+                "web_development"
+            ],
+            "images": [
+                "web_dev_bootcamp.jpg"
+            ],
             "stock": 15,
             "price": 199.99,
             "stars": 3
@@ -1198,16 +1224,30 @@ let articlesData = {
                 "es": "Fundamentos de Ciencia de Datos"
             },
             "description": {
-                "en": "In-depth course covering data analysis, machine learning, and data visualization.",
-                "es": "Curso profundo que abarca análisis de datos, aprendizaje automático y visualización de datos."
+                "en": "In-depth course covering data analysis, machine learning, and data visualization. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Curso profundo que abarca análisis de datos, aprendizaje automático y visualización de datos. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["60d", "120d"],
-                "level": ["Beginner", "Intermediate", "Advanced"],
-                "framework": ["Python", "R"]
+                "duration": [
+                    "60d",
+                    "120d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ],
+                "framework": [
+                    "Python",
+                    "R"
+                ]
             },
-            "categories": ["data_science"],
-            "images": ["Data-Science-Fundamentals.png"],
+            "categories": [
+                "data_science"
+            ],
+            "images": [
+                "Data-Science-Fundamentals.png"
+            ],
             "stock": 8,
             "price": 349.99,
             "stars": 4
@@ -1218,35 +1258,118 @@ let articlesData = {
                 "es": "Desarrollo de Aplicaciones Móviles con Flutter"
             },
             "description": {
-                "en": "Learn to build cross-platform mobile apps using the Flutter framework.",
-                "es": "Aprende a construir aplicaciones móviles multiplataforma con el framework Flutter."
+                "en": "Learn to build cross-platform mobile apps using the Flutter framework. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Aprende a construir aplicaciones móviles multiplataforma con el framework Flutter. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["45d", "90d"],
-                "level": ["Beginner", "Intermediate", "Advanced"],
-                "framework": ["Flutter"]
+                "duration": [
+                    "45d",
+                    "90d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ],
+                "framework": [
+                    "Flutter"
+                ]
             },
-            "categories": ["mobile", "programming"],
-            "images": ["flutter_mobile_dev.jpg"],
+            "categories": [
+                "mobile",
+                "programming"
+            ],
+            "images": [
+                "flutter_mobile_dev.jpg"
+            ],
             "stock": 12,
             "price": 249.99,
             "stars": 4
         },
+        "course_10": {
+            "title": {
+                "en": "SEO Fundamentals",
+                "es": "Fundamentos de SEO"
+            },
+            "description": {
+                "en": "Learn the basics of search engine optimization and how to improve website visibility.",
+                "es": "Aprende los conceptos básicos de la optimización para motores de búsqueda y cómo mejorar la visibilidad del sitio web."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate"]
+            },
+            "categories": ["seo"],
+            "images": ["seo_fundamentals.jpeg"],
+            "stock": 18,
+            "price": 149.99,
+            "stars": 4
+        },
+        "course_11": {
+            "title": {
+                "en": "Introduction to Machine Learning",
+                "es": "Introducción al Aprendizaje Automático"
+            },
+            "description": {
+                "en": "Explore the basics of machine learning, including algorithms and practical applications.",
+                "es": "Explora los conceptos básicos del aprendizaje automático, incluidos los algoritmos y las aplicaciones prácticas."
+            },
+            "variations": {
+                "duration": ["60d", "90d"],
+                "level": ["Beginner", "Intermediate"]
+            },
+            "categories": ["ml"],
+            "images": ["machine_learning_intro.jpeg"],
+            "stock": 10,
+            "price": 299.99,
+            "stars": 5
+        },
+        "course_12": {
+            "title": {
+                "en": "Financial Analysis for Beginners",
+                "es": "Análisis Financiero para Principiantes"
+            },
+            "description": {
+                "en": "Learn the fundamentals of financial analysis and how to interpret financial statements.",
+                "es": "Aprende los fundamentos del análisis financiero y cómo interpretar estados financieros."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate"]
+            },
+            "categories": ["finance"],
+            "images": ["financial_analysis.jpeg"],
+            "stock": 15,
+            "price": 179.99,
+            "stars": 4
+        },
+
         "cybersecurity_essentials": {
             "title": {
                 "en": "Cybersecurity Essentials",
                 "es": "Conceptos Básicos de Ciberseguridad"
             },
             "description": {
-                "en": "Essential course covering cybersecurity principles, practices, and defense strategies.",
-                "es": "Curso esencial que abarca principios, prácticas y estrategias de defensa en ciberseguridad."
+                "en": "Essential course covering cybersecurity principles, practices, and defense strategies. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Curso esencial que abarca principios, prácticas y estrategias de defensa en ciberseguridad. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["30d", "60d"],
-                "level": ["Beginner", "Intermediate", "Advanced"]
+                "duration": [
+                    "30d",
+                    "60d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
             },
-            "categories": ["cybersecurity"],
-            "images": ["cybersecurity_essentials.jpeg"],
+            "categories": [
+                "cybersecurity"
+            ],
+            "images": [
+                "cybersecurity_essentials.jpeg"
+            ],
             "stock": 10,
             "price": 199.99,
             "stars": 4
@@ -1257,18 +1380,68 @@ let articlesData = {
                 "es": "Masterclass de Diseño Gráfico"
             },
             "description": {
-                "en": "Comprehensive masterclass covering graphic design principles, tools, and techniques.",
-                "es": "Masterclass completa que abarca principios, herramientas y técnicas de diseño gráfico."
+                "en": "Comprehensive masterclass covering graphic design principles, tools, and techniques. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Masterclass completa que abarca principios, herramientas y técnicas de diseño gráfico. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["45d", "90d"],
-                "level": ["Beginner", "Intermediate", "Advanced"]
+                "duration": [
+                    "45d",
+                    "90d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
             },
-            "categories": ["design"],
-            "images": ["graphic_design_masterclass.png"],
+            "categories": [
+                "design"
+            ],
+            "images": [
+                "graphic_design_masterclass.png"
+            ],
             "stock": 15,
             "price": 279.99,
             "stars": 3
+        },
+        
+        "course_15": {
+            "title": {
+                "en": "Basics of Graphic Design",
+                "es": "Fundamentos de Diseño Gráfico"
+            },
+            "description": {
+                "en": "Understand the principles of graphic design and learn to create visually appealing designs.",
+                "es": "Comprende los principios del diseño gráfico y aprende a crear diseños visualmente atractivos."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate"]
+            },
+            "categories": ["design"],
+            "images": ["graphic_design_basics.jpeg"],
+            "stock": 15,
+            "price": 179.99,
+            "stars": 4
+        },
+        "course_16": {
+            "title": {
+                "en": "Introduction to DevOps",
+                "es": "Introducción a DevOps"
+            },
+            "description": {
+                "en": "Learn the principles of DevOps and how to improve collaboration between development and operations teams.",
+                "es": "Aprende los principios de DevOps y cómo mejorar la colaboración entre los equipos de desarrollo y operaciones."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate"]
+            },
+            "categories": ["devops"],
+            "images": ["devops_intro.jpeg"],
+            "stock": 10,
+            "price": 199.99,
+            "stars": 4
         },
         "business_analytics_intelligence": {
             "title": {
@@ -1276,17 +1449,49 @@ let articlesData = {
                 "es": "Analítica de Negocios e Inteligencia Empresarial"
             },
             "description": {
-                "en": "Learn how to analyze business data and gain insights for informed decision-making.",
-                "es": "Aprende a analizar datos empresariales y obtener insights para la toma de decisiones informada."
+                "en": "Learn how to analyze business data and gain insights for informed decision-making. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Aprende a analizar datos empresariales y obtener insights para la toma de decisiones informada. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["30d", "45d", "120d"],
-                "level": ["Beginner", "Intermediate", "Advanced"]
+                "duration": [
+                    "30d",
+                    "45d",
+                    "120d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
             },
-            "categories": ["data_science"],
-            "images": ["business_analytics_intelligence.PNG"],
+            "categories": [
+                "data_science"
+            ],
+            "images": [
+                "business_analytics_intelligence.PNG"
+            ],
             "stock": 15,
             "price": 259.99,
+            "stars": 4
+        },
+        
+        "course_5": {
+            "title": {
+                "en": "Cybersecurity for Business",
+                "es": "Ciberseguridad para Empresas"
+            },
+            "description": {
+                "en": "Understand key cybersecurity principles for protecting business assets.",
+                "es": "Comprende los principios clave de ciberseguridad para proteger los activos de la empresa."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate", "Advanced"]
+            },
+            "categories": ["cybersecurity"],
+            "images": ["cybersecurity_business.jpeg"],
+            "stock": 12,
+            "price": 199.99,
             "stars": 4
         },
         "machine_learning_mastery": {
@@ -1295,19 +1500,71 @@ let articlesData = {
                 "es": "Máster en Aprendizaje Automático"
             },
             "description": {
-                "en": "Comprehensive course on machine learning algorithms and applications.",
-                "es": "Curso completo sobre algoritmos y aplicaciones de aprendizaje automático."
+                "en": "Comprehensive course on machine learning algorithms and applications. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Curso completo sobre algoritmos y aplicaciones de aprendizaje automático. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["30d", "120d"],
-                "level": ["Beginner", "Intermediate", "Advanced"],
-                "framework": ["TensorFlow"]
+                "duration": [
+                    "30d",
+                    "120d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ],
+                "framework": [
+                    "TensorFlow"
+                ]
             },
-            "categories": ["ml"],
-            "images": ["machine_learning_mastery.jpg"],
+            "categories": [
+                "ml"
+            ],
+            "images": [
+                "machine_learning_mastery.jpg"
+            ],
             "stock": 17,
             "price": 319.99,
             "stars": 4
+        },
+        "course_6": {
+            "title": {
+                "en": "Introduction to Programming",
+                "es": "Introducción a la Programación"
+            },
+            "description": {
+                "en": "Learn the fundamentals of programming using popular languages like Python and JavaScript.",
+                "es": "Aprende los fundamentos de la programación utilizando lenguajes populares como Python y JavaScript."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate"]
+            },
+            "categories": ["programming"],
+            "images": ["programming_intro.jpeg"],
+            "stock": 15,
+            "price": 149.99,
+            "stars": 4
+        },
+        
+        "course_8": {
+            "title": {
+                "en": "UX/UI Design Fundamentals",
+                "es": "Fundamentos de Diseño UX/UI"
+            },
+            "description": {
+                "en": "Learn the principles of user experience and user interface design for creating effective digital products.",
+                "es": "Aprende los principios del diseño de experiencia y de interfaz de usuario para crear productos digitales efectivos."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate"]
+            },
+            "categories": ["design"],
+            "images": ["ux_ui_design.jpeg"],
+            "stock": 8,
+            "price": 179.99,
+            "stars": 5
         },
         "ethical_hacking_cybersecurity": {
             "title": {
@@ -1315,18 +1572,128 @@ let articlesData = {
                 "es": "Hacking Ético y Ciberseguridad"
             },
             "description": {
-                "en": "Gain skills in ethical hacking to secure systems and networks.",
-                "es": "Adquiere habilidades en hacking ético para asegurar sistemas y redes."
+                "en": "Gain skills in ethical hacking to secure systems and networks. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Adquiere habilidades en hacking ético para asegurar sistemas y redes. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
+            },
+            "variations": {
+                "duration": [
+                    "45d",
+                    "90d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ]
+            },
+            "categories": [
+                "cybersecurity"
+            ],
+            "images": [
+                "ethical_hacking_cybersecurity.jpg"
+            ],
+            "stock": 16,
+            "price": 299.99,
+            "stars": 3
+        },
+        "course_1": {
+            "title": {
+                "en": "Blockchain for Beginners",
+                "es": "Blockchain para Principiantes"
+            },
+            "description": {
+                "en": "Learn the basics of blockchain technology and its applications in different sectors.",
+                "es": "Aprende los conceptos básicos de la tecnología blockchain y sus aplicaciones en diferentes sectores."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate", "Advanced"]
+            },
+            "categories": ["blockchain"],
+            "images": ["blockchain.jpeg"],
+            "stock": 10,
+            "price": 199.99,
+            "stars": 4
+        }
+        ,
+        "course_2": {
+            "title": {
+                "en": "React Native Mobile Development",
+                "es": "Desarrollo Móvil con React Native"
+            },
+            "description": {
+                "en": "Master mobile app development using React Native framework. Hands-on projects included.",
+                "es": "Domina el desarrollo de aplicaciones móviles utilizando el framework React Native. Proyectos prácticos incluidos."
             },
             "variations": {
                 "duration": ["45d", "90d"],
                 "level": ["Beginner", "Intermediate", "Advanced"]
             },
-            "categories": ["cybersecurity"],
-            "images": ["ethical_hacking_cybersecurity.jpg"],
-            "stock": 16,
-            "price": 299.99,
-            "stars": 3
+            "categories": ["mobile"],
+            "images": ["react_native.jpeg"],
+            "stock": 12,
+            "price": 249.99,
+            "stars": 5
+        }
+        ,
+        "course_3": {
+            "title": {
+                "en": "AI for Healthcare",
+                "es": "Inteligencia Artificial para la Salud"
+            },
+            "description": {
+                "en": "Learn how AI is transforming healthcare with practical applications and real-world projects.",
+                "es": "Aprende cómo la inteligencia artificial está transformando el sector salud con aplicaciones prácticas y proyectos del mundo real."
+            },
+            "variations": {
+                "duration": ["60d", "120d"],
+                "level": ["Beginner", "Intermediate", "Advanced"]
+            },
+            "categories": ["ai", "healthcare"],
+            "images": ["ai_healthcare.jpeg"],
+            "stock": 8,
+            "price": 349.99,
+            "stars": 5
+        }
+        ,
+        "course_4": {
+            "title": {
+                "en": "Digital Marketing Strategy",
+                "es": "Estrategia de Marketing Digital"
+            },
+            "description": {
+                "en": "Learn how to build successful digital marketing strategies for businesses.",
+                "es": "Aprende a crear estrategias exitosas de marketing digital para empresas."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate"]
+            },
+            "categories": ["marketing"],
+            "images": ["digital_marketing.jpeg"],
+            "stock": 20,
+            "price": 179.99,
+            "stars": 4
+        }
+        ,
+        "course_9": {
+            "title": {
+                "en": "Cloud Computing Essentials",
+                "es": "Fundamentos de Computación en la Nube"
+            },
+            "description": {
+                "en": "Understand cloud computing concepts and how to use major cloud platforms.",
+                "es": "Comprende los conceptos de computación en la nube y cómo utilizar las principales plataformas de nube."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate"]
+            },
+            "categories": ["cloud"],
+            "images": ["cloud_computing.jpeg"],
+            "stock": 20,
+            "price": 199.99,
+            "stars": 4
         },
         "game_dev_unity": {
             "title": {
@@ -1334,18 +1701,71 @@ let articlesData = {
                 "es": "Desarrollo de Juegos con Unity"
             },
             "description": {
-                "en": "Learn game development using the Unity game engine and C# programming.",
-                "es": "Aprende desarrollo de juegos utilizando el motor Unity y programación en C#."
+                "en": "Learn game development using the Unity game engine and C# programming. This course offers hands-on projects, real-world examples, and personalized feedback to ensure mastery of the subject. By the end of this course, you will have built practical skills that you can immediately apply to your career or personal projects.",
+                "es": "Aprende desarrollo de juegos utilizando el motor Unity y programación en C#. Este curso incluye proyectos prácticos, ejemplos del mundo real y retroalimentación personalizada para asegurar el dominio del tema. Al finalizar, habrás adquirido habilidades prácticas que podrás aplicar de inmediato en tu carrera o proyectos personales."
             },
             "variations": {
-                "duration": ["45d", "120d"],
-                "level": ["Beginner", "Intermediate", "Advanced"],
-                "framework": ["Unity", "C#"]
+                "duration": [
+                    "45d",
+                    "120d"
+                ],
+                "level": [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced"
+                ],
+                "framework": [
+                    "Unity",
+                    "C#"
+                ]
             },
-            "categories": ["game_dev"],
-            "images": ["game_dev_unity.jpg"],
+            "categories": [
+                "game_dev"
+            ],
+            "images": [
+                "game_dev_unity.jpg"
+            ],
             "stock": 20,
             "price": 349.99,
+            "stars": 5
+        },
+       
+        "course_13": {
+            "title": {
+                "en": "Project Management Essentials",
+                "es": "Fundamentos de Gestión de Proyectos"
+            },
+            "description": {
+                "en": "Understand key project management principles and tools for successful project delivery.",
+                "es": "Comprende los principios y herramientas clave de la gestión de proyectos para una entrega exitosa."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate"]
+            },
+            "categories": ["project_management"],
+            "images": ["project_management.jpeg"],
+            "stock": 20,
+            "price": 199.99,
+            "stars": 4
+        },
+        "course_14": {
+            "title": {
+                "en": "Content Creation for Digital Marketing",
+                "es": "Creación de Contenidos para Marketing Digital"
+            },
+            "description": {
+                "en": "Learn how to create engaging content that drives traffic and conversions.",
+                "es": "Aprende a crear contenido atractivo que impulse el tráfico y las conversiones."
+            },
+            "variations": {
+                "duration": ["30d", "60d"],
+                "level": ["Beginner", "Intermediate"]
+            },
+            "categories": ["marketing"],
+            "images": ["content_creation.jpeg"],
+            "stock": 12,
+            "price": 159.99,
             "stars": 5
         },
     }

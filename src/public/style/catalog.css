@@ -4,9 +4,16 @@
 	margin-left: 1.6%;
 	float: left;
     margin-right: 50px;
+    height: 100vh;
+    margin-top: 10px;
 }
 .filters #price_max {float:right;}
 .filters #slider-range {margin-top: 5px;}
+
+#price_filter{
+    width: 100%;
+    font-size: medium;
+}
 
 /* Elementos de catalogo */
 .catalog {
@@ -65,7 +72,7 @@
     width: 82%;
     position: relative;
     left: 8%;
-    aspect-ratio: 1;
+    aspect-ratio: 0.9;
 }
 .catalog-article > span {
 	display: block;

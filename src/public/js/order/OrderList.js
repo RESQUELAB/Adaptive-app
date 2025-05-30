@@ -1,7 +1,7 @@
 class OrderList {
 	orders = []
 
-	static LS_ORDERS = 'sports-orders'
+	static LS_ORDERS = 'app-orders'
 
 	constructor() {
 		this.load()
@@ -22,16 +22,24 @@ class OrderList {
     }
 
 	load() {
+		let profile = new Profile()
 		let data = JSON.parse(localStorage.getItem(OrderList.LS_ORDERS))
+
 		this.orders = []
 
 		if (data != null) {
 			for (let o of data) {
-                o.clientData.birthDate = new Date(o.clientData.birthDate)
-                o.paymentData.dueDate = new Date(o.paymentData.dueDate)
-                o.clientData.birthDate = new Date(o.clientData.birthDate)
-                o.summary.orderDate = new Date(o.summary.orderDate)
+				// Ensure clientData and paymentData are initialized
+				o.clientData = profile.userInfo.clientData || {};
+				o.paymentData = profile.userInfo.paymentData || {};
+				o.shipmentData = profile.userInfo.shipmentData || {};
+				o.summary = o.summary || {};
+                o.summary.orderDate = new Date()
                 o.summary.arrivalDate = new Date(o.summary.arrivalDate)
+				let orderDate = new Date(o.summary.orderDate);
+				let arrivalDate = new Date(orderDate);
+				arrivalDate.setDate(orderDate.getDate() + 3);
+				o.summary.arrivalDate = arrivalDate;
 				this.orders.push(new OrderModel(o))
 			}
 		}
