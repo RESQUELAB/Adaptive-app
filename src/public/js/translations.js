@@ -295,6 +295,10 @@
             "en": "30 days",
             "es": "30 días"
         },
+        "50dChoice": {
+            "en": "50 days",
+            "es": "50 días"
+        },
         "45dChoice": {
             "en": "45 days",
             "es": "45 días"

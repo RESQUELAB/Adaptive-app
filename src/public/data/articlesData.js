@@ -1165,7 +1165,8 @@ let articlesData = {
             "variations": {
                 "duration": [
                     "30d",
-                    "60d"
+                    "60d",
+                    "50d",
                 ],
                 "level": [
                     "Beginner",
