@@ -135,7 +135,7 @@ class MutationController {
             "display": ["list", "grid2", "grid3", "grid4", "grid5"],
             "theme": ["light", "dark"],
             "information": ["show", "partial", "hide"],
-            "font_size": ["small", "default", "big"],
+            "font_size": ["small", "default",  "medium", "big"],
             "menu_type": ["line", "dropdown"]
         }
     }
