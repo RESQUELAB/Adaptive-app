@@ -154,6 +154,7 @@ class MutationController {
             "font_size": ["small", "default",  "medium", "big"],
             "menu_type": ["line", "dropdown"],
             "images": ["images", "no_images"],
+            "category": ["sports", "courses", "trips"],
         }
     }
 }
