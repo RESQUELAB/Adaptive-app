@@ -181,7 +181,9 @@ function disableCard(cardId) {
 // Add click events to the cards
 function addCardClickEvents(groupDefinition, flags) {
     document.getElementById("card1").onclick = function() {
-        document.location = 'http://158.42.185.67:8000/login_web?username=' + loginInfo.username + '&experimentName=' + loginInfo.experimentName;
+        let HOSTNAME = window.api.getHost();
+        let PORT = 8000;
+        document.location = 'http://' + HOSTNAME + ':' + PORT + '/login_web?username=' + loginInfo.username + '&experimentName=' + loginInfo.experimentName;
     };
 
     document.getElementById("card2").onclick = function() {
