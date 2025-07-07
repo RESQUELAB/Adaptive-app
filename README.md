@@ -67,6 +67,18 @@ AdaptiveApp is a cross-platform desktop application built with Electron, designe
 
 * The "proxy" component and the `proxy_src/` folder are no longer used in this version.
 * The backend for authentication and protected data must be available at the URL configured in `preload.js`.
+* **Server IP configuration:**
+  + The server IP must be set manually in the configuration file (`config.json`).
+  + `config.json` example:
+    
+
+```json
+{
+  "TARGET_SERVER": "158.42.185.67"
+}
+    ```
+
+  + Make sure this IP matches your backend server address.
 
 ## Author
 
