@@ -1,76 +1,73 @@
 # AdaptiveApp
 
-AdaptiveApp es una aplicación de escritorio multiplataforma construida con Electron, diseñada para ofrecer una experiencia de catálogo adaptable y personalizable para el usuario. Permite cambiar el modo de visualización, el tema, el idioma, el tamaño de fuente, la información mostrada y la categoría de productos, entre otras opciones.
+AdaptiveApp is a cross-platform desktop application built with Electron, designed to provide an adaptable and customizable product catalog experience for users. It allows you to change the view mode, theme, language, font size, displayed information, product category, and more.
 
-## Características principales
+## Main Features
 
-* Interfaz adaptable: cambia entre vista de lista y cuadrícula.
-* Temas claro y oscuro.
-* Soporte para varios idiomas (español e inglés).
-* Personalización de la información mostrada y el tamaño de fuente.
-* Gestión de categorías y filtros de productos.
-* Integración con servidor externo para autenticación y datos protegidos.
+* Adaptable interface: switch between list and grid views.
+* Light and dark themes.
+* Support for multiple languages (Spanish and English).
+* Customization of displayed information and font size.
+* Product category and filter management.
+* Integration with an external server for authentication and protected data.
 
-## Instalación
+## Installation
 
-### Requisitos previos
+### Prerequisites
 
-* [Node.js](https://nodejs.org/) (recomendado v18 o superior)
+* [Node.js](https://nodejs.org/) (recommended v18 or higher)
 * [npm](https://www.npmjs.com/)
 
-### Pasos
+### Steps
 
-1. Clona este repositorio:
-   
+1. Clone this repository:
 
 ```powershell
    git clone https://github.com/RESQUELAB/Adaptive-app.git
    cd Adaptive-app/src
-   ```
+```
 
-2. Instala las dependencias:
-   
+2. Install dependencies:
 
 ```powershell
    npm install
-   ```
+```
 
-3. Inicia la aplicación:
-   
+3. Start the application:
 
 ```powershell
    npm start
-   ```
+```
 
-## Estructura del proyecto
+## Project Structure
 
-* `src/` - Código fuente principal de la aplicación.
-  + `main.js` - Proceso principal de Electron.
-  + `preload.js` - Comunicación segura entre el frontend y Node.js.
-  + `public/` - Archivos HTML, JS y CSS del frontend.
-    - `js/` - Lógica de la interfaz y controladores.
-    - `style/` - Hojas de estilo.
-    - `img/` - Imágenes y logotipos.
-* `release-builds/` - Paquetes generados para distribución.
+* `src/` - Main source code of the application.
+  + `main.js` - Electron main process.
+  + `preload.js` - Secure communication between frontend and Node.js.
+  + `public/` - Frontend HTML, JS, and CSS files.
+    - `js/` - UI logic and controllers.
+    - `style/` - Stylesheets.
+    - `img/` - Images and logos.
+* `release-builds/` - Generated packages for distribution.
 
-## Dependencias principales
+## Main Dependencies
 
 * [Electron](https://www.electronjs.org/)
 * [axios](https://www.npmjs.com/package/axios)
 * [socket.io](https://socket.io/)
-* [gulp](https://gulpjs.com/) (solo desarrollo)
+* [gulp](https://gulpjs.com/) (development only)
 
-## ¿Qué esperar?
+## What to Expect?
 
-* Una aplicación de catálogo de productos adaptable y personalizable.
-* Cambios de tema, idioma y visualización en tiempo real.
-* Experiencia de usuario moderna y responsiva.
+* An adaptable and customizable product catalog application.
+* Real-time theme, language, and view changes.
+* Modern and responsive user experience.
 
-## Notas
+## Notes
 
-* El componente "proxy" y la carpeta `proxy_src/` ya no se utilizan en esta versión.
-* El backend para autenticación y datos protegidos debe estar disponible en la URL configurada en `preload.js`.
+* The "proxy" component and the `proxy_src/` folder are no longer used in this version.
+* The backend for authentication and protected data must be available at the URL configured in `preload.js`.
 
-## Autor
+## Author
 
 RESQUELAB
