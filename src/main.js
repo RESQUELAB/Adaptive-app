@@ -57,6 +57,18 @@ function createWindow() {
 	// Load the catalog.html of the app
 	mainWindow.loadFile(pagesFolder + 'index.html')
 
+	// Read config.json synchronously or asynchronously here
+	const configPath = path.join(__dirname, 'config.json');
+	let config = {};
+	try {
+		config = JSON.parse(fs.readFileSync(configPath));
+	} catch (err) {
+		console.error('Failed to load config.json', err);
+	}
+
+	// Send config to renderer when it’s ready
+	ipcMain.handle('get-config', () => config);
+
 	// Open the DevTools.
 	// mainWindow.webContents.openDevTools()
 

@@ -2,16 +2,8 @@
 // 	PORT = '8000',
 // 	LS_LOGIN_KEY = 'sports-login'
 
-function getHost() {
-    const IP_REGEX = /^(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}(:[0-9]{1,5})?$/;
-    let host = localStorage.getItem('server-host');
-	host = "158.42.185.67"
-    return host;
-}
-
-
-
-const HOST = getHost();
+const HOST = window.api.getHost();
+console.log('HOST from preload:', HOST);
 PORT = '9999'
 LS_LOGIN_KEY = 'sports-login'
 

@@ -1,6 +1,7 @@
 // Variables (globales) en renderer.
 const { contextBridge, ipcRenderer } = require('electron')
-
+const fs = require('fs');
+const path = require('path');
 // Expose loadPage function on WebContents
 contextBridge.exposeInMainWorld(
   'loadPage', (where) => ipcRenderer.send("loadPage", where)
@@ -10,7 +11,20 @@ const axios = require('axios');
 
 const SERVER_URL = 'http://158.42.185.67:8000';
 
+
+// Read config synchronously on preload startup
+let config = {};
+try {
+  const configPath = path.join(__dirname, 'config.json');
+  const rawData = fs.readFileSync(configPath);
+  config = JSON.parse(rawData);
+} catch (e) {
+  console.error('Error reading config.json:', e);
+}
+
 contextBridge.exposeInMainWorld('api', {
+    getHost: () => config.TARGET_SERVER || 'https://default.server.com',
+
     loginUser: async (username, password) => {
         console.log("logeando!")
         try {
