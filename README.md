@@ -76,7 +76,7 @@ AdaptiveApp is a cross-platform desktop application built with Electron, designe
 {
   "TARGET_SERVER": "158.42.185.67"
 }
-    ```
+```
 
   + Make sure this IP matches your backend server address.
 
