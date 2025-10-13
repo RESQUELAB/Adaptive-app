@@ -5,6 +5,10 @@ const fs = require('fs')
 
 const { spawn, fork } = require('child_process');
 
+////////////
+const { connectToMonitor, sendToMonitor } = require('./public/js/client-monitor');
+/////////////
+
 // const pagesFolder = 'release/public/'
 const pagesFolder = 'public/'
 
@@ -66,6 +70,17 @@ function createWindow() {
 
 	// Set Window Size
 	mainWindow.setSize(1400, 780);
+
+	////////////////////////////////////////
+	mainWindow.webContents.once('did-finish-load', () => {
+		connectToMonitor(mainWindow);
+	});
+
+	mainWindow.on('resize', () => {
+		const bounds = mainWindow.getBounds();
+		sendToMonitor({ type: 'window-resize', payload: bounds });
+	});
+	//////////////////////////////////////////
 }
 
 function startProxy() {
@@ -129,6 +144,27 @@ app.whenReady().then(() => {
 // Quit when all windows are closed, except on macOS.
 // There, it's common to stay active until the user quits explicitly with Cmd + Q.
 app.on('window-all-closed', function () {
+	const now = Date.now();
+
+    // Guardar la última página si existe
+    if (lastPage) {
+        const duration = now - lastPage.entryTime;
+        const record = {
+            page: lastPage.page,
+            duration: duration,
+            timestamp: new Date().toISOString()
+        };
+        sessionRecords.push(record);
+        console.log(`Duración guardada al cerrar: ${lastPage.page} (${duration} ms)`);
+
+        // Guardar la sesión completa en JSON
+        const file = path.join(__dirname, 'pageDurations.json');
+        try {
+            fs.writeFileSync(file, JSON.stringify(sessionRecords, null, 2));
+        } catch (err) {
+            console.error('Error guardando pageDurations.json:', err);
+        }
+    }
 	if (process.platform !== 'darwin') app.quit()
 })
 
@@ -138,4 +174,56 @@ ipcMain.on('restart-proxy', () => {
 		proxyProcess.kill();
 	}
 	// startProxy();
+});
+
+const file = path.join(__dirname, 'pageDurations.json');
+const file_ms = path.join(__dirname, 'mouseInteraction.log');
+
+// Variables en memoria para la sesión
+let lastPage = null;
+let sessionRecords = [];
+
+ipcMain.on('navigation-event', (event, data) => {
+    const now = Date.now();
+
+    // Si hay una página anterior, calcular duración y añadir al registro
+    if (lastPage) {
+        const duration = now - lastPage.entryTime;
+        const record = {
+            page: lastPage.page,
+            duration: duration,
+            timestamp: new Date().toISOString()
+        };
+        sessionRecords.push(record);
+        console.log(`Duración guardada: ${lastPage.page} (${duration} ms)`);
+    }
+
+    // Actualizar la última página en memoria
+    lastPage = {
+        page: data.page,
+        entryTime: now
+    };
+
+    // Guardar toda la secuencia de la sesión en JSON
+    try {
+        fs.writeFileSync(file, JSON.stringify(sessionRecords, null, 2));
+    } catch (err) {
+        console.error('Error guardando pageDurations.json:', err);
+    }
+});
+
+function appendToLog(data) {
+    const line = JSON.stringify(data) + "\n"; // JSON por línea
+    fs.appendFile(file_ms, line, (err) => {
+        if (err) console.error("Error escribiendo log:", err);
+    });
+}
+
+ipcMain.on('mouse-event', (event, data) => {
+    appendToLog({ type: 'click', ...data });
+});
+
+// Scrolls
+ipcMain.on('scroll-event', (event, data) => {
+    appendToLog({ type: 'scroll', ...data });
 });

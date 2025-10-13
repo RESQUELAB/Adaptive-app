@@ -3,7 +3,7 @@ const { contextBridge, ipcRenderer } = require('electron')
 
 // Expose loadPage function on WebContents
 contextBridge.exposeInMainWorld(
-  'loadPage', (where) => ipcRenderer.send("loadPage", where)
+    'loadPage', (where) => ipcRenderer.send("loadPage", where)
 )
 
 const axios = require('axios');
@@ -49,23 +49,26 @@ contextBridge.exposeInMainWorld('api', {
         } catch (error) {
             throw error;
         }
-    }
+    },
+    sendNavigation: (data) => ipcRenderer.send('navigation-event', data),
+    sendMouse: (data) => ipcRenderer.send('mouse-event', data),
+    sendScroll: (data) => ipcRenderer.send('scroll-event', data)
 });
 
 contextBridge.exposeInMainWorld('electron', {
-  ipcRenderer,
-  invoke: (event) => ipcRenderer.invoke(event),
-  getImage: () => ipcRenderer.invoke('getImage'),
+    ipcRenderer,
+    invoke: (event) => ipcRenderer.invoke(event),
+    getImage: () => ipcRenderer.invoke('getImage'),
 });
 
 ipcRenderer.on('proxy-output', (event, data) => {
-  console.log(`[----Proxy Output]: ${data}`);
+    console.log(`[----Proxy Output]: ${data}`);
 });
 
 ipcRenderer.on('proxy-error', (event, data) => {
-  console.error(`[Proxy Error]: ${data}`);
+    console.error(`[Proxy Error]: ${data}`);
 });
 
 ipcRenderer.on('proxy-exit', (event, code) => {
-  console.log(`[Proxy Exit]: Process exited with code ${code}`);
+    console.log(`[Proxy Exit]: Process exited with code ${code}`);
 });

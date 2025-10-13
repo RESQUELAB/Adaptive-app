@@ -43,11 +43,11 @@ class Profile {
 			console.log(loginInfo.userProfile)
 
 			this.userInfo.clientData = {
-				name: loginInfo.userProfile.first_name,
-				lastName: loginInfo.userProfile.last_name,
-				genre: genderMapping[loginInfo.userProfile.gender.toLowerCase()] || 3,
-				birthDate: new Date(loginInfo.userProfile.birth),
-				email: loginInfo.userProfile.username,
+				name: loginInfo.userProfile.first_name || '',
+				lastName: loginInfo.userProfile.last_name || '',
+				genre: genderMapping[loginInfo.userProfile.gender?.toLowerCase?.()] || 3,
+				birthDate: new Date(loginInfo.userProfile.birth) || new Date(),
+				email: loginInfo.userProfile.username || '',
 			}
 		}
 		if(typeof loginInfo.paymentData !== 'undefined'){
