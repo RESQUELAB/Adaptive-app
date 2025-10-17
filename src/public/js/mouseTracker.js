@@ -1,6 +1,3 @@
-
-
-
 window.onclick = function (event) {
     /*
     * Registro de clicks del cliente.
@@ -14,20 +11,8 @@ window.onclick = function (event) {
         console.log("Classe ", indice, ": ",  valor);
     });
     */
-
     sendClickInfo(`${elem.tagName}  ID:  ${elem.id}  Classname:  ${elem.className}  NAME:  ${elem.name}`)
-    if (window.api && window.api.sendMouse) {
-        window.api.sendMouse({
-            tag: elem.tagName,
-            id: elem.id || null,
-            name: elem.name || null,
-            className: elem.className || null,
-            timestamp: Date.now()
-        });
-    } else console.log("Imposible enviar mouse por renderer.")
 }
-
-
 
 var scrollTimer, lastScrollFireTime = 0;
 var y_before = 0;
@@ -45,15 +30,6 @@ $(window).on('scroll', function () {
         }
         y_before = y
     }
-
-    ///////////////////////////
-    if (window.api && window.api.sendScroll) {
-        window.api.sendScroll({
-            scroll: y_before,
-            timestamp: Date.now()
-        });
-    } else console.log("Imposible enviar scroll por renderer.")
-    //////////////////////////
     if (!scrollTimer) {
         if (now - lastScrollFireTime > (3 * minScrollTime)) {
             processScroll();   // fire immediately on first scroll

@@ -76,10 +76,10 @@ function createWindow() {
 		connectToMonitor(mainWindow);
 	});
 
-	mainWindow.on('resize', () => {
+	/* mainWindow.on('resize', () => {
 		const bounds = mainWindow.getBounds();
 		sendToMonitor({ type: 'window-resize', payload: bounds });
-	});
+	}); */
 	//////////////////////////////////////////
 }
 
@@ -144,27 +144,6 @@ app.whenReady().then(() => {
 // Quit when all windows are closed, except on macOS.
 // There, it's common to stay active until the user quits explicitly with Cmd + Q.
 app.on('window-all-closed', function () {
-	const now = Date.now();
-
-    // Guardar la última página si existe
-    if (lastPage) {
-        const duration = now - lastPage.entryTime;
-        const record = {
-            page: lastPage.page,
-            duration: duration,
-            timestamp: new Date().toISOString()
-        };
-        sessionRecords.push(record);
-        console.log(`Duración guardada al cerrar: ${lastPage.page} (${duration} ms)`);
-
-        // Guardar la sesión completa en JSON
-        const file = path.join(__dirname, 'pageDurations.json');
-        try {
-            fs.writeFileSync(file, JSON.stringify(sessionRecords, null, 2));
-        } catch (err) {
-            console.error('Error guardando pageDurations.json:', err);
-        }
-    }
 	if (process.platform !== 'darwin') app.quit()
 })
 
@@ -176,54 +155,28 @@ ipcMain.on('restart-proxy', () => {
 	// startProxy();
 });
 
-const file = path.join(__dirname, 'pageDurations.json');
-const file_ms = path.join(__dirname, 'mouseInteraction.log');
-
-// Variables en memoria para la sesión
+const file = path.join(__dirname, 'sessionActivity.json');
+let sessionHistory = [];
 let lastPage = null;
-let sessionRecords = [];
 
 ipcMain.on('navigation-event', (event, data) => {
-    const now = Date.now();
+	// Ignorar duplicados consecutivos
+	if (!lastPage || lastPage !== data.page) {
+		sessionHistory.push(data);  // Solo añadir si es página distinta
+		lastPage = data.page;
+		console.log('Página registrada:', data.page);
 
-    // Si hay una página anterior, calcular duración y añadir al registro
-    if (lastPage) {
-        const duration = now - lastPage.entryTime;
-        const record = {
-            page: lastPage.page,
-            duration: duration,
-            timestamp: new Date().toISOString()
-        };
-        sessionRecords.push(record);
-        console.log(`Duración guardada: ${lastPage.page} (${duration} ms)`);
-    }
-
-    // Actualizar la última página en memoria
-    lastPage = {
-        page: data.page,
-        entryTime: now
-    };
-
-    // Guardar toda la secuencia de la sesión en JSON
-    try {
-        fs.writeFileSync(file, JSON.stringify(sessionRecords, null, 2));
-    } catch (err) {
-        console.error('Error guardando pageDurations.json:', err);
-    }
+		// Guardar toda la sesión en un solo JSON
+		try {
+			fs.writeFileSync(file, JSON.stringify(sessionHistory, null, 2));
+		} catch (err) {
+			console.error('Error guardando sessionActivity.json:', err);
+		}
+	} else {
+		console.log('Duplicado consecutivo ignorado:', data.page);
+	}
 });
 
-function appendToLog(data) {
-    const line = JSON.stringify(data) + "\n"; // JSON por línea
-    fs.appendFile(file_ms, line, (err) => {
-        if (err) console.error("Error escribiendo log:", err);
-    });
-}
-
-ipcMain.on('mouse-event', (event, data) => {
-    appendToLog({ type: 'click', ...data });
-});
-
-// Scrolls
-ipcMain.on('scroll-event', (event, data) => {
-    appendToLog({ type: 'scroll', ...data });
+ipcMain.handle('get-session-navigation', () => {
+	return sessionHistory;
 });

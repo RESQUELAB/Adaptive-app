@@ -51,14 +51,14 @@ contextBridge.exposeInMainWorld('api', {
         }
     },
     sendNavigation: (data) => ipcRenderer.send('navigation-event', data),
-    sendMouse: (data) => ipcRenderer.send('mouse-event', data),
-    sendScroll: (data) => ipcRenderer.send('scroll-event', data)
+    getSessionNavigation: () => ipcRenderer.invoke('get-session-navigation'),
+    
 });
 
 contextBridge.exposeInMainWorld('electron', {
     ipcRenderer,
     invoke: (event) => ipcRenderer.invoke(event),
-    getImage: () => ipcRenderer.invoke('getImage'),
+    getImage: () => ipcRenderer.invoke('getImage')
 });
 
 ipcRenderer.on('proxy-output', (event, data) => {
