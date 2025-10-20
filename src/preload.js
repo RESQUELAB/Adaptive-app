@@ -52,7 +52,7 @@ contextBridge.exposeInMainWorld('api', {
     },
     sendNavigation: (data) => ipcRenderer.send('navigation-event', data),
     getSessionNavigation: () => ipcRenderer.invoke('get-session-navigation'),
-    
+    getFile: (file) => ipcRenderer.invoke('get-file', file)
 });
 
 contextBridge.exposeInMainWorld('electron', {

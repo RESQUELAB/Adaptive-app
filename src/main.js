@@ -1,18 +1,19 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, ipcMain } = require('electron')
-const path = require('path')
-const fs = require('fs')
-
+const { app, BrowserWindow, ipcMain } = require('electron');
+const path = require('path');
+const fs = require('fs');
 const { spawn, fork } = require('child_process');
-
-////////////
-const { connectToMonitor, sendToMonitor } = require('./public/js/client-monitor');
-/////////////
+const { connectToMonitor, saveSession } = require('./public/js/client-monitor');
 
 // const pagesFolder = 'release/public/'
 const pagesFolder = 'public/'
 
 let count = 0;
+
+/////////
+let sessionHistory = [];
+let lastPage = null;
+/////////
 
 let mainWindow;
 let proxyProcess;
@@ -76,10 +77,22 @@ function createWindow() {
 		connectToMonitor(mainWindow);
 	});
 
-	/* mainWindow.on('resize', () => {
-		const bounds = mainWindow.getBounds();
-		sendToMonitor({ type: 'window-resize', payload: bounds });
-	}); */
+	mainWindow.on('close', async (event) => {
+		event.preventDefault()
+		try {
+			// Llamamos a la función y esperamos el resultado
+			const result = await saveSession(mainWindow);
+			if (result) {
+				const { data, username, appname } = result;
+				const filename = path.join(__dirname, `${appname}_${username}.txt`);
+				fs.writeFileSync(filename, JSON.stringify(data, null, 2));
+				console.log(`Actividad de la sesión guardada en: ${filename}`);
+				mainWindow.destroy();
+			}
+		} catch (err) {
+			console.error('Error guardando sesión de usuario:', err);
+		}
+	});
 	//////////////////////////////////////////
 }
 
@@ -124,8 +137,6 @@ function startProxy() {
 			})
 		})
 	});
-
-
 }
 
 app.whenReady().then(() => {
@@ -155,23 +166,14 @@ ipcMain.on('restart-proxy', () => {
 	// startProxy();
 });
 
-const file = path.join(__dirname, 'sessionActivity.json');
-let sessionHistory = [];
-let lastPage = null;
 
+
+// Escuchar eventos de navegación
 ipcMain.on('navigation-event', (event, data) => {
-	// Ignorar duplicados consecutivos
 	if (!lastPage || lastPage !== data.page) {
-		sessionHistory.push(data);  // Solo añadir si es página distinta
+		sessionHistory.push(data);
 		lastPage = data.page;
-		console.log('Página registrada:', data.page);
-
-		// Guardar toda la sesión en un solo JSON
-		try {
-			fs.writeFileSync(file, JSON.stringify(sessionHistory, null, 2));
-		} catch (err) {
-			console.error('Error guardando sessionActivity.json:', err);
-		}
+		//console.log('Página registrada:', data.page);
 	} else {
 		console.log('Duplicado consecutivo ignorado:', data.page);
 	}
@@ -179,4 +181,20 @@ ipcMain.on('navigation-event', (event, data) => {
 
 ipcMain.handle('get-session-navigation', () => {
 	return sessionHistory;
+});
+
+ipcMain.handle('get-file', async (event, file) => {
+	const filePath = path.join(__dirname, file);
+	try {
+		// Comprobamos si existe
+		if (fs.existsSync(filePath)) {
+			// Leemos el contenido
+			const content = fs.readFileSync(filePath, 'utf-8');
+			return { exists: true, content };
+		} else {
+			return { exists: false };
+		}
+	} catch (error) {
+		return { exists: false, error: error.message };
+	}
 });
