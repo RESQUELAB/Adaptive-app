@@ -34,9 +34,19 @@ function connectToMonitor(mainWindow) {
       return;
     }
 
-    if (data.type === 'mutate') {
-      console.log(`[Cliente] Aplicando mutación: ${data.mutation} -> ${data.value}`);
-      mainWindow.webContents.executeJavaScript('mc.mutate("' + data.mutation + '", "' + data.value + '")');
+    if (data.type === 'apply-adaptation') {
+      //console.log('ESTO SE HA RECIBIDO:\n===========================\n', data);
+
+      const packAdap = data.pack;
+      const adaptations = packAdap.adaptations;
+      for (const adaptation of adaptations) {
+        console.log(`[Cliente] Aplicando mutación: ${adaptation.key} -> ${adaptation.valor}`);
+        mainWindow.webContents.executeJavaScript(`mc.mutate("${adaptation.key}", "${adaptation.valor}")`);
+      }
+
+
+      // console.log(`[Cliente] Aplicando mutación: ${data.mutation} -> ${data.value}`);
+      // mainWindow.webContents.executeJavaScript('mc.mutate("' + data.mutation + '", "' + data.value + '")');
     }
   });
 
