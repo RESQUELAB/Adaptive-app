@@ -21,17 +21,25 @@ function connectToMonitor(mainWindow) {
 
   monitorSocket.on('message', async (msg) => {
     const data = JSON.parse(msg);
+    if (data.type === 'error') {
+      console.warn('Servidor:', data.message);
+      ws.close();
+      return;
+    }
     if (data.type === 'id-assign') {
       clientuuid = data.uuid;
       console.log(`[Cliente] UUID asignado: ${clientuuid}`);//Enviar ultima sesion
       const { content, filename } = await getLastSession(mainWindow);
       sendToMonitor({ type: 'last-session', payload: JSON.parse(content), filename: filename });
 
-      if (!initialized) {
-        initialized = true;
-        startMonitoring(mainWindow);
-      }
-      return;
+      // if (!initialized) {
+      //   initialized = true;
+      //   startMonitoring(mainWindow);
+      // }
+      // return;
+    }
+    if (data.type === 'current-state') {
+      getCurrentState(mainWindow)
     }
 
     if (data.type === 'apply-adaptation') {
@@ -202,10 +210,10 @@ async function getLastSession(mainWindow) {
 }
 
 
-function startMonitoring(mainWindow) {
-  console.log('[Cliente] Empezando monitorización...');
-  setInterval(() => getCurrentState(mainWindow), 60000);
-}
+// function startMonitoring(mainWindow) {
+//   console.log('[Cliente] Empezando monitorización...');
+//   setInterval(() => getCurrentState(mainWindow), 60000);
+// }
 
 // Generic function to send data anywhere to app monitor.
 function sendToMonitor(data) {
