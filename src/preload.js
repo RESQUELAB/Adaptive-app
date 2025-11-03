@@ -50,9 +50,12 @@ contextBridge.exposeInMainWorld('api', {
             throw error;
         }
     },
+    //////////////////////////////////////////////////////////////////////////
     sendNavigation: (data) => ipcRenderer.send('navigation-event', data),
+    performanceMetrics: () => ipcRenderer.invoke('performance-metrics'),
     getSessionNavigation: () => ipcRenderer.invoke('get-session-navigation'),
     getFile: (file) => ipcRenderer.invoke('get-file', file)
+    //////////////////////////////////////////////////////////////////////////
 });
 
 contextBridge.exposeInMainWorld('electron', {

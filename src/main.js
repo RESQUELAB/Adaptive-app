@@ -76,11 +76,9 @@ function createWindow() {
 	mainWindow.webContents.once('did-finish-load', () => {
 		connectToMonitor(mainWindow);
 	});
-
 	mainWindow.on('close', async (event) => {
 		event.preventDefault()
 		try {
-			// Llamamos a la función y esperamos el resultado
 			const result = await saveSession(mainWindow);
 			if (result) {
 				const { data, username, appname } = result;
@@ -168,14 +166,13 @@ ipcMain.on('restart-proxy', () => {
 
 
 
-// Escuchar eventos de navegación
 ipcMain.on('navigation-event', (event, data) => {
-	if (!lastPage || lastPage !== data.page) {
+	if (!lastPage || lastPage !== data.path) {
 		sessionHistory.push(data);
-		lastPage = data.page;
+		lastPage = data.path;
 		//console.log('Página registrada:', data.page);
 	} else {
-		console.log('Duplicado consecutivo ignorado:', data.page);
+		console.log('Duplicado consecutivo ignorado:', data.path);
 	}
 });
 
@@ -186,9 +183,7 @@ ipcMain.handle('get-session-navigation', () => {
 ipcMain.handle('get-file', async (event, file) => {
 	const filePath = path.join(__dirname, file);
 	try {
-		// Comprobamos si existe
 		if (fs.existsSync(filePath)) {
-			// Leemos el contenido
 			const content = fs.readFileSync(filePath, 'utf-8');
 			return { exists: true, content };
 		} else {
@@ -197,4 +192,24 @@ ipcMain.handle('get-file', async (event, file) => {
 	} catch (error) {
 		return { exists: false, error: error.message };
 	}
+});
+
+ipcMain.handle('performance-metrics', async () => {
+    const metrics = app.getAppMetrics();
+    let totalRAMUsedMB = 0;
+    let totalCPUPercent = 0;
+
+    metrics.forEach(process => {
+        if (process.cpu && process.cpu.usage) {
+            totalCPUPercent += process.cpu.usage.percent;
+        }
+        if (process.memory && process.memory.usage) {
+            totalRAMUsedMB += process.memory.usage.rss / (1024 * 1024);
+        }
+    });
+
+    return {
+        ramUsageMB: totalRAMUsedMB.toFixed(2),
+        cpuUsagePercent: totalCPUPercent.toFixed(2)
+    };
 });
