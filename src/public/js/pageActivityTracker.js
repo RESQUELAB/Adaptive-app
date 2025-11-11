@@ -6,6 +6,16 @@ let scrollTimeout;
 //let totalScrollDistance = 0;
 let lastScrollY = window.scrollY;
 
+const emotionValues = {
+    1: 'angry',
+    2: 'happy',
+    3: 'fear',
+    4: 'neutral',
+    5: 'sad',
+    6: 'surprise',
+    7: 'disgust'
+}
+
 function getLocalISOTime() {
     const now = new Date();
     const tzo = -now.getTimezoneOffset();
@@ -15,7 +25,14 @@ function getLocalISOTime() {
     return (now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate()) + 'T' + pad(now.getHours()) + ':' + pad(now.getMinutes()) + ':' + pad(now.getSeconds()) + dif + pad(Math.floor(Math.abs(tzo) / 60)) + ':' + pad(Math.abs(tzo) % 60));
 }
 
+function getEmotion(){
+    const keys = Object.keys(emotionValues);
+    const rdmKey = keys[Math.floor(Math.random() * keys.length)];
+    return emotionValues[rdmKey];
+}
+
 let pageEntryTimeISO = getLocalISOTime();
+let emotion = getEmotion();
 
 window.addEventListener('click', () => clickCount++);
 window.addEventListener('scroll', () => {
@@ -51,7 +68,7 @@ function sendNavigationData() {
         entryTime: pageEntryTimeISO,
         durationSeconds: duration,
         numClicks: clickCount,
-
+        userEmotion: emotion,
         scroll: {
             actionsUP: scrollUpActionCount,
             actionsDOWN: scrollDownActionCount,
