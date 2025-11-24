@@ -62,7 +62,8 @@ function gatherProfileData() {
       name: document.getElementById("nameInput").value,
         lastName: document.getElementById("surnameInput").value,
         genre: genderValue,
-        birthDate: new Date(document.getElementById("birthDateInput").value)
+        birthDate: new Date(document.getElementById("birthDateInput").value),
+        email: document.getElementById("emailInput").value,
         },
         paymentData: {
           cardOwner: cardOwner || "",

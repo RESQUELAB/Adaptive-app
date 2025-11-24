@@ -134,7 +134,7 @@ async function getGlobalState(mainWindow) {
       5: 'Belgium'
     };
 
-    const userInfo = await mainWindow.webContents.executeJavaScript('pfc.profile');
+    const userInfo = await mainWindow.webContents.executeJavaScript(`typeof pfc !== "undefined" ? pfc.profile : pc.profile `);
     const mostrarHora = () => new Date().toLocaleTimeString('es-ES', { hour12: false });
     const mostrarFecha = () => {
       const date = new Date();
