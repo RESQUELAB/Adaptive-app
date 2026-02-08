@@ -10,6 +10,14 @@ class MutationController {
                 that.mutate(mutation, value)
             }
         })
+
+        // Track mouse movement for custom cursor
+        $(document).mousemove(function (e) {
+            $('#custom-cursor').css({
+                left: e.clientX,
+                top: e.clientY
+            });
+        });
     }
 
     mutate(name, value) {
@@ -41,7 +49,7 @@ class MutationController {
             if (name == 'information' && typeof pageProduct !== 'undefined') pageProduct.setDescriptionVisibility(value)
 
             if (name == 'category') this.changeCategory(value)
-            if (name == 'menu_type' && typeof controller !== 'undefined' ){
+            if (name == 'menu_type' && typeof controller !== 'undefined') {
                 console.log("MENU TYPE: ", name, " - ", value)
                 controller.changeFilters(name, value)
             }
@@ -49,6 +57,8 @@ class MutationController {
                 if (value == 'show') this.showImages()
                 if (value == 'hide') this.hideImages()
             }
+
+            if (name == 'cursor') this.setCursor(value)
         }
     }
 
@@ -63,7 +73,7 @@ class MutationController {
          * TODO: Implement the logic to hide images.
         */
     }
-    
+
     changeCategory(value) {
 
         $('#full-container').attr('background-image', "../img/logo_" + value + '.png');
@@ -90,6 +100,17 @@ class MutationController {
         if (value == "default") document.documentElement.style.setProperty('--base-font-size', '16px');
         if (value == "medium") document.documentElement.style.setProperty('--base-font-size', '18px');
         if (value == "big") document.documentElement.style.setProperty('--base-font-size', '22px');
+    }
+
+    setCursor(value) {
+        $('body').removeClass('cursor-large cursor-high-contrast cursor-default');
+        if (value === 'large') {
+            $('body').addClass('cursor-large');
+        } else if (value === 'high-contrast') {
+            $('body').addClass('cursor-high-contrast');
+        } else {
+            $('body').addClass('cursor-default');
+        }
     }
 
     setDarkTheme() {
@@ -123,14 +144,14 @@ class MutationController {
         }
         else {
             const missingMutations = Object.keys(this.all_mutations).filter(mutation => !data.hasOwnProperty(mutation));
-    
+
             if (missingMutations.length > 0) {
                 missingMutations.forEach(mutation => {
                     data[mutation] = this.all_mutations[mutation][0];
                 });
             }
-    
-            this.mutations = data; 
+
+            this.mutations = data;
         }
     }
 
@@ -143,6 +164,7 @@ class MutationController {
             information: "show",
             category: "sports",
             menu_type: "line",
+            cursor: "default",
         }
     }
 
@@ -151,9 +173,10 @@ class MutationController {
             "display": ["list", "grid2", "grid3", "grid4", "grid5"],
             "theme": ["light", "dark"],
             "information": ["show", "partial", "hide"],
-            "font_size": ["small", "default",  "medium", "big"],
+            "font_size": ["small", "default", "medium", "big"],
             "menu_type": ["line", "dropdown"],
             "images": ["images", "no_images"],
+            "cursor": ["default", "large", "high-contrast"],
         }
     }
 }

@@ -81,3 +81,4 @@ src/release*
 
 # proxy-src
 proxy_src/*
+src/pageDurations.json
