@@ -1,3 +1,32 @@
+// --- ADD THIS AT THE VERY TOP OF userModel.js ---
+const LS_LOGIN_KEY = 'sports-login';
+
+function loadLoginInfo() {
+    const defaultLoginInfo = {
+        sessionID: '',
+        username: '',
+        session: 0,
+        groupDefinition: {},
+        userProfile: {},
+        catalogue_1: false,
+        catalogue_2: false,
+        survey_1: false,
+        survey_2: false,
+        experimentName: '',
+    };
+    const stored = localStorage.getItem(LS_LOGIN_KEY);
+    return { ...defaultLoginInfo, ...(stored ? JSON.parse(stored) : {}) };
+}
+
+// Global variable that the Profile class expects
+var loginInfo = loadLoginInfo();
+
+// Helper to save it back if modified
+function saveLoginInfo() {
+    localStorage.setItem(LS_LOGIN_KEY, JSON.stringify(loginInfo));
+}
+// ------------------------------------------------
+
 const genderMapping = {
 	male: 1,
 	female: 2,
@@ -38,6 +67,10 @@ class Profile {
 
 	load() {
 		console.log("LOADING FROM THE PROFILE....");
+		if (!loginInfo || !loginInfo.userProfile || !loginInfo.userProfile.clientData) {
+			console.warn("loginInfo not ready yet.");
+			return; 
+    	}
 		if (typeof loginInfo.userProfile !== 'undefined') {
 
 			console.log(loginInfo.userProfile)
