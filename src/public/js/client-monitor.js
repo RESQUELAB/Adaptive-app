@@ -134,7 +134,25 @@ async function getGlobalState(mainWindow) {
       5: 'Belgium'
     };
 
-    const userInfo = await mainWindow.webContents.executeJavaScript(`typeof pfc !== "undefined" ? pfc.profile : pc.profile `);
+    // This version checks for both potential controllers safely
+    const userInfo = await mainWindow.webContents.executeJavaScript(`
+      (() => {
+        // Try to find the profile from either controller
+        const controller = (typeof pfc !== 'undefined') ? pfc : (typeof pc !== 'undefined' ? pc : null);
+        
+        if (controller && controller.profile && controller.profile.userInfo) {
+          return controller.profile; 
+        }
+        
+        // Fallback if no controller is found on the current page
+        return {
+          userInfo: {
+            clientData: { name: "Guest", lastName: "User", genre: 3 },
+            shipmentData: { city: "Unknown", country: 1 }
+          }
+        };
+      })()
+    `);
     const mostrarHora = () => new Date().toLocaleTimeString('es-ES', { hour12: false });
     const mostrarFecha = () => {
       const date = new Date();
@@ -155,10 +173,10 @@ async function getGlobalState(mainWindow) {
     //const renderEngine = process.versions.chrome;
     //const nodeVersion = process.version;
     //const electronVersion = process.versions.electron;
-    const mutations = await mainWindow.webContents.executeJavaScript('mc.mutations');
-    const allMutations = await mainWindow.webContents.executeJavaScript('mc.all_mutations');
-    const navigationHistory = await mainWindow.webContents.executeJavaScript('window.api.getSessionNavigation()');
-    
+    const mutations = await mainWindow.webContents.executeJavaScript('window.mc ? mc.mutations : []').catch(() => []);
+    const allMutations = await mainWindow.webContents.executeJavaScript('window.mc ? mc.all_mutations : []').catch(() => []);
+    const navigationHistory = await mainWindow.webContents.executeJavaScript('window.api ? window.api.getSessionNavigation() : []').catch(() => []);
+
     // --- Preparing session data structure document
     const usuario = {
       name: userInfo.userInfo?.clientData.name || "Unname",
