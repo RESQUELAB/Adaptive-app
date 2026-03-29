@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AdaptiveApp - Cuestionarios</title>
+    <title>AdaptiveApp - Questionnaires</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -82,17 +82,14 @@
 
   </head>
   <body>
-    <h1>Cuestionario de Implicación de Usuario</h1>
+    <h1>User Engagement Questionnaire</h1>
 
     <!-- Instrucciones -->
     <p>
-        <h3>Instrucciones de Respuestas:</h3>
-        
-        A continuación se presenta una serie de
-      afirmaciones. Para cada una de ellas, indique su nivel de acuerdo
-      seleccionando un número del 1 al 5, donde:
+      <h3>Answer Instructions:</h3>
+      Below is a series of statements. For each of them, indicate your level of agreement by selecting a number from 1 to 5, where:
     </p>
-    <p><strong>1 - Totalmente en desacuerdo, 5 - Totalmente de acuerdo</strong></p>
+    <p><strong>1 - Strongly Disagree, 5 - Strongly Agree</strong></p>
 
     <form id="survey-form" onsubmit="handleSurvey(event)">
 
@@ -100,13 +97,13 @@
       <table border="1">
         <thead>
           <tr>
-            <th>Preguntas</th>
-            <th colspan="5" class="scale-header">Seleccione su respuesta</th>
+            <th>Questions</th>
+            <th colspan="5" class="scale-header">Select your answer</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Me he perdido en esta experiencia</td>
+            <td>I got lost in this experience</td>
             <td class="scale-options">
               <label
                 >1<input
@@ -140,8 +137,7 @@
 
           <tr>
             <td>
-              Estaba tan involucrado en esta experiencia que perdí la noción del
-              tiempo.
+              I was so involved in this experience that I lost track of time.
             </td>
             <td class="scale-options">
               <label
@@ -172,7 +168,7 @@
 
           <tr>
             <td>
-              Bloqueé cosas a mi alrededor cuando estaba usando la aplicación
+              I blocked things around me when I was using the application
             </td>
             <td class="scale-options">
               <label
@@ -203,8 +199,7 @@
 
           <tr>
             <td>
-              Cuando estaba usando la aplicación, perdí la noción del mundo que
-              me rodeaba.
+              When I was using the application, I lost track of the world around me.
             </td>
             <td class="scale-options">
               <label
@@ -227,7 +222,7 @@
 
           <tr>
             <td>
-              El tiempo que pasé usando la aplicación ha pasado muy rápido.
+              The time I spent using the application flew by.
             </td>
             <td class="scale-options">
               <label
@@ -249,7 +244,7 @@
           </tr>
 
           <tr>
-            <td>Esta experiencia ha capturado toda mi atención.</td>
+            <td>This experience has captured my full attention.</td>
             <td class="scale-options">
               <label
                 >1<input
@@ -282,7 +277,7 @@
           </tr>
 
           <tr>
-            <td>Me he dejado llevar por esta experiencia.</td>
+            <td>I got carried away by this experience.</td>
             <td class="scale-options">
               <label
                 >1<input type="radio" name="carried_away" value="1" required
@@ -311,7 +306,7 @@
           </tr>
 
           <tr>
-            <td>Me he sentido frustrado al usar la aplicación</td>
+            <td>I felt frustrated while using the application</td>
             <td class="scale-options">
               <label
                 >1<input type="radio" name="frustrated" value="1" required
@@ -332,7 +327,7 @@
           </tr>
 
           <tr>
-            <td>He encontrado la aplicación confusa de usar.</td>
+            <td>I found the app confusing to use.</td>
             <td class="scale-options">
               <label
                 >1<input type="radio" name="confusing" value="1" required
@@ -352,7 +347,7 @@
             </td>
           </tr>
             <tr>
-              <td>Me he sentido molesto mientras usaba la aplicación.</td>
+              <td>I felt annoyed while using the application.</td>
               <td class="scale-options">
                 <label>1<input type="radio" name="annoyed" value="1" required /></label>
               </td>
@@ -370,7 +365,7 @@
               </td>
             </tr>
             <tr>
-              <td>Me he sentido desanimado al usar la aplicación.</td>
+              <td>I felt discouraged while using the application.</td>
               <td class="scale-options">
                 <label>1<input type="radio" name="discouraged" value="1" required /></label>
               </td>
@@ -388,7 +383,7 @@
               </td>
             </tr>
             <tr>
-              <td>El uso de la aplicación ha requerido mucho esfuerzo.</td>
+              <td>Using the app required a lot of effort.</td>
               <td class="scale-options">
                 <label>1<input type="radio" name="effort" value="1" required /></label>
               </td>
@@ -406,7 +401,7 @@
               </td>
             </tr>
             <tr>
-              <td>Esta experiencia ha sido exigente.</td>
+              <td>This experience has been demanding.</td>
               <td class="scale-options">
                 <label>1<input type="radio" name="demanding" value="1" required /></label>
               </td>
@@ -424,7 +419,7 @@
               </td>
             </tr>
             <tr>
-              <td>He sentido el control mientras usaba la aplicación.</td>
+              <td>I felt in control while using the application.</td>
               <td class="scale-options">
                 <label>1<input type="radio" name="control" value="1" required /></label>
               </td>
@@ -442,7 +437,7 @@
               </td>
             </tr>
             <tr>
-              <td>No he podido hacer algunas de las cosas que tenía que hacer mientras usaba la aplicación.</td>
+              <td>I was unable to do some of the things I needed to do while using the app.</td>
               <td class="scale-options">
                 <label>1<input type="radio" name="unable_to_complete" value="1" required /></label>
               </td>
@@ -460,7 +455,7 @@
               </td>
             </tr>
             <tr>
-              <td>La aplicación ha sido en general atractiva.</td>
+              <td>The application has been generally attractive.</td>
               <td class="scale-options">
                 <label>1<input type="radio" name="overall_attractive" value="1" required /></label>
               </td>
@@ -478,7 +473,7 @@
               </td>
             </tr>
             <tr>
-              <td>La aplicación ha sido estéticamente atractiva.</td>
+              <td>The application has been aesthetically pleasing.</td>
               <td class="scale-options">
                 <label>1<input type="radio" name="aesthetically_attractive" value="1" required /></label>
               </td>
@@ -496,7 +491,7 @@
               </td>
             </tr>
             <tr>
-              <td>Me han gustado los gráficos e imágenes de la aplicación.</td>
+              <td>I liked the graphics and images in the application.</td>
               <td class="scale-options">
                 <label>1<input type="radio" name="graphics_liked" value="1" required /></label>
               </td>
@@ -514,7 +509,7 @@
               </td>
             </tr>
             <tr>
-              <td>La aplicación es atractiva a los sentidos visuales.</td>
+              <td>The application is visually appealing.</td>
               <td class="scale-options">
                 <label>1<input type="radio" name="visually_appealing" value="1" required /></label>
               </td>
@@ -531,7 +526,7 @@
                 <label>5<input type="radio" name="visually_appealing" value="5" /></label>
               </td>
             </tr>
-            <td>El diseño de la pantalla de la aplicación era visualmente agradable.</td>
+            <td>The screen design of the application was visually pleasing.</td>
             <td class="scale-options">
               <label>1<input type="radio" name="screen_design" value="1" required /></label>
             </td>
@@ -549,7 +544,7 @@
             </td>
           </tr>
           <tr>
-            <td>El uso de la aplicación ha valido la pena.</td>
+            <td>The use of the application has been worthwhile.</td>
             <td class="scale-options">
               <label>1<input type="radio" name="worthwhile" value="1" required /></label>
             </td>
@@ -567,7 +562,7 @@
             </td>
           </tr>
           <tr>
-            <td>Considero que mi experiencia ha sido un éxito.</td>
+            <td>I consider my experience to be a success.</td>
             <td class="scale-options">
               <label>1<input type="radio" name="successful_experience" value="1" required /></label>
             </td>
@@ -585,7 +580,7 @@
             </td>
           </tr>
           <tr>
-            <td>Esta experiencia no ha resultado como había planeado.</td>
+            <td>This experience did not turn out as I had planned.</td>
             <td class="scale-options">
               <label>1<input type="radio" name="not_as_planned" value="1" required /></label>
             </td>
@@ -603,7 +598,7 @@
             </td>
           </tr>
           <tr>
-            <td>Mi experiencia ha sido gratificante.</td>
+            <td>My experience has been rewarding.</td>
             <td class="scale-options">
               <label>1<input type="radio" name="rewarding_experience" value="1" required /></label>
             </td>
@@ -621,7 +616,7 @@
             </td>
           </tr>
           <tr>
-            <td>Recomendaría la aplicación a familiares y amigos.</td>
+            <td>I would recommend the application to family and friends.</td>
             <td class="scale-options">
               <label>1<input type="radio" name="recommend_to_friends" value="1" required /></label>
             </td>
@@ -639,7 +634,7 @@
             </td>
           </tr>
           <tr>
-            <td>He continuado usando la aplicación por curiosidad.</td>
+            <td>I continued using the application out of curiosity.</td>
             <td class="scale-options">
               <label>1<input type="radio" name="continued_out_of_curiosity" value="1" required /></label>
             </td>
@@ -657,7 +652,7 @@
             </td>
           </tr>
           <tr>
-            <td>El contenido de la aplicación ha incitado mi curiosidad.</td>
+            <td>The content of the application has incited my curiosity.</td>
             <td class="scale-options">
               <label>1<input type="radio" name="content_incited_curiosity" value="1" required /></label>
             </td>
@@ -675,7 +670,7 @@
             </td>
           </tr>
           <tr>
-            <td>Realmente me atrajo esta experiencia.</td>
+            <td>I was really attracted to this experience.</td>
             <td class="scale-options">
               <label>1<input type="radio" name="really_attracted" value="1" required /></label>
             </td>
@@ -693,7 +688,7 @@
             </td>
           </tr>
           <tr>
-            <td>Me he sentido involucrado en esta experiencia.</td>
+            <td>I felt involved in this experience.</td>
             <td class="scale-options">
               <label>1<input type="radio" name="felt_involved" value="1" required /></label>
             </td>
@@ -711,7 +706,7 @@
             </td>
           </tr>
           <tr>
-            <td>Esta experiencia ha sido divertida.</td>
+            <td>This experience has been fun.</td>
             <td class="scale-options">
               <label>1<input type="radio" name="fun_experience" value="1" required /></label>
             </td>
@@ -733,29 +728,28 @@
 
 
       
-<h2>Cuestionario QUIS</h2>
-
+      <h2>QUIS Questionnaire</h2>
 
 <div class="instructions">
-    <h3>Instrucciones de Respuestas:</h3>
+    <h3>Response Instructions:</h3>
     <ul>
-        <li>Para seleccionar una opción, marque el número correspondiente.</li>
-        <li>En caso de que la opción sea ‘No opina’ o ‘No se aplica’, marque con un círculo la opción ‘NA’.</li>
+        <li>To select an option, mark the corresponding number.</li>
+        <li>If the option is ‘No opinion’ or ‘Not applicable’, circle the ‘NA’ option.</li>
     </ul>
 </div>
 
 
-<h2>PARTE A: PANTALLA</h2>
+<h2>PART A: SCREEN</h2>
 <table border="1">
     <tr>
-        <th colspan="13">Pregunta</th>
+        <th colspan="13">Question</th>
     </tr>
     <tr>
-        <td colspan="13">1. Caracteres en la aplicación (Elementos visuales y de texto)</td>
+        <td colspan="13">1. Characters in the application (Visual and text elements)</td>
     </tr>
     <tr>
         <td></td>
-        <td>Dificil de leer</td>
+        <td>Difficult to read</td>
         <td class="scale-options"><label><input type="radio" name="1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="1" value="3">3</label></td>
@@ -765,16 +759,16 @@
         <td class="scale-options"><label><input type="radio" name="1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="1" value="9">9</label></td>
-        <td>Fácil de leer</td>
+        <td>Easy to read</td>
         <td><input type="radio" name="1" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">1.1 Imagen de caracteres (Representación visual de letras, números, símbolos o iconos)</td>
+        <td colspan="13">1.1 Character image (Visual representation of letters, numbers, symbols, or icons)</td>
     </tr>
     <tr>
         <td></td>
-        <td>Borroso</td>
+        <td>Blurry</td>
         <td class="scale-options"><label><input type="radio" name="1_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="1_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="1_1" value="3">3</label></td>
@@ -784,16 +778,16 @@
         <td class="scale-options"><label><input type="radio" name="1_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="1_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="1_1" value="9">9</label></td>
-        <td>Agudo</td>
+        <td>Sharp</td>
         <td><input type="radio" name="1_1" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">1.2 Formas de los caracteres (Las fuentes, estilos y diseños de los caracteres)</td>
+        <td colspan="13">1.2 Character shapes (Fonts, styles, and designs of characters)</td>
     </tr>
     <tr>
         <td></td>
-        <td>Poco legible</td>
+        <td>Hard to read</td>
         <td class="scale-options"><label><input type="radio" name="1_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="1_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="1_2" value="3">3</label></td>
@@ -803,16 +797,16 @@
         <td class="scale-options"><label><input type="radio" name="1_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="1_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="1_2" value="9">9</label></td>
-        <td>Muy legible</td>
+        <td>Very readable</td>
         <td><input type="radio" name="1_2" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">1.3 Contraste con el fondo</td>
+        <td colspan="13">1.3 Contrast with background</td>
     </tr>
     <tr>
         <td></td>
-        <td>Irritante</td>
+        <td>Irritating</td>
         <td class="scale-options"><label><input type="radio" name="1_3" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="1_3" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="1_3" value="3">3</label></td>
@@ -822,16 +816,16 @@
         <td class="scale-options"><label><input type="radio" name="1_3" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="1_3" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="1_3" value="9">9</label></td>
-        <td>Agradable</td>
+        <td>Pleasant</td>
         <td><input type="radio" name="1_3" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">2. Resaltar en la aplicación facilita la tarea</td>
+        <td colspan="13">2. Highlighting in the application facilitates the task</td>
     </tr>
     <tr>
         <td></td>
-        <td>No del todo</td>
+        <td>Not at all</td>
         <td class="scale-options"><label><input type="radio" name="2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="2" value="3">3</label></td>
@@ -841,16 +835,16 @@
         <td class="scale-options"><label><input type="radio" name="2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="2" value="9">9</label></td>
-        <td>Mucho</td>
+        <td>A lot</td>
         <td><input type="radio" name="2" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">2.1 Uso del color para resaltar</td>
+        <td colspan="13">2.1 Use of color for highlighting</td>
     </tr>
     <tr>
         <td></td>
-        <td>Poco útil</td>
+        <td>Not very useful</td>
         <td class="scale-options"><label><input type="radio" name="2_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="2_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="2_1" value="3">3</label></td>
@@ -860,16 +854,16 @@
         <td class="scale-options"><label><input type="radio" name="2_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="2_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="2_1" value="9">9</label></td>
-        <td>Útil</td>
+        <td>Useful</td>
         <td><input type="radio" name="2_1" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">2.2 Uso del parpadeo</td>
+        <td colspan="13">2.2 Use of blinking</td>
     </tr>
     <tr>
         <td></td>
-        <td>Poco útil</td>
+        <td>Not very useful</td>
         <td class="scale-options"><label><input type="radio" name="2_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="2_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="2_2" value="3">3</label></td>
@@ -879,16 +873,16 @@
         <td class="scale-options"><label><input type="radio" name="2_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="2_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="2_2" value="9">9</label></td>
-        <td>Útil</td>
+        <td>Useful</td>
         <td><input type="radio" name="2_2" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">2.3 Uso del cambio de color de fondo</td>
+        <td colspan="13">2.3 Use of background color change</td>
     </tr>
     <tr>
         <td></td>
-        <td>Poco útil</td>
+        <td>Not very useful</td>
         <td class="scale-options"><label><input type="radio" name="2_3" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="2_3" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="2_3" value="3">3</label></td>
@@ -898,16 +892,16 @@
         <td class="scale-options"><label><input type="radio" name="2_3" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="2_3" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="2_3" value="9">9</label></td>
-        <td>Útil</td>
+        <td>Useful</td>
         <td><input type="radio" name="2_3" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">3. Los diseños en la aplicación facilitan las tareas</td>
+        <td colspan="13">3. Designs in the application facilitate tasks</td>
     </tr>
     <tr>
         <td></td>
-        <td>Nunca</td>
+        <td>Never</td>
         <td class="scale-options"><label><input type="radio" name="3" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="3" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="3" value="3">3</label></td>
@@ -917,16 +911,16 @@
         <td class="scale-options"><label><input type="radio" name="3" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="3" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="3" value="9">9</label></td>
-        <td>Siempre</td>
+        <td>Always</td>
         <td><input type="radio" name="3" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">3.1 Cantidad de información mostrada en la aplicación</td>
+        <td colspan="13">3.1 Amount of information displayed in the application</td>
     </tr>
     <tr>
         <td></td>
-        <td>Inadecuado</td>
+        <td>Inadequate</td>
         <td class="scale-options"><label><input type="radio" name="3_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="3_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="3_1" value="3">3</label></td>
@@ -936,16 +930,16 @@
         <td class="scale-options"><label><input type="radio" name="3_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="3_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="3_1" value="9">9</label></td>
-        <td>Adecuado</td>
+        <td>Adequate</td>
         <td><input type="radio" name="3_1" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">3.2 Disposición de la información en la aplicación</td>
+        <td colspan="13">3.2 Information layout in the application</td>
     </tr>
     <tr>
         <td></td>
-        <td>Ilógico</td>
+        <td>Illogical</td>
         <td class="scale-options"><label><input type="radio" name="3_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="3_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="3_2" value="3">3</label></td>
@@ -955,16 +949,16 @@
         <td class="scale-options"><label><input type="radio" name="3_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="3_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="3_2" value="9">9</label></td>
-        <td>Lógico</td>
+        <td>Logical</td>
         <td><input type="radio" name="3_2" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">3.3 Disposición coherente de la información en la aplicación</td>
+        <td colspan="13">3.3 Coherent layout of information in the application</td>
     </tr>
     <tr>
         <td></td>
-        <td>Nunca</td>
+        <td>Never</td>
         <td class="scale-options"><label><input type="radio" name="3_3" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="3_3" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="3_3" value="3">3</label></td>
@@ -974,16 +968,16 @@
         <td class="scale-options"><label><input type="radio" name="3_3" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="3_3" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="3_3" value="9">9</label></td>
-        <td>Siempre</td>
+        <td>Always</td>
         <td><input type="radio" name="3_3" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">4. Secuencia de páginas</td>
+        <td colspan="13">4. Page sequence</td>
     </tr>
     <tr>
         <td></td>
-        <td>Confuso</td>
+        <td>Confusing</td>
         <td class="scale-options"><label><input type="radio" name="4" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="4" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="4" value="3">3</label></td>
@@ -993,16 +987,16 @@
         <td class="scale-options"><label><input type="radio" name="4" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="4" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="4" value="9">9</label></td>
-        <td>Claro</td>
+        <td>Clear</td>
         <td><input type="radio" name="4" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">4.1 Siguiente página en una secuencia</td>
+        <td colspan="13">4.1 Next page in a sequence</td>
     </tr>
     <tr>
         <td></td>
-        <td>Impredecible</td>
+        <td>Unpredictable</td>
         <td class="scale-options"><label><input type="radio" name="4_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="4_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="4_1" value="3">3</label></td>
@@ -1012,16 +1006,16 @@
         <td class="scale-options"><label><input type="radio" name="4_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="4_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="4_1" value="9">9</label></td>
-        <td>Previsible</td>
+        <td>Predictable</td>
         <td><input type="radio" name="4_1" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">4.2 Volver a la página anterior</td>
+        <td colspan="13">4.2 Back to the previous page</td>
     </tr>
     <tr>
         <td></td>
-        <td>Difícil</td>
+        <td>Difficult</td>
         <td class="scale-options"><label><input type="radio" name="4_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="4_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="4_2" value="3">3</label></td>
@@ -1031,16 +1025,16 @@
         <td class="scale-options"><label><input type="radio" name="4_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="4_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="4_2" value="9">9</label></td>
-        <td>Fácil</td>
+        <td>Easy</td>
         <td><input type="radio" name="4_2" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">4.3 Volver a la página principal</td>
+        <td colspan="13">4.3 Back to the main page</td>
     </tr>
     <tr>
         <td></td>
-        <td>Difícil</td>
+        <td>Difficult</td>
         <td class="scale-options"><label><input type="radio" name="4_3" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="4_3" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="4_3" value="3">3</label></td>
@@ -1050,16 +1044,16 @@
         <td class="scale-options"><label><input type="radio" name="4_3" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="4_3" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="4_3" value="9">9</label></td>
-        <td>Fácil</td>
+        <td>Easy</td>
         <td><input type="radio" name="4_3" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">4.4 Saber dónde se encuentra en la tarea (lo que ha hecho y lo que le falta por hacer)</td>
+        <td colspan="13">4.4 Knowing where you are in the task (what you have done and what you have left to do)</td>
     </tr>
     <tr>
         <td></td>
-        <td>Confuso</td>
+        <td>Confusing</td>
         <td class="scale-options"><label><input type="radio" name="4_4" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="4_4" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="4_4" value="3">3</label></td>
@@ -1069,16 +1063,16 @@
         <td class="scale-options"><label><input type="radio" name="4_4" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="4_4" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="4_4" value="9">9</label></td>
-        <td>Claro</td>
+        <td>Clear</td>
         <td><input type="radio" name="4_4" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">5. Los elementos en la aplicación son fáciles de seleccionar</td>
+        <td colspan="13">5. Elements in the application are easy to select</td>
     </tr>
     <tr>
         <td></td>
-        <td>Nunca</td>
+        <td>Never</td>
         <td class="scale-options"><label><input type="radio" name="5" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="5" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="5" value="3">3</label></td>
@@ -1088,16 +1082,16 @@
         <td class="scale-options"><label><input type="radio" name="5" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="5" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="5" value="9">9</label></td>
-        <td>Siempre</td>
+        <td>Always</td>
         <td><input type="radio" name="5" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">5.1 Los elementos son fáciles de encontrar</td>
+        <td colspan="13">5.1 Elements are easy to find</td>
     </tr>
     <tr>
         <td></td>
-        <td>Nunca</td>
+        <td>Never</td>
         <td class="scale-options"><label><input type="radio" name="5_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="5_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="5_1" value="3">3</label></td>
@@ -1107,18 +1101,17 @@
         <td class="scale-options"><label><input type="radio" name="5_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="5_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="5_1" value="9">9</label></td>
-        <td>Siempre</td>
+        <td>Always</td>
         <td><input type="radio" name="5_1" value="NA" checked>NA</td>
     </tr>
 
 
-    
     <tr>
-        <td colspan="13">5.2 Tamaño del área de selección de elementos</td>
+        <td colspan="13">5.2 Size of the element selection area</td>
     </tr>
     <tr>
         <td></td>
-        <td>Demasiado pequeño</td>
+        <td>Too small</td>
         <td class="scale-options"><label><input type="radio" name="5_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="5_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="5_2" value="3">3</label></td>
@@ -1128,16 +1121,16 @@
         <td class="scale-options"><label><input type="radio" name="5_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="5_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="5_2" value="9">9</label></td>
-        <td>Suficientemente grande</td>
+        <td>Sufficiently large</td>
         <td><input type="radio" name="5_2" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">5.3 Ver la ubicación del cursor</td>
+        <td colspan="13">5.3 See cursor location</td>
     </tr>
     <tr>
         <td></td>
-        <td>Costoso</td>
+        <td>Costly</td>
         <td class="scale-options"><label><input type="radio" name="5_3" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="5_3" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="5_3" value="3">3</label></td>
@@ -1147,16 +1140,16 @@
         <td class="scale-options"><label><input type="radio" name="5_3" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="5_3" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="5_3" value="9">9</label></td>
-        <td>Fácil</td>
+        <td>Easy</td>
         <td><input type="radio" name="5_3" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">5.4 Saber si un elemento está seleccionado</td>
+        <td colspan="13">5.4 Knowing if an element is selected</td>
     </tr>
     <tr>
         <td></td>
-        <td>Costoso</td>
+        <td>Costly</td>
         <td class="scale-options"><label><input type="radio" name="5_4" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="5_4" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="5_4" value="3">3</label></td>
@@ -1166,16 +1159,16 @@
         <td class="scale-options"><label><input type="radio" name="5_4" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="5_4" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="5_4" value="9">9</label></td>
-        <td>Fácil</td>
+        <td>Easy</td>
         <td><input type="radio" name="5_4" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">5.5 La página responde tras realizar un click</td>
+        <td colspan="13">5.5 The page responds after clicking</td>
     </tr>
     <tr>
         <td></td>
-        <td>Poco fiable</td>
+        <td>Unreliable</td>
         <td class="scale-options"><label><input type="radio" name="5_5" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="5_5" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="5_5" value="3">3</label></td>
@@ -1185,16 +1178,16 @@
         <td class="scale-options"><label><input type="radio" name="5_5" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="5_5" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="5_5" value="9">9</label></td>
-        <td>Fiable</td>
+        <td>Reliable</td>
         <td><input type="radio" name="5_5" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">5.6 La pantalla se mantiene encendida el tiempo suficiente para leer todos los elementos antes de que desaparezca</td>
+        <td colspan="13">5.6 The screen stays on long enough to read all elements before disappearing</td>
     </tr>
     <tr>
         <td></td>
-        <td>Demasiado corto</td>
+        <td>Too short</td>
         <td class="scale-options"><label><input type="radio" name="5_6" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="5_6" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="5_6" value="3">3</label></td>
@@ -1204,26 +1197,25 @@
         <td class="scale-options"><label><input type="radio" name="5_6" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="5_6" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="5_6" value="9">9</label></td>
-        <td>Suficientemente largo</td>
+        <td>Sufficiently long</td>
         <td><input type="radio" name="5_6" value="NA" checked>NA</td>
     </tr>
 </table>
 
 
-<h2>PARTE B: TERMINOLOGÍA E INFORMACIÓN DEL SISTEMA</h2>
+<h2>PART B: TERMINOLOGY AND SYSTEM INFORMATION</h2>
 <table border="1">
     <tr>
-        <th colspan="13">Pregunta</th>
+        <th colspan="13">Question</th>
     </tr>
         
 
-
     <tr>
-        <td colspan="13">6. Uso de términos en la aplicación (Los mismos términos o palabras clave se utilizan de manera coherente y uniforme)</td>
+        <td colspan="13">6. Use of terms in the application (The same terms or keywords are used consistently and uniformly)</td>
     </tr>
     <tr>
         <td></td>
-        <td>Inconsistente</td>
+        <td>Inconsistent</td>
         <td class="scale-options"><label><input type="radio" name="6" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="6" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="6" value="3">3</label></td>
@@ -1233,15 +1225,15 @@
         <td class="scale-options"><label><input type="radio" name="6" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="6" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="6" value="9">9</label></td>
-        <td>Consistente</td>
+        <td>Consistent</td>
         <td><input type="radio" name="6" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">6.1 Encabezados en la aplicación</td>
+        <td colspan="13">6.1 Headers in the application</td>
     </tr>
     <tr>
         <td></td>
-        <td>Inconsistente</td>
+        <td>Inconsistent</td>
         <td class="scale-options"><label><input type="radio" name="6_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="6_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="6_1" value="3">3</label></td>
@@ -1251,15 +1243,15 @@
         <td class="scale-options"><label><input type="radio" name="6_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="6_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="6_1" value="9">9</label></td>
-        <td>Consistente</td>
+        <td>Consistent</td>
         <td><input type="radio" name="6_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">6.2 Términos en la aplicación (Etiquetas de elementos)</td>
+        <td colspan="13">6.2 Terms in the application (Element labels)</td>
     </tr>
     <tr>
         <td></td>
-        <td>Ambiguo</td>
+        <td>Ambiguous</td>
         <td class="scale-options"><label><input type="radio" name="6_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="6_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="6_2" value="3">3</label></td>
@@ -1269,16 +1261,16 @@
         <td class="scale-options"><label><input type="radio" name="6_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="6_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="6_2" value="9">9</label></td>
-        <td>Preciso</td>
+        <td>Precise</td>
         <td><input type="radio" name="6_2" value="NA" checked>NA</td>
     </tr>
     
     <tr>
-        <td colspan="13">7. Mensajes de retroalimentación que aparecen en la aplicación</td>
+        <td colspan="13">7. Feedback messages displayed in the application</td>
     </tr>
     <tr>
         <td></td>
-        <td>Inconsistente</td>
+        <td>Inconsistent</td>
         <td class="scale-options"><label><input type="radio" name="7" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="7" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="7" value="3">3</label></td>
@@ -1288,15 +1280,15 @@
         <td class="scale-options"><label><input type="radio" name="7" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="7" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="7" value="9">9</label></td>
-        <td>Consistente</td>
+        <td>Consistent</td>
         <td><input type="radio" name="7" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">7.1 Ubicación de los mensajes en la aplicación</td>
+        <td colspan="13">7.1 Location of messages in the application</td>
     </tr>
     <tr>
         <td></td>
-        <td>Inconsistente</td>
+        <td>Inconsistent</td>
         <td class="scale-options"><label><input type="radio" name="7_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="7_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="7_1" value="3">3</label></td>
@@ -1306,16 +1298,16 @@
         <td class="scale-options"><label><input type="radio" name="7_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="7_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="7_1" value="9">9</label></td>
-        <td>Consistente</td>
+        <td>Consistent</td>
         <td><input type="radio" name="7_1" value="NA" checked>NA</td>
     </tr>
     
     <tr>
-        <td colspan="13">8. Instrucciones para el usuario</td>
+        <td colspan="13">8. User instructions</td>
     </tr>
     <tr>
         <td></td>
-        <td>Confuso</td>
+        <td>Confusing</td>
         <td class="scale-options"><label><input type="radio" name="8" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="8" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="8" value="3">3</label></td>
@@ -1325,15 +1317,15 @@
         <td class="scale-options"><label><input type="radio" name="8" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="8" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="8" value="9">9</label></td>
-        <td>Claro</td>
+        <td>Clear</td>
         <td><input type="radio" name="8" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">8.1 Instrucciones para comandos o elecciones</td>
+        <td colspan="13">8.1 Instructions for commands or choices</td>
     </tr>
     <tr>
         <td></td>
-        <td>Confuso</td>
+        <td>Confusing</td>
         <td class="scale-options"><label><input type="radio" name="8_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="8_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="8_1" value="3">3</label></td>
@@ -1343,15 +1335,15 @@
         <td class="scale-options"><label><input type="radio" name="8_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="8_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="8_1" value="9">9</label></td>
-        <td>Claro</td>
+        <td>Clear</td>
         <td><input type="radio" name="8_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">8.2 Instrucciones para corregir errores</td>
+        <td colspan="13">8.2 Instructions for correcting errors</td>
     </tr>
     <tr>
         <td></td>
-        <td>Confuso</td>
+        <td>Confusing</td>
         <td class="scale-options"><label><input type="radio" name="8_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="8_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="8_2" value="3">3</label></td>
@@ -1361,16 +1353,16 @@
         <td class="scale-options"><label><input type="radio" name="8_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="8_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="8_2" value="9">9</label></td>
-        <td>Claro</td>
+        <td>Clear</td>
         <td><input type="radio" name="8_2" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">9. El sistema le mantiene informado sobre lo que está haciendo</td>
+        <td colspan="13">9. The system keeps you informed about what it is doing</td>
     </tr>
     <tr>
         <td></td>
-        <td>Nunca</td>
+        <td>Never</td>
         <td class="scale-options"><label><input type="radio" name="9" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="9" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="9" value="3">3</label></td>
@@ -1380,15 +1372,15 @@
         <td class="scale-options"><label><input type="radio" name="9" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="9" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="9" value="9">9</label></td>
-        <td>Siempre</td>
+        <td>Always</td>
         <td><input type="radio" name="9" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">9.1 Realizar una operación conduce a un resultado predecible</td>
+        <td colspan="13">9.1 Performing an operation leads to a predictable outcome</td>
     </tr>
     <tr>
         <td></td>
-        <td>Nunca</td>
+        <td>Never</td>
         <td class="scale-options"><label><input type="radio" name="9_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="9_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="9_1" value="3">3</label></td>
@@ -1398,15 +1390,15 @@
         <td class="scale-options"><label><input type="radio" name="9_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="9_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="9_1" value="9">9</label></td>
-        <td>Siempre</td>
+        <td>Always</td>
         <td><input type="radio" name="9_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">9.2 El usuario puede controlar la cantidad de feedback</td>
+        <td colspan="13">9.2 The user can control the amount of feedback</td>
     </tr>
     <tr>
         <td></td>
-        <td>Nunca</td>
+        <td>Never</td>
         <td class="scale-options"><label><input type="radio" name="9_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="9_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="9_2" value="3">3</label></td>
@@ -1416,16 +1408,16 @@
         <td class="scale-options"><label><input type="radio" name="9_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="9_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="9_2" value="9">9</label></td>
-        <td>Siempre</td>
+        <td>Always</td>
         <td><input type="radio" name="9_2" value="NA" checked>NA</td>
     </tr>
     
     <tr>
-        <td colspan="13">10. Mensajes de error</td>
+        <td colspan="13">10. Error messages</td>
     </tr>
     <tr>
         <td></td>
-        <td>Poco útil</td>
+        <td>Not useful</td>
         <td class="scale-options"><label><input type="radio" name="10" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="10" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="10" value="3">3</label></td>
@@ -1435,15 +1427,15 @@
         <td class="scale-options"><label><input type="radio" name="10" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="10" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="10" value="9">9</label></td>
-        <td>Útil</td>
+        <td>Useful</td>
         <td><input type="radio" name="10" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">10.1 Los mensajes de error aclaran el problema</td>
+        <td colspan="13">10.1 Error messages clarify the problem</td>
     </tr>
     <tr>
         <td></td>
-        <td>Nunca</td>
+        <td>Never</td>
         <td class="scale-options"><label><input type="radio" name="10_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="10_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="10_1" value="3">3</label></td>
@@ -1453,15 +1445,15 @@
         <td class="scale-options"><label><input type="radio" name="10_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="10_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="10_1" value="9">9</label></td>
-        <td>Siempre</td>
+        <td>Always</td>
         <td><input type="radio" name="10_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">10.2 Redacción de mensajes de error</td>
+        <td colspan="13">10.2 Writing error messages</td>
     </tr>
     <tr>
         <td></td>
-        <td>Incómodo</td>
+        <td>Uncomfortable</td>
         <td class="scale-options"><label><input type="radio" name="10_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="10_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="10_2" value="3">3</label></td>
@@ -1471,24 +1463,24 @@
         <td class="scale-options"><label><input type="radio" name="10_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="10_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="10_2" value="9">9</label></td>
-        <td>Cómodo</td>
+        <td>Comfortable</td>
         <td><input type="radio" name="10_2" value="NA" checked>NA</td>
     </tr>
 </table>
 
 
-<h2>PARTE C: APRENDIZAJE</h2>
+<h2>PART C: LEARNING</h2>
 <table border="1">
     <tr>
-        <th colspan="13">Pregunta</th>
+        <th colspan="13">Question</th>
     </tr>
-        
+
     <tr>
-        <td colspan="13">11. Aprendiendo a manejar la aplicación</td>
+        <td colspan="13">11. Learning to use the application</td>
     </tr>
     <tr>
         <td></td>
-        <td>Difícil</td>
+        <td>Difficult</td>
         <td class="scale-options"><label><input type="radio" name="11" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="11" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="11" value="3">3</label></td>
@@ -1498,15 +1490,15 @@
         <td class="scale-options"><label><input type="radio" name="11" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="11" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="11" value="9">9</label></td>
-        <td>Fácil</td>
+        <td>Easy</td>
         <td><input type="radio" name="11" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">11.1 Primeros pasos</td>
+        <td colspan="13">11.1 Getting Started</td>
     </tr>
     <tr>
         <td></td>
-        <td>Difícil</td>
+        <td>Difficult</td>
         <td class="scale-options"><label><input type="radio" name="11_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="11_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="11_1" value="3">3</label></td>
@@ -1516,15 +1508,15 @@
         <td class="scale-options"><label><input type="radio" name="11_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="11_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="11_1" value="9">9</label></td>
-        <td>Fácil</td>
+        <td>Easy</td>
         <td><input type="radio" name="11_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">11.2 Aprendiendo funciones avanzadas</td>
+        <td colspan="13">11.2 Learning advanced features</td>
     </tr>
     <tr>
         <td></td>
-        <td>Difícil</td>
+        <td>Difficult</td>
         <td class="scale-options"><label><input type="radio" name="11_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="11_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="11_2" value="3">3</label></td>
@@ -1534,15 +1526,15 @@
         <td class="scale-options"><label><input type="radio" name="11_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="11_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="11_2" value="9">9</label></td>
-        <td>Fácil</td>
+        <td>Easy</td>
         <td><input type="radio" name="11_2" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">11.3 Tiempo para aprender a usar la aplicación</td>
+        <td colspan="13">11.3 Time to learn to use the application</td>
     </tr>
     <tr>
         <td></td>
-        <td>Demasiado largo</td>
+        <td>Too long</td>
         <td class="scale-options"><label><input type="radio" name="11_3" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="11_3" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="11_3" value="3">3</label></td>
@@ -1551,17 +1543,17 @@
         <td class="scale-options"><label><input type="radio" name="11_3" value="6">6</label></td>
         <td class="scale-options"><label><input type="radio" name="11_3" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="11_3" value="8">8</label></td>
-        <td class="scale-options"><label><input type="radio" name="11_3" value="8">9</label></td>
-        <td>Lo justo</td>
+        <td class="scale-options"><label><input type="radio" name="11_3" value="9">9</label></td>
+        <td>Just right</td>
         <td><input type="radio" name="11_3" value="NA" checked>NA</td>
     </tr>
     
     <tr>
-        <td colspan="13">12. Exploración de funciones por prueba y error</td>
+        <td colspan="13">12. Exploring functions through trial and error</td>
     </tr>
     <tr>
         <td></td>
-        <td>Desmotivador</td>
+        <td>Demotivating</td>
         <td class="scale-options"><label><input type="radio" name="12" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="12" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="12" value="3">3</label></td>
@@ -1571,15 +1563,15 @@
         <td class="scale-options"><label><input type="radio" name="12" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="12" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="12" value="9">9</label></td>
-        <td>Animado</td>
+        <td>Animated</td>
         <td><input type="radio" name="12" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">12.1 Exploración de funciones</td>
+        <td colspan="13">12.1 Exploring functions</td>
     </tr>
     <tr>
         <td></td>
-        <td>Incómodo</td>
+        <td>Uncomfortable</td>
         <td class="scale-options"><label><input type="radio" name="12_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="12_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="12_1" value="3">3</label></td>
@@ -1589,15 +1581,15 @@
         <td class="scale-options"><label><input type="radio" name="12_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="12_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="12_1" value="9">9</label></td>
-        <td>Agradable</td>
+        <td>Pleasant</td>
         <td><input type="radio" name="12_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">12.2 Descubrimiento de nuevas funciones</td>
+        <td colspan="13">12.2 Discovering new functions</td>
     </tr>
     <tr>
         <td></td>
-        <td>Difícil</td>
+        <td>Difficult</td>
         <td class="scale-options"><label><input type="radio" name="12_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="12_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="12_2" value="3">3</label></td>
@@ -1607,16 +1599,16 @@
         <td class="scale-options"><label><input type="radio" name="12_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="12_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="12_2" value="9">9</label></td>
-        <td>Fácil</td>
+        <td>Easy</td>
         <td><input type="radio" name="12_2" value="NA" checked>NA</td>
     </tr>
     
     <tr>
-        <td colspan="13">13. Recordación de términos y uso de comandos</td>
+        <td colspan="13">13. Recall of terms and use of commands</td>
     </tr>
     <tr>
         <td></td>
-        <td>Difícil</td>
+        <td>Difficult</td>
         <td class="scale-options"><label><input type="radio" name="13" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="13" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="13" value="3">3</label></td>
@@ -1626,15 +1618,15 @@
         <td class="scale-options"><label><input type="radio" name="13" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="13" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="13" value="9">9</label></td>
-        <td>Fácil</td>
+        <td>Easy</td>
         <td><input type="radio" name="13" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">13.1 Recordar reglas específicas sobre la introducción de comandos</td>
+        <td colspan="13">13.1 Remember specific rules about command input</td>
     </tr>
     <tr>
         <td></td>
-        <td>Difícil</td>
+        <td>Difficult</td>
         <td class="scale-options"><label><input type="radio" name="13_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="13_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="13_1" value="3">3</label></td>
@@ -1644,16 +1636,16 @@
         <td class="scale-options"><label><input type="radio" name="13_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="13_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="13_1" value="9">9</label></td>
-        <td>Fácil</td>
+        <td>Easy</td>
         <td><input type="radio" name="13_1" value="NA" checked>NA</td>
     </tr>
 
     <tr>
-        <td colspan="13">14. Las tareas se pueden realizar de manera directa</td>
+        <td colspan="13">14. Tasks can be performed directly</td>
     </tr>
     <tr>
         <td></td>
-        <td>Nunca</td>
+        <td>Never</td>
         <td class="scale-options"><label><input type="radio" name="14" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="14" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="14" value="3">3</label></td>
@@ -1663,15 +1655,15 @@
         <td class="scale-options"><label><input type="radio" name="14" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="14" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="14" value="9">9</label></td>
-        <td>Siempre</td>
+        <td>Always</td>
         <td><input type="radio" name="14" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">14.1 Número de pasos por tarea</td>
+        <td colspan="13">14.1 Number of steps per task</td>
     </tr>
     <tr>
         <td></td>
-        <td>Demasiado</td>
+        <td>Too many</td>
         <td class="scale-options"><label><input type="radio" name="14_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="14_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="14_1" value="3">3</label></td>
@@ -1681,15 +1673,15 @@
         <td class="scale-options"><label><input type="radio" name="14_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="14_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="14_1" value="9">9</label></td>
-        <td>Los justos</td>
+        <td>Just right</td>
         <td><input type="radio" name="14_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">14.2 Los pasos para completar una tarea siguen una secuencia lógica</td>
+        <td colspan="13">14.2 The steps to complete a task follow a logical sequence</td>
     </tr>
     <tr>
         <td></td>
-        <td>Nunca</td>
+        <td>Never</td>
         <td class="scale-options"><label><input type="radio" name="14_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="14_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="14_2" value="3">3</label></td>
@@ -1699,15 +1691,15 @@
         <td class="scale-options"><label><input type="radio" name="14_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="14_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="14_2" value="9">9</label></td>
-        <td>Siempre</td>
+        <td>Always</td>
         <td><input type="radio" name="14_2" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">14.3 Finalización de la tarea</td>
+        <td colspan="13">14.3 Task completion</td>
     </tr>
     <tr>
         <td></td>
-        <td>Poco claro</td>
+        <td>Unclear</td>
         <td class="scale-options"><label><input type="radio" name="14_3" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="14_3" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="14_3" value="3">3</label></td>
@@ -1717,16 +1709,16 @@
         <td class="scale-options"><label><input type="radio" name="14_3" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="14_3" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="14_3" value="9">9</label></td>
-        <td>Claro</td>
+        <td>Clear</td>
         <td><input type="radio" name="14_3" value="NA" checked>NA</td>
     </tr>
     
     <tr>
-        <td colspan="13">15. Mensajes de ayuda en la aplicación</td>
+        <td colspan="13">15. Help messages in the application</td>
     </tr>
     <tr>
         <td></td>
-        <td>Confuso</td>
+        <td>Confusing</td>
         <td class="scale-options"><label><input type="radio" name="15" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="15" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="15" value="3">3</label></td>
@@ -1736,15 +1728,15 @@
         <td class="scale-options"><label><input type="radio" name="15" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="15" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="15" value="9">9</label></td>
-        <td>Claro</td>
+        <td>Clear</td>
         <td><input type="radio" name="15" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">15.1 Acceso a los mensajes de ayuda</td>
+        <td colspan="13">15.1 Accessing help messages</td>
     </tr>
     <tr>
         <td></td>
-        <td>Difícil</td>
+        <td>Difficult</td>
         <td class="scale-options"><label><input type="radio" name="15_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="15_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="15_1" value="3">3</label></td>
@@ -1754,15 +1746,15 @@
         <td class="scale-options"><label><input type="radio" name="15_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="15_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="15_1" value="9">9</label></td>
-        <td>Fácil</td>
+        <td>Easy</td>
         <td><input type="radio" name="15_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">15.2 Contenido de los mensajes de ayuda</td>
+        <td colspan="13">15.2 Content of help messages</td>
     </tr>
     <tr>
         <td></td>
-        <td>Confuso</td>
+        <td>Confusing</td>
         <td class="scale-options"><label><input type="radio" name="15_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="15_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="15_2" value="3">3</label></td>
@@ -1772,15 +1764,15 @@
         <td class="scale-options"><label><input type="radio" name="15_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="15_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="15_2" value="9">9</label></td>
-        <td>Claro</td>
+        <td>Clear</td>
         <td><input type="radio" name="15_2" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">15.3 Cantidad de ayuda</td>
+        <td colspan="13">15.3 Amount of help</td>
     </tr>
     <tr>
         <td></td>
-        <td>Inadecuado</td>
+        <td>Inadequate</td>
         <td class="scale-options"><label><input type="radio" name="15_3" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="15_3" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="15_3" value="3">3</label></td>
@@ -1790,16 +1782,16 @@
         <td class="scale-options"><label><input type="radio" name="15_3" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="15_3" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="15_3" value="9">9</label></td>
-        <td>Adecuado</td>
+        <td>Adequate</td>
         <td><input type="radio" name="15_3" value="NA" checked>NA</td>
     </tr>
     
     <tr>
-        <td colspan="13">16. Materiales de referencia complementarios</td>
+        <td colspan="13">16. Reference Materials</td>
     </tr>
     <tr>
         <td></td>
-        <td>Confuso</td>
+        <td>Confusing</td>
         <td class="scale-options"><label><input type="radio" name="16" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="16" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="16" value="3">3</label></td>
@@ -1809,15 +1801,15 @@
         <td class="scale-options"><label><input type="radio" name="16" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="16" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="16" value="9">9</label></td>
-        <td>Claro</td>
+        <td>Clear</td>
         <td><input type="radio" name="16" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">16.1 Guía del usuario</td>
+        <td colspan="13">16.1 User Guide</td>
     </tr>
     <tr>
         <td></td>
-        <td>Confuso</td>
+        <td>Confusing</td>
         <td class="scale-options"><label><input type="radio" name="16_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="16_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="16_1" value="3">3</label></td>
@@ -1827,24 +1819,24 @@
         <td class="scale-options"><label><input type="radio" name="16_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="16_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="16_1" value="9">9</label></td>
-        <td>Claro</td>
+        <td>Clear</td>
         <td><input type="radio" name="16_1" value="NA" checked>NA</td>
     </tr>
 </table>
 
 
-<h2>PARTE D: CAPACIDADES DEL SISTEMA</h2>
+<h2>PART D: SYSTEM CAPABILITIES</h2>
 <table border="1">
     <tr>
-        <th colspan="13">Pregunta</th>
+        <th colspan="13">Question</th>
     </tr>
 
     <tr>
-        <td colspan="13">17. Velocidad de la aplicación</td>
+        <td colspan="13">17. Application speed</td>
     </tr>
     <tr>
         <td></td>
-        <td>Demasiado lento</td>
+        <td>Too slow</td>
         <td class="scale-options"><label><input type="radio" name="17" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="17" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="17" value="3">3</label></td>
@@ -1854,15 +1846,15 @@
         <td class="scale-options"><label><input type="radio" name="17" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="17" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="17" value="9">9</label></td>
-        <td>Suficientemente rápido</td>
+        <td>Sufficiently fast</td>
         <td><input type="radio" name="17" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">17.1 Tiempo de respuesta de la aplicación para la mayoría de las operaciones</td>
+        <td colspan="13">17.1 Application response time for most operations</td>
     </tr>
     <tr>
         <td></td>
-        <td>Demasiado lento</td>
+        <td>Too slow</td>
         <td class="scale-options"><label><input type="radio" name="17_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="17_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="17_1" value="3">3</label></td>
@@ -1872,16 +1864,16 @@
         <td class="scale-options"><label><input type="radio" name="17_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="17_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="17_1" value="9">9</label></td>
-        <td>Suficientemente rápido</td>
+        <td>Sufficiently fast</td>
         <td><input type="radio" name="17_1" value="NA" checked>NA</td>
     </tr>
     
     <tr>
-        <td colspan="13">18. Los sonidos en la aplicación tienden a ser</td>
+        <td colspan="13">18. The sounds in the application tend to be</td>
     </tr>
     <tr>
         <td></td>
-        <td>Ruidoso</td>
+        <td>Loud</td>
         <td class="scale-options"><label><input type="radio" name="18" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="18" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="18" value="3">3</label></td>
@@ -1891,15 +1883,15 @@
         <td class="scale-options"><label><input type="radio" name="18" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="18" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="18" value="9">9</label></td>
-        <td>Apropiado</td>
+        <td>Appropriate</td>
         <td><input type="radio" name="18" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">18.1 Pitidos en la aplicación</td>
+        <td colspan="13">18.1 Beeps in the application</td>
     </tr>
     <tr>
         <td></td>
-        <td>Molesto</td>
+        <td>Annoying</td>
         <td class="scale-options"><label><input type="radio" name="18_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="18_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="18_1" value="3">3</label></td>
@@ -1909,15 +1901,15 @@
         <td class="scale-options"><label><input type="radio" name="18_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="18_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="18_1" value="9">9</label></td>
-        <td>Agradable</td>
+        <td>Pleasing</td>
         <td><input type="radio" name="18_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">18.2 Respuestas por voz en la aplicación</td>
+        <td colspan="13">18.2 Voice responses in the application</td>
     </tr>
     <tr>
         <td></td>
-        <td>Molesto</td>
+        <td>Annoying</td>
         <td class="scale-options"><label><input type="radio" name="18_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="18_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="18_2" value="3">3</label></td>
@@ -1927,16 +1919,16 @@
         <td class="scale-options"><label><input type="radio" name="18_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="18_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="18_2" value="9">9</label></td>
-        <td>Agradable</td>
+        <td>Pleasing</td>
         <td><input type="radio" name="18_2" value="NA" checked>NA</td>
     </tr>
     
     <tr>
-        <td colspan="13">19. Corrección de sus errores</td>
+        <td colspan="13">19. Error correction</td>
     </tr>
     <tr>
         <td></td>
-        <td>Difícil</td>
+        <td>Difficult</td>
         <td class="scale-options"><label><input type="radio" name="19" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="19" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="19" value="3">3</label></td>
@@ -1946,15 +1938,15 @@
         <td class="scale-options"><label><input type="radio" name="19" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="19" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="19" value="9">9</label></td>
-        <td>Fácil</td>
+        <td>Easy</td>
         <td><input type="radio" name="19" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">19.1 Capacidad para deshacer lo que acaba de hacer</td>
+        <td colspan="13">19.1 Ability to undo what has just been done</td>
     </tr>
     <tr>
         <td></td>
-        <td>Inadecuado</td>
+        <td>Inadequate</td>
         <td class="scale-options"><label><input type="radio" name="19_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="19_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="19_1" value="3">3</label></td>
@@ -1964,16 +1956,16 @@
         <td class="scale-options"><label><input type="radio" name="19_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="19_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="19_1" value="9">9</label></td>
-        <td>Adecuado</td>
+        <td>Adequate</td>
         <td><input type="radio" name="19_1" value="NA" checked>NA</td>
     </tr>
     
     <tr>
-        <td colspan="13">20. Se tienen en cuenta las necesidades de ambos usuarios, experimentados e inexpertos</td>
+        <td colspan="13">20. There are considerations for the needs of both experienced and inexperienced users</td>
     </tr>
     <tr>
         <td></td>
-        <td>Nunca</td>
+        <td>Never</td>
         <td class="scale-options"><label><input type="radio" name="20" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="20" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="20" value="3">3</label></td>
@@ -1983,15 +1975,15 @@
         <td class="scale-options"><label><input type="radio" name="20" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="20" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="20" value="9">9</label></td>
-        <td>Siempre</td>
+        <td>Always</td>
         <td><input type="radio" name="20" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">20.1 Los novatos pueden realizar tareas</td>
+        <td colspan="13">20.1 Novice users can perform tasks</td>
     </tr>
     <tr>
         <td></td>
-        <td>Con dificultad</td>
+        <td>With difficulty</td>
         <td class="scale-options"><label><input type="radio" name="20_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="20_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="20_1" value="3">3</label></td>
@@ -2001,15 +1993,15 @@
         <td class="scale-options"><label><input type="radio" name="20_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="20_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="20_1" value="9">9</label></td>
-        <td>Fácilmente</td>
+        <td>With ease</td>
         <td><input type="radio" name="20_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">20.2 Los expertos pueden usar funciones y atajos</td>
+        <td colspan="13">20.2 Expert users can use functions and shortcuts</td>
     </tr>
     <tr>
         <td></td>
-        <td>Con dificultad</td>
+        <td>With difficulty</td>
         <td class="scale-options"><label><input type="radio" name="20_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="20_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="20_2" value="3">3</label></td>
@@ -2019,24 +2011,24 @@
         <td class="scale-options"><label><input type="radio" name="20_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="20_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="20_2" value="9">9</label></td>
-        <td>Fácilmente</td>
+        <td>With ease</td>
         <td><input type="radio" name="20_2" value="NA" checked>NA</td>
     </tr>
     
 </table>
 
 
-<h2>PARTE E: IMPRESIONES GENERALES</h2>
+<h2>PART E: GENERAL IMPRESSIONS</h2>
 <table border="1">
     <tr>
-        <th colspan="13">Pregunta</th>
+        <th colspan="13">Question</th>
     </tr>
     <tr>
-        <td colspan="13">21. La aplicación es estéticamente agradable</td>
+        <td colspan="13">21. The application is aesthetically pleasing</td>
     </tr>
     <tr>
         <td></td>
-        <td>En absoluto</td>
+        <td>Not at all</td>
         <td class="scale-options"><label><input type="radio" name="21" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="21" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="21" value="3">3</label></td>
@@ -2046,15 +2038,15 @@
         <td class="scale-options"><label><input type="radio" name="21" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="21" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="21" value="9">9</label></td>
-        <td>Mucho</td>
+        <td>Very much</td>
         <td><input type="radio" name="21" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">21.1 Los diseños y la disposición de la aplicación son atractivos</td>
+        <td colspan="13">21.1 The designs and layout of the application are attractive</td>
     </tr>
     <tr>
         <td></td>
-        <td>En absoluto</td>
+        <td>Not at all</td>
         <td class="scale-options"><label><input type="radio" name="21_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="21_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="21_1" value="3">3</label></td>
@@ -2064,15 +2056,15 @@
         <td class="scale-options"><label><input type="radio" name="21_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="21_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="21_1" value="9">9</label></td>
-        <td>Mucho</td>
+        <td>Very much</td>
         <td><input type="radio" name="21_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">21.2 Uso de colores</td>
+        <td colspan="13">21.2 Use of colors</td>
     </tr>
     <tr>
         <td></td>
-        <td>Poco atractivo</td>
+        <td>Not attractive</td>
         <td class="scale-options"><label><input type="radio" name="21_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="21_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="21_2" value="3">3</label></td>
@@ -2082,15 +2074,15 @@
         <td class="scale-options"><label><input type="radio" name="21_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="21_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="21_2" value="9">9</label></td>
-        <td>Atractivo</td>
+        <td>Attractive</td>
         <td><input type="radio" name="21_2" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">21.3 Uso de combinaciones de colores</td>
+        <td colspan="13">21.3 Use of color combinations</td>
     </tr>
     <tr>
         <td></td>
-        <td>Poco atractivo</td>
+        <td>Not attractive</td>
         <td class="scale-options"><label><input type="radio" name="21_3" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="21_3" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="21_3" value="3">3</label></td>
@@ -2100,16 +2092,16 @@
         <td class="scale-options"><label><input type="radio" name="21_3" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="21_3" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="21_3" value="9">9</label></td>
-        <td>Atractivo</td>
+        <td>Attractive</td>
         <td><input type="radio" name="21_3" value="NA" checked>NA</td>
     </tr>
     
     <tr>
-        <td colspan="13">22. La aplicación es impresionante</td>
+        <td colspan="13">22. The application is impressive</td>
     </tr>
     <tr>
         <td></td>
-        <td>En absoluto</td>
+        <td>Not at all</td>
         <td class="scale-options"><label><input type="radio" name="22" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="22" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="22" value="3">3</label></td>
@@ -2119,15 +2111,15 @@
         <td class="scale-options"><label><input type="radio" name="22" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="22" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="22" value="9">9</label></td>
-        <td>Mucho</td>
+        <td>Very much</td>
         <td><input type="radio" name="22" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">22.1 La aplicación puede hacer mucho</td>
+        <td colspan="13">22.1 The application can do a lot</td>
     </tr>
     <tr>
         <td></td>
-        <td>En absoluto</td>
+        <td>Not at all</td>
         <td class="scale-options"><label><input type="radio" name="22_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="22_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="22_1" value="3">3</label></td>
@@ -2137,15 +2129,15 @@
         <td class="scale-options"><label><input type="radio" name="22_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="22_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="22_1" value="9">9</label></td>
-        <td>Mucho</td>
+        <td>Very much</td>
         <td><input type="radio" name="22_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">22.2 La aplicación en un hogar sería</td>
+        <td colspan="13">22.2 The application in a home would be</td>
     </tr>
     <tr>
         <td></td>
-        <td>Poco atractivo</td>
+        <td>Not attractive</td>
         <td class="scale-options"><label><input type="radio" name="22_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="22_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="22_2" value="3">3</label></td>
@@ -2155,16 +2147,16 @@
         <td class="scale-options"><label><input type="radio" name="22_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="22_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="22_2" value="9">9</label></td>
-        <td>Atractivo</td>
+        <td>Attractive</td>
         <td><input type="radio" name="22_2" value="NA" checked>NA</td>
     </tr>
     
     <tr>
-        <td colspan="13">23. Es divertido usar la aplicación</td>
+        <td colspan="13">23. It is fun to use the application</td>
     </tr>
     <tr>
         <td></td>
-        <td>En absoluto</td>
+        <td>Not at all</td>
         <td class="scale-options"><label><input type="radio" name="23" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="23" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="23" value="3">3</label></td>
@@ -2174,15 +2166,15 @@
         <td class="scale-options"><label><input type="radio" name="23" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="23" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="23" value="9">9</label></td>
-        <td>Mucho</td>
+        <td>Very much</td>
         <td><input type="radio" name="23" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">23.1 La aplicación mantiene el interés de uno</td>
+        <td colspan="13">23.1 The application keeps one’s interest</td>
     </tr>
     <tr>
         <td></td>
-        <td>Nunca</td>
+        <td>Never</td>
         <td class="scale-options"><label><input type="radio" name="23_1" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="23_1" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="23_1" value="3">3</label></td>
@@ -2192,15 +2184,15 @@
         <td class="scale-options"><label><input type="radio" name="23_1" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="23_1" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="23_1" value="9">9</label></td>
-        <td>Siempre</td>
+        <td>Always</td>
         <td><input type="radio" name="23_1" value="NA" checked>NA</td>
     </tr>
     <tr>
-        <td colspan="13">23.2 La aplicación seguiría siendo interesante</td>
+        <td colspan="13">23.2 The application would remain interesting</td>
     </tr>
     <tr>
         <td></td>
-        <td>Poco probable</td>
+        <td>Unlikely</td>
         <td class="scale-options"><label><input type="radio" name="23_2" value="1">1</label></td>
         <td class="scale-options"><label><input type="radio" name="23_2" value="2">2</label></td>
         <td class="scale-options"><label><input type="radio" name="23_2" value="3">3</label></td>
@@ -2210,14 +2202,14 @@
         <td class="scale-options"><label><input type="radio" name="23_2" value="7">7</label></td>
         <td class="scale-options"><label><input type="radio" name="23_2" value="8">8</label></td>
         <td class="scale-options"><label><input type="radio" name="23_2" value="9">9</label></td>
-        <td>Probablemente</td>
+        <td>Probably</td>
         <td><input type="radio" name="23_2" value="NA" checked>NA</td>
     </tr>
 </table>
 
 
       <!-- Botón de envío -->
-      <button type="submit" class="submit-btn">Enviar Cuestionario</button>
+      <button type="submit" class="submit-btn">Send</button>
     </form>
 
 
