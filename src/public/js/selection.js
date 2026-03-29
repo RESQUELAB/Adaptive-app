@@ -100,48 +100,46 @@ function updateSelectionPage() {
 
 function changeDescription(session, groupDefinition, flags) {
     const descriptionElement = document.querySelector('.description-text p');
-    
     const warning_paragraph = document.getElementById('warning-message');
 
     warning_paragraph.style.display = "none";
 
     if (session === "1") {
         descriptionElement.innerHTML = `
-            Estás en la <strong>Sesión 1</strong>. 
-            Solo está disponible la tarea de <b>Learning (Human Feedback)</b>. 
-            Por favor, completa esta actividad antes de pasar a la siguiente sesión.
+            You are in <strong>Session 1</strong>.<br>
+            Only the <b>Learning (Human Feedback)</b> task is available.<br>
+            Please complete this activity before proceeding to the next session.
         `;
     } else if (session === "2") {
-        descriptionElement.innerHTML = `Estás en la <strong>Sesión 2</strong>.`;
+        descriptionElement.innerHTML = `You are in <strong>Session 2</strong>.`;
 
         if (!flags.catalogue_1 && !flags.survey_1) {
             descriptionElement.innerHTML += `
-                Tarea actual: Debes completar el catálogo de <strong>${groupDefinition.session1.domain}</strong>. 
-                Una vez finalizado, se habilitará el cuestionario correspondiente.
+                Current task: You must complete the catalog for <strong>${groupDefinition.session1.domain}</strong>.<br>
+                Once finished, the corresponding questionnaire will be enabled.
             `;
         } else if (flags.catalogue_1 && !flags.survey_1) {
             descriptionElement.innerHTML += `
-                Tarea actual: El catálogo de <strong>${groupDefinition.session1.domain}</strong> está completo. 
-                Ahora, debes rellenar el cuestionario correspondiente.
+                Current task: The catalog for <strong>${groupDefinition.session1.domain}</strong> is complete.<br>
+                Now, you must fill out the corresponding questionnaire.
             `;
         } else if (flags.catalogue_1 && flags.survey_1) {
             if (!flags.catalogue_2 && !flags.survey_2) {
                 descriptionElement.innerHTML += `
-                    El primer dominio (<strong>${groupDefinition.session1.domain}</strong>) está completo. 
-                    Ahora debes completar el catálogo de <strong>${groupDefinition.session2.domain}</strong>.
+                    The first domain (<strong>${groupDefinition.session1.domain}</strong>) is complete.<br>
+                    Now you must complete the catalog for <strong>${groupDefinition.session2.domain}</strong>.
                 `;
             } else if (flags.catalogue_2 && !flags.survey_2) {
                 descriptionElement.innerHTML += `
-                    El segundo dominio (<strong>${groupDefinition.session2.domain}</strong>) está completo. 
-                    Por favor, rellena el cuestionario correspondiente.
+                    The second domain (<strong>${groupDefinition.session2.domain}</strong>) is complete.<br>
+                    Please fill out the corresponding questionnaire.
                 `;
             } else if (flags.catalogue_2 && flags.survey_2) {
                 descriptionElement.innerHTML += `
-                    ¡Ambos dominios y cuestionarios están completos! 
-                    <strong>Muchas gracias por participar en el experimento.</strong>
-
-                    <p style= "margin-top: 30px">
-                        Se han dejado ambos catalogos disponibles para su uso. Por si queréis seguir usándolo.
+                    Both domains and questionnaires are complete!<br>
+                    <strong>Thank you very much for participating in the experiment.</strong>
+                    <p style="margin-top: 30px">
+                        Both catalogs have been left available for your use, in case you want to keep using them.
                     </p>
                 `;
             }
