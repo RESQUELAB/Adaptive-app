@@ -9,9 +9,6 @@ contextBridge.exposeInMainWorld(
 
 const axios = require('axios');
 
-const SERVER_URL = 'http://' + (config.TARGET_SERVER || '158.42.185.67') + ':8000';
-
-
 // Read config synchronously on preload startup
 let config = {};
 try {
@@ -21,6 +18,8 @@ try {
 } catch (e) {
   console.error('Error reading config.json:', e);
 }
+
+const SERVER_URL = 'http://' + (config.TARGET_SERVER || '158.42.185.67') + ':8000';
 
 contextBridge.exposeInMainWorld('api', {
     getHost: () => config.TARGET_SERVER || 'https://default.server.com',

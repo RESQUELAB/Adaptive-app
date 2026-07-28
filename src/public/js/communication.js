@@ -2,10 +2,10 @@
 // 	PORT = '8000',
 // 	LS_LOGIN_KEY = 'sports-login'
 
-const HOST = window.api.getHost();
+var HOST = window.api.getHost();
 console.log('HOST from preload:', HOST);
-PORT = '9999'
-LS_LOGIN_KEY = 'sports-login'
+var PORT = '9999'
+var LS_LOGIN_KEY = 'sports-login'
 
 var loginInfo = null
 var amIconnected = false
