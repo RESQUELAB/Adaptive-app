@@ -9,7 +9,7 @@ contextBridge.exposeInMainWorld(
 
 const axios = require('axios');
 
-const SERVER_URL = 'http://158.42.185.67:8000';
+const SERVER_URL = 'http://' + (config.TARGET_SERVER || '158.42.185.67') + ':8000';
 
 
 // Read config synchronously on preload startup

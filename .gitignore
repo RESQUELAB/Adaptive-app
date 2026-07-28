@@ -67,10 +67,9 @@ AdaptiveApp-win32-x64/
 # Log-Files
 *.txt
 
-# Images
-*.png
-*.jpg
-*.jpeg
+# Build / release artifacts only
+AdaptiveApp-win32-x64/
+release-builds/
 
 # Libraries
 *.dll
