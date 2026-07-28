@@ -67,11 +67,11 @@ class OrderListController {
 			$('.orderList').html(`
 				<div id="articleList">
 				<div class="headers">
-					<span>ID</span>
-					<span>Cantidad de articulos</span>
-					<span>Importe</span>
-					<span>Estado</span>
-					<span>Pedido realizado el</span>
+					<span textId="orderId:1c">ID</span>
+					<span textId="orderItems:1c">Cantidad de artículos</span>
+					<span textId="orderAmount:1c">Importe</span>
+					<span textId="orderStatus:1c">Estado</span>
+					<span textId="orderDateHeader:1c">Pedido realizado el</span>
 				</div>
 				${this.getOrdersHTML()}
 				</div>
@@ -82,10 +82,10 @@ class OrderListController {
 	renderEmptyOrders() {
 		let html = `
 		    <div style="text-align: left; margin: 20px 0;">
-        <span style="font-size: 18px; font-weight: bold;">No existen pedidos todavía.</span>
+        <span style="font-size: 18px; font-weight: bold;" textId="noOrders:1c">No existen pedidos todavía.</span>
     </div>
 	<div style="text-align: left; margin: 20px 0;">
-			<a href="catalog.html" style="color: #007bff; text-decoration: none; font-size: 16px;">
+			<a href="catalog.html" style="color: #007bff; text-decoration: none; font-size: 16px;" textId="backToHome:1c">
 				Volver al inicio
 			</a>
 		</div>
@@ -96,9 +96,9 @@ class OrderListController {
 	getOrdersHTML() {
 		let html = ''
 		let status = {
-			0: "Cancelado",
-			1: "En progreso",
-			2: "Completado"
+			0: getText("orderCancelled:1c"),
+			1: getText("orderInProgress:1c"),
+			2: getText("orderCompleted:1c")
 		}
 		let n = 0
 		for (let order of this.orders) {
@@ -151,19 +151,19 @@ class OrderListController {
 				</div>
 				<div id="moneySummary">
 					<div id="totalMoneyStep1">
-						<div>Total artículos (IVA inc.)</div>
+						<div textId="totalItemsVat:1c">Total artículos (IVA inc.)</div>
 						<div>${(o.summary.total - 6).toFixed(2)}€</div>
 					</div>
 					<div id="shipment">
-						<div>Envío y preparación</div>
+						<div textId="shippingHandling:1c">Envío y preparación</div>
 						<div>6.00€</div>
 					</div>
 					<div id="taxes">
-						<div>Impuestos (21%)</div>
+						<div textId="taxes:1c">Impuestos (21%)</div>
 						<div>${o.summary.tax.toFixed(2)}€</div>
 					</div>
 					<div id="totalMoneyStep2">
-						<div>Total (IVA inc.)</div>
+						<div textId="totalVat:1c">Total (IVA inc.)</div>
 						<div>${(o.summary.total).toFixed(2)}€</div>
 					</div>
 				</div>
@@ -179,16 +179,16 @@ class OrderListController {
 				</div>
 				<div id="moneySummary">
 					<div id="totalMoneyStep1">
-						<div>Total artículos (IVA inc.)</div>
+						<div textId="totalItemsVat:1c">Total artículos (IVA inc.)</div>
 						<div>${(o.summary.total - 6).toFixed(2)}€</div>
 					</div>
 					
 					<div id="taxes">
-						<div>Impuestos (21%)</div>
+						<div textId="taxes:1c">Impuestos (21%)</div>
 						<div>${o.summary.tax.toFixed(2)}€</div>
 					</div>
 					<div id="totalMoneyStep2">
-						<div>Total (IVA inc.)</div>
+						<div textId="totalVat:1c">Total (IVA inc.)</div>
 						<div>${(o.summary.total).toFixed(2)}€</div>
 					</div>
 				</div>
@@ -199,7 +199,7 @@ class OrderListController {
 		</div>
 		<div id="userData">
 			<div id="personalData">
-				<h3>Datos personales</h3>
+				<h3 textId="personalDataTitle:1c">Datos personales</h3>
 				<p>${c.lastName}, ${c.name}</p>
 				<p>
 				<!-- <span textId="${this.getRoadTypeString()}">
@@ -208,8 +208,8 @@ class OrderListController {
 				<p>${o.shipmentData.postalCode} ${o.shipmentData.city}</p>
 			</div>
 			<div id="paymentData">
-				<h3>Datos de pago</h3>
-				<p>Método de pago: Tarjeta de débito</p>
+				<h3 textId="paymentDataTitle:1c">Datos de pago</h3>
+				<p textId="paymentMethod:1c">Método de pago: Tarjeta de débito</p>
 				<p>VISA: **** ${card.substring(card.length - 4)}</p>
 			</div>
 		</div>
@@ -218,7 +218,7 @@ class OrderListController {
 
 		$('.orderList').html(orderHtml)
 
-		$('a.goBack').attr('href', './order.html?action=list').text('< Pedidos')
+		$('a.goBack').attr('href', './order.html?action=list').text('< ' + getText("order:1c") + 's')
 	}
 
 	getRoadTypeString() {

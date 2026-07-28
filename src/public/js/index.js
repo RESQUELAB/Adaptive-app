@@ -14,7 +14,7 @@ function goToStep2() {
     // Check if passwords match
     if (confirmPasswordInput.value !== passwordInput.value) {
         valid = false;
-        confirmPasswordInput.setCustomValidity('Las contraseñas no coinciden.'); // Set custom error message
+        confirmPasswordInput.setCustomValidity(getText("passwordsDoNotMatch:1c")); // Set custom error message
     } else {
         confirmPasswordInput.setCustomValidity(''); // Clear any custom error message
     }
@@ -147,7 +147,7 @@ document.getElementById('registration-form').addEventListener('submit', function
 
     } else {
         if (!dataProtectionCheckbox.checked) {
-            document.getElementById('registration-message').textContent = 'Debe aceptar la protección de datos para registrarse.';
+            document.getElementById('registration-message').textContent = getText("dataProtectionRequired:1c");
             showNotification('registration-message');
         }
         form.reportValidity();
@@ -168,10 +168,10 @@ document.getElementById('registration-form').addEventListener('submit', function
     // Validate form fields
     if (!usernameInput.value || !passwordInput.value) {
         if (!usernameInput.value) {
-            loginMessage.textContent += 'Por favor, introduce tu nombre de usuario. ';
+            loginMessage.textContent += getText("enterUsername:1c") + ' ';
         }
         if (!passwordInput.value) {
-            loginMessage.textContent += 'Por favor, introduce tu contraseña.';
+            loginMessage.textContent += getText("enterPassword:1c");
         }
         return; // Exit if validation fails
     }
@@ -179,7 +179,7 @@ document.getElementById('registration-form').addEventListener('submit', function
     // Check server status (proxy server)
     let serverIsOnline = await checkServerStatus();
     if (!serverIsOnline) {
-        loginMessage.textContent = 'Server is unavailable. Please try again later.';
+        loginMessage.textContent = getText("serverUnavailable:1c");
         return;
     }
     try {

@@ -24,7 +24,7 @@ $(function() {
     console.log("CLICKED SAVE, new profile:: ", profileData);
     
     pc.saveProfileData(profileData);
-    showSuccessMessage("message-shipmentData", "Los datos de envío se han guardado correctamente!");
+    showSuccessMessage("message-shipmentData", getText("shippingSaved:1c"));
 });
 });
 
@@ -94,7 +94,7 @@ function showSuccessMessage(messageElementId, message) {
 }
 
 async function logout(){
-  const confirmLogout = confirm("¿Estás seguro de cerrar sesión?");
+  const confirmLogout = confirm(getText("confirmLogout:1c"));
   if (confirmLogout) {
     console.log("OK. LOGING OUT")
     try {

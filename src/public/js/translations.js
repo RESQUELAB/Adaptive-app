@@ -660,6 +660,186 @@
             "en": "your shopping cart is empty.",
             "es": "su carrito de la compra está vacío."
         },
+        "addToCart": {
+            "en": "add to cart",
+            "es": "añadir al carrito"
+        },
+        "viewCart": {
+            "en": "view cart",
+            "es": "ver carrito"
+        },
+        "showDescription": {
+            "en": "show description",
+            "es": "ver descripción"
+        },
+        "showMore": {
+            "en": "see more",
+            "es": "ver más"
+        },
+        "hideDescription": {
+            "en": "hide description",
+            "es": "ocultar descripción"
+        },
+        "noProductsFound": {
+            "en": "No products found for this search",
+            "es": "No se han encontrado productos en esta búsqueda"
+        },
+        "tryChangingFilters": {
+            "en": "Try changing the filters.",
+            "es": "Pruebe a cambiar los filtros."
+        },
+        "addFavoritesFirst": {
+            "en": "If this is the favorites list, add products to your favorites first.",
+            "es": "Si se trata de la lista de favoritos, añada productos a la lista de favoritos primero."
+        },
+        "resetSearch": {
+            "en": "Reset search",
+            "es": "Reiniciar búsqueda"
+        },
+        "noOrders": {
+            "en": "No orders yet.",
+            "es": "No existen pedidos todavía."
+        },
+        "backToHome": {
+            "en": "Back to home",
+            "es": "Volver al inicio"
+        },
+        "orderCancelled": {
+            "en": "Cancelled",
+            "es": "Cancelado"
+        },
+        "orderInProgress": {
+            "en": "In progress",
+            "es": "En progreso"
+        },
+        "orderCompleted": {
+            "en": "Completed",
+            "es": "Completado"
+        },
+        "totalItemsVat": {
+            "en": "Total items (VAT incl.)",
+            "es": "Total artículos (IVA inc.)"
+        },
+        "shippingHandling": {
+            "en": "Shipping and handling",
+            "es": "Envío y preparación"
+        },
+        "taxes": {
+            "en": "Taxes (21%)",
+            "es": "Impuestos (21%)"
+        },
+        "totalVat": {
+            "en": "Total (VAT incl.)",
+            "es": "Total (IVA inc.)"
+        },
+        "personalDataTitle": {
+            "en": "Personal data",
+            "es": "Datos personales"
+        },
+        "paymentDataTitle": {
+            "en": "Payment data",
+            "es": "Datos de pago"
+        },
+        "paymentMethod": {
+            "en": "Payment method: Debit card",
+            "es": "Método de pago: Tarjeta de débito"
+        },
+        "shippingSaved": {
+            "en": "Shipping data saved successfully!",
+            "es": "Los datos de envío se han guardado correctamente!"
+        },
+        "confirmLogout": {
+            "en": "Are you sure you want to log out?",
+            "es": "¿Estás seguro de cerrar sesión?"
+        },
+        "dataProtectionRequired": {
+            "en": "You must accept the data protection policy to register.",
+            "es": "Debe aceptar la protección de datos para registrarse."
+        },
+        "pageOf": {
+            "en": "Page 1 of 1.",
+            "es": "Página 1 de 1."
+        },
+        "passwordsDoNotMatch": {
+            "en": "Passwords do not match.",
+            "es": "Las contraseñas no coinciden."
+        },
+        "enterUsername": {
+            "en": "Please enter your username.",
+            "es": "Por favor, introduce tu nombre de usuario."
+        },
+        "enterPassword": {
+            "en": "Please enter your password.",
+            "es": "Por favor, introduce tu contraseña."
+        },
+        "serverUnavailable": {
+            "en": "Server is unavailable. Please try again later.",
+            "es": "El servidor no está disponible. Inténtelo de nuevo más tarde."
+        },
+        "orderId": {
+            "en": "ID",
+            "es": "ID"
+        },
+        "orderItems": {
+            "en": "Items",
+            "es": "Cantidad de artículos"
+        },
+        "orderAmount": {
+            "en": "Total",
+            "es": "Importe"
+        },
+        "orderStatus": {
+            "en": "Status",
+            "es": "Estado"
+        },
+        "orderDateHeader": {
+            "en": "Order date",
+            "es": "Pedido realizado el"
+        },
+        "myOrders": {
+            "en": "My orders",
+            "es": "Mis pedidos"
+        },
+        "selectCategory": {
+            "en": "Select a category",
+            "es": "Seleccione una categoría"
+        },
+        "back": {
+            "en": "Back",
+            "es": "Atrás"
+        },
+        "profileSaved": {
+            "en": "Profile saved successfully!",
+            "es": "El perfil se ha guardado correctamente!"
+        },
+        "paymentSaved": {
+            "en": "Payment data saved successfully!",
+            "es": "Los datos de pago se han guardado correctamente!"
+        },
+        "connected": {
+            "en": "Connected",
+            "es": "Conectado"
+        },
+        "connecting": {
+            "en": "Connecting...",
+            "es": "Conectando..."
+        },
+        "serverDown": {
+            "en": "Server is down. Please try again later.",
+            "es": "El servidor no está disponible. Inténtelo de nuevo más tarde."
+        },
+        "loginError": {
+            "en": "An error occurred during login: ",
+            "es": "Se produjo un error durante el inicio de sesión: "
+        },
+        "registrationError": {
+            "en": "An error occurred during registration: ",
+            "es": "Se produjo un error durante el registro: "
+        },
+        "loginAfterRegistrationError": {
+            "en": "Error during login after registration: ",
+            "es": "Error al iniciar sesión después del registro: "
+        },
         // "": {
         //     "en": "",
         //     "es": ""

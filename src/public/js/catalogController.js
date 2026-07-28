@@ -114,7 +114,7 @@ class CatalogController {
 	}
 
 	getPaginationHtml() {
-		return `<div class="pagination">Página 1 de 1.</div>`
+		return `<div class="pagination"><span textId="pageOf:1c">Page 1 of 1.</span></div>`
 	}
 
 	setSlider(min, max) {
@@ -153,10 +153,10 @@ class CatalogController {
 			this.catalogPanel.attr('class', 'grid-border catalog catalog-1cols')
 			this.catalogPanel.html(`
 				<div class="no-items-found" style="text-align: center; padding: 50px;">
-					<h2>No se han encontrado productos en esta búsqueda</h2>
-					<p>Pruebe a cambiar los filtros.</p>
-					<p>Si se trata de la lista de favoritos, añada productos a la lista de favoritos primero.</p>
-					<button onclick="window.location.href='./catalog.html'" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Reiniciar búsqueda</button>
+					<h2 textId="noProductsFound:1c">No se han encontrado productos en esta búsqueda</h2>
+					<p textId="tryChangingFilters:1c">Pruebe a cambiar los filtros.</p>
+					<p textId="addFavoritesFirst:1c">Si se trata de la lista de favoritos, añada productos a la lista de favoritos primero.</p>
+					<button textId="resetSearch:1c" onclick="window.location.href='./catalog.html'" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Reiniciar búsqueda</button>
 				</div>
 			`);
 		} else {
@@ -365,9 +365,9 @@ class Filter {
 		switch (this.menuType) {
 			case 'dropdown':
 				s = `<select onchange="window.location.href='./catalog.html?cat='+this.value">
-					<option>Select a category</option>`;
+					<option textId="selectCategory:1c">Seleccione una categoría</option>`;
 				for (let c of this.categories) {
-					s += `<option value="${c}">
+					s += `<option value="${c}" textId="category_${c}:1c">
 					${c}
 					</option>`;
 				}
@@ -394,7 +394,7 @@ class Filter {
 				for (let c of this.categories) {
 					s += `<div class="category-item">
 						<input type="checkbox" id="${c}" name="${c}">
-						<label for="${c}">${c}</label>
+						<label for="${c}" textId="category_${c}:1c">${c}</label>
 						</div>`;
 				}
 				break;

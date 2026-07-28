@@ -55,7 +55,7 @@ class ProductPage {
 	showDescription(descriptionText, partial) {
 		let fullDescription = this.description['es'];
 		if (!partial) {
-			descriptionText.html(fullDescription + ' <a href="#" class="hide-description" textId="hideDescription:1c">Ocultar descripción</a>');
+			descriptionText.html(fullDescription + ' <a href="#" class="hide-description" textId="hideDescription:1c">Hide description</a>');
 			this.setupHideDescriptionListener(descriptionText);
 			return;
 		}
@@ -63,7 +63,7 @@ class ProductPage {
 
 		if (fullDescription.length > maxLength) {
 			const partialDescription = fullDescription.substring(0, maxLength) + '... ';
-			descriptionText.html(partialDescription + '<a href="#" class="show-more" textId="showMore:1c">Ver más</a>');
+			descriptionText.html(partialDescription + '<a href="#" class="show-more" textId="showMore:1c">See more</a>');
 			this.setupShowMoreListener(descriptionText, fullDescription);
 		}
 	}
@@ -71,7 +71,7 @@ class ProductPage {
 	setupShowMoreListener(descriptionText, fullDescription) {
 		descriptionText.find('.show-more').click((e) => {
 			e.preventDefault();
-			descriptionText.html(fullDescription + ' <a href="#" class="hide-description" textId="hideDescription:1c">Ocultar descripción</a>');
+			descriptionText.html(fullDescription + ' <a href="#" class="hide-description" textId="hideDescription:1c">Hide description</a>');
 			this.setupHideDescriptionListener(descriptionText);
 		});
 	}
@@ -84,7 +84,7 @@ class ProductPage {
 	}
 
 	addShowDescriptionButton() {
-		$('.product .message-section').append('<button class="show-description" textId="showDescription:1c">Ver descripción</button>');
+		$('.product .message-section').append('<button class="show-description" textId="showDescription:1c">Show description</button>');
 		this.setupShowDescriptionListener();
 	}
 
@@ -130,9 +130,9 @@ class ProductPage {
 					${this.getVariationsHtml()}
 					<div class="bottom-section">
 						<div class="add-to-cart">
-							<label class="title" for="quantity" textId="quantity:1c">Cantidad</label>
+							<label class="title" for="quantity" textId="quantity:1c">Quantity</label>
 							<input type="number" id="quantity" value="1" min="1" name="quantity" oninput="this.value = this.value !== '' ? Math.abs(this.value) : '1'">
-							<button class="positive">Añadir al carrito</button>
+							<button class="positive" textId="addToCart:1c">Añadir al carrito</button>
 						</div>
 						<div class="shipment-and-stock">
 							<div class="${this.stock == 0 ? 'negative' : 'positive'}" textId="${this.stock === 0 ? 'noStock' : 'inStock'}:1c"></div>
@@ -220,7 +220,7 @@ class ProductPage {
 			<div class="out-of-stock-notification error-notification">
 				<div class="notification-content">
 					<span class="close-btn">&times;</span>
-					<p textId="outOfStockWarning:1c">Este producto está agotado.</p>
+					<p textId="outOfStockWarning:1c">This product is out of stock.</p>
 				</div>
 			</div>
 		`;
@@ -252,13 +252,13 @@ class ProductPage {
 			<div class="product-added-notification">
 				<div class="notification-content">
 					<span class="close-btn">&times;</span>
-					<h4 textId="productAdded:1c">Producto añadido al carrito</h4>
+					<h4 textId="productAdded:1c">Product added to cart</h4>
 					<p>
 						<span>${q}x</span>
 						<span textId="${id}_title:1c"></span>
 						${variationsString}
 					</p>
-					<a href="./basket.html" class="view-cart-btn">Ver carrito</a>
+					<a href="./basket.html" class="view-cart-btn" textId="viewCart:1c">Ver carrito</a>
 				</div>
 			</div>
 		`;

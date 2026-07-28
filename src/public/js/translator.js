@@ -1,7 +1,7 @@
 /**
  * This file is loaded via the <script> tag in the index.html file
  */
-const defaultLang = "es";
+const defaultLang = "en";
 const acceptedLang = ["en", "es"];
 var texts = {};
 let lang = null;

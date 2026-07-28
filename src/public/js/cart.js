@@ -26,7 +26,7 @@ class CartController {
         <span textId="emptyCart:1c" style="font-size: 18px; font-weight: bold;"></span>
     </div>
 	<div style="text-align: left; margin: 20px 0;">
-			<a href="order.html?action=list" style="color: #007bff; text-decoration: none; font-size: 16px;">
+			<a href="order.html?action=list" style="color: #007bff; text-decoration: none; font-size: 16px;" textId="myOrders:1c">
 				Mis pedidos
 			</a>
 		</div>
@@ -100,19 +100,19 @@ class CartController {
 		let basketHtml = `
 			<div id="moneySummary">
 				<div id="totalMoneyStep1">
-					<div>Total artículos (IVA inc.)</div>
+					<div textId="totalItemsVat:1c">Total artículos (IVA inc.)</div>
 					<div>${this.total.toFixed(2)}€</div>
 				</div>
 				<div id="shipment">
-					<div>Envío y preparación</div>
+					<div textId="shippingHandling:1c">Envío y preparación</div>
 					<div>6.00€</div>
 				</div>
 				<div id="taxes">
-					<div>Impuestos (21%)</div>
+					<div textId="taxes:1c">Impuestos (21%)</div>
 					<div>${(((this.total + 6) / 1.21) * 0.21).toFixed(2)}€</div>
 				</div>
 				<div id="totalMoneyStep2">
-					<div>Total (IVA inc.)</div>
+					<div textId="totalVat:1c">Total (IVA inc.)</div>
 					<div>${(this.total + 6).toFixed(2)}€</div>
 				</div>
 				<div class="confirmPurchase">

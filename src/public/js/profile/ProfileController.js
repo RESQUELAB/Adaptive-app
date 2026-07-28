@@ -23,18 +23,18 @@ class ProfileController {
 
 		let panel = $('#userData').html(`
 			<div id="personalData">
-						<h3>Datos personales</h3>
+						<h3 textId="personalDataTitle:1c">Datos personales</h3>
 						<p>${c.name} ${c.lastName}</p>
 						<p>${cship.roadMainInfo}, ${cship.roadExtraInfo}</p>
 						<p>${cship.postalCode} ${cship.city}</p>
 					</div>
 					<div id="paymentData">
-						<h3>Datos de pago</h3>
-						<p>Método de pago: Tarjeta de débito</p>
+						<h3 textId="paymentDataTitle:1c">Datos de pago</h3>
+						<p textId="paymentMethod:1c">Método de pago: Tarjeta de débito</p>
 						<p>VISA: ${cpay.cardNumber}</p>
 					</div>
 					<div style="text-align: left; margin: 20px 0; border: 0;">
-			<a href="order.html?action=list" style="color: #007bff; text-decoration: none; font-size: 16px;">
+			<a href="order.html?action=list" style="color: #007bff; text-decoration: none; font-size: 16px;" textId="myOrders:1c">
 				Mis pedidos
 			</a>
 		</div>
@@ -81,7 +81,7 @@ class ProfileController {
 		    <div id="message-clientData" style="display: none; color: green;"></div>
 
 		<div class="button-group">
-			<button class="back-button" onclick="goBack()">Atrás</button>
+			<button class="back-button" onclick="goBack()" textId="back:1c">Atrás</button>
 			<button id="saveButton" class="positive" textid="accept:1c"></button>
 		</div>
 		`)
@@ -118,7 +118,7 @@ class ProfileController {
 		<div id="message-paymentData" style="display: none; color: green;"></div>
 
 		<div class="button-group">
-			<button class="back-button" onclick="goBack()">Atrás</button>
+			<button class="back-button" onclick="goBack()" textId="back:1c">Atrás</button>
 			<button id="saveButton2" class="positive" textid="accept:1c"></button>
 		</div>
 		`)
